@@ -23,9 +23,9 @@ shroud:
 	Defaults:
 		Offset: 0, -1, 1
 		ZRamp: 1
-	shroud:
+	shroud: shroud60x30
 		Length: *
-	fog: fog
+	fog: fog60x30
 		Length: *
 
 editor-overlay:

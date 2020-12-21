@@ -1,5 +1,11 @@
 	Shattered Paradise, a mod for OpenRA made by the Nolt.
 
+#Thanks go to:
+
+* OmegaBolt (Terrain)
+
+
+
 #Special Thanks
 
 A warm thank you to the following folks.
@@ -73,7 +79,7 @@ azri_apoc			: Nod Harvester.
 CptNaughty			: radio tower, reclaimer attack sound.
 CyborgCommandoKerem	: Black Hand Sniper shp.
 DaFool				: Mutant Engineer export
-DonutArnold			: Basilisk torpedo explosion effect, scrin explosion effects and NOD nuke explosion effect.	
+DonutArnold			: Basilisk torpedo explosion effect, scrin explosion effects and NOD nuke explosion effect.
 Denmon				: Concept Fona.
 ErastusMercy		: Mammoth Tank, disruptor, buggy, spectre and repair vehicle voxels.
 EoralMilk			: TD Buildings, Bench, communications tower, smooth clouds.
@@ -87,17 +93,17 @@ Marn				: Weapon light effects.
 Moder.U				: Falcon vxl, Battle Fortress vxl, Beam Cannon vxl.
 Noddy				: Queen gore death explosion.
 Nooze				: Pub.
-The_Dementor		: Cameos: Skirmisher, EMP pulse Icons, Harvester and mut MCV, Wrench and Tiberium Icons. 
+The_Dementor		: Cameos: Skirmisher, EMP pulse Icons, Harvester and mut MCV, Wrench and Tiberium Icons.
 HG_Scipción			: Weasaurus, Scrin powerplant and Cabal refinery model, Shattered Paradise planet logo, multiple civilian vehicles, tubes and boxes.
 ImP_RuLz			: Container model.
-Jah					: Storm Rider vxl.	
+Jah					: Storm Rider vxl.
 Super Joe			: Marine shp, Militant shp.
-OverWatch (PPM User): Forgotten Battle Bus vxl.	
+OverWatch (PPM User): Forgotten Battle Bus vxl.
 Kothvir				: Clouds, Flags and Billboard textures
 SMIFFGIG			: TD Scrin crash
 Windawz				: CABAL, Scrin and Forgotten UI remasters. Repair Vehicle recolor icon, Cyborg Commando Recolor icon, Arrow for the refinery icons, SP Icon and logo remake, Veterancy and radar scan support power icons, Nod Nuke Icon, Chemical Missile Icon, Wormhole Icon.
-wirecase.com		: Guardian Platform model.				
-Zoidzilla			: His template.	
+wirecase.com		: Guardian Platform model.
+Zoidzilla			: His template.
 Zero18				: Gargoil vxl,	Quad Cannon vxl, Basilisk vxl.
 ZxGanon				: Warning announcer (Superweapon, Engineer, Commando)
 G-EMP				: Civilian Vehicles: Cobra, Toronado, panter
@@ -110,7 +116,7 @@ Audiomicro.com			: Legio and Glyder sound effect.
 Introspectral			: Destroyer weapon sound effect.
 FXhome.com				: Battleship Sound effect.
 soundpacks.com			: Various sound effects.
-SideArm Studios			: Ultimate Sound FX Bundle (Files with a SSUSB prefix are not allowed to use in other projects and have to be bought) 
+SideArm Studios			: Ultimate Sound FX Bundle (Files with a SSUSB prefix are not allowed to use in other projects and have to be bought)
 soundjay.com			: Chainsaw sounds
 soundbible.com			: Chainsaw sounds & Mine attack sound
 
@@ -122,5 +128,5 @@ Graion Dilach			: Forgotten MCV
 HiJinxy					: Harvester
 Mathew Vanston			: Marauder, Jumpjet, Skirmisher, Mammoth Tank, Black Hand and Templar voices.
 SchismNavigator			: Beam Cannon
-StringStorm				: Cyborg Vehicle quotes (shared by Centurion, Drone Host, Minotaur)	
+StringStorm				: Cyborg Vehicle quotes (shared by Centurion, Drone Host, Minotaur)
 SkyHunter713			: Old Guardian Platform

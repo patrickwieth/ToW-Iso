@@ -96,6 +96,7 @@ Packages:
 	sp|bits/scrin/air
 	sp|bits/nod/effects
 	sp|bits/tiles
+	sp|bits/tiles/tempterrain
 	sp|bits/neutral
 	sp|bits/neutral/creeps
 	sp|bits/neutral/clouds
@@ -175,11 +176,12 @@ ModelSequences:
 	sp|sequences/voxels.yaml
 
 TileSets:
+	sp|tilesets/tempterrain.yaml
 	sp|tilesets/temperate.yaml
 	sp|tilesets/snow.yaml
 
 MapGrid:
-	TileSize: 48,24
+	TileSize: 60,30
 	Type: RectangularIsometric
 	# EnableDepthBuffer: True
 	MaximumTerrainHeight: 16
@@ -269,7 +271,7 @@ Hotkeys:
 
 LoadScreen: LogoStripeLoadScreen
 	Image: sp|uibits/loadscreen.png
-	Text: Exterminating the Martian race..., Sending the tacitus to Earth..., Developing human civilization..., Allowing Tiberium to go rampant...,Increasing political tension..., Finishing the TD Campaign..., Reinstalling bugs..., Searching for life outside earth..., Renaming bugs into easter eggs..., Making sure Nolt doesn't understand the next exception...,Nerfing your favourite unit... 
+	Text: Exterminating the Martian race..., Sending the tacitus to Earth..., Developing human civilization..., Allowing Tiberium to go rampant...,Increasing political tension..., Finishing the TD Campaign..., Reinstalling bugs..., Searching for life outside earth..., Renaming bugs into easter eggs..., Making sure Nolt doesn't understand the next exception...,Nerfing your favourite unit...
 
 ServerTraits:
 	LobbyCommands
@@ -323,9 +325,11 @@ SpriteFormats: ShpTS, TmpTS, ShpTD
 
 SpriteSequenceFormat: TilesetSpecificSpriteSequence
 	TilesetExtensions:
+		TEM: .tem
 		TEMPERATE: .tem
 		SNOW: .sno
 	TilesetCodes:
+		TEM: t
 		TEMPERATE: t
 		SNOW: a
 

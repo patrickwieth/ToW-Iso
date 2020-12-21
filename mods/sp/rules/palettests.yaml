@@ -12,6 +12,10 @@
 		Name: terrain
 		Tileset: SNOW
 		Filename: isosno.pal
+	PaletteFromFile@terraintemp:
+		Name: terrain
+		Tileset: TEM
+		Filename: ob_isotem.pal
 	PaletteFromFile@terraindectem:
 		Name: terraindecoration
 		Tileset: TEMPERATE
@@ -22,6 +26,16 @@
 		Tileset: SNOW
 		Filename: isosno.pal
 		ShadowIndex: 1
+	PaletteFromFile@terraindectemp:
+		Name: terraindecoration
+		Tileset: TEM
+		Filename: ob_isotem.pal
+		ShadowIndex: 1
+	PaletteFromFile@terraindectemp:
+		Name: terraindecoration
+		Tileset: TEM
+		Filename: ob_isotem.pal
+		ShadowIndex: 1
 	PaletteFromFile@playersno:
 		Name: player
 		Tileset: SNOW
@@ -30,6 +44,11 @@
 	PaletteFromFile@playertem:
 		Name: player
 		Tileset: TEMPERATE
+		Filename: unittem.pal
+		ShadowIndex: 1
+	PaletteFromFile@playertemp:
+		Name: player
+		Tileset: TEM
 		Filename: unittem.pal
 		ShadowIndex: 1
 	PaletteFromFile@dropship:
