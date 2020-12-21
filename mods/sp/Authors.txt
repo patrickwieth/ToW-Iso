@@ -3,7 +3,7 @@
 #Thanks go to:
 
 * OmegaBolt (Terrain)
-
+* Merophage	(Soviet Buildings)
 
 
 #Special Thanks

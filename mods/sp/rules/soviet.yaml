@@ -1,0 +1,109 @@
+^conyard_prototype:
+	Inherits: ^Building
+	Inherits@1: ^4x4Shape
+	Inherits@2: ^AICashCheat
+	Inherits@AIbuilding: ^AIbuildingMicroControl
+	Building:
+		Footprint: xxxx xxxx xxxx ____
+		BuildSounds: facbld1.aud
+		Dimensions: 4,4
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description: Builds base structures.
+	Health:
+		HP: 180000
+	Production:
+		Produces: Building, Defense
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Construction Yard
+	BaseProvider:
+		Range: 14c0
+	Targetable:
+		TargetTypes: Building, Ground, C4, SpyInfiltrate, MindControlImmune, ConsideredValuableForAI
+	BaseBuilding:
+	Transforms:
+		IntoActor: mcv
+		Offset: 1,1
+		Facing: 384
+		DeployCursor: undeploy
+		PauseOnCondition: mindcontrolled || empdisable
+	TransformsIntoMobile:
+		RequiresCondition: !Building-Buildup
+		Locomotor: InfantryCrusherVehicle
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoRepairable:
+		RequiresCondition: !Building-Buildup
+		RepairActors: gadept, scrdepot, tdrepd
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoPassenger:
+		RequiresCondition: !Building-Buildup
+		CargoType: Vehicle
+		Voice: Move
+		RequiresForceMove: true
+	ProductionBar@Building:
+		ProductionType: Building
+	ProductionBar@Defense:
+		ProductionType: Defense
+		Color: 8A8A8A
+	WithIdleOverlay@TOP:
+		Sequence: idle-top
+		RequiresCondition: !Building-Buildup
+	WithIdleOverlay@SIDE:
+		Sequence: idle-side
+		RequiresCondition: !Building-Buildup
+	WithIdleOverlay@FRONT:
+		Sequence: idle-front
+		RequiresCondition: !Building-Buildup
+	WithBuildingPlacedOverlay:
+	ProvidesPrerequisite@walls:
+		Factions: gdi, cab
+		Prerequisite: sharedwall
+		ResetOnOwnerChange: true
+	ProvidesPrerequisite@nodgate:
+		Factions: nod, cab, gdi
+		Prerequisite: nodgate
+		ResetOnOwnerChange: true
+	ProvidesPrerequisite@humanstuff:
+		Factions: gdi, nod, cab, mut
+		Prerequisite: humanstuff
+		ResetOnOwnerChange: true
+	RequiresBuildableArea:
+		AreaTypes: building
+	IsometricSelectable:
+		DecorationHeight: 36
+	Power@AICheatPower:
+		RequiresCondition: AIShattered
+		Amount: 80
+
+
+soviet_conyard:
+	Inherits: ^conyard_prototype
+	Inherits@1: ^MutRender
+	RenderSprites:
+		Palette: unittem_merophage
+	Transforms:
+		IntoActor: mutmcv
+		Offset: 1,1
+		Facing: 640
+		DeployCursor: undeploy
+		PauseOnCondition: mindcontrolled || empdisable
+	-WithIdleOverlay@SIDE:
+	WithBuildingPlacedAnimation@body:
+		Sequence: crane-overlay
+	WithIdleOverlay@TOP:
+		Sequence: idle-top
+		IsPlayerPalette: true
+	WithIdleOverlay@FRONT:
+		Sequence: idle-front
+		RequiresCondition: !Building-Buildup
+	ProvidesPrerequisite@faction:
+		Prerequisite: structures.gdi
+	ProvidesPrerequisite@grantself:
+		Factions: gdi, nod, cab, mut, scr
+		ActorTypes: e2

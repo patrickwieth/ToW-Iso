@@ -1,0 +1,30 @@
+soviet_conyard:
+	Inherits: ^EmpOverlay
+	Defaults:
+		UseTilesetCode: false
+		Offset: 0, -59
+	idle: soviet_conyard_crane
+		Length: 1
+		ZOffset: 1023
+		UseTilesetCode: false
+	damaged-idle:
+		Start: 0
+		Length: 3
+		ShadowStart: 3
+		Tick: 80
+		UseTilesetCode: false
+	idle-top: soviet_conyard_anim
+		Length: 18
+		ShadowStart: 18
+		Tick: 200
+	idle-front: soviet_conyard
+		Length: 3
+		ShadowStart: 3
+	make: soviet_conyard_make
+		Length: 50
+		ShadowStart: 50
+	crane-overlay: soviet_conyard_crane
+		Length: 63
+		ZOffset: 1023
+	icon: mutyardicon
+		Offset: 0, 0

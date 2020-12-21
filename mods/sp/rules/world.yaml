@@ -2,6 +2,7 @@
 	Inherits: ^Palettes
 	Inherits@1: ^PalettesGradient
 	Inherits@2: ^PalettesSP
+	Inherits@3: ^PalettesToW
 	AlwaysVisible:
 	ActorMap:
 	ScreenMap:
@@ -42,7 +43,7 @@
 		Name: Random
 		InternalName: Random
 		Description: Random\n Not everyone has a chance to choose his life.
-		RandomFactionMembers: gdi, nod, mut, cab, scr
+		RandomFactionMembers: mut
 	ResourceType@Tiberium:
 		Type: Tiberium
 		Name: Tiberium Riparius
@@ -383,7 +384,7 @@ World:
 		Class: none
 		ClassName: MCV Only
 		Factions: mut
-		BaseActor: mutmcv
+		BaseActor: soviet_conyard
 	MPStartUnits@MCVscr:
 		Class: none
 		ClassName: MCV Only

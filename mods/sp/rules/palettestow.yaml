@@ -1,0 +1,5 @@
+^PalettesToW:
+	PaletteFromFile@unittem_merophage:
+		Name: unittem_merophage
+		Filename: unittem_merophage.pal
+		AllowModifiers: false

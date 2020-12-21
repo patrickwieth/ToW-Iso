@@ -108,6 +108,7 @@ Packages:
 	sp|bits/neutral/props
 	sp|bits/neutral/naval
 	sp|bits/neutral/campaignstuff
+	sp|bits/soviet
 	sp|uibits
 
 MapFolders:
@@ -123,6 +124,7 @@ Rules:
 	sp|rules/palettests.yaml
 	sp|rules/palettesgradient.yaml
 	sp|rules/palettessp.yaml
+	sp|rules/palettestow.yaml
 	sp|rules/defaults.yaml
 	sp|rules/infantry.yaml
 	sp|rules/vehicles.yaml
@@ -139,6 +141,7 @@ Rules:
 	sp|rules/misc.yaml
 	sp|rules/dummies.yaml
 	sp|rules/AIOnly.yaml
+	sp|rules/soviet.yaml
 
 Weapons:
 	sp|weapons/weapondefaults.yaml
@@ -171,6 +174,7 @@ Sequences:
 	sp|sequences/scrseq.yaml
 	sp|sequences/bridges.yaml
 	sp|sequences/mufactory.yaml
+	sp|sequences/sovseq.yaml
 
 ModelSequences:
 	sp|sequences/voxels.yaml
