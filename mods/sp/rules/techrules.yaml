@@ -1,0 +1,754 @@
+CAHOSP:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x4Shape
+	Tooltip:
+		Name: Civilian Hospital
+	TooltipDescription:
+		Description: Provides global healing for infantry.
+	Building:
+		Footprint: XxX xxx xxx xxx
+		Dimensions: 3, 4
+	Health:
+		HP: 80000
+	ProvidesPrerequisite@BuildingName:
+	WithIdleOverlay:
+		Sequence: flag
+	ProvidesPrerequisite@buildingname:
+	IsometricSelectable:
+		DecorationHeight: 48
+
+WELL:
+	Inherits: ^TechBuilding
+	Inherits@1: ^SpawnSmoke
+	Inherits@2: ^3x3Shape
+	Inherits@3: ^MutRender
+	Inherits@4: ^6CellVision
+	Tooltip:
+		Name: Tiberium Extractor
+	TooltipDescription:
+		Description: Provides additional funds.
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	CashTrickler:
+		Interval: 400
+		Amount: 100
+		RequiresCondition: enabled
+	Health:
+		HP: 135000
+	WithIdleOverlay:
+		Sequence: anim
+		Palette: effect
+	Explodes:
+		Weapon: TiberiumExplosion
+	SmokeParticleEmitter:
+		Image: scrsmoke
+		Palette: gradientgreen60
+		Offset: 1300,0,0
+	GrantConditionOnCombatantOwner:
+		Condition: enabled
+	GrantConditionAfterDelay@Cash:
+		Delay: 1
+		ShowSelectionBar: false
+		Condition: cashgiven
+		RequiresCondition: enabled
+	GivesCashOnCapture:
+		Amount: 250
+		RequiresCondition: !cashgiven
+	UpdatesDerrickCount:
+	IsometricSelectable:
+		DecorationHeight: 144
+
+MACHINESHOP:
+	Inherits: ^TechBuilding
+	Inherits@2: ^2x2Shape
+	Tooltip:
+		Name: Machine Shop
+	TooltipDescription:
+		Description: Provides global repairs for vehicles.
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Health:
+		HP: 100000
+	RenderSprites:
+	ProvidesPrerequisite@buildingname:
+	IsometricSelectable:
+		DecorationHeight: 36
+
+BLOODDERRICK:
+	Inherits: ^CivBuilding
+	Inherits@2: ^ScrinRender
+	Inherits@3: ^3x3Shape
+	Tooltip:
+		Name: Tiberian Crab Nest
+	TooltipDescription:
+		Description: Spawns hostile crabs when destroyed.
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Health:
+		HP: 40000
+	Explodes:
+		Weapon: TiberiumExplosion
+	RenderSprites:
+		-Palette: playerscrin
+		PlayerPalette: playerscrin
+	SpawnActorOnDeath@1:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: -1,-1
+	SpawnActorOnDeath@2:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: 0,-1
+	SpawnActorOnDeath@3:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: 1,-1
+	SpawnActorOnDeath@4:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: 1,0
+	SpawnActorOnDeath@5:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: 0,1
+	SpawnActorOnDeath@6:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: 1,0
+	SpawnActorOnDeath@7:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: 1,1
+	SpawnActorOnDeath@8:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: 1,1
+	SpawnActorOnDeath@9:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: 1,1
+	SpawnActorOnDeath@10:
+		Actor: permacrab
+		Probability: 100
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		Offset: 1,1
+
+NEUTRALRADAR:
+	Inherits: ^TechBuilding
+	Inherits@3: ^2x2Shape
+	Tooltip:
+		Name: Spy Satellite
+	TooltipDescription:
+		Description: Provides vision.
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Health:
+		HP: 250000
+	RenderSprites:
+	RevealsShroud:
+		Range: 14c0
+	ProvidesRadar:
+	IsometricSelectable:
+		DecorationHeight: 48
+
+NEUTRALPOWERPLANT:
+	Inherits: ^TechBuilding
+	Inherits@3: ^3x3Shape
+	Tooltip:
+		Name: Nuclear Power Plant
+	TooltipDescription:
+		Description: Provides build radius & explodes violently when destroyed.
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Health:
+		HP: 150000
+	Power:
+		Amount: 200
+	RenderSprites:
+	RevealsShroud:
+		Range: 5c0
+	GivesBuildableArea:
+		AreaTypes: building
+	BaseProvider:
+		Range: 8c0
+	RequiresBuildableArea:
+		AreaTypes: building
+	Explodes:
+		Weapon: PowerplantNuke
+		EmptyWeapon: PowerplantNuke
+	IsometricSelectable:
+		DecorationHeight: 72
+
+SCRINREINFPAD:
+	Inherits: ^TechBuilding
+	Inherits@2: ^ScrinDeathExplo
+	Inherits@3: ^3x3Shape
+	Inherits@4: ^ScrinBuildingFire
+	Tooltip:
+		Name: Scrin Replicator
+	TooltipDescription:
+		Description: Builds a main battle tank periodically.
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Health:
+		HP: 120000
+	RenderSprites:
+		PlayerPalette: playerscrin
+	RevealsShroud:
+		Range: 5c0
+	RallyPoint:
+		Path: 1,4
+		Palette: mouse
+		IsPlayerPalette: false
+	WithIdleOverlay@ROOF:
+		Sequence: idle-roof
+	WithIdleOverlay@production:
+		Sequence: production-lights
+		RequiresCondition: enabled && (BuildStuffGDI || BuildStuffNOD || BuildStuffMUT || BuildStuffCAB || BuildStuffSCR)
+	Exit@1:
+		SpawnOffset: 0,-256,0
+		ExitCell: 1,2
+		ExitDelay: 5
+	Production:
+		Produces: Replicator
+	GrantConditionOnFaction@GDI:
+		Condition: BuildStuffGDI
+		Factions: gdi
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@NOD:
+		Condition: BuildStuffNOD
+		Factions: nod
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@MUT:
+		Condition: BuildStuffMUT
+		Factions: mut
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@CAB:
+		Condition: BuildStuffCAB
+		Factions: cab
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@SCR:
+		Condition: BuildStuffSCR
+		Factions: scr
+		ResetOnOwnerChange: true
+	PeriodicProducer@GDI:
+		Actors: mmch
+		Type: Replicator
+		ChargeDuration: 3000
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && BuildStuffGDI
+	PeriodicProducer@NOD:
+		Actors: ttnk
+		Type: Replicator
+		ChargeDuration: 3000
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && BuildStuffNOD
+	PeriodicProducer@mut:
+		Actors: lynx
+		Type: Replicator
+		ChargeDuration: 3000
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && BuildStuffMUT
+	PeriodicProducer@cab:
+		Actors: reapercab
+		Type: Replicator
+		ChargeDuration: 3000
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && BuildStuffCAB
+	PeriodicProducer@scr:
+		Actors: scrmbt
+		Type: Replicator
+		ChargeDuration: 3000
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && BuildStuffSCR
+	GrantConditionOnCombatantOwner:
+		Condition: enabled
+	IsometricSelectable:
+		DecorationHeight: 48
+
+NEUTRALSONICTUR:
+	Inherits: ^TechBuilding
+	Inherits@0: ^1x1Shape
+	Inherits@1: ^11CellVision
+	Inherits@2: ^AutoTargetAll
+	Tooltip:
+		Name: Tech Shockwave Turret
+	TooltipDescription:
+		Description: Damages units in a straight line.
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: DefenseArmor
+	Health:
+		HP: 200000
+	RenderRangeCircle:
+	Turreted:
+		TurnSpeed: 12
+	WithSpriteTurret:
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	Armament@1:
+		Weapon: SonicEmitterProj
+		PauseOnCondition: empdisable
+		LocalOffset: 1500,0, 0
+
+CABCANNON:
+	Inherits: ^TechBuilding
+	Inherits@1: ^CabRender
+	Inherits@3: ^TowerStealthDetection
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Cannon Turret
+	TooltipDescription:
+		Description: Defensive turret.
+	Building:
+	Health:
+		HP: 45000
+	BodyOrientation:
+		QuantizedFacings: 32
+	WithMuzzleOverlay:
+	Turreted:
+		TurnSpeed: 12
+	WithSpriteTurret:
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	Armament:
+		Weapon: CTurretCannon
+		LocalOffset: 650,0,550
+		MuzzleSequence: muzzle
+	RequiresBuildableArea:
+		AreaTypes: building
+
+REPAIRTUR:
+	Inherits: ^TechBuilding
+	Inherits@2: ^2x2Shape
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Maintenance Turret
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 50000
+	BodyOrientation:
+		QuantizedFacings: 32
+	RenderRangeCircle:
+		RangeCircleType: aa
+	Turreted:
+		TurnSpeed: 12
+	WithSpriteTurret:
+	AttackTurreted:
+		PauseOnCondition: empdisable
+	Armament:
+		Weapon: RepairNeutralTurret
+		LocalOffset: 512,0,512
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+	Armament@1:
+		Weapon: RepairNeutralTurret
+		LocalOffset: 512,0,512
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+		Delay: 5
+	Armament@2:
+		Weapon: RepairNeutralTurret
+		LocalOffset: 512,0,512
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+		Delay: 10
+
+BLUETIBBARREL:
+	Inherits: ^CivBuilding
+	Inherits@2: ^1x1Shape
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Tooltip:
+		Name: Blue Tib-fuel Barrel
+	TooltipDescription:
+		Description: Explodes when destroyed.
+	Health:
+		HP: 200
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+		Palette: player
+	Explodes:
+		Weapon: BlueTibBarrelExplo
+		EmptyWeapon: BlueTibBarrelExplo
+
+BLUETIBBARREL2:
+	Inherits: BLUETIBBARREL
+
+BLUETIBBARREL3:
+	Inherits: BLUETIBBARREL
+
+BLUETIBBARREL4:
+	Inherits: BLUETIBBARREL
+
+BLUETIBBARREL5:
+	Inherits: BLUETIBBARREL
+
+BLUETIBBARREL6:
+	Inherits: BLUETIBBARREL
+
+CIVHELI:
+	Inherits: ^TechBuilding
+	Inherits@3: ^Helipad
+	Tooltip:
+		Name: Civilian Helipad
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 20000
+	RenderSprites:
+		PlayerPalette: playerunittem
+	WithIdleOverlay:
+		Sequence: flag
+
+### Tech Units
+
+LIMPED:
+	Inherits: ^HoverVehicle
+	Inherits@1: ^8CellVision
+	Inherits@2: ^EngineerHackableDrone
+	Inherits@3: ^BasicStealthDetection
+	Inherits@AImicroManagable: ^AImicroManagable
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Limped Drone
+	Health:
+		HP: 10000
+	Mobile:
+		Speed: 55
+		TurnSpeed: 1023
+		Locomotor: Hover
+		RequireForceMoveCondition: !AImicroManage && !undeployed
+	Passenger:
+		RequireForceMoveCondition: !undeployed
+	-WithFacingSpriteBody:
+	Voiced:
+		VoiceSet: Limpet
+	Selectable:
+		Bounds: 16, 35, 0, 0
+	Hovers:
+		RequiresCondition: !deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		Facing: 640
+		AllowedTerrainTypes: Clear, Road, DirtRoad, Rough, Tiberium, BlueTiberium
+		DeploySounds: clicky1.aud
+		UndeploySounds: clicky1.aud
+		SmartDeploy: true
+		UndeployOnMove: true
+		CanDeployOnRamps: true
+		RequiresCondition: !inside-tunnel && !empdisable
+	RejectsOrders@deployment:
+		Reject: AttackMove, AssaultMove
+		RequiresCondition: deployed
+	Cloak@cloakgenerator:
+		RequiresCondition: deployed && !empdisable
+		InitialDelay: 40
+		CloakDelay: 40
+		Palette: cloakcab
+		-CloakSound: cloak5.aud
+		-UncloakSound: cloak5.aud
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Damage
+	WithSpriteBody@UndeloyedBody:
+		Sequence: idle
+		RequiresCondition: !deployed && !inside-tunnel
+	WithMakeAnimation:
+	WithSpriteBody@DeloyedBody:
+		Sequence: deployed
+		RequiresCondition: !undeployed
+	### AI Control
+	Wanders@AI:
+		RequiresCondition: AImicroManage
+		WanderMoveRadius: 15
+		MinMoveDelay: 300
+		MaxMoveDelay: 300
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && !deployed
+		DeployTrigger: Periodically
+		DeployTicks: 150
+		UndeployTicks: 150
+
+LPST:
+	Inherits: ^VoxelVehicle
+	Inherits@4: ^EngineerCapturableVehicle
+	Inherits@AImicroManagable: ^AImicroManagable
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Sensor Array
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		TurnSpeed: 32
+		Speed: 45
+		Locomotor: InfantryCrusherVehicle
+		PauseOnCondition: empdisable
+		RequireForceMoveCondition: !AImicroManage && !undeployed
+	Passenger:
+		RequireForceMoveCondition: !undeployed
+	Health:
+		HP: 25000
+	WithMakeAnimation:
+		BodyNames: deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		Facing: 640
+		SmartDeploy: true
+		AllowedTerrainTypes: Clear, Road, DirtRoad, Rough
+		DeploySounds: place2.aud
+		CanDeployOnRamps: true
+		UndeployOnMove: true
+		UndeploySounds: clicky1.aud
+		PauseOnCondition: RefineryLock
+		RequiresCondition: !inside-tunnel && !empdisable
+	RejectsOrders@deployment:
+		Reject: AttackMove, AssaultMove
+		RequiresCondition: !AImicroManage && deployed
+	Carryable:
+		RequiresCondition: undeployed
+	WithSpriteBody@deployed:
+		Sequence: deployed
+		Name: deployed
+		RequiresCondition: !undeployed
+	WithVoxelBody:
+		RequiresCondition: undeployed
+	RenderDetectionCircle:
+		TrailCount: 3
+	RenderVoxels:
+		Scale: 11.5
+	DetectCloaked:
+		RequiresCondition: !empdisable && deployed
+		Range: 15c0
+	RevealsShroud:
+		RequiresCondition: !inside-tunnel && undeployed
+		Range: 4c0
+		MaxHeightDelta: 3
+	RevealsShroud@DEPLOYED:
+		RequiresCondition: !undeployed
+		Range: 15c0
+		MaxHeightDelta: 3
+	### AI Control
+	Wanders@AI:
+		RequiresCondition: AImicroManage
+		WanderMoveRadius: 10
+		MinMoveDelay: 300
+		MaxMoveDelay: 300
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && !deployed
+		DeployTrigger: Periodically
+		DeployTicks: 150
+		UndeployTicks: 150
+
+SGEN:
+	Inherits: ^VoxelVehicle
+	Inherits@4: ^EngineerCapturableVehicle
+	Inherits@AImicroManagable: ^AImicroManagable
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Mobile stealth generator
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		TurnSpeed: 32
+		Speed: 45
+		Locomotor: InfantryCrusherVehicle
+		PauseOnCondition: empdisable
+		RequireForceMoveCondition: !AImicroManage && !undeployed
+	Passenger:
+		RequireForceMoveCondition: !undeployed
+	Health:
+		HP: 25000
+	WithMakeAnimation:
+		BodyNames: deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		Facing: 384
+		SmartDeploy: true
+		AllowedTerrainTypes: Clear, Road, DirtRoad, Rough
+		DeploySounds: place2.aud
+		CanDeployOnRamps: true
+		UndeployOnMove: true
+		UndeploySounds: clicky1.aud
+		PauseOnCondition: RefineryLock
+		RequiresCondition: !inside-tunnel && !empdisable
+	RejectsOrders@deployment:
+		Reject: AttackMove, AssaultMove
+		RequiresCondition: !AImicroManage && deployed
+	Carryable:
+		RequiresCondition: undeployed
+	WithSpriteBody@deployed:
+		Sequence: deployed
+		Name: deployed
+		RequiresCondition: !undeployed
+	WithVoxelBody:
+		RequiresCondition: undeployed
+	RenderVoxels:
+		Scale: 11.5
+	ProximityExternalCondition:
+		Condition: cloakgenerator
+		RequiresCondition: deployed
+		Range: 3c0
+		EnableSound: cloak5.aud
+		DisableSound: cloak5.aud
+		AffectsParent: true
+	WithRangeCircle:
+		Range: 3c0
+		Type: cloakgenerator
+		Color: 00FF7FCC
+		RequiresCondition: deployed
+	### AI Control
+	Wanders@AI:
+		RequiresCondition: AImicroManage
+		WanderMoveRadius: 10
+		MinMoveDelay: 300
+		MaxMoveDelay: 300
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && !deployed
+		DeployTrigger: Periodically
+		DeployTicks: 150
+		UndeployTicks: 150
+
+## AI control it by using McvManagerBotModule
+MWAR:
+	Inherits: ^VoxelVehicle
+	Inherits@4: ^EngineerCapturableVehicle
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Mobile warfactory
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		TurnSpeed: 32
+		Speed: 45
+		Locomotor: InfantryCrusherVehicle
+	Health:
+		HP: 25000
+		BodyNames: deployed
+	RenderVoxels:
+		Scale: 11.5
+	Transforms:
+		IntoActor: mtar
+		Facing: 384
+		TransformSounds: place2.aud
+		NoTransformSounds:
+		Voice: Move
+		Offset: -1,-1
+
+MTAR:
+	Inherits: ^TechBuilding
+	Inherits@2: ^Factory
+	Inherits@AIbuilding: ^AIbuildingMicroControl
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Mobile warfactory
+	Health:
+		HP: 25000
+	Transforms:
+		IntoActor: mwar
+		Facing: 384
+		TransformSounds: place2.aud
+		NoTransformSounds:
+		Voice: Move
+		Offset: 1,1
+	WithIdleOverlay@ROOF:
+		Sequence: idle-roof
+		RequiresCondition: !Building-Buildup
+	WithProductionDoorOverlay@DOOR:
+		RequiresCondition: !Building-Buildup
+	WithProductionOverlay@WHITELIGHTS:
+		Sequence: production-lights-white
+		RequiresCondition: !Building-Buildup
+	WithProductionOverlay@REDLIGHTS:
+		Sequence: production-lights-red
+		RequiresCondition: !Building-Buildup
+	WithIdleOverlay@TURBINES:
+		Sequence: idle-turbines
+		RequiresCondition: !Building-Buildup
+	WithIdleOverlay@BIB:
+		Sequence: bib
+		RequiresCondition: !Building-Buildup
+	IsometricSelectable:
+		DecorationHeight: 36
+	-ProvidesPrerequisite:
+	### AI Control
+	RejectsOrders@deploymentAI: ## Hack: Need to prevent first time deploy
+		Reject: DeployTransform
+		RequiresCondition: Building-Buildup && AIbuildingMicroControl
+	AutoDeployer@AI:
+		RequiresCondition: AIbuildingMicroControl
+		DeployTrigger: Periodically
+		DeployTicks: 1700
+		UndeployTicks: 2000
+
+## will probably not used forever
+GAARTY:
+	Inherits@1: ^DeployedVehicle
+	Valued:
+		Cost: 975
+	Tooltip:
+		Name: Deployed Artillery
+	Health:
+		HP: 30000
+	Turreted:
+		TurnSpeed: 20
+		InitialFacing: 512
+		Offset: 0,0,171
+	Armament:
+		Weapon: 155mm
+		LocalOffset: 811,0,0
+		MuzzleSequence: muzzle
+	BodyOrientation:
+		QuantizedFacings: 32
+	RenderVoxels:
+		LightAmbientColor: 0.4, 0.4, 0.4
+	WithVoxelBarrel:
+		LocalOffset: 0,0,-512
+	WithVoxelTurret:
+	WithMuzzleOverlay:

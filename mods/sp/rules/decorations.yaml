@@ -1,0 +1,864 @@
+#### Should not be destroyable
+
+GEYSER:
+	Inherits: ^TiberiumDecoration
+	RenderSprites:
+		Palette: isotem
+	WithIdleOverlay:
+		Sequence: gasanim
+		Palette: jascgreenalpha
+
+GEYSER2:
+	Inherits: GEYSER
+
+GEYSER3:
+	Inherits: GEYSER
+
+GEYSER4:
+	Inherits: GEYSER
+
+GEYSERMINI:
+	Inherits: ^TiberiumDecoration
+	RenderSprites:
+		Palette: isotem
+	WithIdleOverlay:
+		Sequence: gasanim
+		Palette: jascgreenalpha
+
+GEYSERMINI2:
+	Inherits: GEYSERMINI
+
+GEYSERMINI3:
+	Inherits: GEYSERMINI
+
+GEYSERMINI4:
+	Inherits: GEYSERMINI
+
+TIBGLACIER:
+	Inherits: ^TiberiumDecoration
+	Inherits@2: ^1x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	RenderSprites:
+		Palette: scipberium
+
+TIBGLACIER2:
+	Inherits: TIBGLACIER
+
+TIBGLACIER3:
+	Inherits: TIBGLACIER
+
+TIBGLACIER4:
+	Inherits: TIBGLACIER
+
+ROCKS1:
+	Inherits@1: ^Rock
+	-Tooltip:
+	EditorOnlyTooltip:
+		Name: Rock set (Supports facings)
+	RenderSprites:
+		Palette: player
+	-WithSpriteBody:
+	WithSpriteTurret:
+	Turreted:
+		RealignDelay: -1
+	Armament:
+		Weapon: LightTowerClaxon
+	AttackTurreted:
+
+SROCK01:
+	Inherits: ^Rock
+
+SROCK02:
+	Inherits: ^Rock
+
+SROCK03:
+	Inherits: ^Rock
+
+SROCK04:
+	Inherits: ^Rock
+
+SROCK05:
+	Inherits: ^Rock
+
+TROCK01:
+	Inherits: ^Rock
+
+TROCK02:
+	Inherits: ^Rock
+
+TROCK03:
+	Inherits: ^Rock
+
+TROCK04:
+	Inherits: ^Rock
+
+TROCK05:
+	Inherits: ^Rock
+
+TRACKS01:
+	Inherits: ^Railway
+
+TRACKS02:
+	Inherits: ^Railway
+
+TRACKS03:
+	Inherits: ^Railway
+
+TRACKS04:
+	Inherits: ^Railway
+
+TRACKS05:
+	Inherits: ^Railway
+
+TRACKS06:
+	Inherits: ^Railway
+
+TRACKS07:
+	Inherits: ^Railway
+
+TRACKS08:
+	Inherits: ^Railway
+
+TRACKS09:
+	Inherits: ^Railway
+
+TRACKS10:
+	Inherits: ^Railway
+
+TRACKS11:
+	Inherits: ^Railway
+
+TRACKS12:
+	Inherits: ^Railway
+
+TRACKS13:
+	Inherits: ^Railway
+
+TRACKS14:
+	Inherits: ^Railway
+
+TRACKS15:
+	Inherits: ^Railway
+
+TRACKS16:
+	Inherits: ^Railway
+
+BLOODDECO1:
+	Inherits: ^CrossableDecoration
+	RenderSprites:
+		Image: redblood
+		Palette: gradientred
+	WithSpriteBody:
+		Sequence: dieblood1
+
+BLOODDECO2:
+	Inherits: BLOODDECO1
+	WithSpriteBody:
+		Sequence: dieblood2
+
+BLOODDECO3:
+	Inherits: BLOODDECO1
+	WithSpriteBody:
+		Sequence: dieblood3
+
+BLOODDECO5:
+	Inherits: BLOODDECO1
+	WithSpriteBody:
+		Sequence: dieblood5
+
+BLOODDECO6:
+	Inherits: BLOODDECO1
+	WithSpriteBody:
+		Sequence: dieblood6
+
+CORPSEDECO1:
+	Inherits: ^CrossableDecoration
+	RenderSprites:
+		Image: corpses
+		Palette: effect
+	WithSpriteBody:
+		Sequence: diebody1
+
+CORPSEDECO2:
+	Inherits: CORPSEDECO1
+	RenderSprites:
+		Image: corpses
+		Palette: effect
+	WithSpriteBody:
+		Sequence: diebody2
+
+CORPSEDECO3:
+	Inherits: CORPSEDECO1
+	RenderSprites:
+		Image: corpses
+		Palette: effect
+	WithSpriteBody:
+		Sequence: diebody3
+
+CORPSEDECO4:
+	Inherits: CORPSEDECO1
+	RenderSprites:
+		Image: corpses
+		Palette: effect
+	WithSpriteBody:
+		Sequence: diebody4
+
+CORPSEDECO5:
+	Inherits: CORPSEDECO1
+	RenderSprites:
+		Image: corpses
+		Palette: effect
+	WithSpriteBody:
+		Sequence: diebody5
+
+#### Should be destroyable
+
+PALLET:
+	Inherits: ^1x1TurretedCivBuilding
+	Tooltip:
+		Name: Pallet
+	EditorOnlyTooltip:
+		Name: Pallet (Supports facings)
+	RenderSprites:
+		Palette: player
+
+BOXSET1:
+	Inherits: ^1x1TurretedCivBuilding
+	Tooltip:
+		Name: Boxes
+	EditorOnlyTooltip:
+		Name: Boxes (Supports facings)
+	RenderSprites:
+		Palette: unittem
+
+GRAVE:
+	Inherits@1: ^1x1TurretedCivBuilding
+	Tooltip:
+		Name: Grave
+	EditorOnlyTooltip:
+		Name: Grave (Supports facings)
+	RenderSprites:
+		Palette: unittem
+
+TANKBARRIER:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Tank Barrier
+	Health:
+		HP: 50000
+	Armor:
+		Type: ConcreteArmor
+	RenderSprites:
+		Palette: player
+
+TANKBARRIER2:
+	Inherits: TANKBARRIER
+
+CONCRETEBARRIER:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Civilian Barrier
+	Health:
+		HP: 25000
+	Armor:
+		Type: ConcreteArmor
+	RenderSprites:
+		Palette: player
+
+CONCRETEBARRIER2:
+	Inherits: CONCRETEBARRIER
+
+CONCRETEBARRIER3:
+	Inherits: CONCRETEBARRIER
+
+CONCRETEBARRIER4:
+	Inherits: CONCRETEBARRIER
+
+CONCRETEBARRIER5:
+	Inherits: CONCRETEBARRIER
+
+CONCRETEBARRIER6:
+	Inherits: CONCRETEBARRIER
+
+CONCRETEBARRIER7:
+	Inherits: CONCRETEBARRIER
+
+CONCRETEBARRIER8:
+	Inherits: CONCRETEBARRIER
+
+FENCE:
+	Inherits: ^Wall
+	Tooltip:
+		Name: Fence
+	Crushable:
+		CrushClasses: infantry
+	-BlocksProjectiles:
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 12500
+
+CERMWALL:
+	Inherits: FENCE
+	Tooltip:
+		Name: Wall
+
+FENCE2:
+	Inherits: FENCE
+	Tooltip:
+		Name: Fence
+	Health:
+		HP: 5000
+
+FENCE3:
+	Inherits: FENCE
+	Tooltip:
+		Name: Fence
+	Health:
+		HP: 5000
+
+FENCE4:
+	Inherits: FENCE
+	Tooltip:
+		Name: Fence
+	Health:
+		HP: 5000
+POWERLINE:
+	Inherits: ^Wall
+	Tooltip:
+		Name: Power line
+	Pluggable:
+		Conditions:
+			powerlinepost: powerlinepost
+		EditorOptions:
+			powerlinepost: Power post (Doesnt explode when the cables do)
+	Building:
+		Footprint: +
+	Health:
+		HP: 5000
+	-BlocksProjectiles:
+	Armor:
+		Type: BuildingArmor
+	Crushable:
+		CrushClasses: infantry
+		RequiresCondition: powerlinepost
+	Targetable:
+		RequiresCondition: powerlinepost
+	Targetable@PowerLine:
+		TargetTypes: PowerLine
+		RequiresCondition: !powerlinepost
+	KillsSelf:
+		RequiresCondition: powerlineexploding && !powerlinepost
+	ExternalCondition@powerlineexploding:
+		Condition: powerlineexploding
+	Explodes@UnitExplode:
+		EmptyWeapon: UnitExplode
+		Weapon: UnitExplode
+		RequiresCondition: powerlinepost
+	Explodes@powerlinepost:
+		EmptyWeapon: PowerlineExplosion
+		Weapon: PowerlineExplosion
+	RenderSprites:
+		Palette: isotem
+
+POWERLINESINGLE:
+	Inherits: POWERLINE
+
+POWERLINEPLUGPOST:
+	Inherits: ^BuildingPlug
+	Plug:
+		Type: powerlinepost
+
+TRASHDUMP:
+	Inherits: ^CivBuilding
+	Inherits@2: ^1x1Shape
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Tooltip:
+		Name: Trash Dump
+	Health:
+		HP: 15000
+	RenderSprites:
+		Palette: player
+
+SC_TUBES:
+	Inherits@1: ^1x1TurretedCivBuilding
+	-Tooltip:
+	EditorOnlyTooltip:
+		Name: Tube set (Supports facings)
+	Health:
+		HP: 15000
+	RenderSprites:
+		-Palette:
+		PlayerPalette: playerunittem
+
+SC_BOXES:
+	Inherits@1: ^1x1TurretedCivBuilding
+	-Tooltip:
+	EditorOnlyTooltip:
+		Name: Tube set (Supports facings)
+	Health:
+		HP: 15000
+	RenderSprites:
+		-Palette:
+		PlayerPalette: playerunittem
+
+TIBTRE01:
+	Inherits: ^BlossomTree
+
+TIBTRE02:
+	Inherits: ^BlossomTree
+
+TIBTRE03:
+	Inherits: ^BlossomTree
+
+BIGBLUE:
+	Inherits: ^BlossomTree
+	RenderSprites:
+		Palette: bluetiberium
+	RadarColorFromTerrain:
+		Terrain: BlueTiberium
+	Tooltip:
+		Name: Vinifera Monolith
+	SeedsResource:
+		ResourceType: BlueTiberium
+		Interval: 100
+	TerrainLightSource:
+		RedTint: 0
+		GreenTint: 0
+		BlueTint: 0.4
+
+BIGBLUE3:
+	Inherits: BIGBLUE
+	RenderSprites:
+		Image: bigblue
+	EditorOnlyTooltip:
+		Name: Duplicated vinifera (It helps avoid map importation issues)
+
+BIGGREEN:
+	Inherits: ^BlossomTree
+	Tooltip:
+		Name: Riparius Monolith
+	RenderSprites:
+		Image: BIGBLUE
+		Palette: greentiberium
+
+^Fona:
+	Inherits: ^Tree
+	Tooltip:
+		Name: Fona
+	TerrainLightSource@1:
+		Range: 2c640
+		Intensity: 0.0005
+		RedTint: 0.05
+		GreenTint: 0.05
+		BlueTint: 0.6
+
+^FonaGreen:
+	Inherits: ^Fona
+	TerrainLightSource@1:
+		Intensity: 0.0005
+		RedTint: 0.07
+		GreenTint: 0.36
+		BlueTint: 0.07
+
+^FonaYellow:
+	Inherits: ^Fona
+	TerrainLightSource@1:
+		Intensity: 0.0005
+		RedTint: 0.36
+		GreenTint: 0.36
+		BlueTint: 0.01
+	RenderSprites:
+		Palette: isotem
+
+^FonaWhite:
+	Inherits: ^Fona
+	TerrainLightSource@1:
+		Intensity: 0.36
+		RedTint: 0
+		GreenTint: 0
+		BlueTint: 0
+	RenderSprites:
+		Palette: isotem
+
+
+TREE01:
+	Inherits: ^Tree
+
+TREE02:
+	Inherits: ^Tree
+
+TREE03:
+	Inherits: ^Tree
+
+TREE04:
+	Inherits: ^Tree
+
+TREE05:
+	Inherits: ^Tree
+
+TREE06:
+	Inherits: ^Tree
+
+TREE07:
+	Inherits: ^Tree
+
+TREE08:
+	Inherits: ^Tree
+
+TREE09:
+	Inherits: ^Tree
+
+TREE10:
+	Inherits: ^Tree
+
+TREE11:
+	Inherits: ^Tree
+
+TREE12:
+	Inherits: ^Tree
+
+TREE13:
+	Inherits: ^Tree
+
+TREE14:
+	Inherits: ^Tree
+
+TREE15:
+	Inherits: ^Tree
+
+TREE16:
+	Inherits: ^Tree
+
+TREE17:
+	Inherits: ^Tree
+
+TREE18:
+	Inherits: ^Tree
+
+TREE19:
+	Inherits: ^Tree
+
+TREE20:
+	Inherits: ^Tree
+
+TREE21:
+	Inherits: ^Tree
+
+TREE22:
+	Inherits: ^Tree
+
+TREE23:
+	Inherits: ^Tree
+
+TREE24:
+	Inherits: ^Tree
+
+TREE25:
+	Inherits: ^Tree
+
+fona01:
+	Inherits: ^Fona
+
+fona02:
+	Inherits: ^Fona
+
+fona03:
+	Inherits: ^Fona
+
+fona04:
+	Inherits: ^Fona
+
+fona05:
+	Inherits: ^Fona
+
+fona06:
+	Inherits: ^FonaGreen
+
+fona07:
+	Inherits: ^FonaGreen
+
+fona08:
+	Inherits: ^FonaGreen
+
+fona09:
+	Inherits: ^FonaGreen
+
+fona10:
+	Inherits: ^FonaGreen
+
+fona11:
+	Inherits: ^FonaGreen
+
+fona12:
+	Inherits: ^FonaGreen
+
+fona13:
+	Inherits: ^FonaGreen
+
+fona14:
+	Inherits: ^FonaGreen
+
+fona15:
+	Inherits: ^FonaGreen
+
+fona16:
+	Inherits: ^FonaWhite
+
+fona17:
+	Inherits: ^FonaWhite
+
+fona18:
+	Inherits: ^FonaWhite
+
+fona19:
+	Inherits: ^FonaWhite
+
+fona20:
+	Inherits: ^FonaWhite
+
+yellowfona01:
+	Inherits: ^FonaYellow
+
+yellowfona02:
+	Inherits: ^FonaYellow
+
+treepine:
+	Inherits: ^Tree
+	RenderSprites:
+		Palette: dropship
+
+treepine2:
+	Inherits: treepine
+
+treepine3:
+	Inherits: treepine
+
+treepine4:
+	Inherits: treepine
+
+treepine5:
+	Inherits: treepine
+
+treepine6:
+	Inherits: treepine
+
+treeoak:
+	Inherits: treepine
+
+treeoak2:
+	Inherits: treepine
+
+treeoak3:
+	Inherits: treepine
+
+treeoak4:
+	Inherits: treepine
+
+treeoak5:
+	Inherits: treepine
+
+treeoak6:
+	Inherits: treepine
+
+treegeneric:
+	Inherits: treepine
+
+treegeneric2:
+	Inherits: treepine
+
+treegeneric3:
+	Inherits: treepine
+
+treegeneric4:
+	Inherits: treepine
+
+treegeneric5:
+	Inherits: treepine
+
+treegeneric6:
+	Inherits: treepine
+^Box:
+	Inherits: ^Decoration
+	Tooltip:
+		Name: Box
+
+^Drum:
+	Inherits: ^Decoration
+	Tooltip:
+		Name: Drum
+
+CRAT01:
+	Inherits: ^Box
+
+CRAT02:
+	Inherits: ^Box
+
+CRAT03:
+	Inherits: ^Box
+
+CRAT04:
+	Inherits: ^Box
+
+CRAT0A:
+	Inherits: ^Box
+
+CRAT0B:
+	Inherits: ^Box
+
+CRAT0C:
+	Inherits: ^Box
+
+DRUM01:
+	Inherits: ^Drum
+
+DRUM02:
+	Inherits: ^Drum
+
+PALET01:
+	Inherits: ^Palette
+
+PALET02:
+	Inherits: ^Palette
+
+PALET03:
+	Inherits: ^Palette
+
+PALET04:
+	Inherits: ^Palette
+
+STREETSIGNS:
+	Inherits@1: ^1x1TurretedCivBuilding
+	Tooltip:
+		Name: Street sign
+	EditorOnlyTooltip:
+		Name: Street Sign set (Supports facings)
+	RenderSprites:
+		Palette: unittemred
+
+STREETSIGNS2:
+	Inherits@1: ^1x1TurretedCivBuilding
+	Tooltip:
+		Name: Street sign
+	EditorOnlyTooltip:
+		Name: Street Sign set (Supports facings)
+	RenderSprites:
+		Palette: unittemred
+
+TRAFFICLIGHTS:
+	Inherits@1: ^1x1TurretedCivBuilding
+	Tooltip:
+		Name: Traffic Light
+	EditorOnlyTooltip:
+		Name: Traffic Light set (Supports facings)
+	RenderSprites:
+		Palette: unittemred
+
+BENCH:
+	Inherits@1: ^1x1TurretedCivBuilding
+	Tooltip:
+		Name: Bench
+	EditorOnlyTooltip:
+		Name: Bench set (Supports facings)
+	Health:
+		HP: 2500
+	RenderSprites:
+		Palette: player
+
+BUSSTOP:
+	Inherits: ^1x1TurretedCivBuilding
+	Tooltip:
+		Name: Bus Stop
+	EditorOnlyTooltip:
+		Name: Bus Stop (Supports facings)
+	RenderSprites:
+		Palette: unittem
+
+LIGHTPOST4x4:
+	Inherits: ^CivBuilding
+	Inherits@2: ^1x1Shape
+	Tooltip:
+		Name: Light Post
+	Health:
+		HP: 15000
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+		Palette: player
+	Crushable:
+		CrushClasses: infantry
+
+TSTLAMP:
+	Inherits: GALITE
+	TerrainLightSource:
+		Range: 4c0
+		Intensity: 1
+
+CONSTRUCTIONBARRIER:
+	Inherits: ^CivBuilding
+	Inherits@2: ^1x1Shape
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Tooltip:
+		Name: Construction Barrier
+	Health:
+		HP: 5000
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+		Palette: player
+
+CONSTRUCTIONBARRIER2:
+	Inherits: CONSTRUCTIONBARRIER
+
+CAMPFIRE:
+	Inherits: ^Decoration
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Tooltip:
+		Name: Campfire
+	RenderSprites:
+		Palette: isotem
+	WithIdleOverlay:
+		Sequence: fire
+		Palette: FlameEffectPal
+
+CACRSH01:
+	Inherits: ^Decoration
+	Tooltip:
+		Name: Crash Site
+
+CACRSH02:
+	Inherits: CACRSH01
+
+CACRSH03:
+	Inherits: CACRSH01
+
+CACRSH04:
+	Inherits: CACRSH01
+
+CACRSH05:
+	Inherits: CACRSH01
+
+TANKWRECK1:
+	Inherits@1: ^1x1TurretedDecoration
+	Tooltip:
+		Name: Scrap
+	EditorOnlyTooltip:
+		Name: Scrap set (Supports facings)
+	RenderSprites:
+		Palette: isotem
+
+SCRINY:
+	Inherits: ^Box
+	Tooltip:
+		Name: Crash
+	RenderSprites:
+		Palette: isotem
+		Image: scriny

@@ -1,0 +1,138 @@
+Player:
+	-ConquestVictoryConditions:
+	Shroud:
+		FogCheckboxEnabled: False
+
+World:
+	LuaScript:
+		Scripts: luascript.lua
+	-CrateSpawner:
+	-SpawnMPUnits:
+	-MPStartLocations:
+	MusicPlaylist:
+		BackgroundMusic: intro
+		DisableWorldSounds: true
+	-StartGameNotification:
+	GlobalLightingPaletteEffect:
+		Red: 0.8
+		Green: 0.7
+		Ambient: 0.675
+	WeatherOverlay:
+		ParticleDensityFactor: 10
+		WindLevels: 5,5,0,0,0,0,0
+		WindTick: 150, 350
+		UseSquares: false
+		Gravity: 15,15
+		ChangingWindLevel: false
+		ParticleColors: 4287f5, 0062ff, 0d2e63, b1cefc, 4f6d9c, 0063ff, 002a6b
+		ParticleSize: 0, 1
+
+^GenericEffects:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	DamageMultiplier@Shellmap:
+		Modifier: 0
+		RequiresCondition: !produced
+
+^Wall:
+	DamageMultiplier@Shellmap:
+		Modifier: 0
+
+^BlossomTree:
+	TerrainLightSource:
+		RedTint: 0
+		GreenTint: 1.5
+		BlueTint: 0
+		Intensity: 0
+		Range: 7c0
+
+BIGBLUE:
+	TerrainLightSource:
+		RedTint: 0
+		GreenTint: 0
+		BlueTint: 1.4
+
+^ProducesStuff:
+	GrantExternalConditionToProduced:
+		Condition: produced
+
+^Barracks:
+	-ProximityExternalCondition@hospitalheal:
+
+GAPOWR:
+	Power:
+		Amount: 99999
+
+CABPOWR:
+	Power:
+		Amount: 99999
+
+PROC:
+	Refinery:
+		ShowTicks: false
+		UseStorage: false
+
+FLIPPEDPROC:
+	Refinery:
+		ShowTicks: false
+		UseStorage: false
+
+FLIPPEDXPROC:
+	Refinery:
+		ShowTicks: false
+		UseStorage: false
+
+FLIPPEDYPROC:
+	Refinery:
+		ShowTicks: false
+		UseStorage: false
+
+WELL:
+	CashTrickler:
+		ShowTicks: false
+
+GAVULC:
+	-WithSpriteBody:
+	WithWallSpriteBody:
+		Type: wall
+
+GAROCK:
+	-WithSpriteBody:
+	WithWallSpriteBody:
+		Type: wall
+
+GACSAM:
+	-WithSpriteBody:
+	WithWallSpriteBody:
+		Type: wall
+
+ZOMBIE:
+	-ExternalCondition@PRODUCED:
+	-DamageMultiplier@Shellmap:
+
+BERSERKER:
+	-ExternalCondition@PRODUCED:
+	-DamageMultiplier@Shellmap:
+
+NAPULS:
+	-FireArmamentPower:
+	Armament:
+		Name: primary
+		TargetRelationships: Enemy, Neutral
+
+EMPDUMMY:
+	Inherits: ^GROUNDDUMMY
+	Inherits@1: ^EmpDisable
+	-WithIdleOverlay@EMPDISABLE:
+	Targetable:
+		RequiresCondition: !empdisable
+	RenderSprites:
+		Image: car
+
+MARAUDER:
+	AutoTarget:
+		InitialStanceAI: Defend
+
+MUTFIEND:
+	AutoTarget:
+		InitialStanceAI: Defend

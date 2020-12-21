@@ -1,0 +1,1040 @@
+explosion:
+	Defaults:
+		Length: *
+		ZOffset: 9000
+		Offset: 0,0,120
+		Tick: 35
+	building: twlt070
+	pulse_explosion: pulsefx2
+		BlendMode: Additive
+		Tick: 80
+	small_watersplash: h2o_exp2
+	large_watersplash: h2o_exp1
+	water_piff: w_piff
+	water_piffs: w_piffs
+	piff: piff
+	piffs: piffpiff
+	jaccexp: jaccexp
+	japmuzzle: japmuzzle
+	japmuzzleb: japmuzzleb
+	japocexp: japocexp
+	jbiggunfx: jbiggunfx
+	jbrrlexp1: jbrrlexp1
+	jbrrlexp1b: jbrrlexp1b
+	jbrrlexp2: jbrrlexp2
+	jbrrlexp2b: jbrrlexp2b
+	jcrivexp: jcrivexp
+	jcrivexpb: jcrivexpb
+	jcrivexpc: jcrivexpc
+	jdurasmoke: jdurasmoke
+	jexplolrg: jexplolrg
+	jexplolrgb: jexplolrgb
+	jexplomed: jexplomed
+	jexplomedb: jexplomedb
+	jexplosml: jexplosml
+	jexplosmlb: jexplosmlb
+	jflmtrail: jflmtrail
+	jgcmuzzle: jgcmuzzle
+	jgunfire: jgunfire
+	jhtrkpuff: jhtrkpuff
+	jlgrysmk1: jlgrysmk1
+	jsbang16: jsbang16
+	jsbang16b: jsbang16b
+	jsbang24: jsbang24
+	jsbang24b: jsbang24b
+	jsbang34: jsbang34
+	jsbang34b: jsbang34b
+	jsbang48: jsbang48
+	jsbang48b: jsbang48b
+	jsbrnl20: jsbrnl20
+	jsbrnl20b: jsbrnl20b
+	jsbrnl30: jsbrnl30
+	jsbrnl30b: jsbrnl30b
+	jsbrnl40: jsbrnl40
+	jsbrnl40b: jsbrnl40b
+	jvtexplodb: jvtexplodb
+	jsbrnl58: jsbrnl58
+	jsbrnl40: jsbrnl40
+	jsbrnl40b: jsbrnl40b
+	jsbrnl58: jsbrnl58
+	jsbrnl58b: jsbrnl58b
+	jsclsn16: jsclsn16
+	jsclsn16b: jsclsn16b
+	jsclsn22: jsclsn22
+	jsclsn22b: jsclsn22b
+	jsclsn30: jsclsn30
+	jsclsn30b: jsclsn30b
+	jsclsn42: jsclsn42
+	jsclsn42b: jsclsn42b
+	jsclsn58: jsclsn58
+	jsclsn58b: jsclsn58b
+	jsgrysmk1: jsgrysmk1
+	jsmkblast: jsmkblast
+	jsmkblastmini: jsmkblastmini
+	juccons: juccons
+	jucflash: jucflash
+	jnukepuff: jnukepuff
+	jsmkpuff: jsmkpuff
+	jsmkpuffb: jsmkpuffb
+	jsmokey: jsmokey
+	jstumu22: jstumu22
+	jstumu22b: jstumu22b
+	jstumu30: jstumu30
+	jstumu30b: jstumu30b
+	jstumu42: jstumu42
+	jstumu42b: jstumu42b
+	jstumu60: jstumu60
+	jstumu60b: jstumu60b
+	jtwlt026: jtwlt026
+	jtwlt026b: jtwlt026b
+	jtwlt036: jtwlt036
+	jtwlt036b: jtwlt036b
+	jtwlt050: jtwlt050
+	jtwlt050b: jtwlt050b
+	jtwlt070: jtwlt070
+	jtwlt070b: jtwlt070b
+	jtwlt100: jtwlt100
+	jtwlt100b: jtwlt100b
+	jvtexplod: jvtexplod
+	jvtmuzzle: jvtmuzzle
+	jxgrymed1: jxgrymed1
+	jxgrymed1b: jxgrymed1b
+	jxgrymed2: jxgrymed2
+	jxgrymed2b: jxgrymed2b
+	jxgrysml1: jxgrysml1
+	jxgrysml1b: jxgrysml1b
+	jxgrysml2: jxgrysml2
+	jxgrysml2b: jxgrysml2b
+	infdeathexplo1: infdeathexplo1
+	infdeathexplo2: infdeathexplo2
+	infdeathexplo3: infdeathexplo3
+	small_explosion: explosml
+	medium_explosion: explomed
+	large_explosion: explolrg
+	tiny_bang: s_bang16
+	small_bang: s_bang24
+	medium_bang: s_bang34
+	large_bang: s_bang48
+	tiny_brnl: s_brnl20
+	small_brnl: s_brnl30
+	medium_brnl: s_brnl40
+	large_brnl: s_brnl58
+	tiny_tumu: s_tumu22
+	small_tumu: s_tumu30
+	medium_tumu: s_tumu42
+	large_tumu: s_tumu60
+	tiny_clsn: s_clsn16
+	small_clsn: s_clsn22
+	medium_clsn: s_clsn30
+	large_clsn: s_clsn42
+	verylarge_clsn: s_clsn58
+	tiny_twlt: twlt026
+	small_twlt: twlt036
+	medium_twlt: twlt050
+	large_twlt: twlt070
+	verylarge_twlt: twlt100
+	tiny_grey_explosion: xgrysml1
+	small_grey_explosion: xgrysml2
+	medium_grey_explosion: xgrymed1
+	large_grey_explosion: xgrymed2
+	fire1: fire1
+		ZOffset: 0
+	fire2: fire2
+		ZOffset: 0
+	fire3: fire3
+		ZOffset: 0
+	fire4: fire4
+		ZOffset: 0
+	jfire01: jfire01
+		ZOffset: 0
+	jfire02: jfire02
+		ZOffset: 0
+	jfire03: jfire03
+		ZOffset: 0
+	sparks: sparks
+	sparks2: sparks2
+	sparks3: sparks3
+	smallspark: smallspark
+	emp_fx01: emp_fx01
+		Length: *
+		Offset: 0, 0, 37
+		UseTilesetCode: false
+		BlendMode: Additive
+	plasmaballexplosion: plasmaballexplosion ## It is the emp + marnflash1, in doing so can save lots of batches
+	powerlinexplosion: plasmaballexplosion ## It is the emp + marnflash1, in doing so can save lots of batches
+		Offset: 0,-48, 90
+	fsidlewall: fsidle
+		Offset: 0,-90, 90
+		Tick: 35
+	fsgrndwall: fsgrnd
+		Offset: 0,-48, 48
+		Tick: 35
+	fsidle: fsidle
+		Offset: 0,-62,0
+		Tick: 35
+	fsgrnd: fsgrnd
+		Offset: 0,-33,0
+		Tick: 35
+	podring: podring
+	droppod: droppod
+		Tick: 400
+		ZOffset: -1000
+	droppod2: droppod2
+		Tick: 400
+		ZOffset: -1000
+	ionring: ring1
+		Tick: 100
+	ionscorch: ionscorch
+		Tick: 400
+		ZOffset: -512
+	laserscorch: laserscorch
+		Tick: 400
+		ZOffset: -512
+	laserburnt: laserburnt
+		ZOffset: -512
+		Tick: 280
+	templargren: templargren
+		Length: *
+		Tick: 65
+	hallugren: hallugren
+		Length: *
+		Offset: 0,-20
+		Tick: 65
+	nuke1: nuke1
+		ZOffset: 1024
+		BlendMode: Additive
+	nuke2: nuke2
+		ZOffset: 1024
+		BlendMode: Additive
+	nuke3: nuke3
+		ZOffset: 1024
+		BlendMode: Additive
+	holosmoke1: holosmoke1
+		ZOffset: 1024
+	holosmoke2: holosmoke2
+		ZOffset: 1024
+	holosmoke3: holosmoke3
+		ZOffset: 1024
+	holosmoke4: holosmoke4
+		ZOffset: 1024
+	bolt1: lightningbolts
+		Length: 1
+		Tick: 35
+	bolt2: lightningbolts
+		Start: 1
+		Length: 1
+		Tick: 35
+	bolt3: lightningbolts
+		Start: 2
+		Length: 1
+		Tick: 35
+	bolt4: lightningbolts
+		Start: 3
+		Length: 1
+		Tick: 35
+	bolt5: lightningbolts
+		Start: 4
+		Length: 1
+		Tick: 35
+	bolt6: lightningbolts
+		Start: 5
+		Length: 1
+		Tick: 35
+	bolt7: lightningbolts
+		Start: 6
+		Length: 1
+		Tick: 35
+	bolt8: lightningbolts
+		Start: 7
+		Length: 1
+		Tick: 35
+	bolt9: lightningbolts
+		Start: 8
+		Length: 1
+		Tick: 35
+	bolt10: lightningbolts
+		Start: 9
+		Length: 1
+		Tick: 35
+	QueenExplo: queenexplo
+	mininuke1: nuke1
+		ZOffset: 1024
+		BlendMode: Additive
+	mininuke2: nuke2
+		ZOffset: 1024
+		BlendMode: Additive
+	tibexp: tibexp
+	tibexp2: tibexp2
+	tibexp2mini: tibexp2mini
+	tib_expsmall: tibexpsmall
+	cabexplo: cabexplo
+	lurkertentacle: lurkertentacle
+		Offset: 0, -18, 12
+		Tick: 10
+	cabspark: cabspark
+	destroexp: destroexp
+	lightningexplo: lightningexplo
+		Tick: 10
+	colossiglow: glow
+		Tick: 100
+	viscexplo: viscexplo
+	alienpiff3: alienpiff3
+	alienpiff4: alienpiff4
+	alienpiff5: alienpiff5
+	scrinpulse2: scrinpulse2
+		Offset: -5,-12, 12
+	scrinpulse3: scrinpulse3
+		Offset: -5,-12, 12
+	firestormexplo: firestormexplo
+	firestormexplo1: firestormexplo1
+	firestormexplo2: firestormexplo2
+	scrinexplo1: scrinexplo1
+	scrinexplo2: scrinexplo2
+	scrinexplo3: scrinexplo3
+	scrinexplo4: scrinexplo4
+	scrinexplo5: scrinexplo5
+	scrinexplo6: scrinexplo6
+	scrinvehicleexplo1: scrinvehicleexplo1
+	scrinvehicleexplo2: scrinvehicleexplo2
+	ionring: ring1
+		ZRamp: 1
+		Tick: 100
+	ionbeam: ionbeam
+		Offset: 0, -60, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam2: ionbeam
+		Offset: 0, -180, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam3: ionbeam
+		Offset: 0, -300, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam4: ionbeam
+		Offset: 0, -420, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam5: ionbeam
+		Offset: 0, -540, 60
+		ZRamp: 1
+		Tick: 100
+	ionbeam6: ionbeam
+		Offset: 0, -660, 60
+		ZRamp: 1
+		Tick: 100
+	marnflash1: marnflash1
+	marnflash2: marnflash2
+	marnflash3: marnflash3
+	marnflash4: marnflash4
+	marnflash5: marnflash5
+	marnflash6: marnflash6
+	marnflash7: marnflash7
+	wrecksmoke: wrecksmoke
+		Tick: 25
+		ZOffset: -720
+	wrecksmoke2: wrecksmoke2
+		Tick: 25
+		ZOffset: -720
+	wrecksmoke3: wrecksmoke3
+		Tick: 25
+		ZOffset: -720
+	tripodshockwave: tripodshockwave
+		Length: *
+		Offset: 0, 0, -18
+	gasexplo: gasexplo
+		Offset: -1, -23, 0
+	woodbits: wooddebris
+		Tick: 1200
+		Start: 10
+		Length: 1
+		ZOffset: -540
+	woodbits2: wooddebris
+		Tick: 1200
+		Start: 12
+		Length: 1
+		ZOffset: -540
+	woodbits3: wooddebris
+		Tick: 1200
+		Length: 1
+		Start: 16
+		ZOffset: -540
+	woodbits4: wooddebris
+		Tick: 1200
+		Start: 18
+		Length: 1
+		ZOffset: -540
+	woodbits5: wooddebris
+		Tick: 1200
+		Start: 21
+		Length: 1
+		ZOffset: -540
+	woodbits6: wooddebris
+		Tick: 1200
+		Start: 26
+		Length: 1
+		ZOffset: -540
+	woodbits7: wooddebris
+		Tick: 1200
+		Start: 27
+		Length: 1
+		ZOffset: -540
+	woodbitsbig: wooddebrisbig
+		Tick: 1200
+		Start: 10
+		Length: 1
+		ZOffset: -540
+	woodbitsbig2: wooddebrisbig
+		Tick: 1200
+		Start: 12
+		Length: 1
+		ZOffset: -540
+	woodbitsbig3: wooddebrisbig
+		Tick: 1200
+		Length: 1
+		Start: 16
+		ZOffset: -540
+	woodbitsbig4: wooddebrisbig
+		Tick: 1200
+		Start: 18
+		Length: 1
+		ZOffset: -540
+	woodbitsbig5: wooddebrisbig
+		Tick: 1200
+		Start: 21
+		Length: 1
+		ZOffset: -540
+	woodbitsbig6: wooddebrisbig
+		Tick: 1200
+		Start: 26
+		Length: 1
+		ZOffset: -540
+	woodbitsbig7: wooddebrisbig
+		Tick: 1200
+		Start: 27
+		Length: 1
+		ZOffset: -540
+	casingscorch: casing
+		Tick: 1200
+		Start: 10
+		Length: 1
+		ZOffset: -540
+	casingscorch2: casing
+		Tick: 1200
+		Start: 12
+		Length: 1
+		ZOffset: -540
+	casingscorch3: casing
+		Tick: 1200
+		Length: 1
+		Start: 16
+		ZOffset: -540
+	casingscorch4: casing
+		Tick: 1200
+		Start: 18
+		Length: 1
+		ZOffset: -540
+	casingscorch5: casing
+		Tick: 1200
+		Start: 21
+		Length: 1
+		ZOffset: -540
+	casingscorch6: casing
+		Tick: 1200
+		Start: 26
+		Length: 1
+		ZOffset: -540
+	casingscorch7: casing
+		Tick: 1200
+		Start: 27
+		Length: 1
+		ZOffset: -540
+	shellcasingscorch: shellcasing
+		Tick: 1200
+		Start: 10
+		Length: 1
+		ZOffset: -540
+	shellcasingscorch2: shellcasing
+		Tick: 1200
+		Start: 12
+		Length: 1
+		ZOffset: -540
+	shellcasingscorch3: shellcasing
+		Tick: 1200
+		Length: 1
+		Start: 16
+		ZOffset: -540
+	shellcasingscorch4: shellcasing
+		Tick: 1200
+		Start: 18
+		Length: 1
+		ZOffset: -540
+	shellcasingscorch5: shellcasing
+		Tick: 1200
+		Start: 21
+		Length: 1
+		ZOffset: -540
+	shellcasingscorch6: shellcasing
+		Tick: 1200
+		Start: 26
+		Length: 1
+		ZOffset: -540
+	shellcasingscorch7: shellcasing
+		Tick: 1200
+		Start: 27
+		Length: 1
+		ZOffset: -540
+	cldrngl1: cldrngl1
+	lazerflare: lazerflare
+		Start: 0
+		Length: 4
+		Tick: 60
+	claw1: claw1
+	claw2: claw2
+
+buildingfire:
+	Defaults:
+		Length: *
+		ZOffset: 9000
+		Offset: 0,0,120
+	fire1: fire1
+	fire2: fire2
+	fire3: fire3
+	fire4: fire4
+
+smoothclouds:
+	Defaults:
+		ZOffset: 7500
+	idle0: eoralcloudsmooth0000
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle1: eoralcloudsmooth0001
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle2: eoralcloudsmooth0002
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle3: eoralcloudsmooth0003
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle4: eoralcloudsmooth0004
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle5: eoralcloudsmooth0005
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle6: eoralcloudsmooth0006
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle7: eoralcloudsmooth0007
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle8: eoralcloudsmooth0008
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle9: eoralcloudsmooth0009
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle10: eoralcloudsmooth0010
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle11: eoralcloudsmooth0011
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle12: eoralcloudsmooth0012
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle13: eoralcloudsmooth0013
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle14: eoralcloudsmooth0014
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle15: eoralcloudsmooth0015
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle16: eoralcloudsmooth0016
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle17: eoralcloudsmooth0017
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+	idle18: skycloudsmoothkothvir
+		BlendMode: DoubleMultiplicative
+		IgnoreWorldTint: true
+
+dig:
+	idle:
+		Length: *
+		ZOffset: 511
+		Offset: 0, 0
+
+lgrysmk1:
+	defaults:
+	idle:
+		Length: *
+		Tick: 25
+
+flaresmoke:
+	idle:
+		Length: *
+		Tick: 60
+
+sgrysmk1:
+	idle:
+		Length: *
+		Tick: 125
+
+scrsmoke:
+	idle:
+		Length: *
+		Tick: 125
+
+htrkpuff:
+	idle:
+		Length: *
+		ZOffset: 1023
+
+meteor:
+	idle:
+		Length: 8
+		Facings: 8
+
+smoketrailsmall:
+	idle:
+		Length: *
+		Offset: 0,-18, 18
+		ZOffset: 512
+
+sparks:
+	idle: sparks3
+		Length: *
+		Tick: 25
+		Offset: 0,0, 24
+
+meteor2:
+	Inherits: meteor
+
+discus:
+	idle:
+		Length: *
+		ZOffset: 1023
+
+gdidroppod:
+	idle:
+		Length: 1
+		Facings: 32
+		ZOffset: 1023
+
+canister:
+	idle:
+		Length: *
+		ZOffset: 1023
+
+pulsball:
+	idle:
+		Length: *
+		BlendMode: Additive
+		ZOffset: 1023
+
+dragon:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
+tibshard:
+	idle:
+		Facings: -32
+		ZOffset: 1023
+
+minitibshard:
+	idle:
+		Facings: -32
+		ZOffset: 1023
+
+glaive:
+	idle:
+		Length: *
+		Facings: 1
+		ZOffset: 1023
+
+web2:
+	idle:
+		Length: *
+		ZOffset: 1023
+
+crystal4:
+	idle:
+		Length: 15
+		ShadowStart: 15
+		UseTilesetExtension: true
+		ZOffset: 1023
+
+120mm:
+	idle:
+		ZOffset: 1023
+
+torpedo:
+	idle:
+		Length: *
+		ZOffset: 1023
+clusterbomb:
+	idle:
+		Length: *
+		ZOffset: 1023
+
+flameall:
+	idle:
+		Length: 19
+		Facings: -8
+		Tick: 160
+		ZOffset: 1023
+
+flameallremap:
+	Inherits: flameall
+
+flameapol:
+	Inherits: flameall
+
+largesmoke:
+	idle: lgrysmk1
+		Length: *
+		ZOffset: 1023
+
+smallsmoke:
+	idle: sgrysmk1
+		Length: *
+		ZOffset: 1023
+
+large_smoke_trail:
+	idle: smokey
+		Length: *
+		ZOffset: 1023
+
+small_smoke_trail:
+	idle: smokey2
+		Length: *
+		ZOffset: 1023
+
+lurkertrail:
+	idle:
+		Offset: 0,-12
+		Length: *
+		ZOffset: 1023
+		Tick: 30
+
+sparkprojectile:
+	idle: sparkprojectile
+		Length: *
+
+fatballprojectile:
+	idle:
+		Facings: 32
+
+highcaliberprojectile:
+	idle:
+		Facings: 32
+
+sparklong:
+	idle: sparklong
+		Length: *
+
+viscproj:
+	idle:
+		Offset: 0,6
+		Length: *
+		ZOffset: 1023
+
+spectreball:
+	idle:
+		ZOffset: 1023
+
+eggproj:
+	idle:
+		Length: 10
+		ZOffset: 1023
+		Facings: 8
+
+cabswproj:
+	idle:
+		Offset: 0,6
+		Length: *
+		ZOffset: 1023
+		BlendMode: Additive
+
+cabswproj2:
+	idle:
+		Offset: 0,6
+		Length: *
+		ZOffset: 1023
+		BlendMode: Additive
+
+scrinenergyeff:
+	idle:
+		Length: *
+		ZOffset: 1023
+		BlendMode: Additive
+
+metstral:
+	idle:
+		Length: *
+		ZOffset: 1023
+		BlendMode: Additive
+
+meteortrail:
+	idle:
+		Length: *
+		Tick: 25
+		ZOffset: 3000
+		BlendMode: Additive
+	idle2:
+		Length: *
+		ZOffset: 3000
+		BlendMode: Additive
+	idle3:
+		Start: 10
+		Length: *
+		ZOffset: 3000
+		Tick: 75
+		BlendMode: Additive
+
+largefire:
+	idle: fire1
+		Length: *
+
+mediumfire:
+	idle: fire2
+		Length: *
+
+smallfire:
+	idle: fire3
+		Length: *
+
+tinyfire:
+	idle: fire4
+		Length: *
+
+moveflsh:
+	idle: ring
+		Length: *
+		Tick: 30
+		ZOffset: 2047
+		Offset: 0,0,24
+
+wake:
+	idle: wake2
+		Length: *
+		Tick: 180
+		ZOffset: -512
+
+casing:
+	Defaults:
+		ZOffset: 1023
+		Length: 10
+		Tick: 25
+	1:
+		Start: 10
+	2:
+		Start: 20
+	3:
+		Start: 30
+	4:
+		Start: 40
+	5:
+		Start: 50
+	6:
+		Start: 60
+	7:
+		Start: 70
+	8:
+		Start: 80
+	9:
+		Start: 90
+	10:
+		Start: 100
+	11:
+		Start: 110
+	12:
+		Start: 120
+	13:
+		Start: 130
+	14:
+		Start: 140
+	15:
+		Start: 150
+
+shellcasing:
+	Inherits: casing
+
+wooddebris:
+	Inherits: casing
+
+wooddebrisbig:
+	Inherits: casing
+
+ionbeam:
+	idle:
+		Length: *
+		Offset: 0, -78, 78
+		ZOffset: 1023
+
+ionring:
+	idle: ring1
+		Length: *
+		ZOffset: -512
+		Tick: 120
+
+dbrissm:
+	Defaults:
+		ZOffset: 1023
+		Length: *
+	1: dbris1sm
+	2: dbris2sm
+	3: dbris3sm
+	4: dbris4sm
+	5: dbris5sm
+	6: dbris6sm
+	7: dbris7sm
+	8: dbris8sm
+	9: dbris9sm
+	10: dbrs10sm
+
+dbrislg:
+	Defaults:
+		ZOffset: 1023
+		Length: *
+	1: dbris1lg
+	2: dbris2lg
+	3: dbris3lg
+	4: dbris4lg
+	5: dbris5lg
+	6: dbris6lg
+	7: dbris7lg
+	8: dbris8lg
+	9: dbris9lg
+	10: dbrs10lg
+
+
+
+acidall32:
+	idle:
+		Length: 15
+		Facings: -32
+		Tick: 160
+
+acidall32mini:
+	idle:
+		Length: 15
+		Facings: -32
+		Tick: 160
+
+flamebro:
+	idle:
+		Length: 17
+		Facings: 8
+
+litning:
+	bright:
+		Length: 4
+		Offset: 0,0,3
+	dim:
+		Offset: 0,0,3
+		Start: 4
+		Length: 4
+
+lightest:
+	bright:
+		Length: 4
+	dim:
+		Start: 4
+		Length: 4
+
+blueball:
+	idle:
+		Facings: 1
+		Length: 5
+		ZOffset: 1023
+
+blueplasma:
+	idle:
+		Facings: -32
+
+greenplasma:
+	idle:
+		Facings: 32
+
+greenplasmamini:
+	idle:
+		Facings: 32
+greenplasma2:
+	idle:
+		Length: *
+		ZOffset: 1023
+smallblueplasma:
+	idle:
+		Length: *
+		ZOffset: 1023
+blueballmini:
+	idle:
+		Facings: 1
+		Length: 5
+		ZOffset: 1023
+
+blueballminitrail:
+	idle:
+		Facings: 1
+		Length: *
+		ZOffset: 1023
+
+essencetrail:
+	idle:
+		Facings: 1
+		Length: *
+		ZOffset: 1023
+
+essencetrailmini:
+	idle:
+		Facings: 1
+		Length: *
+		ZOffset: 1023
+
+projwyverm:
+	idle:
+		Facings: -32
+		ZOffset: 1023
+
+dronemissile:
+	idle:
+		Facings: -32
+		ZOffset: 1023
+
+dronemissilemini:
+	idle:
+		Facings: -32
+		ZOffset: 1023
+
+destroshell:
+	idle:
+		Facings: 1
+		Length: *
+		ZOffset: 1023
+
+purpbullet:
+	idle:
+		Facings: -32
+		ZOffset: 1023
+
+bullet:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
+line:
+	idle:
+		Facings: 32
+		ZOffset: 1023
+
+lightpan:
+	idle: lightmuzzle
+		Frames: 6, 7
+		Length: 2

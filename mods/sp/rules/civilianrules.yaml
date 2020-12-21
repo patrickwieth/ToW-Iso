@@ -1,0 +1,3276 @@
+E2:
+	Inherits@1: ^Soldier
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Disc Thrower
+	Mobile:
+		Voice: Move
+		Speed: 50
+	WithInfantryBody:
+		AttackSequences: throw
+	RenderSprites:
+		Image: e2
+
+GHOST:
+	Inherits: ^Mutant
+	Tooltip:
+		Name: Ghost Stalker
+	Voiced:
+		VoiceSet: Ghost
+	Mobile:
+		Speed: 65
+	Health:
+		HP: 20000
+	Passenger:
+	RevealsShroud:
+		Range: 6c0
+	Armament:
+		Weapon: LtRail
+		LocalOffset: 85,0,384
+	Crushable:
+		CrushSound: squishy2.aud
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: WebDisable
+	Demolition:
+		DetonationDelay: 45
+		Voice: Attack
+	WithInfantryBody:
+		AttackSequences: shoot
+
+WEEDGUY:
+	Inherits: ^Soldier
+	Tooltip:
+		Name: Chem Spray Infantry
+	Voiced:
+		VoiceSet: Weed
+	Mobile:
+		Speed: 55
+	Health:
+		HP: 13000
+	Crushable:
+		CrushSound: squishy2.aud
+	Armament:
+		Weapon: FireballLauncher
+		LocalOffset: 85,0,384
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: WebDisable
+
+UMAGON:
+	Inherits: ^Mutant
+	Tooltip:
+		Name: Umagon
+	Voiced:
+		VoiceSet: Umagon
+	Mobile:
+		Speed: 80
+	Health:
+		HP: 15000
+	Passenger:
+	RevealsShroud:
+		Range: 7c0
+	Armament:
+		Weapon: Sniper
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: WebDisable
+	WithInfantryBody:
+		AttackSequences: shoot
+
+CHAMSPY:
+	Inherits: ^Soldier
+	Tooltip:
+		Name: Chameleon Spy
+	Voiced:
+		VoiceSet: Spy
+	Health:
+		HP: 12000
+	Mobile:
+		Speed: 95
+	RevealsShroud:
+		Range: 9c0
+	Passenger:
+	Disguise:
+	WithDecoration@disguise:
+		Image: pips
+		Sequence: pip-disguise
+		Palette: pips
+		Position: TopRight
+		RequiresCondition: disguise
+	Infiltrates:
+		Types: SpyInfiltrate
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	WithInfantryBody:
+		AttackSequences: shoot
+
+MUTANT:
+	Inherits: ^Mutant
+	Tooltip:
+		Name: Mutant
+	Voiced:
+		VoiceSet: Mutant
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 65
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: Vulcan
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: WebDisable
+	WithInfantryBody:
+		AttackSequences: shoot
+
+MWMN:
+	Inherits: ^Mutant
+	Tooltip:
+		Name: Mutant Soldier
+	Voiced:
+		VoiceSet: CivilianFemale
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 65
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: Vulcan
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: WebDisable
+	WithInfantryBody:
+		AttackSequences: shoot
+
+MUTANT3:
+	Inherits: ^Mutant
+	Tooltip:
+		Name: Mutant Sergeant
+	Voiced:
+		VoiceSet: Mutant
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 65
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: Vulcan
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: WebDisable
+	WithInfantryBody:
+		AttackSequences: shoot
+
+TRATOS:
+	Inherits: ^Mutant
+	Tooltip:
+		Name: Tratos
+	Voiced:
+		VoiceSet: Tratos
+	Health:
+		HP: 20000
+	Mobile:
+		Speed: 80
+	RevealsShroud:
+		Range: 4c0
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	WithInfantryBody:
+		AttackSequences: shoot
+
+OXANNA:
+	Inherits: ^Soldier
+	Tooltip:
+		Name: Oxanna
+	Voiced:
+		VoiceSet: Oxanna
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 65
+	RevealsShroud:
+		Range: 4c0
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	WithInfantryBody:
+		AttackSequences: shoot
+
+SLAV:
+	Inherits: ^Soldier
+	Tooltip:
+		Name: Slavick
+	Voiced:
+		VoiceSet: Slavick
+	Health:
+		HP: 30000
+	Mobile:
+		Speed: 65
+	RevealsShroud:
+		Range: 4c0
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	WithInfantryBody:
+		AttackSequences: shoot
+
+CIV1:
+	Inherits: ^CivilianInfantry
+	WithInfantryBody:
+		AttackSequences: shoot
+
+CIV2:
+	Inherits: ^CivilianInfantry
+
+CIV3:
+	Inherits: ^CivilianInfantry
+	WithInfantryBody:
+		AttackSequences: shoot
+
+4TNK:
+	Inherits: ^VoxelTank
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Mammoth Tank
+	Mobile:
+		Speed: 65
+		TurnSpeed: 20
+	Health:
+		HP: 60000
+	Armor:
+		Type: VehicleArmor
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 12
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 500,60,360, 500,-85,360
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Weapon: 4tnkgun
+		LocalOffset: 0,200,410, 0,-200,410
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: empdisable
+	ChangesHealth:
+		PercentageStep: 1
+		Step: 0
+		StartIfBelow: 50
+		DamageCooldown: 200
+	WithVoxelTurret:
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+
+^TRUCK:
+	Inherits: ^CivilianVoxelVehicle
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Truck
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 5c0
+
+TRUCKA:
+	Inherits: ^TRUCK
+
+TRUCKB:
+	Inherits: ^TRUCK
+
+ICBM:
+	Inherits: ^CivilianVoxelVehicle
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Ballistic Missile Launcher
+	Health:
+		HP: 50000
+	Armor:
+		Type: VehicleArmor
+	Mobile:
+		Speed: 95
+		TurnSpeed: 20
+	RevealsShroud:
+		Range: 7c0
+	Transforms:
+		IntoActor: gaicbm
+		Offset: -1,-1
+		Facing: 384
+		TransformSounds:
+		NoTransformSounds:
+		Voice: Move
+
+WEED:
+	Inherits: ^VoxelVehicle
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Weed Eater
+	Harvester:
+		DeliveryBuildings: nawast
+		Capacity: 7
+		Resources: Veins
+		BaleUnloadDelay: 20
+		BaleLoadDelay: 40
+		SearchFromProcRadius: 72
+		SearchFromHarvesterRadius: 36
+		HarvestVoice: Attack
+		DeliverVoice: Move
+	Mobile:
+		Speed: 80
+		TurnSpeed: 20
+	Health:
+		HP: 600
+	Armor:
+		Type: VehicleArmor
+	RevealsShroud:
+		Range: 4c0
+	-WithVoxelBody:
+	WithVoxelUnloadBody:
+	WithHarvesterPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 7
+
+BUS:
+	Inherits: ^CivilianVoxelVehicle
+	Tooltip:
+		Name: School Bus
+	Mobile:
+		TurnSpeed: 20
+		Speed: 120
+	Health:
+		HP: 10000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c0
+
+CAR2:
+	Inherits: ^CivilianSpriteVehicle
+	Tooltip:
+		Name: Automobile
+	Mobile:
+		TurnSpeed: 20
+		Speed: 120
+	Health:
+		HP: 10000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c0
+
+CAR:
+	Inherits: CAR2
+
+CARCOBRA:
+	Inherits: CAR2
+
+CARPANTERB:
+	Inherits: CAR2
+
+CARPANTERC:
+	Inherits: CAR2
+
+CARBMW850:
+	Inherits: CAR2
+
+CARBUS01:
+	Inherits: CAR2
+
+CARCAMION01:
+	Inherits: CAR2
+
+CARCAMION02:
+	Inherits: CAR2
+
+CARCAMION03:
+	Inherits: CAR2
+
+CARCAMION04:
+	Inherits: CAR2
+
+CARWINI:
+	Inherits: CAR2
+
+CARBIGCAMION:
+	Inherits: CAR2
+
+TRUCKOPEN:
+	Inherits: CAR2
+
+TRUCKOPEN02:
+	Inherits: CAR2
+
+TRUCKOPENTIB:
+	Inherits: CAR2
+	RenderSprites:
+		Palette: unittemgreen
+
+PICKUPBENDER:
+	Inherits: CAR2
+	Tooltip:
+		Name: Pickup
+
+PICK:
+	Inherits: CAR2
+	Tooltip:
+		Name: Pickup
+
+CATEXCAVATOR:
+	Inherits: CAR2
+	Tooltip:
+		Name: Excavator
+
+WINI:
+	Inherits: CAR2
+	Tooltip:
+		Name: Recreational Vehicle
+	Mobile:
+		TurnSpeed: 20
+		Speed: 120
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c0
+
+VAN:
+	Inherits: CAR2
+	Tooltip:
+		Name: Van
+	Mobile:
+		TurnSpeed: 20
+		Speed: 120
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c0
+
+FUELTRUCK:
+	Inherits: CAR2
+	Tooltip:
+		Name: Fuel Truck
+	Mobile:
+		TurnSpeed: 20
+		Speed: 120
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c0
+
+LOCOMOTIVE:
+	Inherits: ^Train
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Train Locomotive
+	Targetable@1:
+		TargetTypes: Locomotive
+
+TRAINCAR:
+	Inherits: LOCOMOTIVE
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Passenger Car
+	Targetable@1:
+		TargetTypes: Traincar
+	RenderVoxels:
+		Image: traincar
+	RenderSprites:
+		Image: traincar
+
+CARGOCAR:
+	Inherits: LOCOMOTIVE
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Cargo Car
+
+GAWALL:
+	Inherits: ^Wall
+	SoundOnDamageTransition:
+		DamagedSounds:
+		DestroyedSounds:
+	Valued:
+		Cost: 50
+	-AppearsOnRadar:
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Concrete Wall
+	RenderSprites:
+		Image: wall.gdi
+	Crushable:
+		CrushClasses: BuildingArmorwall
+	LineBuild:
+		NodeTypes: wall, turret
+
+NAWALL:
+	Inherits: ^Wall
+	SoundOnDamageTransition:
+		DamagedSounds:
+		DestroyedSounds:
+	Valued:
+		Cost: 50
+	-AppearsOnRadar:
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Nod Wall
+	RenderSprites:
+		Image: wall.nod
+	Crushable:
+		CrushClasses: BuildingArmorwall
+	LineBuild:
+		NodeTypes: wall, turret
+
+GAGATE_A:
+	Inherits: ^Gate_A
+	Tooltip:
+		Name: Gate
+	-AppearsOnRadar:
+	-UpdatesPlayerStatistics:
+	RenderSprites:
+		Image: gate_a.gdi
+		FactionImages:
+			gdi: gate_b.gdi
+			nod: gate_b.nod
+
+GAGATE_B:
+	Inherits: ^Gate_B
+	Tooltip:
+		Name: Gate
+	-AppearsOnRadar:
+	-UpdatesPlayerStatistics:
+	RenderSprites:
+		Image: gate_b.gdi
+		FactionImages:
+			gdi: gate_b.gdi
+			nod: gate_b.nod
+
+NAGATE_A:
+	Inherits: ^Gate_A
+	Tooltip:
+		Name: Gate
+	-AppearsOnRadar:
+	-UpdatesPlayerStatistics:
+	RenderSprites:
+		Image: gate_a.gdi
+		FactionImages:
+			gdi: gate_a.gdi
+			nod: gate_a.nod
+
+NAGATE_B:
+	Inherits: ^Gate_B
+	Tooltip:
+		Name: Gate
+	-AppearsOnRadar:
+	-UpdatesPlayerStatistics:
+	RenderSprites:
+		Image: gate_b.gdi
+		FactionImages:
+			gdi: gate_b.gdi
+			nod: gate_b.nod
+
+ABAN01:
+	Inherits: ^CivBuilding
+	Inherits@SHAPE: ^2x6Shape
+	Tooltip:
+		Name: WS Logging Company
+	Building:
+		Footprint: xx xx xx xx xx XX
+		Dimensions: 2, 6
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 60000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+		Weapons: SmallDebris
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+		Weapons: LargeDebris
+	IsometricSelectable:
+		DecorationHeight: 72
+
+ABAN02:
+	Inherits: ^CivBuilding
+	Inherits@SHAPE: ^5x3Shape
+	Tooltip:
+		Name: Panullo Hacienda
+	Building:
+		Footprint: xxxxx xxxxx XXXxX
+		Dimensions: 5, 3
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 60000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+	IsometricSelectable:
+		DecorationHeight: 48
+
+ABAN03:
+	Inherits: ^CivBuilding
+	Inherits@SHAPE: ^2x5Shape
+	Tooltip:
+		Name: Abandoned Factory
+	Building:
+		Footprint: xx xx xx xx XX
+		Dimensions: 2, 5
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+	IsometricSelectable:
+		DecorationHeight: 48
+
+ABAN04:
+	Inherits: ^CivBuilding
+	Inherits@SHAPE: ^4x2Shape
+	Tooltip:
+		Name: City Hall
+	Building:
+		Footprint: xxxX xxxX
+		Dimensions: 4, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 4, 7
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 3
+
+ABAN05:
+	Inherits: ^CivBuilding
+	Inherits@SHAPE: ^3x2Shape
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 768, 1024
+	Tooltip:
+		Name: Hunting Lodge
+	Building:
+		Footprint: xxX xxX
+		Dimensions: 3, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN06:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Local Inn & Lodging
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN07:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Church
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 35000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN08:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Abandoned Warehouse
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN09:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Tall's Residence
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 35000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN10:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Denzil's Last Chance Motel
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN11:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Miele Manor
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN12:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Kettler's Place
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN13:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Long's Home
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN14:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Local Store
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 30000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN15:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Adam's House
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN16:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Gas Station
+	Building:
+		Footprint: xx xX
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN17:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Gas Pumps
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+ABAN18:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Gas Station Sign
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: TEMPERATE
+
+FOUNTAIN:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Fountain
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	RenderSprites:
+		Palette: unittemblue
+	WithIdleOverlay:
+		Sequence: water
+		Palette: unittemblue
+
+FOUNTAINTIB:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Fountain
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	RenderSprites:
+		Palette: unittemgreen
+
+FOUNTAINBLOOD:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Fountain
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	RenderSprites:
+		Palette: unittemred
+
+AMMOCRAT:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Ammo Crates
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: none
+	Health:
+		HP: 1
+	RenderSprites:
+		Palette: player
+
+BBOARD01:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: Eat at Rade's Roadhouse
+
+BBOARD02:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: Drink YEO-CA Cola!
+
+BBOARD03:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: Hamburgers $.99
+
+BBOARD04:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: Visit Scenic Las Vegas
+
+BBOARD05:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: Rooms $29 a nite
+
+BBOARD06:
+	Inherits: ^CivBillboard
+	Inherits@shape: ^1x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -128,-192,0, 128,192,0
+	Tooltip:
+		Name: Kaspm's Tiberium Warhouse
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+
+BBOARD07:
+	Inherits: ^CivBillboard
+	Inherits@shape: ^1x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -128,-192,0, 128,192,0
+	Tooltip:
+		Name: Alkaline's Battery Superstore
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+
+BBOARD08:
+	Inherits: ^CivBillboard
+	Inherits@shape: ^1x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -128,-192,0, 128,192,0
+	Tooltip:
+		Name: Alex-gators petshop just ahead!
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+
+BBOARD09:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: TacticX games rock!
+
+BBOARD10:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: WW Surf and Turf hits the spot!
+
+BBOARD11:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: Only 11 miles to Zydeko's cafe!
+
+BBOARD12:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: No escape from Archer's Asylum!
+
+BBOARD13:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: Stop in at Hewitt's hair salon
+
+BBOARD14:
+	Inherits: ^CivBillboard
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -128,192,0, 128,-192,0
+	Tooltip:
+		Name: Billy Bob's Harvester school
+	Building:
+		Footprint: xx
+		Dimensions: 2, 1
+
+BBOARD15:
+	Inherits: ^CivBillboard
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -128,192,0, 128,-192,0
+	Tooltip:
+		Name: Pannullo's hacienda es bueno
+	Building:
+		Footprint: xx
+		Dimensions: 2, 1
+
+BBOARD16:
+	Inherits: ^CivBillboard
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -128,192,0, 128,-192,0
+	Tooltip:
+		Name: Join GDI: We save lives.
+	Building:
+		Footprint: xx
+		Dimensions: 2, 1
+
+TIBERUMBILLBOARD:
+	Inherits: ^CivBillboard
+	Inherits@1: ^3x1Shape
+	Tooltip:
+		Name: TibeRUM, Mutants love it!!
+	Building:
+		Dimensions: 3,1
+		Footprint: xxx
+	RenderSprites:
+		Palette: player
+	IsometricSelectable:
+		DecorationHeight: 60
+
+BILLBOARDWATER:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: Drink Water!
+	RenderSprites:
+		Palette: unittemgreen
+
+BILLBOARDTIBBUX:
+	Inherits: ^CivBillboard
+	Tooltip:
+		Name: Get Tibbux: Charm Girls
+	RenderSprites:
+		Palette: unittemgreen
+
+CA0001:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Rade's Roadhouse
+	Building:
+		Footprint: xxX xxX XXX
+		Dimensions: 3, 3
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+
+CA0002:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Sandberg and Son's
+	Building:
+		Footprint: xxX xxx Xxx
+		Dimensions: 3, 3
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+
+CA0003:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Temp Housing
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+
+CA0004:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Waystation
+	Building:
+		Footprint: xx xX
+		Dimensions: 2, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+
+CA0005:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x2Shape
+	Tooltip:
+		Name: Ferbie's 4 Sale
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+
+CA0006:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x2Shape
+	Tooltip:
+		Name: Deluxe Accomodations
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 30000
+
+CA0007:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x2Shape
+	Tooltip:
+		Name: Field Generator
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 40000
+
+CA0008:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x3Shape
+	Tooltip:
+		Name: Subterranean Dwelling
+	Building:
+		Footprint: xX xX xx
+		Dimensions: 2, 3
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+
+CA0009:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x3Shape
+	Tooltip:
+		Name: Subterranean Dwelling
+	Building:
+		Footprint: xX xx xX
+		Dimensions: 2, 3
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+
+CA0010:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Leary Traveller Inn
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 30000
+
+CA0011:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x2Shape
+	Tooltip:
+		Name: Water Tank
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 20000
+
+CA0012:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x2Shape
+	Tooltip:
+		Name: Greenhouse
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 10000
+	IsometricSelectable:
+		DecorationHeight: 36
+
+CA0013:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Tooltip:
+		Name: Water Purifier
+	Building:
+		Footprint: xx
+		Dimensions: 2, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 30000
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CA0014:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Observation Tower
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 30000
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CA0015:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Port-A-Shack
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+
+CA0016:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Port-A-Shack Deluxe
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CA0017:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Energy Transformer
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 30000
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CA0018:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, -512,-512,0
+	Tooltip:
+		Name: Solar Panel
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CA0019:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, -512,-512,0
+	Tooltip:
+		Name: Solar Panel
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CA0020:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,512,0
+	Tooltip:
+		Name: Solar Panel
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CA0021:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,512,0
+	Tooltip:
+		Name: Solar Panel
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CAARAY:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Civilian Array
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: concrete
+	Health:
+		HP: 40000
+	RenderSprites:
+		Palette: player
+	WithIdleOverlay@SATELLITE:
+		Sequence: idle-satellite
+	WithIdleOverlay@RADAR:
+		Sequence: idle-radar
+	WithIdleOverlay@SCANNER:
+		Sequence: idle-scanner
+	WithIdleOverlay@LIGHT:
+		Sequence: idle-light
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 7
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+	IsometricSelectable:
+		DecorationHeight: 72
+
+CAARMR:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Civilian Armory
+	TooltipDescription:
+		Description: Increases experience gain.
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	Health:
+	ThrowsShrapnel@SMALL:
+		Pieces: 6, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 4
+	WithIdleOverlay:
+		Sequence: flag
+	Health:
+		HP: 120000
+	ProvidesPrerequisite:
+		Prerequisite: ArmoryExpBuff
+
+FLAGNOD:
+	Inherits: CACRSH01
+	RenderSprites:
+		Palette: unittemred
+	Tooltip:
+		Name: Flag
+
+FLAGMUT:
+	Inherits: FLAGNOD
+	RenderSprites:
+		Palette: unittemgreen
+
+FLAGSCR:
+	Inherits: FLAGNOD
+	RenderSprites:
+		Palette: unittempurp
+
+FLAGCAB:
+	Inherits: FLAGNOD
+	RenderSprites:
+		Palette: unittemblue
+
+FLAGGDI:
+	Inherits: FLAGNOD
+	RenderSprites:
+		Palette: player
+
+FLAGNEUTRAL:
+	Inherits: ^TechBuilding
+	RenderSprites:
+		PlayerPalette: unittemremapplayer
+	Tooltip:
+		Name: Flag
+
+CAPYR01:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Pyramid
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: concrete
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: SNOW
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CAPYR02:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Pyramid
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: SNOW
+	ThrowsShrapnel@SMALL:
+		Pieces: 6, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 4
+	IsometricSelectable:
+		DecorationHeight: 96
+
+CAPYR03:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Pyramid
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	Armor:
+		Type: concrete
+	Health:
+		HP: 40000
+	MapEditorData:
+		ExcludeTilesets: SNOW
+	ThrowsShrapnel@SMALL:
+		Pieces: 6, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 4
+	IsometricSelectable:
+		DecorationHeight: 96
+
+CITY01:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Connelly Court Apts.
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+	IsometricSelectable:
+		DecorationHeight: 72
+
+CITY02:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x3Shape
+	Tooltip:
+		Name: Lightner's Luxury Suites
+	Building:
+		Footprint: xx xx xx
+		Dimensions: 2, 3
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 70000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+	IsometricSelectable:
+		DecorationHeight: 72
+
+CITY03:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Office Building
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CITY04:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: WestBuildingArmor Stock Exchange
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 60000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+	IsometricSelectable:
+		DecorationHeight: 72
+
+CITY05:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Daily Sun Times
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 60000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+	IsometricSelectable:
+		DecorationHeight: 96
+
+CITY06:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: YEO-CA Cola Corp.
+	Building:
+		Footprint: xxxx XxxX
+		Dimensions: 4, 2
+	Armor:
+		Type: concrete
+	Health:
+		HP: 50000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 7, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 4
+	IsometricSelectable:
+		DecorationHeight: 72
+
+CITY07:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: Urban Housing
+	Building:
+		Footprint: xxxx xxxx
+		Dimensions: 4, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 7, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 4
+	IsometricSelectable:
+		DecorationHeight: 600
+
+CITY08:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Yee's Discount Liquor
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 30000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+
+CITY09:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Abandoned Warehouse
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CITY10:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Urban Storefront
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 30000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	IsometricSelectable:
+		DecorationHeight: 48
+
+CITY11:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Ambrose Lounge
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	IsometricSelectable:
+		DecorationHeight: 96
+
+CITY12:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Bostic Tower
+	Building:
+		Footprint: xX xx
+		Dimensions: 2, 2
+	Armor:
+		Type: concrete
+	Health:
+		HP: 60000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	IsometricSelectable:
+		DecorationHeight: 96
+
+CITY13:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Hewitt Hair Salon
+	Building:
+		Footprint: xX Xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	IsometricSelectable:
+		DecorationHeight: 96
+
+CITY14:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Business Offices
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 60000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	IsometricSelectable:
+		DecorationHeight: 96
+
+CITY15:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: 2nd National Bank
+	Building:
+		Footprint: xxxX xxxX
+		Dimensions: 4, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 7, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 4
+
+CITY16:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: Highrise Hotel
+	Building:
+		Footprint: xxxx xxxx
+		Dimensions: 4, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 7, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 4
+	IsometricSelectable:
+		DecorationHeight: 72
+
+CITY17:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x3Shape
+	Tooltip:
+		Name: The Projects
+	Building:
+		Footprint: XxxX xxxx xxxX
+		Dimensions: 4, 3
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 30000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 7, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 4
+	IsometricSelectable:
+		DecorationHeight: 108
+
+CITY18:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x5Shape
+	Tooltip:
+		Name: Archer Asylum
+	Building:
+		Footprint: xxx xxx xxx xxx xxX
+		Dimensions: 3, 5
+	Armor:
+		Type: concrete
+	Health:
+		HP: 60000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 8, 12
+	ThrowsShrapnel@LARGE:
+		Pieces: 5, 7
+	IsometricSelectable:
+		DecorationHeight: 72
+
+CITY19:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Fill'er Up-Pump'N'Go
+	Building:
+		Footprint: xx xX
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 50000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+
+CITY20:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Gas Pump
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 25000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+
+CITY21:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Gas Station Sign
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: none
+	Health:
+		HP: 10000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+
+CITY22:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Church
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: none
+	Health:
+		HP: 10000
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	IsometricSelectable:
+		DecorationHeight: 72
+
+CPWRP:
+	Inherits: ^CivBuilding
+	Inherits@2: ^4x3Shape
+	Tooltip:
+		Name: Power station
+	Building:
+		Footprint: xxxx xxxx xxxx
+		Dimensions: 4, 3
+	Health:
+		HP: 150000
+	RenderSprites:
+		Palette: isotem
+
+CITY35:
+	Inherits: ^CivBuilding
+	Inherits@2: ^3x4Shape
+	Tooltip:
+		Name: Apartment complex
+	Building:
+		Footprint: xxx xxx xxx xxx
+		Dimensions: 3, 4
+	Health:
+		HP: 150000
+	RenderSprites:
+		Palette: isotem
+
+CARPUB:
+	Inherits: ^CivBuilding
+	Inherits@2: ^3x3Shape
+	Tooltip:
+		Name: Pub
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Health:
+		HP: 20000
+	RenderSprites:
+		-Palette:
+		PlayerPalette: playerunittem
+
+APARTMENT1:
+	Inherits: ^CivBuilding
+	Inherits@2: ^3x3Shape
+	Tooltip:
+		Name: Apartment
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Health:
+		HP: 20000
+	RenderSprites:
+		Palette: isotem
+	IsometricSelectable:
+		DecorationHeight: 96
+
+APARTMENT2:
+	Inherits: ^CivBuilding
+	Inherits@2: ^2x4Shape
+	Tooltip:
+		Name: Apartment
+	Building:
+		Footprint: xx xx xx xx
+		Dimensions: 2,4
+	Health:
+		HP: 20000
+	RenderSprites:
+		Palette: isotem
+	IsometricSelectable:
+		DecorationHeight: 96
+
+APARTMENT3:
+	Inherits: ^CivBuilding
+	Inherits@2: ^3x3Shape
+	Tooltip:
+		Name: Apartment
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Health:
+		HP: 20000
+	RenderSprites:
+		Palette: isotem
+	IsometricSelectable:
+		DecorationHeight: 96
+
+WATERTOWER:
+	Inherits: ^CivBuilding
+	Inherits@2: ^1x1Shape
+	Tooltip:
+		Name: Water Tower
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 20000
+	RenderSprites:
+		Palette: isotem
+	IsometricSelectable:
+		DecorationHeight: 96
+
+^OldBase:
+	Inherits: ^CivBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	RenderSprites:
+		Palette: player
+
+GAOLDCC1:
+	Inherits: ^OldBase
+	Tooltip:
+		Name: Old Construction Yard
+
+GAOLDCC2:
+	Inherits: ^OldBase
+	Tooltip:
+		Name: Old Temple
+	Building:
+		Footprint: xx xX
+	IsometricSelectable:
+		DecorationHeight: 36
+
+GAOLDCC3:
+	Inherits: ^OldBase
+	Tooltip:
+		Name: Old Weapons Factory
+	IsometricSelectable:
+		DecorationHeight: 36
+
+GAOLDCC4:
+	Inherits: ^OldBase
+	Tooltip:
+		Name: Old Refinery
+	IsometricSelectable:
+		DecorationHeight: 36
+
+GAOLDCC5:
+	Inherits: ^OldBase
+	Tooltip:
+		Name: Old Advanced Power Plant
+
+GAOLDCC6:
+	Inherits: ^OldBase
+	Tooltip:
+		Name: Old Silos
+	Building:
+		Footprint: xX Xx
+
+GASAND:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Defence
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+	SoundOnDamageTransition:
+		DamagedSounds: sandbag1.aud
+		DestroyedSounds: sandbag1.aud
+	Valued:
+		Cost: 0
+	Tooltip:
+		Name: Sandbags
+	Health:
+		HP: 25000
+	Armor:
+		Type: BuildingArmor
+	LineBuild:
+		NodeTypes: sandbags
+	LineBuildNode:
+		Types: sandbags
+	WithWallSpriteBody:
+		Type: sandbags
+	Crushable:
+		CrushClasses: infantry
+	-BlocksProjectiles:
+
+GASPOT:
+	Inherits: ^TechBuilding
+	Inherits@1: ^AutoTargetGround
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Light Tower
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 40000
+	RevealsShroud:
+		Range: 6c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		Sequence: idle-lights
+	Armament:
+		Weapon: LightTowerClaxon
+	GivesCashOnCapture:
+		Amount: 300
+	AttackOmni:
+	RenderSprites:
+	IsometricSelectable:
+		DecorationHeight: 72
+
+RADIOTOWER:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Radio Tower
+	Health:
+		HP: 15000
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+		Palette: player
+	IsometricSelectable:
+		DecorationHeight: 120
+
+SIGNALTOWER:
+	Inherits: RADIOTOWER
+	Tooltip:
+		Name: Communications Tower
+	Health:
+		HP: 30000
+
+CONTAINER:
+	Inherits: ^CivBuilding
+	Inherits@2: ^1x2Shape
+	Building:
+		Footprint: xx
+		Dimensions: 1,2
+	Tooltip:
+		Name: Container
+	Health:
+		HP: 35000
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+		Palette: player
+
+CONTAINER2:
+	Inherits: CONTAINER
+	Inherits@2: ^2x1Shape
+	Building:
+		Footprint: x x
+		Dimensions: 2,1
+
+CONTAINER3:
+	Inherits: CONTAINER
+	Inherits@2: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+
+CONTAINER4:
+	Inherits: CONTAINER
+	Inherits@2: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+
+CONTAINER5:
+	Inherits: CONTAINER
+	Inherits@2: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+
+CONTAINER2X2:
+	Inherits@1: ^FakeTurretedCivBuilding
+	Inherits@2: ^1x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Container
+	Health:
+		HP: 25000
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+		Palette: unittem
+
+CONTAINER1X2:
+	Inherits: ^CivBuilding
+	Inherits@2: ^1x2Shape
+	Building:
+		Footprint: xx
+		Dimensions: 1,2
+	Tooltip:
+		Name: Container
+	Health:
+		HP: 15000
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+		Palette: unittem
+
+CONTAINER1X2STACKED:
+	Inherits: CONTAINER1X2
+
+CONTAINER2X1:
+	Inherits: ^CivBuilding
+	Inherits@2: ^2x1Shape
+	Building:
+		Footprint: x x
+		Dimensions: 2,1
+	Tooltip:
+		Name: Container
+	Health:
+		HP: 15000
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+		Palette: unittem
+
+CONTAINER2X1STACKED:
+	Inherits: CONTAINER2X1
+	
+CONTAINERDIAGONAL:
+	Inherits: ^CivBuilding
+	Inherits@2: ^2x2DiagonalShape
+	Building:
+		Footprint: x= =x
+		Dimensions: 2,2
+	Tooltip:
+		Name: Container
+	Health:
+		HP: 15000
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+		Palette: unittem
+
+CONTAINERDIAGONALSTACKED:
+	Inherits: CONTAINERDIAGONAL
+
+TENT1:
+	Inherits: ^CivBuilding
+	Inherits@2: ^1x2Shape
+	Tooltip:
+		Name: Military tent
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Health:
+		HP: 10000
+	RenderSprites:
+		Palette: unittemgreen
+	Explodes:
+		Weapon: BuildingSmokeExplode
+		EmptyWeapon: BuildingSmokeExplode
+	-Explodes@BuildingFireBigSpawn:
+	-Explodes@BuildingSmokeSpawner:
+	-ThrowsShrapnel@SMALL:
+	-ThrowsShrapnel@LARGE:
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+
+TENT2:
+	Inherits: TENT1
+	Inherits@2: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2, 1
+
+TENT3:
+	Inherits: TENT1
+	Inherits@2: ^1x1Shape
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+
+TENT4:
+	Inherits: TENT1
+	Inherits@2: ^1x1Shape
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+
+TENT5:
+	Inherits: TENT1
+
+TENT6:
+	Inherits: TENT1
+	Inherits@2: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2, 1
+
+TENT7:
+	Inherits: TENT1
+	Inherits@2: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2, 1
+
+TENT8:
+	Inherits: TENT1
+
+TENTSMINI1:
+	Inherits: ^CivBuilding
+	Inherits@2: ^1x1Shape
+	Tooltip:
+		Name: Tent
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 5000
+	RenderSprites:
+		Palette: unittemgreen
+	Explodes:
+		Weapon: BuildingSmokeExplode
+		EmptyWeapon: BuildingSmokeExplode
+	-Explodes@BuildingFireBigSpawn:
+	-Explodes@BuildingSmokeSpawner:
+	-ThrowsShrapnel@SMALL:
+	-ThrowsShrapnel@LARGE:
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+
+TENTSMINI2:
+	Inherits: TENTSMINI1
+
+TENTSMINI3:
+	Inherits: TENTSMINI1
+
+TENTSMINI4:
+	Inherits: TENTSMINI1
+
+TENTSMINI5:
+	Inherits: TENTSMINI1
+
+TENTSMINI6:
+	Inherits: TENTSMINI1
+
+TENTSMINI7:
+	Inherits: TENTSMINI1
+
+TENTSMINI8:
+	Inherits: TENTSMINI1
+
+TENTSMINI9:
+	Inherits: TENTSMINI1
+
+TENTSMINI10:
+	Inherits: TENTSMINI1
+
+CIVDOCK01:
+	Inherits: ^CivBuilding
+	Inherits@2: ^3x3Shape
+	Tooltip:
+		Name: Civilian Dock
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Health:
+		HP: 5000
+	RenderSprites:
+		Palette: unittem
+
+CIVDOCK02:
+	Inherits: CIVDOCK01
+
+CIVDOCK03:
+	Inherits: CIVDOCK01
+
+CIVDOCK04:
+	Inherits: CIVDOCK01
+
+###################################################
+# NAVAL CRAP
+###################################################
+
+CARGOSHIP01:
+	Inherits@1: ^Ship
+	Inherits@1: ^4CellVision
+	Mobile:
+		TurnSpeed: 20
+		Speed: 130
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Tooltip:
+		Name: Cargo ship
+	Valued:
+		Cost: 700
+	Health:
+		HP: 400000
+	RenderSprites:
+		Palette: unittemgreen
+
+FISHINGSHIP01:
+	Inherits@1: ^Ship
+	Inherits@1: ^4CellVision
+	Mobile:
+		TurnSpeed: 20
+		Speed: 130
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Tooltip:
+		Name: Fishing ship
+	Valued:
+		Cost: 700
+	Health:
+		HP: 4000
+
+GDIHYPERION:
+	Inherits@1: ^Ship
+	Inherits@2: ^6CellVision
+	Mobile:
+		TurnSpeed: 20
+		Speed: 90
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Tooltip:
+		Name: Hyperion Patrol Ship
+	Valued:
+		Cost: 700
+	Health:
+		HP: 400000
+	AttackFrontal:
+		PauseOnCondition: empdisable
+	Armament@1:
+		Weapon: LTrail
+		LocalOffset: 1200,0,600
+		PauseOnCondition: empdisable
+		MuzzleSequence: muzzle
+
+###################################################
+# SITUATIONAL
+###################################################
+
+CTDAM:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x5Shape
+	Tooltip:
+		Name: Hydroelectric Dam
+	Building:
+		Footprint: xx xx xx xx xx
+		Dimensions: 2, 5
+	Power:
+		Amount: 200
+	PowerTooltip:
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 100000
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	MapEditorData:
+		ExcludeTilesets: SNOW
+	WithIdleOverlay@LIGHTS:
+		Sequence: idle-lights
+	WithIdleOverlay@WATER:
+		Sequence: idle-water
+	ThrowsShrapnel@SMALL:
+		Pieces: 5, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 2, 4
+
+CTVEGA:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Vega's Pyramid
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	Armor:
+		Type: none
+	Health:
+		HP: 10000
+	MapEditorData:
+		ExcludeTilesets: SNOW
+	ThrowsShrapnel@SMALL:
+		Pieces: 7, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 4
+	IsometricSelectable:
+		DecorationHeight: 72
+
+GAKODK:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x2Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, -512,512,0, -950,1024,0
+	Tooltip:
+		Name: GDI Kodiak
+	Building:
+		Footprint: xxXX xxXX
+		Dimensions: 4, 2
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 150000
+	RenderSprites:
+		Palette: player
+	WithIdleOverlay@LARGELIGHTS:
+		Sequence: large-lights
+	WithIdleOverlay@SMALLLIGHT:
+		Sequence: small-light
+	WithIdleOverlay@SMALLLIGHTS:
+		Sequence: small-lights
+
+GAICBM:
+	Inherits: ^CivBuilding
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Deployed ICBM
+	Health:
+		HP: 40000
+	Armor:
+		Type: BuildingArmor
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Transforms:
+		IntoActor: icbm
+		Offset: 1,1
+		Facing: 384
+		TransformSounds: place2.aud
+		NoTransformSounds:
+	MapEditorData:
+		Categories: Vehicle
+	IsometricSelectable:
+		DecorationHeight: 48
+
+NAMNTK:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x3Shape
+	Tooltip:
+		Name: Nod Montauk
+	Building:
+		Footprint: x x x
+		Dimensions: 1, 3
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 150000
+	RenderSprites:
+		Palette: player
+	WithIdleOverlay@LIGHTS:
+		Sequence: idle-lights
+	IsometricSelectable:
+		DecorationHeight: 36
+
+NTPYRA:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Nod Pyramid
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 150000
+	RenderSprites:
+		Palette: player
+	WithIdleOverlay@LIGHTS:
+		Sequence: idle-lights
+	ThrowsShrapnel@SMALL:
+		Pieces: 7, 9
+	ThrowsShrapnel@LARGE:
+		Pieces: 3, 5
+	DamageMultiplier@cantkillme:
+		Modifier: 0
+	IsometricSelectable:
+		DecorationHeight: 72
+
+UFO:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^6x4Shape
+	Building:
+		Dimensions: 6, 4
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
+	RenderSprites:
+		Palette: terraindecoration
+	Tooltip:
+		Name: Scrin Ship
+	Health:
+		HP: 100000
+	Armor:
+		Type: BuildingArmor
+	MapEditorData:
+		RequireTilesets: TEMPERATE
+	ThrowsShrapnel@SMALL:
+		Pieces: 9, 12
+	ThrowsShrapnel@LARGE:
+		Pieces: 6, 8
+	IsometricSelectable:
+		DecorationHeight: 144
+
+C_KODIAK:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Kodiak Crash
+	Armor:
+		Type: BuildingArmor
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+		QuantizedFacings: 1
+	FrozenUnderFog:
+	RequiresBuildableArea:
+		AreaTypes: building
+	Interactable:
+
+###################################################
+# TIBERIAN DAWN BUILDINGS: cannot be captured
+###################################################
+
+TDADVGTWR:
+	Inherits: ^TurretedDefence
+	Inherits@1: ^AntiAir
+	Tooltip:
+		Name: Advanced Guard Tower
+	BodyOrientation:
+		QuantizedFacings: 32
+	Armament:
+		Weapon: HoverMissile
+		LocalOffset: 500,200,2800, 500,-200,2800
+		PauseOnCondition: empdisable
+	Armament@AA:
+		Weapon: HoverMissileAA
+		LocalOffset: 500,200,2800, 500,-200,2800
+		PauseOnCondition: empdisable
+	RenderSprites:
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	IsometricSelectable:
+		DecorationHeight: 60
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+ADVHQ:
+	Inherits: ^Radar
+	Inherits@2: ^3x3Shape
+	ProvidesPrerequisite:
+		Prerequisite: radar
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Tooltip:
+		Name: Old Advanced Communications Center
+	WithIdleOverlay@anim:
+		Sequence: anima
+		PauseOnCondition: stop || empdisable
+	WithIdleOverlay@anim:
+		Sequence: animb
+		PauseOnCondition: stop || empdisable
+	RenderSprites:
+		Image: tdadvhq
+	GrantCondition:
+		Condition: stop
+	-SpawnActorPower:
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDADVPP:
+	Inherits: ^Powerplant
+	Inherits@2: ^2x2Shape
+	Tooltip:
+		Name: Old advanced power plant
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	WithIdleOverlay@LIGHTS:
+		Sequence: anima
+		RequiresCondition: !Building-Buildup
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDAIRSTRIP:
+	Inherits: ^Factory
+	Inherits@1: ^5x3Shape
+	Tooltip:
+		Name: Airstrip
+	WithIdleOverlay@anima:
+		Sequence: anima
+		Palette: player
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	Building:
+		Footprint: xxxx= xxxx= xxxxx
+		Dimensions: 5,3
+	RallyPoint:
+		Path: 7,1
+	Exit@1:
+		ExitCell: 6,1
+		SpawnOffset: -1536,-1536,0
+	IsometricSelectable:
+		DecorationHeight: 40
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDBARR:
+	Inherits: ^Barracks
+	Inherits@2: ^3x3Shape
+	Tooltip:
+		Name: Barracks
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Exit@1:
+		SpawnOffset: -512,768,0
+		ExitCell: 1,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: -512,768,0
+		ExitCell: 0,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,2
+	Exit@fallback2:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,1
+	Exit@fallback3:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,0
+	Exit@fallback4:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,-1
+	Exit@fallback5:
+		SpawnOffset: 724,0,0
+		ExitCell: 1,-1
+	Exit@fallback6:
+		SpawnOffset: 0,-724,0
+		ExitCell: 0,-1
+	Exit@fallback7:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,-1
+	Exit@fallback8:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,0
+	Exit@fallback9:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,1
+	Exit@fallback10:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,2
+	WithIdleOverlay@anima:
+		Sequence: anima
+		RequiresCondition: !Building-Buildup
+	ProvidesPrerequisite@SharedEngie:
+		Prerequisite: SharedEngie
+	RequiresBuildableArea:
+		AreaTypes: building
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDGTWR:
+	Inherits: ^Defence
+	Tooltip:
+		Name: Guard Tower
+	Armament:
+		Weapon: WolverineVulcan
+		PauseOnCondition: empdisable
+	Armament@1Casing:
+		Weapon: WolverineVulcanCasing
+		PauseOnCondition: empdisable
+		LocalOffset: 0,-275,1300, 0,275,1300
+	Armament@2Bullet:
+		Weapon: WolverineVulcanLine
+		PauseOnCondition: empdisable
+		LocalOffset: 0,-275,1300, 0,275,1300
+	AttackOmni:
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDNHAND:
+	Inherits: ^Barracks
+	Inherits@2: ^3x2Shape
+	Tooltip:
+		Name: Hand of Nod
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Exit@1:
+		SpawnOffset: 384,768,0
+		ExitCell: 2,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 384,768,0
+		ExitCell: 1,2
+	Exit@fallback2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,1
+	Exit@fallback3:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,0
+	Exit@fallback4:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+	Exit@fallback5:
+		SpawnOffset: 1086,362,0
+		ExitCell: 2,-1
+	Exit@fallback6:
+		SpawnOffset: 362,-362,0
+		ExitCell: 1,-1
+	Exit@fallback7:
+		SpawnOffset: -362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback8:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback10:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,1
+	Exit@fallback11:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,2
+	Exit@fallback12:
+		SpawnOffset: -1086,-362,0
+		ExitCell: 0,2
+	WithIdleOverlay:
+		Sequence: anima
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	IsometricSelectable:
+		DecorationHeight: 90
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDNTPL:
+	Inherits: ^Building
+	Inherits@2: ^6x4Shape
+	Tooltip:
+		Name: Old temple of Nod
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	Building:
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx
+		Dimensions: 6,6
+	IsometricSelectable:
+		DecorationHeight: 90
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDHELIPAD:
+	Inherits@1: ^Helipad
+	Inherits@2: ^2x2Shape
+	Tooltip:
+		Name: Helipad
+	Valued:
+		Cost: 500
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	PrimaryBuilding:
+	WithIdleOverlay@anima:
+		Sequence: anima
+		RequiresCondition: !Building-Buildup
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDNTUR:
+	Inherits: ^TurretedDefence
+	Tooltip:
+		Name: Old gun turret
+	BodyOrientation:
+		QuantizedFacings: 32
+	Armament:
+		Weapon: Titan120mm
+		LocalOffset: 800,0,500
+		PauseOnCondition: empdisable
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDOBELISK:
+	Inherits: ^Defence
+	Inherits@1: ^TowerStealthDetection
+	Inherits@2: ^1x1Shape
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Obelisk of Light
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 100000
+	WithMuzzleOverlay:
+	Armament:
+		Weapon: ObeliskLaserFire
+		LocalOffset: 190,-190,3800
+		MuzzleSequence: muzzle
+		MuzzlePalette: obelpal
+		RequiresCondition: !Building-Buildup
+	AttackCharges:
+		PauseOnCondition: empdisable || disabled
+		ChargeLevel: 40
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging && !disabled
+		SoundFiles: obelpowr.aud
+	WithChargeOverlay:
+		Sequence: powerup
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: !Building-Buildup
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	IsometricSelectable:
+		DecorationHeight: 60
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDREFINERY:
+	Inherits: FLIPPEDXPROC
+	Building:
+		Footprint: xxx xxx X=X ===
+	WithIdleOverlay@anim:
+		Sequence: anim
+		Palette: player
+	WithIdleOverlay@animb:
+		Sequence: animb
+		Palette: player
+	WithIdleOverlay@animd:
+		Sequence: animd
+		Palette: player
+	-WithIdleOverlay@REDLIGHTS:
+	-WithDockedOverlay@flame:
+	-FreeActor:
+	Refinery:
+		DockOffset: 1,3
+	Tooltip:
+		Name: Old Refinery
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDREPD:
+	Inherits: GADEPT
+	Tooltip:
+		Name: Old Service Depot
+	WithRepairOverlay@PLATFORM:
+		Sequence: anima
+	-Buildable:
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	RenderSprites:
+		Image: tdrepd
+		-FactionImages:
+	ProvidesPrerequisite@buildingname:
+	-WithIdleOverlay@LIGHT:
+	-WithIdleOverlay@GROUND:
+	-WithIdleOverlay@CIRCUITS:
+	-WithRepairOverlay@CRANE:
+	-WithDeathAnimation@BIB:
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDSAMSITE:
+	Inherits: ^TurretedDefence
+	Inherits@1: ^2x2Shape
+	Inherits@1: ^AntiAir
+	Tooltip:
+		Name: Sam Site
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Armament@AA:
+		Weapon: HoverMissileAA
+		LocalOffset: 1200,200,2000, 1200,-200,2000
+		PauseOnCondition: empdisable
+	-AttackTurreted:
+	AttackPopupTurreted:
+		CloseDelay: 50
+		DefaultFacing: 640
+	WithEmbeddedTurretSpriteBody:
+	-WithSpriteTurret:
+	WithSpriteBody:
+		Name: base
+		Sequence: idle-open
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDPP:
+	Inherits: ^Powerplant
+	Inherits@2: ^2x3Shape
+	Tooltip:
+		Name: Power Plant
+	Valued:
+		Cost: 700
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 2,3
+	Health:
+		HP: 100000
+	WithIdleOverlay@anima:
+		Sequence: anima
+		RequiresCondition: !Building-Buildup
+	Power:
+		Amount: 300
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+TDSILO:
+	Inherits: ^Building
+	Inherits: ^2x2Shape
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Old Silo
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	-GivesBuildableArea:
+	Health:
+		HP: 10000
+	Armor:
+		Type: BuildingArmor
+	RenderSprites:
+	WithSpriteBody:
+	StoresResources:
+		Capacity: 3000
+	GivesCashOnCapture:
+		Amount: 3000
+	GrantConditionOnPlayerResources:
+		Condition: contains-tiberium
+	Explodes:
+		RequiresCondition: contains-tiberium
+		Weapon: TiberiumExplosion
+	WithResourceLevelOverlay@FILLSTAGE:
+		RequiresCondition: !build-incomplete
+		Sequence: stages
+	WithResourceStoragePipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		Margin: 8, 2
+		FullSequence: pip-green-building
+		EmptySequence: pip-empty-building
+		PipStride: 4, 2
+		PipCount: 12
+		Palette: pips
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+	IsometricSelectable:
+		DecorationHeight: 20
+
+TDWF:
+	Inherits: ^Factory
+	Inherits@1: ^4x4Shape
+	Tooltip:
+		Name: War Factory
+	ProvidesPrerequisite@ShowMammMkII:
+		Prerequisite: showmammmk2
+	WithIdleOverlay@ROOF:
+		Sequence: idle-roof
+		RequiresCondition: !Building-Buildup
+	WithProductionDoorOverlay@DOOR:
+		RequiresCondition: !Building-Buildup
+	WithIdleOverlay@anima:
+		Sequence: anima
+		RequiresCondition: !Building-Buildup
+	WithIdleOverlay@BIB:
+		Sequence: bib
+		RequiresCondition: !Building-Buildup
+	Building:
+		Footprint: xx== xx== xxxx xxxx
+		Dimensions: 4,4
+	Exit@1:
+		ExitCell: 3,2
+		SpawnOffset: -1024, 0, 0
+	IsometricSelectable:
+		DecorationHeight: 36
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	EditorOnlyTooltip:
+		Name: TD Building
+	-Sellable:
+	-SpawnActorsOnSell@gdi:
+	-SpawnActorsOnSell@nod:
+	-SpawnActorsOnSell@cab:
+	-SpawnActorsOnSell@mut:
+	-SpawnActorsOnSell@scr:
+
+###################################################
+# -------TIBERIAN DAWN BUILDINGS
+###################################################

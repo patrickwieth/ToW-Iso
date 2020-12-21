@@ -1,0 +1,576 @@
+^BaseWorld:
+	Inherits: ^Palettes
+	Inherits@1: ^PalettesGradient
+	Inherits@2: ^PalettesSP
+	AlwaysVisible:
+	ActorMap:
+	ScreenMap:
+	Selection:
+	MusicPlaylist:
+		VictoryMusic: score
+		DefeatMusic: maps
+	TerrainGeometryOverlay:
+	TerrainLighting:
+	TerrainRenderer:
+	DebugVisualizations:
+	ShroudRenderer:
+		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
+		UseExtendedIndex: true
+		ShroudPalette: shroud
+		FogPalette: shroud
+	Faction@0:
+		Name: GDI
+		InternalName: gdi
+		Description: Global Defense Initiative\nA paramilitar organization that fights to halt tiberium growth and\nmaintain world stability, along with global peace.\n\nBalanced faction.\n\nSpecial Characteristics:\n\n- Well rounded arsenal in offense as much as defense.\n- Strong vehicles.\n- Support structure: Firestorm Generators (Firewall).\n- Support power: Drop pod support.\n- Superweapon: Ion cannon array.
+	Faction@1:
+		Name: Nod
+		InternalName: nod
+		Description: Brotherhood of Nod\nThe Brotherhood fights under the leadership of Kane to speed up\nthe evolution of mankind through the power of Tiberium.\n\nHit and run faction.\n\nSpecial Characteristics:\n\n- Nod units are oriented to do guerilla attacks and stealth.\n- Advanced laser technology and Subterranean Vehicles.\n- Support Structure: Stealth Generators.\n- Support power: Chemical Missile (quick missile).\n- Superweapon: Atomic Bomb.
+	Faction@2:
+		Name: Mutants
+		InternalName: mut
+		Description: Mutants\nWarbands composed of people affected by tiberium mutations. To\nsurvive they exploit the very substance that harms them.\n\nSwarmer faction.\n\nSpecial Characteristics:\n\n- Most units are cheap and fast to produce.\n- Defenses dont require energy to operate.\n- Infantry and beasts heal on tiberium fields.\n- Support Structure: Tunnels.\n- Support power: Veinhole cluster spawn.\n- Superweapon: Ion Storm control.
+	Faction@3:
+		Name: C.A.B.A.L.
+		InternalName: cab
+		Description: Computer Assisted Biologically Augmented Lifeform\nC.A.B.A.L. has separated itself from Kane to dominate the world\nand allow humanity to achieve perfection as cyborgs.\n\nSteamroller faction.\n\nSpecial Characteristics:\n\n- Expensive but extremly strong machinery.\n- Uncrushable Cyborgs and heavy Walkers.\n- Support Structure: Eye of Cabal (vision provider + gap generator)\n- Support Power: Nanoswarm (Area healer)\n- Super Weapon: Iron Savior.
+	Faction@4:
+		Name: Scrin
+		InternalName: scr
+		Description: Scrin\nAn alien race that brought Tiberium to earth many years ago. They\nmine planets through the use of Ichor (Tiberium).\n\nManipulator Faction\n\nSpecial Characteristics:\n\n- Most units have special abilities that affect the battlefield.\n- Focus on airpower, mind control, shield generation and radiation.\n- All Scrin units steal essence from kills to heal.\n- Support Structure: Shield Battery.\n- Support power: Wormhole Generation (Teleportation Device)\n- Superweapon: Wrath of the Creator (Meteor Storm)
+	Faction@Random:
+		Name: Random
+		InternalName: Random
+		Description: Random\n Not everyone has a chance to choose his life.
+		RandomFactionMembers: gdi, nod, mut, cab, scr
+	ResourceType@Tiberium:
+		Type: Tiberium
+		Name: Tiberium Riparius
+		ResourceType: 1
+		Palette: greentibpal
+		Sequences: greentibtile01, greentibtile02, greentibtile03, greentibtile04, greentibtile05, greentibtile06, greentibtile07, greentibtile08, greentibtile09, greentibtile10, greentibtile11, greentibtile12, greentibtile13, greentibtile14, greentibtile15, greentibtile16
+		MaxDensity: 17
+		ValuePerUnit: 25
+		AllowedTerrainTypes: Clear, Rough, DirtRoad
+		AllowUnderActors: true
+		TerrainType: Tiberium
+	ResourceType@BlueTiberium:
+		Type: BlueTiberium
+		Name: Tiberium Vinifera
+		ResourceType: 2
+		Palette: bluetibpal
+		Sequences: greentibtile01, greentibtile02, greentibtile03, greentibtile04, greentibtile05, greentibtile06, greentibtile07, greentibtile08, greentibtile09, greentibtile10, greentibtile11, greentibtile12, greentibtile13, greentibtile14, greentibtile15, greentibtile16
+		MaxDensity: 17
+		ValuePerUnit: 50
+		AllowedTerrainTypes: Clear, Rough, DirtRoad
+		AllowUnderActors: true
+		TerrainType: BlueTiberium
+	ResourceType@Veins:
+		Type: Veins
+		ResourceType: 3
+		Palette: player
+		Sequences: veins
+		MaxDensity: 1
+		ValuePerUnit: 0
+		Name: Veins
+		AllowedTerrainTypes: Clear, Rough, DirtRoad
+		AllowUnderActors: true
+		TerrainType: Veins
+	ExitsDebugOverlayManager:
+	CliffBackImpassabilityLayer:
+	SubterraneanActorLayer:
+	Locomotor@Infantry:
+		Name: Infantry
+		Crushes: crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 110
+			Rail: 100
+			DirtRoad: 105
+			Rough: 80
+			Bridge: 110
+			Tiberium: 70
+				PathingCost: 300
+			BlueTiberium: 70
+				PathingCost: 300
+			Veins: 80
+	Locomotor@HeavyInfantry:
+		Name: HeavyInfantry
+		Crushes: crate
+		SharesCell: false
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 110
+			Rail: 100
+			DirtRoad: 105
+			Rough: 80
+			Bridge: 110
+			Tiberium: 70
+				PathingCost: 300
+			BlueTiberium: 70
+				PathingCost: 300
+			Veins: 80
+	Locomotor@TibInmuneInfantry:
+		Name: TibInmuneInfantry
+		Crushes: crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 110
+			Rail: 100
+			DirtRoad: 105
+			Rough: 80
+			Bridge: 110
+			Tiberium: 70
+				PathingCost: 50
+			BlueTiberium: 70
+				PathingCost: 50
+			Veins: 80
+	Locomotor@TibFiends:
+		Name: TibFiends
+		Crushes: crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 110
+			Rail: 100
+			DirtRoad: 105
+			Rough: 80
+			Bridge: 110
+			Tiberium: 100
+				PathingCost: 50
+			BlueTiberium: 100
+				PathingCost: 50
+			Veins: 80
+	Locomotor@TibVeCritter:
+		Name: TibVeCritter
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 120
+			Rail: 100
+			DirtRoad: 110
+			Rough: 80
+			Bridge: 120
+			Tiberium: 100
+			BlueTiberium: 100
+			Veins: 80
+				PathingCost: 300
+	Locomotor@Vehicle:
+		Name: Vehicle
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 120
+			Rail: 100
+			DirtRoad: 110
+			Rough: 80
+			Bridge: 120
+			Tiberium: 70
+			BlueTiberium: 70
+			Veins: 80
+				PathingCost: 300
+	Locomotor@InfantryCrusherVehicle:
+		Name: InfantryCrusherVehicle
+		Crushes: crate, infantry
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 120
+			Rail: 100
+			DirtRoad: 110
+			Rough: 80
+			Bridge: 120
+			Tiberium: 70
+			BlueTiberium: 70
+			Veins: 80
+				PathingCost: 300
+	Locomotor@AmphAPCLocomotor:
+		Name: AmphAPCLocomotor
+		Crushes: crate, infantry
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 120
+			Rail: 100
+			DirtRoad: 110
+			Rough: 80
+			Bridge: 120
+			Tiberium: 70
+			BlueTiberium: 70
+			Veins: 80
+				PathingCost: 300
+			Water: 60
+	Locomotor@VehicleCrusher:
+		Name: VehicleCrusher
+		Crushes: wall, heavywall, crate, infantry, Vehicle, HeavyInfantry
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 120
+			Rail: 100
+			DirtRoad: 110
+			Rough: 80
+			Bridge: 120
+			Tiberium: 70
+			BlueTiberium: 70
+			Veins: 80
+				PathingCost: 300
+	SubterraneanLocomotor@SUBTERRANEAN:
+		Name: subterranean
+		Crushes: wall, crate, infantry
+		TerrainSpeeds:
+			Clear: 70
+				PathingCost: 150
+			Road: 100
+				PathingCost: 150
+			Bridge: 100
+				PathingCost: 150
+			Rail: 100
+				PathingCost: 150
+			DirtRoad: 90
+				PathingCost: 150
+			Rough: 60
+				PathingCost: 150
+			Tiberium: 70
+				PathingCost: 150
+			BlueTiberium: 70
+				PathingCost: 150
+			Veins: 70
+				PathingCost: 150
+			Subterranean: 120
+		SubterraneanTransitionTerrainTypes: Clear, Ice, Rough, Road, Rail, DirtRoad, Bridge, Tiberium, BlueTiberium, Veins
+		SubterraneanTransitionCost: -5
+	Locomotor@HOVER:
+		Name: Hover
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 100
+			Rail: 100
+			DirtRoad: 100
+			Rough: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Veins: 100
+			Water: 80
+	Locomotor@HOVERINFANTRY:
+		Name: HoverInfantry
+		Crushes: crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Ice: 100
+			Road: 100
+			Rail: 100
+			DirtRoad: 100
+			Rough: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Veins: 100
+			Water: 80
+	Locomotor@Naval:
+		Name: Naval
+		Crushes: crate, Infantry
+		TerrainSpeeds:
+			Clear: 0
+			Ice: 100
+			Road: 0
+			Rail: 0
+			DirtRoad: 0
+			Rough: 0
+			Tiberium: 0
+			BlueTiberium: 0
+			Veins: 0
+			Water: 100
+	ResourceRenderer:
+		RenderTypes: Tiberium, BlueTiberium, Veins
+
+World:
+	Inherits: ^BaseWorld
+	ChatCommands:
+	DevCommands:
+	PlayerCommands:
+	DebugVisualizationCommands:
+	HelpCommand:
+	ProductionQueueFromSelection:
+		ProductionPaletteWidget: PRODUCTION_PALETTE
+	DomainIndex:
+	BridgeLayer:
+	TintedCellsLayer@Default:
+		UpdateDelay: 75
+		FadeoutDelay: 150
+		Darkest: 16
+		Brightest: 256
+	TintedCellsLayer@OrangeRadiation:
+		Color: EFFF00
+		Name: OrangeRadiation
+		UpdateDelay: 25
+		FadeoutDelay: 150
+		Darkest: 8
+	TintedCellsLayer@ColossusRadiation:
+		Color: 000099
+		FadeoutDelay: 25
+		Darkest: 16
+		Brightest: 128
+		Name: ColossusRadiation
+	SmudgeLayer@SMALLSCORCH:
+		Type: SmallScorch
+		Sequence: smallscorches
+		SmokeType: smallfire
+		SmokePercentage: 50
+	SmudgeLayer@MEDIUMSCORCH:
+		Type: MediumScorch
+		Sequence: mediumscorches
+		SmokeType: mediumfire
+		SmokePercentage: 75
+	SmudgeLayer@LARGESCORCH:
+		Type: LargeScorch
+		Sequence: largescorches
+		SmokeType: largefire
+		SmokePercentage: 100
+	SmudgeLayer@SMALLCRATER:
+		Type: SmallCrater
+		SmokeType: smallsmoke
+		Sequence: smallcraters
+	SmudgeLayer@MEDIUMCRATER:
+		Type: MediumCrater
+		SmokeType: smallsmoke
+		Sequence: mediumcraters
+	SmudgeLayer@LARGECRATER:
+		Type: LargeCrater
+		SmokeType: largesmoke
+		Sequence: largecraters
+	ResourceLayer:
+	ResourceClaimLayer:
+	CustomTerrainDebugOverlay:
+	WarheadDebugOverlay:
+	MapCreeps:
+		CheckboxVisible: false
+	SpawnMapActors:
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxDisplayOrder: 5
+	MapOptions:
+		ShortGameCheckboxDisplayOrder: 2
+		TechLevelDropdownDisplayOrder: 2
+		GameSpeedDropdownDisplayOrder: 3
+	CreateMPPlayers:
+	MPStartUnits@MCV:
+		Class: none
+		ClassName: MCV Only
+		Factions: gdi
+		BaseActor: mcv
+	MPStartUnits@MCVnod:
+		Class: none
+		ClassName: MCV Only
+		Factions: nod
+		BaseActor: nodmcv
+	MPStartUnits@MCVcab:
+		Class: none
+		ClassName: MCV Only
+		Factions: cab
+		BaseActor: cabmcv
+	MPStartUnits@MCVmut:
+		Class: none
+		ClassName: MCV Only
+		Factions: mut
+		BaseActor: mutmcv
+	MPStartUnits@MCVscr:
+		Class: none
+		ClassName: MCV Only
+		Factions: scr
+		BaseActor: drache
+	MPStartUnits@LightGDI:
+		Class: Light
+		ClassName: Light Support
+		Factions: gdi
+		BaseActor: mcv
+		SupportActors: gdie1, gdie1, gdie1, grenadier
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@LightNOD:
+		Class: Light
+		ClassName: Light Support
+		Factions: nod
+		BaseActor: nodmcv
+		SupportActors: altnode1, altnode1, altnode1, crusader
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@LightCab:
+		Class: Light
+		ClassName: Light Support
+		Factions: cab
+		BaseActor: cabmcv
+		SupportActors: cyborg, cyborg, cborg
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@LightMut:
+		Class: Light
+		ClassName: Light Support
+		Factions: mut
+		BaseActor: mutmcv
+		SupportActors: marauder, marauder, marauder, mutfiend
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@LightScr:
+		Class: Light
+		ClassName: Light Support
+		Factions: scr
+		BaseActor: drache
+		SupportActors: shark, shark, shark, shark, legio
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@MediumGDI:
+		Class: Medium
+		ClassName: Medium Support
+		Factions: gdi
+		BaseActor: mcv
+		SupportActors: gdie1, gdie1, gdie1, gdie1, grenadier, medic, smech
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@MediumNOD:
+		Class: Medium
+		ClassName: Medium Support
+		Factions: nod
+		BaseActor: nodmcv
+		SupportActors: altnode1, altnode1, altnode1, altnode1, crusader, crusader, bggy
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@MediumCab:
+		Class: Medium
+		ClassName: Medium Support
+		Factions: cab
+		BaseActor: cabmcv
+		SupportActors: cyborg, cyborg, cyborg, cborg, pdrone, reapercab
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@MediumMut:
+		Class: Medium
+		ClassName: Medium Support
+		Factions: mut
+		BaseActor: mutmcv
+		SupportActors: marauder, marauder, marauder, marauder, mutfiend, mutfiend, mutquad
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@MediumScr:
+		Class: Medium
+		ClassName: Medium Support
+		Factions: scr
+		BaseActor: drache
+		SupportActors: shark, shark, shark, shark, shark, legio, float, scrscorpion
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@HeavyGDI:
+		Class: Heavy
+		ClassName: Heavy Support
+		Factions: gdi
+		BaseActor: mcv
+		SupportActors: gdie1, gdie1, gdie1, gdie1, grenadier, grenadier,, medic, smech, mmch
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@HeavyNOD:
+		Class: Heavy
+		ClassName: Heavy Support
+		Factions: nod
+		BaseActor: nodmcv
+		SupportActors: altnode1, altnode1, altnode1, altnode1, crusader, crusader, templar, bggy, ttnk
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@HeavyCab:
+		Class: Heavy
+		ClassName: Heavy Support
+		Factions: cab
+		BaseActor: cabmcv
+		SupportActors: cyborg, cyborg, cyborg, cborg, cborg, pdrone, reapercab, centurion
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@HeavyMut:
+		Class: Heavy
+		ClassName: Heavy Support
+		Factions: mut
+		BaseActor: mutmcv
+		SupportActors: marauder, marauder, marauder, marauder, mutfiend, mutfiend, e3, mutquad, lynx
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@HeavyScr:
+		Class: Heavy
+		ClassName: Heavy Support
+		Factions: scr
+		BaseActor: drache
+		SupportActors: shark, shark, shark, shark, shark, legio, legio, float, scrscorpion, scrmbt
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartLocations:
+		SeparateTeamSpawnsCheckboxDisplayOrder: 6
+	SpawnMPUnits:
+		DropdownDisplayOrder: 1
+	CrateSpawner:
+		Minimum: 10
+		Maximum: 40
+		SpawnInterval: 1500
+		WaterChance: 0
+		ValidGround: Clear, Rough, Road, DirtRoad, Tiberium, BlueTiberium
+		InitialSpawnDelay: 750
+		CheckboxEnabled: false
+		CheckboxDisplayOrder: 1
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	ScreenShaker:
+	BuildingInfluence:
+	RadarPings:
+	StartGameNotification:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+	LoadWidgetAtGameStart:
+		ShellmapRoot: MAINMENU_PRERELEASE_NOTIFICATION
+	TimeLimitManager:
+	CloudSpawner@light:
+		Image: smoothclouds
+		Sequences: idle0, idle17
+		Palette: gradientgray
+		Speed: 6
+		SpawnInterval: 2001
+		CruiseAltitude: 3c0
+		WindDirection: 19
+	CloudSpawner@dark:
+		Image: smoothclouds
+		Sequences: idle1, idle2, idle3, idle4, idle5, idle6, idle7, idle8, idle9, idle10, idle11, idle12, idle13, idle14, idle15, idle16, idle18
+		Palette: gradientgray
+		Speed: 6
+		SpawnInterval: 2000
+		CruiseAltitude: 3c0
+		WindDirection: 19
+	ResourceTwinkleLayer:
+		Image: tibtilegasanim
+		Types: Tiberium
+		Palette: gradientgreen20
+		Ratio: 1, 5
+		Delay: 600, 1500
+		Sequences: idle, idle2, idle3, idle4
+	ResourceTwinkleLayer@1:
+		Image: tibtilegasanim
+		Types: BlueTiberium
+		Palette: gradientblue20
+		Ratio: 1, 5
+		Delay: 1200, 3000
+		Sequences: idle, idle2, idle3, idle4
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+	EditorCursorLayer:
+	EditorResourceLayer:
+	EditorSelectionLayer:
+		Palette: placefootprint
+	LoadWidgetAtGameStart:
+	EditorActionManager:

@@ -1,0 +1,839 @@
+SharkJump:
+	Inherits: ^RifleWarhead
+	ValidTargets: Ground, Water
+	ReloadDelay: 20
+	Range: 1c512
+	Report: SharkStrike0001.wav, SharkStrike0003.wav, SharkStrike0004.wav, SharkStrike0006.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+		Versus:
+			BuildingArmor: 10
+		Spread: 0c030
+		DamageTypes: BulletDeath, ScrinEssenceKill
+		InvalidTargets: Shark
+	Warhead@2Shark: SpreadDamage
+		Damage: 2000
+		ValidTargets: Shark
+		Versus:
+			BuildingArmor: 10
+		Spread: 0c030
+		DamageTypes: BulletDeath, ScrinEssenceKill
+		InvalidTargets: Building, Vehicle
+		ValidRelationships: Enemy, Neutral
+
+LegioNeedler:
+	Inherits: ^RocketWarhead
+	Inherits@2: ^Scrin_Pulse
+	ReloadDelay: 60
+	Range: 6c0
+	Report: photon1.wav
+	ValidTargets: Ground, Water, Infantry, Vehicle, Building
+	Projectile: Missile
+		Blockable: false
+		Shadow: true
+		Palette: apblue
+		Image: smallblueplasma
+		ContrailLength: 10
+		ContrailColor: 000ba8
+		ContrailWidth: 0c35
+		-TrailImage: small_smoke_trail
+		-TrailPalette: effectalpha75
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+		ValidTargets: Ground, Water, Infantry, Vehicle, Building
+		InvalidTargets: Air, Shark
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath, ScrinEssenceKill
+	Warhead@2Shark: SpreadDamage
+		Damage: 3000
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath, ScrinEssenceKill
+		InvalidTargets: Building, Vehicle, Air
+		ValidRelationships: Enemy, Neutral
+		ValidTargets: Shark
+
+LegioNeedlerAA:
+	Inherits: LegioNeedler
+	Inherits@1: ^AARocketWarhead
+	Range: 7c0
+	ValidTargets: Air
+	InvalidTargets: Ground, Water, Infantry, Vehicle, Building
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+		InvalidTargets: Ground, Water, Infantry, Vehicle, Building
+
+ColossiShard:
+	Inherits: ^RifleWarhead
+	ReloadDelay: 70
+	Range: 6c0
+	Burst: 4
+	Report: fiend2.aud
+	MinRange: 0c100
+	ValidTargets: Ground, Water
+	Projectile: BulletAS
+		Speed: 600
+		Image: minitibshard
+		Shadow: true
+		LaunchAngle: 60
+		Palette: apblue
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+		ValidTargets: Ground, Water
+		DamageTypes: Prone100Percent, TriggerProne, TiberiumDeath, ScrinEssenceKill
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ExplosionPalette: player
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+	Warhead@2Eff: CreateEffect
+		Explosions: tib_expsmall
+		ExplosionPalette: apolbluealpha
+		InvalidTargets: Water
+
+ColossiBlast:
+	ReloadDelay: 4
+	Range: 8c0
+	Warhead@op: FireShrapnel
+		Weapon: ColossiBlastTesla
+		ImpactActors: false
+		Amount: 3
+		AllowDirectHit: false
+	Warhead@8Radio: CreateTintedCells
+		Spread: 1c128
+		Level: 30
+		Falloff: 100, 85, 60, 45, 30, 15
+		LayerName: ColossusRadiation
+
+ColossiBlastTesla:
+	ReloadDelay: 80
+	Range: 4c0
+	Projectile: TeslaZap
+		BrightZaps: 1
+		DimZaps: 1
+		Palette: appurp
+	Warhead@op: FireShrapnel
+		Weapon: ColTeslaSparks
+		ImpactActors: false
+		Amount: 2
+		AllowDirectHit: false
+	Warhead@2Eff: CreateEffect
+		Explosions: lightningexplo
+		ExplosionPalette: apollightbluealpha
+		InvalidTargets: Water
+
+ColTeslaSparks:
+	ReloadDelay: 80
+	Range: 1c0
+	Projectile: TeslaZap
+		DimZaps: 0
+		Palette: appurp
+
+FloatTesla:
+	Inherits: ^RifleWarhead
+	ReloadDelay: 75
+	Range: 7c0
+	Report: voltautofire.wav
+	ValidTargets: Infantry, Vehicle
+	Projectile: TeslaZap
+		Palette: apolredalpha
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, ScrinEssenceKill
+	Warhead@op: FireShrapnel
+		Weapon: EssenceMissile
+		ImpactActors: false
+		Amount: 2
+		AimChance: 100
+		AllowDirectHit: true
+
+FloatGlaive:
+	Inherits: ^FullDamage
+	Inherits@2: ^Scrin_Pulse
+	ReloadDelay: 85
+	Range: 5c0
+	Report: ScrinPlague0000.wav,  ScrinPlague0001.wav,  ScrinPlague0002.wav,  ScrinPlague0003.wav
+	ValidTargets: Ground, Water
+	Projectile: BulletAS
+		Speed: 300
+		Blockable: true
+		Shadow: true
+		Palette: apollightbluealpha
+		Image: glaive
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+		ValidTargets: Ground, Water
+		DamageTypes: SmallExplosionDeath, ScrinEssenceKill
+	Warhead@op: FireShrapnel
+		Weapon: FloatGlaive2
+		ImpactActors: false
+		Amount: 1
+		AimChance: 100
+		AllowDirectHit: true
+		AimTargetStances: Enemy
+		ValidTargets: Infantry, Vehicle, Building, Ground, Wall
+	Warhead@Acid: GrantExternalCondition
+		Range: 96
+		Duration: 300
+		Condition: BugPoison
+	Warhead@2Eff: CreateEffect
+		-ImpactSounds: expnew12.aud, expnew13.aud, expnew14.aud, expnew15.aud
+
+PoisonGlaive:
+	ReloadDelay: 75
+	Range: 2c0
+	Report:
+	Projectile: InstantExplode
+	Warhead@op: FireShrapnel
+		Weapon: FloatGlaive10
+		ImpactActors: false
+		Amount: 1
+		AimChance: 100
+		AllowDirectHit: true
+		AimTargetStances: Ally, Neutral
+		ValidTargets: Infantry, Vehicle, Ground, Wall
+
+FloatGlaive10:
+	Inherits: FloatGlaive
+	Range: 2c0
+	-Report:
+	-Warhead@op:
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Damage: 2000
+
+FloatGlaive2:
+	Inherits: FloatGlaive
+	-Report:
+	-Warhead@op:
+
+ScorpAcid:
+	Inherits: ^AcidWarhead
+	Inherits@1: ^SpawnsIrradiation
+	ReloadDelay: 70
+	Range: 5c0
+	Burst: 12
+	BurstDelays: 1
+	Report: ScrinAcid0000.wav, ScrinAcid0001.wav, ScrinAcid0002.wav, ScrinAcid0003.wav, ScrinAcid0004.wav
+	Projectile: BulletAS
+		Speed: 200
+		Inaccuracy: 1c0
+		Palette: apolgreenalpha
+		Image: flameallremap
+	BurstDelays: 3
+	Warhead@1Dam: SpreadDamage
+		Spread: 250
+		Damage: 975
+		Versus:
+			InfantryArmor: 150
+			BuildingArmor: 75
+		DamageTypes: Prone100Percent, TriggerProne, TiberiumDeath, ScrinEssenceKill
+		InvalidTargets: Shark
+	Warhead@2Shark: SpreadDamage
+		Spread: 250
+		Damage: 975
+		DamageTypes: Prone100Percent, TriggerProne, TiberiumDeath, ScrinEssenceKill
+		Versus:
+			InfantryArmor: 150
+			BuildingArmor: 75
+		ValidTargets: Shark
+		InvalidTargets: Building, Vehicle
+		ValidRelationships: Enemy, Neutral
+	Warhead@2Eff: CreateEffect
+		Explosions: tibexp2
+		ExplosionPalette: apolgreenalpha
+
+MindController:
+	ReloadDelay: 100
+	Range: 6c0
+	ValidTargets: Vehicle
+	InvalidTargets: MindControlImmune
+	Report: iyurat1a.wav
+	Projectile: InstantHit
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 1
+		Damage: 0
+		ValidTargets: Infantry, Vehicle
+		InvalidTargets: Structure, Wall, Husk, Trees, Creep, MindControlImmune
+	Warhead@2Eff: CreateEffect
+		Explosions: cldrngl1
+		ExplosionPalette: apolredalpha
+		ValidTargets: Infantry, Vehicle
+		InvalidTargets: Structure, Wall, Husk, Trees, Creep, MindControlImmune
+
+MindEnergyCasing:
+	ReloadDelay: 200000
+	Projectile: AthenaProjectile
+		Altitude: 800
+	ValidTargets: Infantry, Vehicle, Building, Wall, Ground, Water, Air, AirHit
+	Warhead@0Dam: TargetDamage
+		ValidTargets: Infantry, Vehicle, Building, Wall, Ground, Water, Air, AirHit
+	Warhead@op: FireShrapnel
+		Weapon: RedSpark
+		ImpactActors: false
+		Amount: 3
+		ValidTargets: Ground, Water, Air, AirHit
+		InvalidTargets: Infantry, Vehicle, Building, Wall
+	Warhead@2Eff: CreateEffect
+		Explosions: cldrngl1
+		ExplosionPalette: apolredalpha
+		ValidTargets: Ground, Water, Air, AirHit
+		InvalidTargets: Infantry, Vehicle, Building, Wall
+
+RedSpark:
+	Inherits: ^NoDamage
+	ReloadDelay: 80
+	Range: 0c20
+	Projectile: TeslaZap
+		ZOffset: 3500
+		Palette: apolredalpha
+	Warhead@1Dam: TargetDamage
+		ImpactActors: false
+
+VanguardShrapnel:
+	ReloadDelay: 50
+	Range: 2c0
+	ValidTargets: ShieldedUnit
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 24
+		Damage: -1
+		ValidTargets: ShieldedUnit
+
+ScrMbtLasor:
+	Inherits: ^FullDamage
+	Inherits@2: ^Scrin_Explo
+	ReloadDelay: 95
+	Range: 6c0
+	Report: SeekerShot0000.wav,  SeekerShot0001.wav,  SeekerShot0002.wav,  SeekerShot0003.wav
+	Projectile: LaserZap
+		Width: 50
+		Duration: 5
+		ZOffset: 2047
+		Color: f442f4
+		SecondaryBeam: true
+		SecondaryBeamWidth: 30
+		SecondaryBeamZOffset: 4000
+		SecondaryBeamColor: FFFFFF
+		Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c045
+		Damage: 7500
+		Versus:
+			InfantryArmor: 45
+		DamageTypes: Prone60Percent, TriggerProne, FireDeath, ScrinEssenceKill
+		InvalidTargets: Shark
+	Warhead@2shark: SpreadDamage
+		Spread: 0c045
+		Damage: 7500
+		ValidTargets: Shark
+		Versus:
+			InfantryArmor: 45
+		DamageTypes: Prone60Percent, TriggerProne, FireDeath, ScrinEssenceKill
+		InvalidTargets: Building, Vehicle
+		ValidRelationships: Enemy, Neutral
+	Warhead@2Eff: CreateEffect
+		-ImpactSounds: expnew12.aud, expnew13.aud, expnew14.aud, expnew15.aud
+
+TripodBlast:
+	Inherits: ^RifleWarhead
+	Inherits@2: ^Small_Bang
+	ReloadDelay: 80
+	Range: 7c0
+	Report: scrin5b.aud
+	Projectile: BulletAS
+		Speed: 500
+		Image: greenplasma
+		Shadow: true
+		LaunchAngle: 62
+		Palette: gradientblue60
+		Blockable: false
+		ContrailLength: 8
+		ContrailColor: 9A8AFFAA
+		ContrailWidth: 0c52
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 12500
+		Versus:
+			InfantryArmor: 100
+			BuildingArmor: 80
+			VehicleArmor: 50
+			DefenseArmor: 50
+			ConcreteArmor: 30
+		DamageTypes: Prone60Percent, TriggerProne, EnergyDeath, ScrinEssenceKill
+	Warhead@4Sharpnel: FireShrapnel
+		Weapon: TripodDebris
+		ImpactActors: false
+		AllowDirectHit: false
+		ValidTargets: Infantry, Vehicle, Building, Wall, Ground, Water
+	Warhead@2Eff: CreateEffect
+		Explosions: scrinexplo3, scrinexplo4, scrinexplo5
+		ExplosionPalette: apolbluealpha
+
+TripodDebris:
+	Inherits: SmallDebris
+	Range: 2c60
+	Projectile: Bullet
+		Image: sparkprojectile
+		Palette: jascbluealpha
+		Sequences: idle
+	-Warhead@2Eff:
+	Warhead@smoke: CreateEffect
+		ExplosionPalette: gensmkexplojFblue
+	Warhead@2: SpawnSmokeParticle
+		Palette: jascbluealpha
+		Duration: 75
+
+TripodBlast2:
+	Inherits: TripodBlast
+	ValidTargets: Infantry, Vehicle, Building, Wall, Ground, Water
+	Warhead@2Eff: CreateEffect
+		Explosions: tripodshockwave
+		ExplosionPalette: jascbluealpha
+		ValidTargets: Infantry, Vehicle, LandedAircraft, Building, Wall, Ground, Water
+		ImpactActors: false
+
+StormRiderBlast:
+	Inherits: ^FullDamage
+	Inherits@2: ^Scrin_Explo
+	ReloadDelay: 100
+	Range: 6c512
+	MinRange: 0c300
+	Report: laserpistol.wav
+	ValidTargets: Ground, Water, Vehicle, Building, Infantry
+	InvalidTargets: Air
+	Projectile: Missile
+		TerrainHeightAware: true
+		CruiseAltitude: 4000
+		Speed: 500
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 0c543
+		MinimumLaunchSpeed: 0c301
+		Blockable: false
+		Shadow: true
+		HorizontalRateOfTurn: 160
+		VerticalRateOfTurn: 160
+		RangeLimit: 20c0
+		AllowSnapping: true
+		Palette: pips
+		TrailPalette: apblue
+		TrailImage: blueballminitrail
+		Image: blueplasma
+	Warhead@1Dam: SpreadDamage
+		Damage: 4500
+		ValidTargets: Ground, Water, Vehicle, Building, Infantry
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, ScrinEssenceKill
+		InvalidTargets: Shark, Air
+		Versus:
+			InfantryArmor: 50
+	Warhead@2Shark: SpreadDamage
+		Damage: 4500
+		ValidTargets: Shark
+		InvalidTargets: Building, Vehicle, Air
+		ValidRelationships: Enemy, Neutral
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, ScrinEssenceKill
+		Versus:
+			InfantryArmor: 50
+	Warhead@ShieldUpgrade: GrantExternalCondition
+		Range: 96
+
+StormRiderBlastAA:
+	Inherits@2: StormRiderBlast
+	ValidTargets: Air
+	InvalidTargets: Ground, Water, Vehicle, Building, Infantry
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+		ValidTargets: Air
+		InvalidTargets: Ground, Water, Vehicle, Building, Infantry
+
+Glyder1Cannon:
+	Inherits: ^RocketWarhead
+	Inherits@2: ^Scrin_Pulse
+	Inherits@3: ^MarnFlash7
+	ReloadDelay: 50
+	Range: 6c0
+	Burst: 3
+	MinRange: 0c100
+	Report: photon1.wav
+	ValidTargets: Ground, Water
+	Projectile: BulletAS
+		Speed: 500
+		Image: lightpan
+		Shadow: true
+		-TrailImage: small_smoke_trail
+		-TrailPalette: effectalpha75
+		Palette: apblue
+		ContrailLength: 7
+		ContrailColor: 000ba855
+		ContrailWidth: 0c70
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c400
+		Damage: 3000
+		Versus:
+			InfantryArmor: 140
+			BuildingArmor: 35
+			VehicleArmor: 15
+			DefenseArmor: 15
+			ConcreteArmor: 25
+		ValidTargets: Ground, Water
+		DamageTypes: Prone50Percent, TriggerProne, EnergyDeath, ScrinEssenceKill
+	Warhead@2Eff: CreateEffect
+		Explosions: marnflash7
+		ExplosionPalette: MarnAlphaAlpha
+		ImpactSounds: photon1.wav
+
+Glyder2Cannon:
+	Inherits: ^RocketWarhead
+	Inherits@2: ^Scrin_Pulse
+	Inherits@3: ^MarnFlash7
+	ReloadDelay: 50
+	Range: 8c0
+	Burst: 3
+	MinRange: 0c100
+	Report: photon1.wav
+	ValidTargets: Air
+	Projectile: Missile
+		-TrailImage: small_smoke_trail
+		-TrailPalette: effectalpha75
+		Image: lightpan
+		RangeLimit: 15c0
+		Palette: apblue
+		ContrailLength: 7
+		ContrailColor: 000ba855
+		ContrailWidth: 0c70
+	Warhead@1Dam: SpreadDamage
+		Spread: 90
+		Damage: 2000
+		ValidTargets: Air
+		DamageTypes: Prone50Percent, TriggerProne, EnergyDeath, ScrinEssenceKill
+		Warhead@2Eff: CreateEffect
+	Warhead@2Eff: CreateEffect
+		Explosions: marnflash7
+		ExplosionPalette: MarnAlphaAlpha
+		ImpactSounds: photon1.wav
+
+BattleshipCannon:
+	Inherits: ^FullDamage
+	Inherits@2: ^Scrin_Explo
+	ReloadDelay: 25
+	Range: 5c768
+	Report: SeekerShot0000.wav,  SeekerShot0001.wav,  SeekerShot0002.wav,  SeekerShot0003.wav
+	Burst: 16
+	BurstDelays: 2
+	MinRange: 0c100
+	ValidTargets: Ground, Water, Infantry, Vehicle, water
+	Projectile: BulletAS
+		Speed: 500
+		Image: fatballprojectile
+		Inaccuracy: 1c0
+		Palette: gradientblue60
+		ContrailLength: 7
+		ContrailColor: ca00f7
+		ContrailWidth: 0c35
+	Warhead@1Dam: SpreadDamage
+		Damage: 4500
+		ValidTargets: Ground, Water, Infantry, Vehicle, water
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath, ScrinEssenceKill
+
+DestroyerCannon:
+	Inherits: ^ArtilleryWarhead
+	Inherits@1: ^Large_Explosion
+	ReloadDelay: 200
+	Range: 14c0
+	MinRange: 4c0
+	Report: devourerlasor0000.wav, devourerlasor0001.wav, devourerlasor0002.wav
+	Burst: 1
+	BurstDelays: 5
+	Projectile: BulletAS
+		Speed: 300
+		Image: destroshell
+		TrailImage: blueballminitrail
+		Palette: pips
+		Blockable: false
+		Shadow: false
+		LaunchAngle: 62
+	Warhead@1Dam: SpreadDamage
+		Spread: 400
+		Damage: 17000
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath, ScrinEssenceKill
+	Warhead@2Eff: CreateEffect
+		Explosions: scrinpulse2
+		ExplosionPalette: effectalpha50
+		ImpactSounds: expnew14.aud
+		ValidTargets: Ground, Air, Water
+	-Warhead@3EffWater:
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater
+		InvalidTargets: Vehicle, Building, Wall
+
+FighterSpawn:
+	ReloadDelay: 15
+	Range: 8c0
+	MinRange: 0c100
+	Projectile: InstantExplode
+	ValidTargets: Ground, Water, Infantry, Air, Vehicle, Building, Wall
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Ground, Water, Infantry, Air, Vehicle, Building, Wall
+
+WyvermBlast:
+	Inherits: ^ArtilleryWarhead
+	Inherits@2: ^Scrin_Pulse
+	ReloadDelay: 65
+	Range: 5c0
+	MinRange: 0c100
+	Report: laserpistol.wav
+	ValidTargets: Ground, Water
+	Projectile: Missile
+		TerrainHeightAware: true
+		CruiseAltitude: 4000
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 0c543
+		MinimumLaunchSpeed: 0c301
+		Speed: 700
+		Blockable: false
+		Shadow: true
+		HorizontalRateOfTurn: 160
+		VerticalRateOfTurn: 160
+		RangeLimit: 28c291
+		AllowSnapping: true
+		Image: smallblueplasma
+		Palette: apblue
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c180
+		Damage: 3000
+		Versus:
+			AircraftArmor: 75
+			InfantryArmor: 10
+			VehicleArmor: 100
+			DefenseArmor: 100
+			BuildingArmor: 50
+		ValidTargets: Ground, Water
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, ScrinEssenceKill
+
+WyvermBlastAA:
+	Inherits: WyvermBlast
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+		Damage: 2500
+
+WasteTurretWeapon:
+	Inherits: ^AcidWarhead
+	Inherits@1: ^SpawnsIrradiation
+	ReloadDelay: 40
+	Range: 6c768
+	ValidTargets: Building, Structure, Infantry, Vehicle, Ground
+	Report: ScrinAcid0000.wav, ScrinAcid0001.wav, ScrinAcid0002.wav, ScrinAcid0003.wav, ScrinAcid0004.wav
+	Projectile: BulletAS
+		Speed: 500
+		Image: greenplasmamini
+		Blockable: false
+		Inaccuracy: 0
+		Palette: jascgreen
+		Angle: 60
+		Shadow: true
+		ContrailLength: 10
+		ContrailColor: 007000
+		ContrailWidth: 0c20
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c400
+		Damage: 8000
+		Versus:
+			InfantryArmor: 200
+			BuildingArmor: 75
+		DamageTypes: Prone100Percent, TriggerProne, TiberiumDeath, ScrinEssenceKill
+		ValidTargets: Building, Structure, Infantry, Vehicle, Ground
+		InvalidTargets: Shark
+	Warhead@2Shark: SpreadDamage
+		Spread: 0c400
+		Damage: 8000
+		Versus:
+			InfantryArmor: 200
+			BuildingArmor: 75
+		DamageTypes: Prone100Percent, TriggerProne, TiberiumDeath, ScrinEssenceKill
+		ValidTargets: Shark
+		InvalidTargets: Building, Structure, Infantry, Vehicle, Ground
+		ValidRelationships: Enemy, Neutral
+	Warhead@2Eff: CreateEffect
+		Explosions: tibexp2
+		ExplosionPalette: apolgreenalpha
+		InvalidTargets: : Water
+	Warhead@3Radio: CreateTintedCells
+		Spread: 512
+		Level: 24
+	Warhead@3Radio2: CreateTintedCells
+		Spread: 512
+		Level: 24
+		ValidTargets: Infantry, Vehicle, Building, LandedAircraft
+	Warhead@5Actor: SpawnActor
+		Actors: cloud1
+		FallRate: 5000
+		Range: 3
+
+WasteTurretWeaponMini:
+	Inherits: WasteTurretWeapon
+	ReloadDelay: 10
+	Burst: 10
+	BurstDelays: 3
+	-Report:
+	Projectile: Missile
+		Image: greenplasmamini
+		Blockable: false
+		Palette: jascgreen
+		Inaccuracy: 1c0
+		HorizontalRateOfTurn: 8
+		Speed: 350
+		ContrailLength: 10
+		ContrailColor: 007000
+		ContrailWidth: 0c20
+	Warhead@1Dam: SpreadDamage
+		Spread: 1
+		Damage: 1
+	Warhead@2Shark: SpreadDamage
+		Damage: 1
+		Spread: 1
+	Warhead@2Eff: CreateEffect
+	-Warhead@3Radio:
+	-Warhead@3Radio2:
+	-Warhead@5Actor:
+
+TractorBeam:
+	Inherits: ^AntiAirTurretWeapon
+	Report: triplasor0000.wav, triplasor0001.wav, triplasor0002.wav
+	Projectile: ArcLaserZap
+		Color: FFAAFF55
+		Width: 50
+		Duration: 15
+		ZOffset: 4000
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+		ValidTargets: Air
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@TractorStop: GrantExternalCondition
+		Range: 0c512
+		Duration: 10
+		Condition: tractorstop
+		ValidTargets: Air
+
+TractorBeam2:
+	Inherits: TractorBeam
+	-Report:
+	-Warhead@1Dam: SpreadDamage
+	-Warhead@TractorStop: GrantExternalCondition
+
+DronePlane:
+	Inherits: ^BombWarhead
+	ReloadDelay: 150
+	Range: 7c0
+	Burst: 2
+	BurstDelays: 10
+	MinRange: 1c0
+	ValidTargets: Infantry, Vehicle, Building
+	Projectile: BulletAS
+		Speed: 360
+		Image: viscproj
+		Shadow: true
+		Palette: effect
+		LaunchAngle: 50
+	Warhead@1Dam: SpreadDamage
+		Spread: 150
+		Damage: 4000
+		Versus:
+			InfantryArmor: 100
+			BuildingArmor: 100
+			VehicleArmor: 100
+			DefenseArmor: 100
+			AircraftArmor: 100
+			ConcreteArmor: 15
+		ValidTargets: Ground, Water, Air
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath, ScrinEssenceKill
+	Warhead@2Eff: CreateEffect
+		Explosions: viscexplo
+		ExplosionPalette: effect
+		ImpactSounds: expnew14.aud
+		InvalidTargets: : Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: viscexplo
+		ExplosionPalette: effect
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater
+		InvalidTargets: Vehicle, Building, Wall
+	Warhead@5Actor: SpawnActor
+		Actors: visc_lrg_scrin, visc_lrg_scrin
+		FallRate: 5000
+		Range: 3
+		ValidTargets: Ground, Infantry, Vehicle, Building, Structure, Water, Air
+
+EssenceSmall:
+	ReloadDelay: 45
+	Range: 10c0
+	MinRange: 1c0
+	ValidTargets: ScrinUnit
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: -1
+		AffectsParent: true
+		ValidTargets: ScrinUnit
+	Warhead@op: FireShrapnel
+		Weapon: EssenceMissile
+		ImpactActors: false
+		Amount: 1
+		AimChance: 100
+		ThrowWithoutTarget: false
+		AllowDirectHit: true
+		AimTargetStances: Ally
+		ValidTargets: Ground, Water, Air, ScrinUnit
+
+EssenceMissile:
+	Inherits: ^FullDamage
+	ReloadDelay: 45
+	Range: 10c0
+	MinRange: 1c0
+	ValidTargets: ScrinUnit
+	Projectile: BulletAS
+		Image: essencetrail
+		TrailImage: essencetrailmini
+		TrailPalette: apolra2ialpha
+		Speed: 600
+		TrailInterval: 1
+		Palette: apolra2ialpha
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: -2000
+		ValidTargets: ScrinUnit
+	Warhead@2Eff: CreateEffect
+		Explosions: tibexp2
+		ExplosionPalette: apolra2ialpha
+	Warhead@emp: GrantExternalCondition
+		Range: 75
+		Duration: 175
+		Condition: batteryboost
+	Warhead@emp: GrantExternalCondition
+		Range: 200
+		Duration: 3
+		Condition: EssenceGrab
+
+HealScrin:
+	ReloadDelay: 150
+	Range: 2c0
+	ValidTargets: ScrinUnit
+	InvalidTargets: EssenceBattery
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		DebugOverlayColor: 00FF00
+		Spread: 1c0
+		Damage: -10000
+		AffectsParent: true
+		Versus:
+			InfantryArmor: 50
+			VehicleArmor: 100
+			DefenseArmor: 100
+		ValidTargets: ScrinUnit
+	Warhead@emp: GrantExternalCondition
+		Range: 200
+		Duration: 50
+		Condition: ScrinDamageBoost

@@ -1,0 +1,409 @@
+^AircraftHusk:
+	Inherits: ^SpriteActor
+	HitShape:
+	RenderSprites:
+	Interactable:
+		Bounds: 50,50
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+	Aircraft:
+	WithFacingSpriteBody:
+	WithShadow:
+	Health:
+		HP: 28000
+	Armor:
+		Type: AircraftArmor
+	HiddenUnderFog:
+		Type: GroundPosition
+	Targetable@Ignore:
+		TargetTypes: NoAutoTarget
+	ScriptTriggers:
+	Tooltip:
+		GenericName: Destroyed Aircraft
+	FallsToEarth:
+		Moves: true
+		Velocity: 180
+		MaximumSpinSpeed: 100
+		Explosion: SmallPlaneExplode
+
+^BigAircraftHusk:
+	Inherits: ^AircraftHusk
+	FallsToEarth:
+		Moves: true
+		Velocity: 100
+		Explosion: BigAircraftExplode
+
+DSHP.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Dropship
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 168
+	RenderSprites:
+		Image: dshp
+
+ORCA.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Orca Fighter
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 186
+	RenderSprites:
+		Image: orca
+
+ORCAB.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Orca Bomber
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 96
+	RenderSprites:
+		Image: orcab
+	FallsToEarth:
+		Moves: true
+		MaximumSpinSpeed: 0
+
+ORCATRAN.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Orca Transport
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 84
+	RenderSprites:
+		Image: orcatran
+	RenderVoxels:
+		Image: orcatran
+	WithVoxelBody:
+	-WithFacingSpriteBody:
+	-WithShadow:
+
+TRNSPORT.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Carryall
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: trnsport
+		FactionImages:
+			gdi: trnsport
+			nod: nodcarryall
+			cab: cabcarryall
+			mut: forgcarryall
+
+GUARDIAN.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Guardian Platform
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	FallsToEarth:
+		MaximumSpinSpeed: 0
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	RenderSprites:
+		Image: guardian
+
+SCRIN.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Banshee Fighter
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 168
+	RenderSprites:
+		Image: scrin
+	FallsToEarth:
+		Moves: true
+		MaximumSpinSpeed: 0
+
+APACHE.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Harpy
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 130
+	WithIdleOverlay:
+		Offset: 85,0,384
+		Sequence: rotor
+	RenderSprites:
+		Image: apache
+
+CERBERUS.Husk:
+	Inherits: ^BigAircraftHusk
+	Tooltip:
+		Name: Paladin Husk
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	RenderSprites:
+		Image: cerberus
+
+
+MUTHELI.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Gargoyl
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 168
+	WithIdleOverlay@ROTORAIR:
+		Offset: 85,0,384
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 85,0,384
+		Sequence: slow-rotor
+		RequiresCondition: airborne
+	RenderSprites:
+		Image: mutheli
+
+WETP.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Falcon
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 168
+	RenderSprites:
+		Image: wetp
+	FallsToEarth:
+		Moves: true
+		MaximumSpinSpeed: 0
+
+WASP.Husk:
+	Inherits: ^AircraftHusk
+	Inherits@5: ^CabRender
+	Tooltip:
+		Name: Wasp
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	RenderSprites:
+		Image: wasp
+
+CABDRONEJET.Husk:
+	Inherits: ^AircraftHusk
+	Inherits@5: ^CabRender
+	Tooltip:
+		Name: Wasp
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	RenderSprites:
+		Image: cabdronejet
+
+DEVOURER.Husk:
+	Inherits: ^BigAircraftHusk
+	Inherits@5: ^CabRender
+	Tooltip:
+		Name: Devourer
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	RenderSprites:
+		Image: devourer
+
+FIREFLY.Husk:
+	Inherits: ^AircraftHusk
+	Inherits@5: ^CabRender
+	Tooltip:
+		Name: Firefly
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: firefly
+
+BASILISK.Husk:
+	Inherits: ^BigAircraftHusk
+	Inherits@2: ^CabRender
+	Tooltip:
+		Name: Basilisk
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 168
+	RenderSprites:
+		Image: basilisk
+
+STORMRIDER.Husk:
+	Inherits: ^AircraftHusk
+	Tooltip:
+		Name: Stormrider
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 168
+	RenderSprites:
+		Image: stormrider
+	FallsToEarth:
+		Moves: true
+		Explosion: StormriderExplode #ScrinUnitExplode2
+		MaximumSpinSpeed: 0
+		
+WYVERM2.Husk:
+	Inherits: ^AircraftHusk
+	Inherits@2: ^ScrinRender
+	Tooltip:
+		Name: Wyverm
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: wyverm2
+	FallsToEarth:
+		Explosion: SmallPlaneExplode
+
+GLYDER1.Husk:
+	Inherits: ^AircraftHusk
+	Inherits@2: ^ScrinRender
+	-Cloak@CLOAKGENERATOR:
+	-ExternalCondition@cloakgenerator:
+	Tooltip:
+		Name: Glyder
+	WithShadow:
+	WithFacingSpriteBody:
+	FallsToEarth:
+		Explosion: ScrinUnitExplode
+	BodyOrientation:
+		QuantizedFacings: 32
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: scrglyder1
+
+DRACHE.Husk:
+	Inherits: ^BigAircraftHusk
+	Inherits@2: ^ScrinRender
+	Tooltip:
+		Name: Host Station
+	FallsToEarth:
+		Explosion: DracheExplode
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: drache.falling
+
+SCRDESTROYER.Husk:
+	Inherits: ^BigAircraftHusk
+	Inherits@2: ^ScrinRender
+	Tooltip:
+		Name: Destroyer
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: scrdestroyer
+	FallsToEarth:
+		Explosion: DestroyerExplode
+
+SCRBATTLESHIP.Husk:
+	Inherits: ^BigAircraftHusk
+	Inherits@2: ^ScrinRender
+	Tooltip:
+		Name: Battlecruiser
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: scrbattleship
+	FallsToEarth:
+		Explosion: BattleshipExplode
+
+SCRCARRIER.Husk:
+	Inherits: ^BigAircraftHusk
+	Inherits@2: ^ScrinRender
+	Tooltip:
+		Name: Carrier
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: scrcarrier
+	FallsToEarth:
+		Explosion: DestroyerExplode
+
+SCRTRANS.Husk:
+	Inherits: ^AircraftHusk
+	Inherits@2: ^ScrinRender
+	Tooltip:
+		Name: Scrin Transport
+	FallsToEarth:
+		Explosion: DestroyerExplode
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: scrtrans
+
+SCRCOUNCIL.Husk:
+	Inherits: ^AircraftHusk
+	Inherits@2: ^ScrinRender
+	Tooltip:
+		Name: Scrin Council
+	WithShadow:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 149
+	RenderSprites:
+		Image: scrincouncil
+	FallsToEarth:
+		Explosion: BattleshipExplode

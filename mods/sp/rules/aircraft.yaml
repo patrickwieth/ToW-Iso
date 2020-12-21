@@ -1,0 +1,1449 @@
+ORCA:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^BasicStealthDetectionAir
+	Inherits@3: ^9CellVision
+	Inherits@4: ^UsesAmmunition
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 1300
+	Tooltip:
+		Name: Orca Fighter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Fast assault gunship with dual missile launchers.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Can attack air\n- Detects cloaked units
+		Queue: Air
+		BuildPaletteOrder: 1
+		Prerequisites: ~gahpad
+	Selectable:
+		Bounds: 30,24
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 150
+		MoveIntoShroud: true
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
+	Health:
+		HP: 12000
+	Armament:
+		Weapon: FighterHellfire
+		PauseOnCondition: !ammo
+	Armament@AA:
+		Weapon: FighterHellfireAA
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 20
+		Voice: Attack
+	AmmoPool:
+		Ammo: 10
+		ReloadCount: 2
+		ReloadDelay: 50
+		AmmoCondition: ammo
+	SpawnActorOnDeath:
+		Actor: ORCA.Husk
+		RequiresCondition: airborne
+	WithIdleOverlay@Wind1:
+		Image: orcawind
+		Sequence: idle
+		Offset: -25, 100, -750
+		RequiresCondition: airborne
+		Palette: effect
+	WithIdleOverlay@Wind2:
+		Image: orcawind
+		Sequence: idle
+		Offset: -25, -100, -750
+		RequiresCondition: airborne
+		Palette: effect
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: pips
+
+ORCAB:
+	Inherits: ^CombatPlane
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^9CellVision
+	Inherits@3: ^UsesAmmunition
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Orca Bomber
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Heavy carpet bomber.\n\nGood vs: Ground Targets\n\nSpecial:\n- Deals AoE damage.
+		Queue: Air
+		BuildPaletteOrder: 3
+		Prerequisites: ~gahpad, gatech
+	Selectable:
+		Bounds: 30,24
+	Aircraft:
+		MaximumPitch: 120
+		TurnSpeed: 20
+		IdealSeparation: 256
+		Speed: 130
+		IdleTurnSpeed: 20
+		IdleSpeed: 85
+		AirborneCondition: airborne
+		MoveIntoShroud: true
+	Health:
+		HP: 25000
+	Armament@primary:
+		Weapon: OBBombFrontal
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 20
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
+	AmmoPool:
+		Ammo: 20
+		ReloadCount: 10
+		ReloadDelay: 125
+		AmmoCondition: ammo
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+	SpawnActorOnDeath:
+		Actor: ORCAB.Husk
+		RequiresCondition: airborne
+	WithIdleOverlay@Wind1:
+		Image: orcawind
+		Sequence: idle
+		Offset: 150, 350, -750
+		RequiresCondition: airborne
+		Palette: effect
+	WithIdleOverlay@Wind2:
+		Image: orcawind
+		Sequence: idle
+		Offset: 150, -350, -750
+		RequiresCondition: airborne
+		Palette: effect
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 2
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: pips
+
+DPOD:
+	Inherits: ^CombatHelicopter
+	Valued:
+		Cost: 10
+	Tooltip:
+		Name: Drop Pod
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 160
+		InitialFacing: 0
+	-Rearmable:
+	Health:
+		HP: 6000
+	RevealsShroud:
+		Range: 0
+	Cargo:
+		Types: Infantry
+		MaxWeight: 1
+		UnloadVoice: Move
+		OwnerChangedAffectsPassengers: false
+	Armament:
+		Weapon: Vulcan2
+		PauseOnCondition: !ammo
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	AttackAircraft:
+		Voice: Attack
+	AmmoPool:
+		Ammo: 5
+		AmmoCondition: ammo
+	AutoTarget:
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: pips
+
+DSHP:
+	Inherits: ^CombatHelicopter
+	Inherits@PIPS: ^CargoPips
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Dropship
+	Aircraft:
+		TurnSpeed: 40
+		Speed: 200
+		InitialFacing: 0
+		Repulsable: false
+		AltitudeVelocity: 500
+		IdleBehavior: LeaveMap
+		VTOL: false
+	-Rearmable:
+	-Targetable@AIRBORNE:
+	-Targetable@GROUND:
+	Health:
+		HP: 20000
+	RejectsOrders:
+	-RevealsShroud:
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		UnloadVoice: Move
+		OwnerChangedAffectsPassengers: false
+	SpawnActorOnDeath:
+		Actor: DSHP.Husk
+		RequiresCondition: airborne
+	RenderSprites:
+	WithVoxelBody:
+	RenderVoxels:
+		Scale: 20
+	-WithFacingSpriteBody:
+	Cloak@Dropship:
+		RequiresCondition: !DropshipCloak
+		IsPlayerPalette: true
+		CloakTypes: JohnCena
+	ExternalCondition@DropshipCloak:
+		Condition: DropshipCloak
+	Interactable:
+		Bounds: 1,1
+	-Selectable:
+	-SelectionDecorations:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+
+ORCATRAN:
+	Inherits: ^Helicopter
+	Inherits@1: ^6CellVision
+	Inherits@PIPS: ^CargoPips
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Orca Transport
+	Buildable:
+		Queue: Air
+		BuildPaletteOrder: 10
+		Prerequisites: ~disabled
+	RenderSprites:
+	WithVoxelBody:
+	RenderVoxels:
+	-WithFacingSpriteBody:
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 84
+		InitialFacing: 0
+		LandableTerrainTypes: Clear, Ice, Rough, Road, DirtRoad, Ground, Green, Tiberium, BlueTiberium
+	Health:
+		HP: 20000
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		UnloadVoice: Move
+		OwnerChangedAffectsPassengers: false
+	SpawnActorOnDeath:
+		Actor: ORCATRAN.Husk
+		RequiresCondition: airborne
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+
+APACHE:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^BasicStealthDetectionAir
+	Inherits@3: ^9CellVision
+	Inherits@4: ^UsesAmmunition
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 1300
+	Tooltip:
+		Name: Harpy
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Scout Helicopter armed with chain guns.\n\nGood vs: Infantry, Aircraft\n\nSpecial:\n- Can attack air\n- Detects cloaked units
+		Queue: Air
+		BuildPaletteOrder: 1
+		Prerequisites: ~nahpad
+	Selectable:
+		Bounds: 30,24
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 150
+		MoveIntoShroud: true
+	Health:
+		HP: 12000
+	Armament@Fakebullet:
+		Weapon: HarpyClawBullet
+		PauseOnCondition: !ammo
+		Name: decoration
+		LocalOffset: 900,0,0
+	Armament@FakebulletAA:
+		Weapon: HarpyClawBulletAA
+		PauseOnCondition: !ammo
+		Name: decoration
+		LocalOffset: 900,0,0
+	GrantConditionOnAttack@Casing:
+		Condition: attack
+		ArmamentNames: decoration
+	ExplodeWeapon@Casing:
+		Weapon: HarpyClawCasing
+		RequiresCondition: attack
+		RevokeDelay: 1
+		LocalOffset: 800,0,0
+	Armament:
+		Weapon: HarpyClaw
+		PauseOnCondition: !ammo
+	Armament@AA:
+		Weapon: HarpyClawAA
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 20
+		Voice: Attack
+		Armaments: primary, secondary, decoration
+	AmmoPool:
+		Ammo: 10
+		ReloadCount: 2
+		ReloadDelay: 50
+		AmmoCondition: ammo
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
+	WithIdleOverlay@ROTORAIR:
+		Offset: 150,0,200
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 150,0,200
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	SpawnActorOnDeath:
+		Actor: APACHE.Husk
+		RequiresCondition: airborne
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: pips
+
+SCRIN:
+	Inherits: ^CombatPlane
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^UsesAmmunition
+	Inherits@3: ^11CellVision
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Banshee Fighter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Advanced fighter-bomber craft armed with twin plasma cannons.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Can attack air
+		Queue: Air
+		BuildPaletteOrder: 4
+		Prerequisites: ~nahpad, natech
+	Selectable:
+		Bounds: 30,24
+	Voiced:
+		VoiceSet: Scrin
+	Aircraft:
+		MaximumPitch: 90
+		TurnSpeed: 40
+		Speed: 170
+		IdleTurnSpeed: 20
+		IdleSpeed: 85
+		AirborneCondition: airborne
+		MoveIntoShroud: true
+	Health:
+		HP: 20000
+	Armament@1:
+		Weapon: Proton
+		PauseOnCondition: !ammo
+	Armament@2:
+		Weapon: ProtonAA
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		Voice: Attack
+		FacingTolerance: 20
+	AmmoPool:
+		Ammo: 15
+		ReloadCount: 5
+		ReloadDelay: 83
+		AmmoCondition: ammo
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
+	DeathSounds:
+	SpawnActorOnDeath:
+		Actor: SCRIN.Husk
+		RequiresCondition: airborne
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: pips
+	Contrail@1:
+		Offset: -325,-143,100
+		Color: 00E00090
+		UsePlayerColor: false
+		TrailWidth: 48
+		TrailLength: 15
+	Contrail@2:
+		Offset: -325,143,100
+		Color: 00E00090
+		UsePlayerColor: false
+		TrailWidth: 48
+		TrailLength: 15
+
+CERBERUS:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^9CellVision
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 2200
+	Tooltip:
+		Name: Paladin Cruiser
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: High tech frigate armed with a mobile stealth generator.\n\nGood vs: Ground Targets\n\nSpecial:\n- Cloaks friendly units next to it
+		Queue: Air
+		BuildPaletteOrder: 5
+		Prerequisites: ~nahpad, natech
+	Selectable:
+		Bounds: 90,45
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 60
+		Repulsable: true
+		MoveIntoShroud: true
+	-Rearmable:
+	Health:
+		HP: 45000
+	Armament@sweep1:
+		Weapon: CerberusSublazor1
+		LocalOffset: 1400, 225, 0
+	Armament@sweep2:
+		Weapon: CerberusSublazor2
+		LocalOffset: 1400, -225, 0
+	AmbientSound:
+		SoundFiles: NUBeamC_wea1Loopa.wav, NUBeamC_wea1Loopb.wav, NUBeamC_wea1Loopc.wav, NUBeamC_wea1Loopd.wav, NUBeamC_wea1Loope.wav
+		Interval: 2
+		RequiresCondition: Attacking
+	GrantConditionOnAttack:
+		Condition: Attacking
+		RevokeDelay: 3
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 10
+		Voice: Attack
+	-Cloak@CLOAKGENERATOR:
+	WithRangeCircle:
+		Range: 4c0
+		Type: cloakgenerator
+		RenderOnGround: true
+		Color: 00FF7FCC
+	RenderSprites:
+		PlayerPalette: playertemperate
+	SpawnActorOnDeath:
+		Actor: CERBERUS.Husk
+		RequiresCondition: airborne
+	ProximityExternalCondition:
+		Condition: cloakgenerator
+		Range: 5c0
+		EnableSound: cloak5.aud
+		DisableSound: cloak5.aud
+		AffectsParent: false
+	Explodes@Shrapnel:
+		Weapon: BigAircraftShrapnel
+		EmptyWeapon: BigAircraftShrapnel
+	Contrail@1:
+		Offset: -1500, 336, -50
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailLength: 10
+		TrailWidth: 96
+	Contrail@2:
+		Offset: -1500, 112, -50
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailLength: 10
+		TrailWidth: 96
+	Contrail@3:
+		Offset: -1500, -112, -50
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailLength: 10
+		TrailWidth: 96
+	Contrail@4:
+		Offset: -1500, -336, -50
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailLength: 10
+		TrailWidth: 96
+
+MUTHELI:
+	Inherits: ^CombatHelicopter
+	Inherits@2: ^AutoTargetAllAssaultMove
+	Inherits@3: ^BasicStealthDetectionAir
+	Inherits@4: ^MutRender
+	Inherits@5: ^9CellVision
+	Inherits@6: ^UsesAmmunition
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 1300
+	Tooltip:
+		Name: Gargoyle
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Heavy assault gunship with an auto-cannon.\n\nGood vs: Everything\n\nSpecial:\n- Can attack air\n- Detects cloaked units
+		Queue: Air
+		BuildPaletteOrder: 1
+		Prerequisites: ~muair
+	Selectable:
+		Bounds: 30,24
+	Aircraft:
+		TurnSpeed: 28
+		Speed: 150
+		MoveIntoShroud: true
+	Health:
+		HP: 12000
+	WithIdleOverlay@ROTORAIR:
+		Offset: 300,0,500
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 300,0,500
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	Armament@primary:
+		Weapon: GargoylACannon
+		MuzzleSequence: muzzle
+		LocalOffset: 950,0,0
+		PauseOnCondition: !ammo
+	Armament@AA:
+		Weapon: GargoylACannonAA
+		MuzzleSequence: muzzle
+		LocalOffset: 950,0,0
+		PauseOnCondition: !ammo
+	GrantConditionOnAttack@Casing:
+		Condition: attack
+		ArmamentNames: primary
+	ExplodeWeapon@Casing:
+		Weapon: GargoylACannonCasing
+		RequiresCondition: attack
+		RevokeDelay: 1
+	WithMuzzleOverlay:
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 32
+		Voice: Attack
+		Armaments: primary
+	AmmoPool:
+		Ammo: 10
+		ReloadCount: 2
+		ReloadDelay: 50
+		AmmoCondition: ammo
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
+	SpawnActorOnDeath:
+		Actor: MUTHELI.Husk
+		RequiresCondition: airborne
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: pips
+
+WETP:
+	Inherits: ^CombatPlane
+	Inherits@2: ^AutoTargetAllAssaultMove
+	Inherits@3: ^UsesAmmunition
+	Inherits@4: ^9CellVision
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Falcon
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Fast jet that throws a small tiberium bomb.\n\nGood vs: Ground Targets\nSpecial:\n- Can mutate killed enemy units\n- Emits tiberium gas damaging nearby units\n- Moves at high speed when attacking\n- Has very low vision
+		Queue: Air
+		BuildPaletteOrder: 7
+		Prerequisites: ~muair, muhall
+	Selectable:
+		Bounds: 30,24
+	Aircraft:
+		MaximumPitch: 120
+		TurnSpeed: 30
+		IdleTurnSpeed: 20
+		Speed: 150
+		IdleSpeed: 85
+		AirborneCondition: airborne
+		MoveIntoShroud: true
+	Health:
+		HP: 13000
+	Armament:
+		Weapon: FalconPunch
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 20
+	AmmoPool:
+		Ammo: 1
+		ReloadCount: 1
+		ReloadDelay: 250
+		AmmoCondition: ammo
+	AutoTarget:
+		ScanRadius: 6
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
+	RenderSprites:
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+	SpawnActorOnDeath:
+		Actor: WETP.Husk
+		RequiresCondition: airborne
+	GrantConditionOnActivity:
+		Condition: attacking
+	SpeedMultiplier@Supersonic:
+		RequiresCondition: attacking && ammo
+		Modifier: 300
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: pips
+	Contrail@1:
+		Offset: -100,-700,55
+		Color: 55555580
+		UsePlayerColor: false
+		TrailWidth: 32
+	Contrail@2:
+		Offset: -100,700,55
+		Color: 55555580
+		UsePlayerColor: false
+		TrailWidth: 32
+	Contrail@FlameTrail:
+		Offset: -900,0,50
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailWidth: 96
+		TrailLength: 7
+
+MUTQUEEN:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^SpriteActor
+	Inherits@2: ^MutRender
+	Inherits@3: ^AutoTargetAllAssaultMove
+	Inherits@4: ^PermanentSelfHeal
+	Inherits@5: ^9CellVision
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Inherits@AImicroManagable: ^AImicroManagable
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Queen
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Harasser and mutator.\n\nGood vs: Vehicles, Buildings\n\nSpecial:\n- Can mutate killed enemy units\n- Lays eggs via deploy which later hatch as crabs that are hostile to anyone
+		Queue: Air
+		BuildPaletteOrder: 6
+		Prerequisites: ~muair
+	Selectable:
+		Bounds: 30,24
+	Voiced:
+		VoiceSet: LargeBeast
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 125
+		Repulsable: true
+		MoveIntoShroud: true
+		IdealSeparation: 1c0
+	-Rearmable:
+	Health:
+		HP: 10000
+	WithFacingSpriteBody:
+		Sequence: run
+	BodyOrientation:
+		QuantizedFacings: 8
+	GrantTimedConditionOnDeploy:
+		DeployedCondition: deployed
+		CooldownTicks: 4500
+		DeployedTicks: 15
+		StartsFullyCharged: true
+	ExplodeWeapon:
+		Weapon: EggElevator
+		RequiresCondition: deployed
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 20
+	Armament@1:
+		Weapon: QueenShard
+	-GrantConditionOnDamageState@spawnsparks:
+	-ExplodeWeapon@spawnsparks:
+	-ExternalCondition@spawnsparks:
+	-GrantConditionOnDamageState@smoke:
+	-SmokeParticleEmitter:
+	-ExternalCondition@smoketrail:
+	-Explodes@Shrapnel:
+	Explodes:
+		Weapon: QueenExplode
+		EmptyWeapon: QueenExplode
+	Explodes@AImicroManage:
+		RequiresCondition: AImicroManage
+		Weapon: SpawnEggShrapnelE
+		EmptyWeapon: SpawnEggShrapnelE
+
+MUTBIRD:
+	Inherits@3: MUTQUEEN
+	Tooltip:
+		Name: Seeder Bird
+	-Buildable:
+
+
+^ScrinAircraftGeneric:
+	Inherits@4: ^ScrinAircratVoice
+	Inherits@2: ^ScrinRender
+	Inherits@Shadow: ^AircraftShadow
+	SmokeParticleEmitter:
+		Image: scrsmoke
+		Palette: gradientblue40
+	Explodes@Shrapnel:
+		Weapon: BigScrinAircraftShrapnel
+		EmptyWeapon: BigScrinAircraftShrapnel
+	-WithDeathAnimation:
+
+STORMRIDER:
+	Inherits: ^CombatPlane
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^ScrinAircraftGeneric
+	Inherits@3: ^9CellVision
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Storm Rider
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Scrin fighter equiped with a blaster turret\n\nStrong vs Aircraft.\n\nSpecial:\n- Can absorb essence from killed units to heal.\n- Can attack enemies from all directions while moving
+		Queue: Air
+		BuildPaletteOrder: 1
+		Prerequisites: ~scrair
+	Selectable:
+		Bounds: 30,24
+	Hovers:
+	Aircraft:
+		MaximumPitch: 90
+		TurnSpeed: 32
+		Speed: 170
+		IdleTurnSpeed: 20
+		IdleSpeed: 85
+		AirborneCondition: airborne
+		MoveIntoShroud: true
+	-Rearmable:
+	Health:
+		HP: 10000
+	Armament:
+		Weapon: StormRiderBlast
+	Armament@AA:
+		Weapon: StormRiderBlastAA
+	AttackAircraft:
+		Voice: Attack
+		FacingTolerance: 120
+	SpawnActorOnDeath:
+		Actor: STORMRIDER.Husk
+		RequiresCondition: airborne
+	SmokeParticleEmitter:
+		Image: scrsmoke
+		Palette: gradientblue40
+	Explodes@Shrapnel:
+		Weapon: SmalLScrinAircraftShrapnel
+		EmptyWeapon: SmalLScrinAircraftShrapnel
+	Contrail@1:
+		Offset: -300,-150,-100
+		Color: 33008860
+		UsePlayerColor: false
+	Contrail@2:
+		Offset: -300,150,-100
+		Color: 3300EE80
+		UsePlayerColor: false
+
+
+DRACHE:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^8CellVision
+	Inherits@2: ^ScrinAircraftGeneric
+	Buildable:
+		Queue: Air
+		BuildPaletteOrder: 110
+		Description: Deploys into a Host Station.\n\nSpecial:\n- Provides a build radius for structures\n- Maximum production speed is reached with 7 Conyards\n- Max production speed reduces production time by 50%\n- Has increased HP when deployed
+		Prerequisites: ~scrair, ~!fixUndeployDracheBug
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Scrin Host Station
+	Selectable:
+		Bounds: 100, 85, 0, -24
+		Priority: 4
+	Health:
+		HP: 60000
+	Targetable@MindControlImmune:
+		TargetTypes: MindControlImmune
+	Aircraft:
+		TurnSpeed: 12
+		Speed: 50
+		MoveIntoShroud: true
+		TakeOffOnCreation: false
+		LandableTerrainTypes: Clear, Ice, Rough, Road, DirtRoad, Ground, Green, Tiberium, BlueTiberium
+	-Rearmable:
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	Transforms:
+		IntoActor: drached
+		Offset: -1,-1
+		Facing: 384
+		TransformSounds: place2.aud
+		DeployCursor: deploy
+		NoTransformSounds:
+		Voice: Move
+		PauseOnCondition: mindcontrolled || empdisable
+	SelectionDecorations:
+	WithFacingSpriteBody:
+		Sequence: stand
+	Hovers:
+	SpawnActorOnDeath:
+		Actor: DRACHE.Husk
+		RequiresCondition: airborne
+	SmokeParticleEmitter:
+		Offset: 0,0,1000,0,0,1000
+
+SCRGLYDER1:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^ScrinAircraftGeneric
+	Inherits@3: ^BasicStealthDetectionAir
+	Inherits@5: ^9CellVision
+	Inherits@GainsExperience: ^GainsExperience
+	Inherits@AImicroManagable: ^AImicroManagable
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Glider
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Bounds: 40,30,0,-10
+	Transforms:
+		IntoActor: scrglyder2
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 120
+		Repulsable: true
+		MoveIntoShroud: true
+		LandableTerrainTypes: Clear, Ice, Rough, Road, DirtRoad, Ground, Green, Tiberium, BlueTiberium, Water
+	-Rearmable:
+	Health:
+		HP: 20000
+	Armament:
+		Weapon: Glyder1Cannon
+		LocalOffset: 0,0,0
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 20
+		Voice: Attack
+	BodyOrientation:
+		QuantizedFacings: 32
+	SpawnActorOnDeath:
+		Actor: GLYDER1.Husk
+		RequiresCondition: airborne
+	Armament@AITransformDummyWeapon:
+		Weapon: AIGlyder1AimingDummyWeapon
+		RequiresCondition: AImicroManage
+		PauseOnCondition: empdisable
+		ReloadingCondition: AIattackGround
+	TransformOnCondition@AITransform:
+		RequiresCondition: AIattackGround
+		IntoActor: scrglyder2
+	SmokeParticleEmitter:
+		Offset: 0,0,500,0,0,500
+	Explodes@Shrapnel:
+		Weapon: SmalLScrinAircraftShrapnel
+		EmptyWeapon: SmalLScrinAircraftShrapnel
+
+SCRDESTROYER:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^ScrinAircraftGeneric
+	Inherits@3: ^7CellVision
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Destroyer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Scrin light frigate, designed for long range harassment.\n\nGood vs Ground targets\n\nSpecial:\n- Can absorb essence from killed units to heal
+		Queue: Air
+		BuildPaletteOrder: 9
+		Prerequisites: ~scrair, scrradr
+	-Rearmable:
+	Selectable:
+		Bounds: 85,50,0,-12
+	AutoTarget:
+		ScanRadius: 15
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 60
+		Repulsable: true
+		MoveIntoShroud: true
+	Targetable@Essence:
+		TargetTypes: ScrinUnit
+	Health:
+		HP: 25000
+	Armament:
+		Weapon: DestroyerCannon
+		LocalOffset: 300,0,0
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 20
+		Voice: Attack
+		TargetFrozenActors: true
+	BodyOrientation:
+		QuantizedFacings: 32
+	SpawnActorOnDeath:
+		Actor: SCRDESTROYER.Husk
+		RequiresCondition: airborne
+	Contrail@1:
+		Offset: -1300, -20, 600
+		Color: AAAAFFAA
+		UsePlayerColor: false
+		TrailLength: 10
+		TrailWidth: 128
+
+SCRTRANS:
+	Inherits: ^Helicopter
+	Inherits@1: ^9CellVision
+	Inherits@2: ^ScrinAircraftGeneric
+	Inherits@4: ^LowPrioritySelectionMode
+	Inherits@PIPS: ^CargoPips
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Scrin Transport
+	Buildable:
+		Description: Scrin transport.\n\nSpecial\n- Can carry up to 3 vehicles or ten soldiers.\n- Lands whenever its able to
+		Queue: Air
+		Prerequisites: ~scrair, scrdepot
+		BuildPaletteOrder: 8
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 10
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		UnloadVoice: Unload
+		LoadingCondition: notmobile
+		OwnerChangedAffectsPassengers: false
+	Selectable:
+		Bounds: 90,50
+		Priority: 4
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 150
+		Repulsable: true
+		MoveIntoShroud: true
+		LandableTerrainTypes: Clear, Ice, Rough, Road, DirtRoad, Ground, Green, Tiberium, BlueTiberium
+	Health:
+		HP: 15000
+	BodyOrientation:
+		QuantizedFacings: 32
+	SpawnActorOnDeath:
+		Actor: SCRTRANS.Husk
+		RequiresCondition: airborne
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+	Contrail@1:
+		Offset: -1600, -20, 100
+		Color: AAAAFFAA
+		UsePlayerColor: false
+		TrailLength: 10
+		TrailWidth: 128
+
+SCRCARRIER:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^ScrinAircraftGeneric
+	Inherits@3: ^BasicStealthDetectionAir
+	Inherits@5: ^9CellVision
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Assault Carrier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Scrin frigate.\n\nStrong vs Vehicles, Aircraft\n\nSpecial:\n- Sends fighters at enemies\n- Can attack Air\n- Detects cloaked units\n- Can absorb essence from killed enemies to heal\n- Can attack enemies while moving.
+		Queue: Air
+		BuildPaletteOrder: 11
+		Prerequisites: ~scrair, scrtech
+	Targetable@Essence:
+		TargetTypes: ScrinUnit
+	Selectable:
+		Bounds: 90,55
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 50
+		Repulsable: true
+		MoveIntoShroud: true
+	-Rearmable:
+	Health:
+		HP: 60000
+	Targetable@GROUND:
+		TargetTypes: Vehicle, MindControlImmune, Mothership
+	Targetable@AIRBORNE:
+		TargetTypes: Air, MindControlImmune, Mothership
+	Armament:
+		Weapon: FighterSpawn
+	CarrierMaster:
+		Actors: STORMRIDERSPAWN, STORMRIDERSPAWN, STORMRIDERSPAWN, STORMRIDERSPAWN, STORMRIDERSPAWN, STORMRIDERSPAWN
+		RespawnTicks: 200
+		RearmTicks: 10
+		InstantRepair: true
+	AttackTurreted:
+	Turreted:
+	AutoTarget:
+	-WithFacingSpriteBody:
+	WithInfantryBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	SpawnActorOnDeath:
+		Actor: SCRCARRIER.Husk
+		RequiresCondition: airborne
+	WithSpawnerMasterPipsDecoration:
+		Margin: 4, 3
+		Palette: pips
+		Position: BottomLeft
+		RequiresSelection: true
+	Contrail@1:
+		Offset: -1300, -20, 100
+		Color: AAAAFFAA
+		UsePlayerColor: false
+		TrailLength: 10
+		TrailWidth: 128
+
+STORMRIDERSPAWN:
+	Inherits: ^CombatPlane
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^ScrinAircraftGeneric
+	Inherits@3: ^3CellVision
+	Inherits@Shadow: ^AircraftShadow
+	EditorOnlyTooltip:
+		Name: Assault Carrier Drone (Do not place in editor)
+	Tooltip:
+		Name: Wyverm
+	Interactable:
+	Contrail@1:
+		Offset: 0,-30,0
+		Color: 3300EE80
+		UsePlayerColor: false
+		TrailWidth: 32
+	GivesExperience:
+		Experience: 50
+	Aircraft:
+		MaximumPitch: 90
+		Repulsable: false
+		TurnSpeed: 80
+		Speed: 150
+		AltitudeVelocity: 200
+		VTOL: false #Hack: avoid unable entering carrier while carrier moving
+		AirborneCondition: airborne
+		MoveIntoShroud: true
+	Armament:
+		Weapon: WyvermBlast
+	Armament@AA:
+		Weapon: WyvermBlastAA
+	AttackAircraft:
+		FacingTolerance: 120
+	RejectsOrders:
+	RenderSprites:
+		Image: wyverm2
+	ExternalCondition@Return:
+		Condition: ForceReturn
+	-Rearmable:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Health:
+		HP: 5000
+	CarrierSlave:
+		LandingDistance: 1c0
+	Targetable@Summoned:
+		TargetTypes: Summoned
+	-UpdatesPlayerStatistics:
+	-ActorLostNotification:
+	-AppearsOnRadar:
+	-SmokeParticleEmitter:
+	-GrantConditionOnDamageState@spawnsparks:
+	-ExplodeWeapon@spawnsparks:
+	-ExternalCondition@spawnsparks:
+	-Selectable:
+	-SelectionDecorations:
+	-Explodes@Shrapnel:
+
+CABDRONEJET:
+	Inherits: STORMRIDERSPAWN
+	Inherits@1: ^CabRender
+	Armament:
+		Weapon: CabJetMiniBomb
+		PauseOnCondition: !ammo
+	-Armament@AA:
+	AmmoPool:
+		Ammo: 3
+		AmmoCondition: ammo
+		ReloadDelay: 5
+	EditorOnlyTooltip:
+		Name: Imp (Do not place in editor)
+	Tooltip:
+		Name: Imp
+	Valued:
+		Cost: 50
+	Health:
+		HP: 8000
+	RenderSprites:
+		Image: cabdronejet
+	Rearmable:
+		RearmActors: cabpit
+	Aircraft:
+		MaximumPitch: 90
+		TurnSpeed: 120
+		Speed: 200
+		AirborneCondition: airborne
+		AltitudeVelocity: 600
+		MoveIntoShroud: true
+		VTOL: true
+	AttackAircraft:
+	RejectsOrders:
+	Contrail@1:
+		Offset: 0,-30,0
+		Color: FFFF0050
+		UsePlayerColor: false
+		TrailWidth: 32
+
+SCRBATTLESHIP:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^ScrinAircraftGeneric
+	Inherits@3: ^PermanentSelfHeal
+	Inherits@4: ^CommandoIcon
+	Inherits@6: ^11CellVision
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 4000
+	Tooltip:
+		Name: Battlecruiser
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Scrin flagship\n\nStrong vs Ground units\n\nSpecial:\n- Maximum Supply of 1\n- Auto repairs\n- Can absorb essence from killed enemies to heal\n- Can attack enemies while moving
+		Queue: Air
+		BuildPaletteOrder: 12
+		Prerequisites: ~scrair, scradvpowr
+		BuildLimit: 1
+	Selectable:
+		Bounds: 90,55
+	Targetable@Essence:
+		TargetTypes: ScrinUnit
+	AnnounceOnSeen:
+		Notification: BattleCruiserDetected
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 60
+		Repulsable: true
+		MoveIntoShroud: true
+	-Rearmable:
+	Health:
+		HP: 150000
+	Armament:
+		Weapon: BattleshipCannon
+		LocalOffset: 0,0,0, 1000,0,0, -1000,0,0, 600,-500,0, -600,-500,0, -600,500,0, 600,500,0
+		MuzzleSequence: muzzle
+		MuzzlePalette: gradientblue60
+	WithMuzzleOverlay:
+	AttackTurreted:
+	Turreted:
+	AutoTarget:
+	BodyOrientation:
+		QuantizedFacings: 32
+	SpawnActorOnDeath:
+		RequiresCondition: airborne
+		Actor: SCRBATTLESHIP.Husk
+	Contrail@1:
+		Offset: -2200, -20, 350
+		Color: AAAAFFAA
+		UsePlayerColor: false
+		TrailLength: 15
+		TrailWidth: 128
+	Contrail@2:
+		Offset: -2300, 80, 350
+		Color: AA33FF80
+		UsePlayerColor: false
+		TrailLength: 8
+		TrailWidth: 128
+	Contrail@3:
+		Offset: -2300, -140, 350
+		Color: AA33FF80
+		UsePlayerColor: false
+		TrailLength: 8
+		TrailWidth: 128
+
+WASP:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^BasicStealthDetectionAir
+	Inherits@4: ^9CellVision
+	Inherits@5: ^CabRender
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Wasp
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Aerial drone armed with dual railgun cannons.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Can attack air\n- Detects cloaked units
+		Queue: Air
+		BuildPaletteOrder: 1
+		Prerequisites: ~cabair
+	Selectable:
+		Bounds: 40,30
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 130
+		Repulsable: true
+		MoveIntoShroud: true
+	-Rearmable:
+	Health:
+		HP: 18000
+	Voiced:
+		VoiceSet: Limpet
+	Armament@PRIMARY:
+		Weapon: WaspBullet
+		LocalOffset: 250,350,-100, 250,-350,-100
+	Armament@SECONDARY:
+		Weapon: WaspBulletAA
+		LocalOffset: 250,-350,-100, 250,350,-100
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 20
+		Voice: Attack
+	AutoTarget:
+	RenderSprites:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	SpawnActorOnDeath:
+		RequiresCondition: airborne
+		Actor: WASP.Husk
+
+FIREFLY:
+	Inherits: ^CombatHelicopter
+	Inherits@5: ^CabRender
+	Inherits@Shadow: ^AircraftShadow
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Firefly
+	Buildable:
+		Description: Support drone that deploys turrets.\n\nSpecial:\n- unarmed\n- Deployes turrets\n- rearms at Service Depot\n- detects stealth
+		Queue: Air
+		BuildPaletteOrder: 13
+		Prerequisites: ~disabled #~cabair, cabradr, gadept
+	Selectable:
+		Bounds: 40,30
+		Priority: 4
+	Voiced:
+		VoiceSet: Limpet
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 120
+		Repulsable: true
+		MoveIntoShroud: true
+		LandableTerrainTypes: Clear, Ice, Rough, Road, DirtRoad, Ground, Green, Tiberium, BlueTiberium
+	-Rearmable:
+	Health:
+		HP: 10000
+	RenderSprites:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	SpawnActorOnDeath:
+		RequiresCondition: airborne
+		Actor: FIREFLY.Husk
+
+BASILISK:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^9CellVision
+	Inherits@4: ^CabRender
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: Basilisk
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Description: Light frigate armed with firestorm rockets.\n\nGood vs: Infantry\n\nSpecial:\n- Deals AoE damage
+		Queue: Air
+		BuildPaletteOrder: 14
+		Prerequisites: ~cabair, cabtech
+	Selectable:
+		Bounds: 60,48
+	Voiced:
+		VoiceSet: Limpet
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 75
+		MoveIntoShroud: true
+	-Rearmable:
+	Health:
+		HP: 60000
+	Armament:
+		Weapon: BasiliskBomb
+		LocalOffset: 128,0,0, 500,-700,0, 500,700,0
+	AttackAircraft:
+		AttackType: Hover
+		FacingTolerance: 20
+		Voice: Attack
+	AutoTarget:
+	RenderSprites:
+	WithFacingSpriteBody:
+	SpawnActorOnDeath:
+		RequiresCondition: airborne
+		Actor: BASILISK.Husk
+	Explodes@Shrapnel:
+		Weapon: BigAircraftShrapnel
+		EmptyWeapon: BigAircraftShrapnel
+	Contrail@1:
+		Offset: -1000,-330,40
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailLength: 10
+	Contrail@2:
+		Offset: -1000,300,40
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailLength: 10
+
+DEVOURER:
+	Inherits: ^CombatHelicopter
+	Inherits@1: ^AutoTargetAllAssaultMove
+	Inherits@2: ^PermanentSelfHeal
+	Inherits@3: ^CabRender
+	Inherits@4: ^9CellVision
+	Inherits@Shadow: ^AircraftShadow
+	Inherits@GainsExperience: ^GainsExperience
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Devourer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Air
+		Description: Heavy and slow siege frigate.\n\nGood vs: Buildings\n\nSpecial:\n- Selfrepairs\n- Can attack units while moving
+		BuildPaletteOrder: 15
+		Prerequisites: ~cabair, cabtech
+	Selectable:
+		Bounds: 80, 60, 0, -24
+	Aircraft:
+		TurnSpeed: 24
+		Speed: 35
+		CruiseAltitude: 0c750
+		Repulsable: true
+		MoveIntoShroud: true
+	-Rearmable:
+	Health:
+		HP: 175000
+	Voiced:
+		VoiceSet: Limpet
+	Armament@Primary:
+		Weapon: DevourerGrinder
+	AmbientSound:
+		SoundFiles: ChainLoop0000.wav, ChainLoop0001.wav, ChainLoop0002.wav, ChainLoop0003.wav, ChainLoop0004.wav, ChainLoop0005.wav
+		Interval: 13
+		Volume: 0.08
+		RequiresCondition: Attacking
+	GrantConditionOnAttack:
+		Condition: Attacking
+		RevokeDelay: 25
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: empdisable
+	Turreted:
+		TurnSpeed: 12
+	AutoTarget:
+		ScanRadius: 5
+	RenderSprites:
+	WithFacingSpriteBody:
+		RequiresCondition: !Attacking
+		Sequence: idle
+	WithFacingSpriteBody@attack:
+		Sequence: shoot
+		RequiresCondition: Attacking
+		Name: Nomnomnom
+	BodyOrientation:
+		QuantizedFacings: 8
+	SpawnActorOnDeath:
+		RequiresCondition: airborne
+		Actor: DEVOURER.Husk
+	Explodes@Shrapnel:
+		Weapon: BigAircraftShrapnel
+		EmptyWeapon: BigAircraftShrapnel

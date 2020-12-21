@@ -1,0 +1,127 @@
+^BasePlayer:
+	AlwaysVisible:
+	Shroud:
+
+EditorPlayer:
+	Inherits: ^BasePlayer
+
+Player:
+	Inherits: ^BasePlayer
+	AlwaysVisible:
+	TechTree:
+	GrantConditionOnPrerequisiteManager:
+	EnemyWatcher:
+	ClassicProductionQueue@Building:
+		Type: Building
+		LowPowerModifier: 200
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		BuildDurationModifier: 100
+		ReadyAudio: ConstructionComplete
+		SpeedUp: true
+		CancelledAudio: Cancelled
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Defense:
+		Type: Defense
+		LowPowerModifier: 200
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		BuildDurationModifier: 100
+		ReadyAudio: ConstructionComplete
+		SpeedUp: true
+		CancelledAudio: Cancelled
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Vehicle:
+		Type: Vehicle
+		LowPowerModifier: 200
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		BuildDurationModifier: 100
+		ReadyAudio: UnitReady
+		SpeedUp: true
+		CancelledAudio: Cancelled
+		BuildTimeSpeedReduction: 100, 80, 65, 50
+	ClassicProductionQueue@Infantry:
+		Type: Infantry
+		LowPowerModifier: 200
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		ReadyAudio: UnitReady
+		SpeedUp: true
+		CancelledAudio: Cancelled
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Air:
+		Type: Air
+		BuildDurationModifier: 100
+		LowPowerModifier: 200
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		ReadyAudio: UnitReady
+		SpeedUp: true
+		CancelledAudio: Cancelled
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	PlaceBuilding:
+		ToggleVariantKey: ToggleVariant
+		NewOptionsNotification: NewOptions
+	SupportPowerManager:
+	ScriptTriggers:
+	MissionObjectives:
+		WinNotification: Win
+		LoseNotification: Lose
+		LeaveNotification: Leave
+	ConquestVictoryConditions:
+	PowerManager:
+		SpeechNotification: LowPower
+	AllyRepair:
+	PlayerResources:
+		InsufficientFundsNotification: InsufficientFunds
+		CashTickUpNotification: CashTickUp
+		CashTickDownNotification: CashTickDown
+	DeveloperMode:
+		CheckboxEnabled: false
+		CheckboxDisplayOrder: 9
+	ProvidesTechPrerequisite@high:
+		Name: No Superweapons
+		Prerequisites: techlevel.infonly, techlevel.low, techlevel.medium, techlevel.high
+		Id: nosuperweapons
+	ProvidesTechPrerequisite@unrestricted:
+		Name: Unrestricted
+		Prerequisites: techlevel.infonly, techlevel.low, techlevel.medium, techlevel.high, techlevel.unrestricted
+		Id: unrestricted
+	Shroud:
+		FogCheckboxDisplayOrder: 3
+		ExploredMapCheckboxEnabled: true
+	LobbyPrerequisiteCheckbox@FREEMINIMAP:
+		ID: freeradar
+		Label: Free Minimap
+		Description: Minimap is active without a radar building
+		Enabled: true
+		DisplayOrder: 8
+		Prerequisites: global-freeminimap
+	ProvidesRadar:
+		RequiresCondition: freeminimap
+	GrantConditionOnPrerequisite@FREEMINIMAP:
+		Condition: freeminimap
+		Prerequisites: global-freeminimap
+	FrozenActorLayer:
+	BaseAttackNotifier:
+		NotifyInterval: 20
+		AllyNotification: OurAllyIsUnderAttack
+	HarvesterAttackNotifier:
+	PlayerStatistics:
+	PlaceBeacon:
+		Palette: cloakbeacon
+		IsPlayerPalette: true
+		BeaconSequence: idle
+		ArrowSequence:
+		CircleSequence:
+	ResourceStorageWarning:
+		AdviceInterval: 120
+	PlayerExperience:
+	SharedCargoManager:
+		MaxWeight: 15
+	TeleportNetworkManager:
+		Type: mutantteleportnetwork
+	GameSaveViewportManager:
+	PlayerRadarTerrain:
+	AutoDeployManager:
