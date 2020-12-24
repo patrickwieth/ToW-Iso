@@ -19,7 +19,6 @@ soviet_conyard:
 		Tick: 200
 	idle-front: soviet_conyard
 		Length: 3
-		ShadowStart: 3
 	make: soviet_conyard_make
 		Length: 50
 		ShadowStart: 50
@@ -28,3 +27,42 @@ soviet_conyard:
 		ZOffset: 1023
 	icon: mutyardicon
 		Offset: 0, 0
+
+
+weap.auto:
+	Defaults:
+		Offset: -12, -42, 22
+		DepthSpriteOffset: 32, 0
+		DepthSprite: isodepth.shp
+	idle: soviet_fact
+		ShadowStart: 3
+		ZOffset: -1024
+		ZRamp: 1
+		-DepthSprite:
+	build-top: soviet_fact_5
+		Start: 0
+		Length: 15
+		ZOffset: 511
+	make: soviet_factmk
+		Length: 40
+		ShadowStart: 40
+	bib: soviet_fact_1
+		Length: 3
+		ZOffset: -1024
+		ZRamp: 1
+		-DepthSprite:
+	idle-top: soviet_conyard_anim
+		Length: 18
+		ShadowStart: 18
+		Tick: 200
+	emp-overlay: emp_fx01
+		Length: *
+		Offset: 0, 0, 23
+		UseTilesetCode: false
+		ZOffset: 512
+		BlendMode: Additive
+		-DepthSprite:
+	icon: weapicon
+		Offset: 0, 0
+		UseTilesetCode: false
+		-DepthSprite:
