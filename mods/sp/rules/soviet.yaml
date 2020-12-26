@@ -4,7 +4,7 @@
 	Inherits@2: ^AICashCheat
 	Inherits@AIbuilding: ^AIbuildingMicroControl
 	Building:
-		Footprint: xxxx xxxx xxxx ____
+		Footprint: xxxx xxxx xxxx xxxx
 		BuildSounds: facbld1.aud
 		Dimensions: 4,4
 	Buildable:
@@ -110,7 +110,11 @@ soviet_conyard:
 
 WEAP.auto:
 	Inherits: ^Building
-	Inherits@shape: ^4x4Shape
+	Inherits@shape: ^4x3Shape
+	Building:
+		Footprint: xxx= xxx= xxx=
+		Dimensions: 4,3
+		LocalCenterOffset: 0,-512,0
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 80
@@ -121,10 +125,6 @@ WEAP.auto:
 		Cost: 3000
 	Tooltip:
 		Name: Automated War Factory
-	Building:
-		Footprint: xxx xxx xxx +++
-		Dimensions: 3,4
-		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 150000
 	Armor:
@@ -150,8 +150,8 @@ WEAP.auto:
 	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
-		SpawnOffset: 213,-128,0
-		ExitCell: 1,3
+		SpawnOffset: 413,-512,0
+		ExitCell: 3,1
 	Cargo:
 		Types: Infantry, Vehicle
 		MaxWeight: 10
@@ -159,7 +159,7 @@ WEAP.auto:
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 	PeriodicCargoProducer:
-		Actors: mmch
+		Condition: TyrannyBuff
 		Type: Vehicle
 		ChargeDuration: 300
 		ShowSelectionBar: true
@@ -169,7 +169,7 @@ WEAP.auto:
 		PauseOnCondition: forceshield || invulnerability || being-warped
 	ReloadDelayMultiplier@balance2:
 		Modifier: 50
-		RequiresCondition: TeamBalance2
+		RequiresCondition: true
 	ReloadDelayMultiplier@balance1:
 		Modifier: 66
 		RequiresCondition: TeamBalance1
