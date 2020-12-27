@@ -108,7 +108,7 @@ soviet_conyard:
 		Factions: gdi, nod, cab, mut, scr
 		ActorTypes: e2
 
-WEAP.auto:
+soviet_factory:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Building:
@@ -141,12 +141,19 @@ WEAP.auto:
 	WithIdleOverlay@TOP:
 		Sequence: idle-top
 		IsPlayerPalette: true
+		RequiresCondition: !Building-Buildup
+	WithIdleOverlay@FLAG:
+		Sequence: idle-flag
+		IsPlayerPalette: true
 	WithIdleOverlay@BIB:
 		Sequence: bib
 		RequiresCondition: !Building-Buildup
+	WithProductionOverlay:
+		Sequence: build-top
+		RequiresCondition: !Building-Buildup
 	WithProductionDoorOverlay:
 		RequiresCondition: !build-incomplete
-		Sequence: build-top
+		Sequence: build-door
 	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
@@ -158,8 +165,9 @@ WEAP.auto:
 		PipCount: 10
 		PassengerFacing: 0
 		LoadingCondition: notmobile
+	Inherits@PIPS: ^CargoPips
 	PeriodicCargoProducer:
-		Condition: TyrannyBuff
+		Condition: Autoproduced
 		Type: Vehicle
 		ChargeDuration: 300
 		ShowSelectionBar: true
@@ -177,5 +185,69 @@ WEAP.auto:
 		Condition: TeamBalance1
 	ExternalCondition@TeamBalance:
 		Condition: TeamBalance2
-	GrantExternalConditionToProduced:
-		Condition: autoproduced
+
+soviet_barracks:
+	Inherits: ^Barracks
+	Inherits@2: ^2x2Shape
+	Tooltip:
+		Name: GDI Barracks
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 2
+		Description: Arms Infantry.\n\nSpecial:\n- Heals infantry in an area around it.\n- Maximun production speed is reached with 7 barracks.\n- Max production speed reduces production time by 50%.
+		Prerequisites: anypower, ~structures.gdi
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Exit@1:
+		SpawnOffset: -512,768,0
+		ExitCell: 1,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: -512,768,0
+		ExitCell: 0,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,2
+	Exit@fallback2:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,1
+	Exit@fallback3:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,0
+	Exit@fallback4:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,-1
+	Exit@fallback5:
+		SpawnOffset: 724,0,0
+		ExitCell: 1,-1
+	Exit@fallback6:
+		SpawnOffset: 0,-724,0
+		ExitCell: 0,-1
+	Exit@fallback7:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,-1
+	Exit@fallback8:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,0
+	Exit@fallback9:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,1
+	Exit@fallback10:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,2
+	WithProductionOverlay@LIGHTS:
+		Sequence: production-lights
+		RequiresCondition: !Building-Buildup
+	WithIdleOverlay@LIGHT:
+		Sequence: idle-light
+		RequiresCondition: !Building-Buildup
+	WithIdleOverlay@FLAG:
+		Sequence: idle-flag
+		RequiresCondition: !Building-Buildup
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@SharedEngie:
+		Prerequisite: SharedEngie
+	RequiresBuildableArea:
+		AreaTypes: building

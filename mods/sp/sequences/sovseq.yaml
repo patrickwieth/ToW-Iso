@@ -29,7 +29,7 @@ soviet_conyard:
 		Offset: 0, 0
 
 
-weap.auto:
+soviet_factory:
 	Defaults:
 		Offset: -12, -42, 22
 		DepthSpriteOffset: 32, 0
@@ -39,10 +39,15 @@ weap.auto:
 		ZOffset: -1024
 		ZRamp: 1
 		-DepthSprite:
-	build-top: soviet_fact_5
+	build-top: soviet_fact_2
+		Start: 0
+		Length: 3
+		ZOffset: 1024
+		Tick: 200
+	build-door: soviet_fact_5
 		Start: 0
 		Length: 15
-		ZOffset: 511
+		ZOffset: 1024
 	make: soviet_factmk
 		Length: 40
 		ShadowStart: 40
@@ -51,10 +56,14 @@ weap.auto:
 		ZOffset: -1024
 		ZRamp: 1
 		-DepthSprite:
-	idle-top: soviet_conyard_anim
+	idle-flag: soviet_conyard_anim
 		Length: 18
 		ShadowStart: 18
 		Tick: 200
+	idle-top: soviet_fact_2
+		Length: 3
+		ZOffset: 1024
+		ShadowStart: 3
 	emp-overlay: emp_fx01
 		Length: *
 		Offset: 0, 0, 23
@@ -66,3 +75,50 @@ weap.auto:
 		Offset: 0, 0
 		UseTilesetCode: false
 		-DepthSprite:
+
+soviet_barracks:
+	Defaults:
+		Offset: 0, -24, 24
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	dead:
+		Start: 2
+		ShadowStart: 5
+		Tick: 400
+	production-lights: gtpile_a
+		Length: 7
+		Tick: 200
+		ZOffset: 1023
+	damaged-production-lights: gtpile_a
+		Start: 7
+		Length: 7
+		Tick: 200
+		ZOffset: 1023
+	idle-light: gtpile_b
+		Length: 7
+		Tick: 200
+	damaged-idle-light: gtpile_b
+		Start: 7
+		Length: 7
+		Tick: 200
+	idle-flag: gtpile_c
+		Length: 7
+	damaged-idle-flag: gtpile_c
+		Start: 7
+		Length: 7
+	make: gtpilemk
+		Length: 20
+		ShadowStart: 20
+	emp-overlay: emp_fx01
+		Length: *
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		BlendMode: Additive
+	icon: brrkicon
+		Offset: 0, 0
+		UseTilesetCode: false
