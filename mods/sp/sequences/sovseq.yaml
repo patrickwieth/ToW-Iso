@@ -28,8 +28,7 @@ soviet_conyard:
 	icon: mutyardicon
 		Offset: 0, 0
 
-
-soviet_factory:
+weap.auto:
 	Defaults:
 		Offset: -12, -42, 22
 		DepthSpriteOffset: 32, 0
@@ -56,7 +55,7 @@ soviet_factory:
 		ZOffset: -1024
 		ZRamp: 1
 		-DepthSprite:
-	idle-flag: soviet_conyard_anim
+	idle-flag: soviet_conyard_flag
 		Length: 18
 		ShadowStart: 18
 		Tick: 200
@@ -82,37 +81,12 @@ soviet_barracks:
 		UseTilesetCode: true
 	idle:
 		ShadowStart: 3
-	damaged-idle:
-		Start: 1
-		ShadowStart: 4
-	dead:
-		Start: 2
-		ShadowStart: 5
-		Tick: 400
-	production-lights: gtpile_a
-		Length: 7
-		Tick: 200
-		ZOffset: 1023
-	damaged-production-lights: gtpile_a
-		Start: 7
-		Length: 7
-		Tick: 200
-		ZOffset: 1023
-	idle-light: gtpile_b
-		Length: 7
-		Tick: 200
-	damaged-idle-light: gtpile_b
-		Start: 7
-		Length: 7
-		Tick: 200
-	idle-flag: gtpile_c
-		Length: 7
-	damaged-idle-flag: gtpile_c
-		Start: 7
-		Length: 7
-	make: gtpilemk
-		Length: 20
-		ShadowStart: 20
+	idle-flag: soviet_barracks_flag
+		Length: 18
+		ShadowStart: 18
+	make: soviet_barracksmk
+		Length: 40
+		ShadowStart: 40
 	emp-overlay: emp_fx01
 		Length: *
 		Offset: 0, 0

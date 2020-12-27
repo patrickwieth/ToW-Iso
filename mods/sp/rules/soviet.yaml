@@ -108,7 +108,7 @@ soviet_conyard:
 		Factions: gdi, nod, cab, mut, scr
 		ActorTypes: e2
 
-soviet_factory:
+weap.auto:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Building:
@@ -195,7 +195,7 @@ soviet_barracks:
 		Queue: Building
 		BuildPaletteOrder: 2
 		Description: Arms Infantry.\n\nSpecial:\n- Heals infantry in an area around it.\n- Maximun production speed is reached with 7 barracks.\n- Max production speed reduces production time by 50%.
-		Prerequisites: anypower, ~structures.gdi
+		Prerequisites: soviet_conyard
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -237,12 +237,6 @@ soviet_barracks:
 	Exit@fallback10:
 		SpawnOffset: -724,0,0
 		ExitCell: -1,2
-	WithProductionOverlay@LIGHTS:
-		Sequence: production-lights
-		RequiresCondition: !Building-Buildup
-	WithIdleOverlay@LIGHT:
-		Sequence: idle-light
-		RequiresCondition: !Building-Buildup
 	WithIdleOverlay@FLAG:
 		Sequence: idle-flag
 		RequiresCondition: !Building-Buildup
