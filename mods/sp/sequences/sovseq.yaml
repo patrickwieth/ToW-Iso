@@ -13,10 +13,10 @@ soviet_conyard:
 		ShadowStart: 3
 		Tick: 80
 		UseTilesetCode: false
-	idle-top: soviet_conyard_anim
+	idle-top: soviet_conyard_flag
 		Length: 18
 		ShadowStart: 18
-		Tick: 200
+		Tick: 120
 	idle-front: soviet_conyard
 		Length: 3
 	make: soviet_conyard_make
@@ -28,7 +28,7 @@ soviet_conyard:
 	icon: mutyardicon
 		Offset: 0, 0
 
-weap.auto:
+soviet_factory:
 	Defaults:
 		Offset: -12, -42, 22
 		DepthSpriteOffset: 32, 0
@@ -42,12 +42,11 @@ weap.auto:
 		Start: 0
 		Length: 3
 		ZOffset: 1024
-		Tick: 200
 	build-door: soviet_fact_5
 		Start: 0
 		Length: 15
 		ZOffset: 1024
-	make: soviet_factmk
+	make: soviet_fact_make
 		Length: 40
 		ShadowStart: 40
 	bib: soviet_fact_1
@@ -58,7 +57,7 @@ weap.auto:
 	idle-flag: soviet_conyard_flag
 		Length: 18
 		ShadowStart: 18
-		Tick: 200
+		Tick: 120
 	idle-top: soviet_fact_2
 		Length: 3
 		ZOffset: 1024
@@ -77,14 +76,14 @@ weap.auto:
 
 soviet_barracks:
 	Defaults:
-		Offset: 0, -24, 24
-		UseTilesetCode: true
+		Offset: 23, -43, 24
 	idle:
 		ShadowStart: 3
 	idle-flag: soviet_barracks_flag
 		Length: 18
 		ShadowStart: 18
-	make: soviet_barracksmk
+		Tick: 120
+	make: soviet_barracks_make
 		Length: 40
 		ShadowStart: 40
 	emp-overlay: emp_fx01
@@ -94,5 +93,52 @@ soviet_barracks:
 		ZOffset: 512
 		BlendMode: Additive
 	icon: brrkicon
+		Offset: 0, 0
+		UseTilesetCode: false
+
+soviet_power:
+	Defaults:
+		Offset: 1, -29, 24
+		DepthSprite: isodepth.shp
+	idle:
+		ShadowStart: 3
+	make: soviet_power_make
+		Length: 40
+		ShadowStart: 40
+	idle-flag: soviet_power_flag
+		Length: 18
+		ShadowStart: 18
+		Tick: 120
+	emp-overlay: emp_fx01
+		Length: *
+		Offset: 0, 0, 25
+		UseTilesetCode: false
+		ZOffset: 512
+		BlendMode: Additive
+		-DepthSprite:
+	icon: powricon
+		Offset: 0, 0
+		UseTilesetCode: false
+		-DepthSprite:
+
+soviet_advanced_power:
+	Defaults:
+		Offset: 10, -34, 30
+	idle:
+		ShadowStart: 3
+	idle-flag: soviet_power_flag
+		Length: 18
+		ShadowStart: 18
+		Tick: 120
+	make: soviet_advanced_power_make
+		Length: 19
+		ShadowStart: 19
+	emp-overlay: emp_fx01
+		Length: *
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		BlendMode: Additive
+	icon: apwricon
 		Offset: 0, 0
 		UseTilesetCode: false

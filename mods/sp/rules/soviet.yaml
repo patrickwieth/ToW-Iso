@@ -81,7 +81,6 @@
 		RequiresCondition: AIShattered
 		Amount: 80
 
-
 soviet_conyard:
 	Inherits: ^conyard_prototype
 	Inherits@1: ^MutRender
@@ -108,7 +107,7 @@ soviet_conyard:
 		Factions: gdi, nod, cab, mut, scr
 		ActorTypes: e2
 
-weap.auto:
+soviet_factory:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Building:
@@ -188,24 +187,24 @@ weap.auto:
 
 soviet_barracks:
 	Inherits: ^Barracks
-	Inherits@2: ^2x2Shape
+	Inherits@2: ^2x3Shape
 	Tooltip:
-		Name: GDI Barracks
+		Name: Soviet Barracks
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 2
 		Description: Arms Infantry.\n\nSpecial:\n- Heals infantry in an area around it.\n- Maximun production speed is reached with 7 barracks.\n- Max production speed reduces production time by 50%.
 		Prerequisites: soviet_conyard
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
 	Exit@1:
-		SpawnOffset: -512,768,0
-		ExitCell: 1,2
+		SpawnOffset: -800,512,0
+		ExitCell: 0,2
 		Priority: 2
 	Exit@2:
-		SpawnOffset: -512,768,0
-		ExitCell: 0,2
+		SpawnOffset: -800,512,0
+		ExitCell: -1,2
 		Priority: 2
 	Exit@fallback1:
 		SpawnOffset: 0,724,0
@@ -245,3 +244,49 @@ soviet_barracks:
 		Prerequisite: SharedEngie
 	RequiresBuildableArea:
 		AreaTypes: building
+
+soviet_power:
+	Inherits: ^Powerplant
+	Inherits@2: ^2x2Shape
+	Tooltip:
+		Name: Soviet Power Plant
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1
+		Prerequisites: soviet_conyard
+		Description: Provides power for other structures.
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	WithIdleOverlay@FLAG:
+		Sequence: idle-flag
+		RequiresCondition: !Building-Buildup
+	RequiresBuildableArea:
+		AreaTypes: building
+
+soviet_advanced_power:
+	Inherits: ^Powerplant
+	Inherits@2: ^2x3Shape
+	Tooltip:
+		Name: Advanced Power Plant
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 7
+		Description: Provides more power than the standard powerplant\nusing less space.
+		Prerequisites: soviet_conyard
+	Valued:
+		Cost: 700
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 2,3
+	Health:
+		HP: 100000
+	WithIdleOverlay@FLAG:
+		Sequence: idle-flag
+		RequiresCondition: !Building-Buildup
+	Power:
+		Amount: 300
+	RequiresBuildableArea:
+		AreaTypes: building
+	ProvidesPrerequisite:
+		Prerequisite: anypower
