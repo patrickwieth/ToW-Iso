@@ -1,5 +1,5 @@
-local callbacksLoaded = {};
-local callbacksTick = {};
+local callbacksLoaded = {WorldLoadedToW};
+local callbacksTick = {TickTugOfWar};
 
 function createModule(module, name)
 	_G[name] = module;
