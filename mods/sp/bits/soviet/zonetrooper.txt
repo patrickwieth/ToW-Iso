@@ -1,0 +1,36 @@
+Zone Trooper by Machine:
+
+Give credit if you use in a public release :P
+
+Elemental coding:
+
+Art.ini:
+[ZONE]
+Cameo=
+Sequence=ZoneSequence
+Crawls=yes
+Remapable=yes
+FireUp=2
+PrimaryFireFLH=0,0,0
+
+[ZoneSequence]
+Ready=0,1,1
+Guard=0,1,1
+Prone=104,1,1		
+Walk=8,12,12		
+FireUp=184,6,12		
+Down=104,1,1		
+Crawl=112,9,9		
+Up=0,1,1		
+FireProne=190,6,12
+Idle1=298,21,0,E	
+;Idle1=340,21,0,E
+Idle2=319,21,0,S
+Die1=280,9,0		
+Die2=289,9,0		
+Die3=0,1,1
+Die4=0,1,1
+Die5=0,1,1
+Struggle=0,6,0	;*;FS
+
+Added 3 idle anims, so you can pick one as cheer for RA2
