@@ -1,3 +1,39 @@
+##################### INFANTRY #####################
+
+soviet_conscript:
+	Inherits: ^Soldier
+	Inherits@2: ^6CellVision
+	Inherits@GainsExperience: ^GainsExperience
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 1
+		Description: Basic combat infantry.\n\nGood vs: Infantry\n\nSpecial:\n- Crush class: crushable
+		Prerequisites: ~gapile
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Marine
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 15000
+	Voiced:
+		VoiceSet: Marine
+	Armament@1:
+		Weapon: MarineRifle
+		PauseOnCondition: WebDisable
+		Name: OnFoot
+	Armament@2:
+		Weapon: GMarineRifle
+		PauseOnCondition: WebDisable
+	AttackFrontal:
+		Voice: Attack
+		Armaments: OnFoot
+		FacingTolerance: 2
+	RenderSprites:
+
+##################### BUILDINGS #####################
+
 ^conyard_prototype:
 	Inherits: ^Building
 	Inherits@1: ^4x4Shape
