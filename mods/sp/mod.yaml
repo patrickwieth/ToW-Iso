@@ -110,6 +110,7 @@ Packages:
 	sp|bits/neutral/campaignstuff
 	sp|bits/soviet
 	sp|uibits
+	sp|lua
 
 MapFolders:
 	sp|maps/multiplayer: System

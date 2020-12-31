@@ -103,10 +103,10 @@ TickTugOfWar = function()
 			return math.pow(a.Location.X - b.Location.X, 2) + math.pow(a.Location.Y - b.Location.Y, 2)
 		end
 
-		mcv = teamA[1].GetActorsByTypes({"mcv", "amcv", "smcv"})[1]
+		mcv = teamA[1].GetActorsByTypes({"soviet_conyard"})[1]
 
-		--Media.DisplayMessage("Distance to A:", tostring(sqdistance(mcv, startpointa)))
-		--Media.DisplayMessage("Distance to B:", tostring(sqdistance(mcv, startpointb)))
+		Media.DisplayMessage("Distance to A:", tostring(sqdistance(mcv, startpointa)))
+		Media.DisplayMessage("Distance to B:", tostring(sqdistance(mcv, startpointb)))
 
 		if sqdistance(mcv, startpointa) < sqdistance(mcv, startpointb) then
 			Media.DisplayMessage("Switching sides of teams")
@@ -182,7 +182,7 @@ AttackMoveUnits = function()
 
 		AttackMoveUnitsFromTable(teamBunits[5], warpointb1.Location)
 		AttackMoveUnitsFromTable(teamBunits[6], warpoint0.Location)
-		AttackMoveUnitsFromTable(teamBunits[7], warpointb2.Location)
+		AttackMoveUnitsFromTable(teamBunits[7], warpointa1.Location)
 	end
 end
 
@@ -234,7 +234,8 @@ end
 
 Trigger.OnAnyProduction(
   function(producer, produced, productionType)
-    if producer.Type == 'weap.auto'
+    --if producer.Type == 'soviet_factory'
+		if productionType == 'Autoproduction'
     then
 			if producer.Owner.IsAlliedWith(teamA[1]) and teamApower == 1.5 then
 				--Media.DisplayMessage("buffA1")

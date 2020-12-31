@@ -297,6 +297,9 @@
 
 World:
 	Inherits: ^BaseWorld
+	ScriptTriggers:
+	LuaScript:
+		Scripts: main.lua, tug_of_war.lua
 	ChatCommands:
 	DevCommands:
 	PlayerCommands:

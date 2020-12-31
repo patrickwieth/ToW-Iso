@@ -1,9 +1,17 @@
+^Autoproduce:
+	RejectsOrders:
+		RequiresCondition: Autoproduced
+	ExternalCondition@Autoproduced:
+		Condition: Autoproduced
+
+
 ##################### INFANTRY #####################
 
 soviet_conscript:
 	Inherits: ^Soldier
 	Inherits@2: ^6CellVision
 	Inherits@GainsExperience: ^GainsExperience
+	Inherits@Autoproduce: ^Autoproduce
 	Buildable:
 		Queue: Infantry
 		BuildPaletteOrder: 1
@@ -203,12 +211,12 @@ soviet_factory:
 	Inherits@PIPS: ^CargoPips
 	PeriodicCargoProducer:
 		Condition: Autoproduced
-		Type: Vehicle
+		Type: Autoproduction
 		ChargeDuration: 300
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
 	Production:
-		Produces: Vehicle
+		Produces: Autoproduction
 		PauseOnCondition: forceshield || invulnerability || being-warped
 	ReloadDelayMultiplier@balance2:
 		Modifier: 50
