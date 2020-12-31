@@ -6,59 +6,59 @@ soviet_conscript:
 		Tick: 80
 	stand:
 		Facings: 8
-		ShadowStart: 650
+		ShadowStart: 649
 	run:
 		Start: 8
 		Length: 8
 		Facings: 8
-		ShadowStart: 658
+		ShadowStart: 657
 	idle1:
-		Start: 169
+		Start: 168
 		Length: 8
-		ShadowStart: 818
+		ShadowStart: 816
 	idle2:
-		Start:
-		Length:
-		ShadowStart:
+		Start: 168
+		Length: 8
+		ShadowStart: 816
 	prone-run:
-		Start: 73
+		Start: 72
 		Length: 8
 		Facings: 8
-		ShadowStart: 722
+		ShadowStart: 721
 	prone-stand:
-		Start:
-		Facings:
-		Stride:
-		ShadowStart:
+		Start: 177
+		Facings: 8
+		Stride: 2
+		ShadowStart: 826
 	die1:
-		Start: 210
-		Length: 145
-		ShadowStart:
+		Start: 209
+		Length: 77
+		ShadowStart: 858
 	die2:
-		Start:
-		Length:
-		ShadowStart:
+		Start: 277
+		Length: 77
+		ShadowStart: 926
 	die-crushed:
-		Start:
-		Length:
-		ShadowStart:
-		Tick:
-		ZOffset:
+		Start: 277
+		Length: 77
+		ShadowStart: 926
+		Tick: 800
+		ZOffset: -511
 	shoot:
-		Start: 410
-		Length:
-		Facings:
-		ShadowStart:
+		Start: 409
+		Length: 15
+		Facings: 8
+		ShadowStart: 1058
 	prone-shoot:
-		Start:
-		Length:
-		Facings:
-		ShadowStart:
+		Start: 529
+		Length: 15
+		Facings: 8
+		ShadowStart: 1178
 	standup-0:
-		Start:
-		Length:
-		Facings:
-		ShadowStart:
+		Start: 193
+		Length: 2
+		Facings: 8
+		ShadowStart: 842
 	icon: sidebar-gdi|e1icon
 
 ##################### BUILDINGS #####################
