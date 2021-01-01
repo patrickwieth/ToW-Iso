@@ -103,7 +103,7 @@ TickTugOfWar = function()
 			return math.pow(a.Location.X - b.Location.X, 2) + math.pow(a.Location.Y - b.Location.Y, 2)
 		end
 
-		mcv = teamA[1].GetActorsByTypes({"soviet_conyard"})[1]
+		mcv = teamA[1].GetActorsByTypes({"soviet_conyard", "drache", "mcv", "cabmcv", "nodmcv"})[1]
 
 		Media.DisplayMessage("Distance to A:", tostring(sqdistance(mcv, startpointa)))
 		Media.DisplayMessage("Distance to B:", tostring(sqdistance(mcv, startpointb)))
