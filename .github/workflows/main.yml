@@ -31,6 +31,14 @@ jobs:
       id: buildx
       with:
         install: true
+    - name: Cache Docker layers
+      uses: actions/cache@v2
+      id: cache
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-
     - name: Perpare docker
       run: docker build -t openra-build --load .
     - name: Build CA
