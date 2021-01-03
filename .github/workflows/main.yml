@@ -27,8 +27,10 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
+    - name: Perpare docker
+      run: docker build -t openra-build .
     - name: Build CA
-      run: docker run -e RELEASE_VERSION=${{ needs.version.outputs.VERSION }} -v $GITHUB_WORKSPACE:/workdir --rm miob/openra-build ./build-docker.sh
+      run: docker run -e RELEASE_VERSION=${{ needs.version.outputs.VERSION }} -v $GITHUB_WORKSPACE:/workdir --rm openra-build ./build-docker.sh
     - name: Upload packages
       uses: actions/upload-artifact@v2
       with:
