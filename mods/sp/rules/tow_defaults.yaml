@@ -1,0 +1,33 @@
+^Autoproducer:
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 10
+		PipCount: 10
+		PassengerFacing: 0
+		LoadingCondition: notmobile
+	Inherits@PIPS: ^CargoPips
+	PeriodicCargoProducer:
+		Condition: Autoproduced
+		Type: Autoproduction
+		ChargeDuration: 300
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+	Production@Autoproduction:
+		Produces: Autoproduction
+		PauseOnCondition: forceshield || invulnerability || being-warped
+	ReloadDelayMultiplier@balance2:
+		Modifier: 50
+		RequiresCondition: true
+	ReloadDelayMultiplier@balance1:
+		Modifier: 66
+		RequiresCondition: TeamBalance1
+	ExternalCondition@TeamBalance:
+		Condition: TeamBalance1
+	ExternalCondition@TeamBalance:
+		Condition: TeamBalance2
+
+^Autoproduced:
+	RejectsOrders:
+		RequiresCondition: Autoproduced
+	ExternalCondition@Autoproduced:
+		Condition: Autoproduced

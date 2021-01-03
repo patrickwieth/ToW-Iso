@@ -142,6 +142,7 @@ Rules:
 	sp|rules/misc.yaml
 	sp|rules/dummies.yaml
 	sp|rules/AIOnly.yaml
+	sp|rules/tow_defaults.yaml
 	sp|rules/soviet.yaml
 
 Weapons:
