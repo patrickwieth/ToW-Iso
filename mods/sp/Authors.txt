@@ -1,4 +1,6 @@
-	Shattered Paradise, a mod for OpenRA made by the Nolt.
+Tug of War, a mod for OpenRA made by the PatrickWieth.
+
+forked from	Shattered Paradise, a mod for OpenRA made by the Nolt.
 
 #Thanks go to:
 
