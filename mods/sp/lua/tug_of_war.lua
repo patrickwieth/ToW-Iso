@@ -123,23 +123,73 @@ TickTugOfWar = function()
 	--Media.DisplayMessage(tostring(DateTime.GameTime))
 	-- these are the actions that are done every 1000 ticks
 	TransferUnitGroups()
-	AttackMoveUnits()
+	GuardMoveUnits()
 end
 
 
-AttackMoveUnitsFromTable = function (unittable, Location)
-	--for i,unit in next,unittable do
-  	--Media.DisplayMessage(tostring(key) .. " of " .. tostring(#autoproduced) .. " is " .. tostring(value.Type))
-	--end
-	--for i=1,#unittable do
-		--Media.DisplayMessage(tostring(i) .. " of " .. tostring(#unittable) .. " is " .. tostring(unittable[i].Type))
-	--end
-
+GuardUnitsFromTable = function (unittable, GuardTarget)
 	for i=1,#unittable do
 		--Media.DisplayMessage(tostring(i) .. " of " .. tostring(#autoproduced))
-		if unittable[i].IsDead  then --and unittable[i] ~= nil
+		if unittable[i].IsDead  then
 			--table.remove(unittable, i)			-- crash area
 		else
+			--Media.DisplayMessage(tostring(unittable[i].HasProperty("Harvester")))
+			--unittable[i].AttackMove(Location, 0)
+			unittable[i].Guard(GuardTarget)
+		end
+	end
+end
+
+GuardMoveUnits = function()
+	ActivityApplyFunction = GuardUnitsFromTable
+
+	if ( warpointa3 ~= nil ) then
+		ActivityApplyFunction(teamAunits[1], warpointa3)
+		ActivityApplyFunction(teamAunits[2], warpointa2)
+		ActivityApplyFunction(teamAunits[3], warpointa1)
+		ActivityApplyFunction(teamAunits[4], warpoint0)
+		ActivityApplyFunction(teamAunits[5], warpointb1)
+		ActivityApplyFunction(teamAunits[6], warpointb2)
+		ActivityApplyFunction(teamAunits[7], warpointb3)
+
+		ActivityApplyFunction(teamBunits[1], warpointb3)
+		ActivityApplyFunction(teamBunits[2], warpointb2)
+		ActivityApplyFunction(teamBunits[3], warpointb1)
+		ActivityApplyFunction(teamBunits[4], warpoint0)
+		ActivityApplyFunction(teamBunits[5], warpointa1)
+		ActivityApplyFunction(teamBunits[6], warpointa2)
+		ActivityApplyFunction(teamBunits[7], warpointa3)
+
+	elseif ( warpointa2 ~= nil ) then
+		ActivityApplyFunction(teamAunits[3], warpointa2)
+		ActivityApplyFunction(teamAunits[4], warpointa1)
+		ActivityApplyFunction(teamAunits[5], warpoint0)
+		ActivityApplyFunction(teamAunits[6], warpointb1)
+		ActivityApplyFunction(teamAunits[7], warpointb2)
+
+		ActivityApplyFunction(teamBunits[3], warpointb2)
+		ActivityApplyFunction(teamBunits[4], warpointb1)
+		ActivityApplyFunction(teamBunits[5], warpoint0)
+		ActivityApplyFunction(teamBunits[6], warpointa1)
+		ActivityApplyFunction(teamBunits[7], warpointa2)
+	else
+		ActivityApplyFunction(teamAunits[5], warpointa1)
+		ActivityApplyFunction(teamAunits[6], warpoint0)
+		ActivityApplyFunction(teamAunits[7], warpointb1)
+
+		ActivityApplyFunction(teamBunits[5], warpointb1)
+		ActivityApplyFunction(teamBunits[6], warpoint0)
+		ActivityApplyFunction(teamBunits[7], warpointa1)
+	end
+end
+
+AttackMoveUnitsFromTable = function (unittable, Location)
+	for i=1,#unittable do
+		--Media.DisplayMessage(tostring(i) .. " of " .. tostring(#autoproduced))
+		if unittable[i].IsDead  then
+			--table.remove(unittable, i)			-- crash area
+		else
+			--Media.DisplayMessage(tostring(unittable[i].HasProperty("Harvester")))
 			unittable[i].AttackMove(Location, 0)
 		end
 	end

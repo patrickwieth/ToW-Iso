@@ -147,9 +147,7 @@ soviet_conyard:
 		ActorTypes: e2
 
 soviet_factory:
-	Inherits: ^Building
-	Inherits@shape: ^4x3Shape
-	Inherits@Autoproducer: ^Autoproducer
+	Inherits: ^Factory
 	Building:
 		Footprint: xxx= xxx= xxx=
 		Dimensions: 4,3
@@ -203,7 +201,7 @@ soviet_factory:
 soviet_barracks:
 	Inherits: ^Barracks
 	Inherits@2: ^2x3Shape
-	Inherits@Autoproducer: ^Autoproducer
+	Inherits@Autoproducer: ^InfAutoproducer
 	Tooltip:
 		Name: Soviet Barracks
 	Buildable:
@@ -260,6 +258,8 @@ soviet_barracks:
 		Prerequisite: SharedEngie
 	RequiresBuildableArea:
 		AreaTypes: building
+	RenderSprites:
+		Scale: 1
 
 soviet_power:
 	Inherits: ^Powerplant

@@ -1949,8 +1949,15 @@
 	Hovers:
 		RequiresCondition: airborne
 
+^CombatHelicopterNoAmmo:
+	Inherits: ^Helicopter
+
 ^CombatHelicopter:
 	Inherits: ^Helicopter
+	ReloadAmmoPool:
+		AmmoPool: primary
+		Count: 10
+		Delay: 300
 #	Rearmable:
 #		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
 
@@ -1958,11 +1965,19 @@
 	Inherits: ^Aircraft
 	Inherits@3: ^AutoTargetAir
 	Aircraft:
-#	Rearmable:
-#		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
+
+^CombatPlaneNoAmmo:
+	Inherits: ^Plane
 
 ^CombatPlane:
 	Inherits: ^Plane
+	ReloadAmmoPool:
+		AmmoPool: primary
+		Count: 10
+		Delay: 300
+#	Rearmable:
+#		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
+
 
 ^Visceroid:
 	Inherits@1: ^ExistsInWorld
