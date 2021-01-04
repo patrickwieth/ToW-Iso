@@ -1132,6 +1132,7 @@
 	Inherits@4: ^InfantryShape
 	Inherits@5: ^5CellVision
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
+	Inherits@Autoproduceable: ^Autoproduceable
 	ActorLostNotification:
 	SharedPassenger:
 		CargoType: Infantry
@@ -1683,6 +1684,7 @@
 	Inherits@0: ^BasicVehicle
 	Inherits@2: ^VehicleEffects
 	Inherits@3: ^ExistsInWorld
+	Inherits@Autoproduceable: ^Autoproduceable
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -1871,6 +1873,7 @@
 	Inherits@4: ^VehicleShape
 	Inherits@5: ^10CellVision
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
+	Inherits@Autoproduceable: ^Autoproduceable
 	DrawLineToTarget:
 	WithTextControlGroupDecoration:
 	AppearsOnRadar:
@@ -1948,15 +1951,15 @@
 
 ^CombatHelicopter:
 	Inherits: ^Helicopter
-	Rearmable:
-		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
+#	Rearmable:
+#		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
 
 ^Plane:
 	Inherits: ^Aircraft
 	Inherits@3: ^AutoTargetAir
 	Aircraft:
-	Rearmable:
-		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
+#	Rearmable:
+#		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
 
 ^CombatPlane:
 	Inherits: ^Plane

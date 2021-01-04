@@ -31,7 +31,7 @@
 	Cargo:
 		Types: Infantry
 	PeriodicCargoProducer:
-		ChargeDuration: 1500
+		ChargeDuration: 2000
 
 ^TankAutoproducer:
 	Inherits: ^Autoproducer
@@ -45,9 +45,9 @@
 	Cargo:
 		Types: Aircraft
 	PeriodicCargoProducer:
-		ChargeDuration: 1000
+		ChargeDuration: 2000
 
-^Autoproduced:
+^Autoproduceable:
 	RejectsOrders:
 		RequiresCondition: Autoproduced
 	ExternalCondition@Autoproduced:

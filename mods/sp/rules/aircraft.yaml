@@ -145,7 +145,6 @@ DPOD:
 		TurnSpeed: 20
 		Speed: 160
 		InitialFacing: 0
-	-Rearmable:
 	Health:
 		HP: 6000
 	RevealsShroud:
@@ -189,7 +188,6 @@ DSHP:
 		AltitudeVelocity: 500
 		IdleBehavior: LeaveMap
 		VTOL: false
-	-Rearmable:
 	-Targetable@AIRBORNE:
 	-Targetable@GROUND:
 	Health:
@@ -447,7 +445,6 @@ CERBERUS:
 		Speed: 60
 		Repulsable: true
 		MoveIntoShroud: true
-	-Rearmable:
 	Health:
 		HP: 45000
 	Armament@sweep1:
@@ -699,7 +696,6 @@ MUTQUEEN:
 		Repulsable: true
 		MoveIntoShroud: true
 		IdealSeparation: 1c0
-	-Rearmable:
 	Health:
 		HP: 10000
 	WithFacingSpriteBody:
@@ -782,7 +778,6 @@ STORMRIDER:
 		IdleSpeed: 85
 		AirborneCondition: airborne
 		MoveIntoShroud: true
-	-Rearmable:
 	Health:
 		HP: 10000
 	Armament:
@@ -837,7 +832,6 @@ DRACHE:
 		MoveIntoShroud: true
 		TakeOffOnCreation: false
 		LandableTerrainTypes: Clear, Ice, Rough, Road, DirtRoad, Ground, Green, Tiberium, BlueTiberium
-	-Rearmable:
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
@@ -884,7 +878,6 @@ SCRGLYDER1:
 		Repulsable: true
 		MoveIntoShroud: true
 		LandableTerrainTypes: Clear, Ice, Rough, Road, DirtRoad, Ground, Green, Tiberium, BlueTiberium, Water
-	-Rearmable:
 	Health:
 		HP: 20000
 	Armament:
@@ -930,7 +923,6 @@ SCRDESTROYER:
 		Queue: Air
 		BuildPaletteOrder: 9
 		Prerequisites: ~scrair, scrradr
-	-Rearmable:
 	Selectable:
 		Bounds: 85,50,0,-12
 	AutoTarget:
@@ -1040,7 +1032,6 @@ SCRCARRIER:
 		Speed: 50
 		Repulsable: true
 		MoveIntoShroud: true
-	-Rearmable:
 	Health:
 		HP: 60000
 	Targetable@GROUND:
@@ -1114,7 +1105,6 @@ STORMRIDERSPAWN:
 		Image: wyverm2
 	ExternalCondition@Return:
 		Condition: ForceReturn
-	-Rearmable:
 	WithFacingSpriteBody:
 	BodyOrientation:
 		QuantizedFacings: 32
@@ -1205,7 +1195,6 @@ SCRBATTLESHIP:
 		Speed: 60
 		Repulsable: true
 		MoveIntoShroud: true
-	-Rearmable:
 	Health:
 		HP: 150000
 	Armament:
@@ -1267,7 +1256,6 @@ WASP:
 		Speed: 130
 		Repulsable: true
 		MoveIntoShroud: true
-	-Rearmable:
 	Health:
 		HP: 18000
 	Voiced:
@@ -1315,7 +1303,6 @@ FIREFLY:
 		Repulsable: true
 		MoveIntoShroud: true
 		LandableTerrainTypes: Clear, Ice, Rough, Road, DirtRoad, Ground, Green, Tiberium, BlueTiberium
-	-Rearmable:
 	Health:
 		HP: 10000
 	RenderSprites:
@@ -1352,7 +1339,6 @@ BASILISK:
 		TurnSpeed: 24
 		Speed: 75
 		MoveIntoShroud: true
-	-Rearmable:
 	Health:
 		HP: 60000
 	Armament:
@@ -1409,7 +1395,6 @@ DEVOURER:
 		CruiseAltitude: 0c750
 		Repulsable: true
 		MoveIntoShroud: true
-	-Rearmable:
 	Health:
 		HP: 175000
 	Voiced:

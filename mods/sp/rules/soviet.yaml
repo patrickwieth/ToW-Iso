@@ -6,7 +6,7 @@ soviet_conscript:
 	Inherits: ^Soldier
 	Inherits@2: ^6CellVision
 	Inherits@GainsExperience: ^GainsExperience
-	Inherits@Autoproduced: ^Autoproduced
+	Inherits@Autoproduceable: ^Autoproduceable
 	Buildable:
 		Queue: Infantry
 		BuildPaletteOrder: 1
