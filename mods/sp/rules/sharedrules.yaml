@@ -170,6 +170,7 @@ HARV:
 			Tiberium: pip-green
 			BlueTiberium: pip-blue
 
+
 harv.gdi:
 	Inherits: HARV
 	Buildable:
@@ -437,6 +438,7 @@ PROC:
 	Inherits@1: ^NormalRefineryHitShape
 	Inherits@2: ^RefineryHP
 	Inherits@3: ^AICashCheat
+	Inherits@Cash: ^CashGenerator 
 	Building:
 		Footprint: xx== xx== xx==
 		Dimensions: 4,3
@@ -477,6 +479,7 @@ PROC:
 	ThrowsShrapnel@TLARGE:
 		Pieces: 2, 4
 		Weapons: TLargeDebris
+
 
 FLIPPEDPROC:
 	Inherits: ^Building

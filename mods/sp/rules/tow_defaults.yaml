@@ -52,3 +52,16 @@
 		RequiresCondition: Autoproduced
 	ExternalCondition@Autoproduced:
 		Condition: Autoproduced
+
+^Checkpoint:
+	DamageMultiplier@Checkpoint:
+		Modifier: 0
+	ProximityCapturable:
+		Range: 10c0
+		CaptorTypes: Vehicle, Tank, Infantry
+		Sticky: true
+
+^CashGenerator:
+	CashTrickler:
+		Interval: 150
+		Amount: 100

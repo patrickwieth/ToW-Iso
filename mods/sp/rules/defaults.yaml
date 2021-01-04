@@ -1294,6 +1294,8 @@
 		Sequence: infantry
 		Palette: player
 		IsPlayerPalette: true
+	ProximityCaptor:
+		Types: Infantry
 
 ^Soldier:
 	Inherits@1: ^Infantry
@@ -1685,6 +1687,8 @@
 	Inherits@2: ^VehicleEffects
 	Inherits@3: ^ExistsInWorld
 	Inherits@Autoproduceable: ^Autoproduceable
+	ProximityCaptor:
+		Types: Vehicle
 
 ^Tank:
 	Inherits: ^Vehicle

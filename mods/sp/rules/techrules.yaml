@@ -23,17 +23,14 @@ WELL:
 	Inherits@2: ^3x3Shape
 	Inherits@3: ^MutRender
 	Inherits@4: ^6CellVision
+	Inherits@Checkpoint: ^Checkpoint
 	Tooltip:
 		Name: Tiberium Extractor
 	TooltipDescription:
-		Description: Provides additional funds.
+		Description: Lose the Tiberium Extractor and also lose your self-respect. Humor too, sure.
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
-	CashTrickler:
-		Interval: 400
-		Amount: 100
-		RequiresCondition: enabled
 	Health:
 		HP: 135000
 	WithIdleOverlay:
@@ -53,7 +50,7 @@ WELL:
 		Condition: cashgiven
 		RequiresCondition: enabled
 	GivesCashOnCapture:
-		Amount: 250
+		Amount: 0
 		RequiresCondition: !cashgiven
 	UpdatesDerrickCount:
 	IsometricSelectable:
@@ -177,6 +174,7 @@ NEUTRALRADAR:
 NEUTRALPOWERPLANT:
 	Inherits: ^TechBuilding
 	Inherits@3: ^3x3Shape
+	Inherits@Checkpoint: ^Checkpoint
 	Tooltip:
 		Name: Nuclear Power Plant
 	TooltipDescription:

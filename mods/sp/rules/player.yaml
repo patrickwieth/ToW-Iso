@@ -125,3 +125,5 @@ Player:
 	GameSaveViewportManager:
 	PlayerRadarTerrain:
 	AutoDeployManager:
+	ProximityCaptor:
+		Types: Player
