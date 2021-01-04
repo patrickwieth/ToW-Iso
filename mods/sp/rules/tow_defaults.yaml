@@ -9,7 +9,7 @@
 	PeriodicCargoProducer:
 		Condition: Autoproduced
 		Type: Autoproduction
-		ChargeDuration: 300
+		ChargeDuration: 500
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
 	Production@Autoproduction:
@@ -25,6 +25,27 @@
 		Condition: TeamBalance1
 	ExternalCondition@TeamBalance:
 		Condition: TeamBalance2
+
+^InfAutoproducer:
+	Inherits: ^Autoproducer
+	Cargo:
+		Types: Infantry
+	PeriodicCargoProducer:
+		ChargeDuration: 1500
+
+^TankAutoproducer:
+	Inherits: ^Autoproducer
+	Cargo:
+		Types: Vehicle
+	PeriodicCargoProducer:
+		ChargeDuration: 500
+
+^AirAutoproducer:
+	Inherits: ^Autoproducer
+	Cargo:
+		Types: Aircraft
+	PeriodicCargoProducer:
+		ChargeDuration: 1000
 
 ^Autoproduced:
 	RejectsOrders:
