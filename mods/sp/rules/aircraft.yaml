@@ -174,7 +174,7 @@ DPOD:
 		Palette: pips
 
 DSHP:
-	Inherits: ^CombatHelicopter
+	Inherits: ^Helicopter
 	Inherits@PIPS: ^CargoPips
 	Valued:
 		Cost: 1000
@@ -422,7 +422,7 @@ SCRIN:
 		TrailLength: 15
 
 CERBERUS:
-	Inherits: ^CombatHelicopter
+	Inherits: ^CombatHelicopterNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^9CellVision
 	Inherits@Shadow: ^AircraftShadow
@@ -628,7 +628,7 @@ WETP:
 		ReloadDelay: 250
 		AmmoCondition: ammo
 	AutoTarget:
-		ScanRadius: 6
+		ScanRadius: 12
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 	RenderSprites:
@@ -666,7 +666,7 @@ WETP:
 		TrailLength: 7
 
 MUTQUEEN:
-	Inherits: ^CombatHelicopter
+	Inherits: ^CombatHelicopterNoAmmo
 	Inherits@1: ^SpriteActor
 	Inherits@2: ^MutRender
 	Inherits@3: ^AutoTargetAllAssaultMove
@@ -750,7 +750,7 @@ MUTBIRD:
 	-WithDeathAnimation:
 
 STORMRIDER:
-	Inherits: ^CombatPlane
+	Inherits: ^CombatPlaneNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^ScrinAircraftGeneric
 	Inherits@3: ^9CellVision
@@ -807,7 +807,7 @@ STORMRIDER:
 
 
 DRACHE:
-	Inherits: ^CombatHelicopter
+	Inherits: ^Helicopter
 	Inherits@1: ^8CellVision
 	Inherits@2: ^ScrinAircraftGeneric
 	Buildable:
@@ -855,7 +855,7 @@ DRACHE:
 		Offset: 0,0,1000,0,0,1000
 
 SCRGLYDER1:
-	Inherits: ^CombatHelicopter
+	Inherits: ^CombatHelicopterNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^ScrinAircraftGeneric
 	Inherits@3: ^BasicStealthDetectionAir
@@ -907,7 +907,7 @@ SCRGLYDER1:
 		EmptyWeapon: SmalLScrinAircraftShrapnel
 
 SCRDESTROYER:
-	Inherits: ^CombatHelicopter
+	Inherits: ^CombatHelicopterNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^ScrinAircraftGeneric
 	Inherits@3: ^7CellVision
@@ -1007,7 +1007,7 @@ SCRTRANS:
 		TrailWidth: 128
 
 SCRCARRIER:
-	Inherits: ^CombatHelicopter
+	Inherits: ^CombatHelicopterNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^ScrinAircraftGeneric
 	Inherits@3: ^BasicStealthDetectionAir
@@ -1068,7 +1068,7 @@ SCRCARRIER:
 		TrailWidth: 128
 
 STORMRIDERSPAWN:
-	Inherits: ^CombatPlane
+	Inherits: ^CombatPlaneNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^ScrinAircraftGeneric
 	Inherits@3: ^3CellVision
@@ -1165,7 +1165,7 @@ CABDRONEJET:
 		TrailWidth: 32
 
 SCRBATTLESHIP:
-	Inherits: ^CombatHelicopter
+	Inherits: ^CombatHelicopterNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^ScrinAircraftGeneric
 	Inherits@3: ^PermanentSelfHeal
@@ -1231,7 +1231,7 @@ SCRBATTLESHIP:
 		TrailWidth: 128
 
 WASP:
-	Inherits: ^CombatHelicopter
+	Inherits: ^CombatHelicopterNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^BasicStealthDetectionAir
 	Inherits@4: ^9CellVision
@@ -1280,7 +1280,7 @@ WASP:
 		Actor: WASP.Husk
 
 FIREFLY:
-	Inherits: ^CombatHelicopter
+	Inherits: ^Helicopter
 	Inherits@5: ^CabRender
 	Inherits@Shadow: ^AircraftShadow
 	Valued:
@@ -1314,7 +1314,7 @@ FIREFLY:
 		Actor: FIREFLY.Husk
 
 BASILISK:
-	Inherits: ^CombatHelicopter
+	Inherits: ^CombatHelicopterNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^9CellVision
 	Inherits@4: ^CabRender
@@ -1369,7 +1369,7 @@ BASILISK:
 		TrailLength: 10
 
 DEVOURER:
-	Inherits: ^CombatHelicopter
+	Inherits: ^CombatHelicopterNoAmmo
 	Inherits@1: ^AutoTargetAllAssaultMove
 	Inherits@2: ^PermanentSelfHeal
 	Inherits@3: ^CabRender
@@ -1415,7 +1415,7 @@ DEVOURER:
 	Turreted:
 		TurnSpeed: 12
 	AutoTarget:
-		ScanRadius: 5
+		ScanRadius: 12
 	RenderSprites:
 	WithFacingSpriteBody:
 		RequiresCondition: !Attacking

@@ -170,6 +170,7 @@ HARV:
 			Tiberium: pip-green
 			BlueTiberium: pip-blue
 
+
 harv.gdi:
 	Inherits: HARV
 	Buildable:
@@ -377,6 +378,7 @@ GACNST:
 	Inherits: ^Building
 	Inherits@1: ^ProducesStuff
 	Inherits@AIbuilding: ^AIbuildingMicroControl
+	Inherits@Autoproducer: ^InfAutoproducer
 	Valued:
 		Cost: 500
 	ProvidesPrerequisite:
@@ -436,6 +438,7 @@ PROC:
 	Inherits@1: ^NormalRefineryHitShape
 	Inherits@2: ^RefineryHP
 	Inherits@3: ^AICashCheat
+	Inherits@Cash: ^CashGenerator 
 	Building:
 		Footprint: xx== xx== xx==
 		Dimensions: 4,3
@@ -476,6 +479,7 @@ PROC:
 	ThrowsShrapnel@TLARGE:
 		Pieces: 2, 4
 		Weapons: TLargeDebris
+
 
 FLIPPEDPROC:
 	Inherits: ^Building
@@ -572,6 +576,7 @@ FLIPPEDYPROC:
 
 ^Factory:
 	Inherits: ^Building
+	Inherits@Autoproducer: ^TankAutoproducer
 	Inherits@1: ^ProducesStuff
 	Inherits@4: ^4x3FactoryWithBibShape
 	Inherits@AIbuilding: ^AIbuildingMicroControl
@@ -592,7 +597,6 @@ FLIPPEDYPROC:
 		SpawnOffset: -384,-384,0
 		ExitCell: 3,1
 		ExitDelay: 5
-		ProductionTypes: Tank, Vehicle
 	Tooltip:
 		Name: Vehicle or Aircraft production
 	ProvidesPrerequisite@factoryhelipad:
@@ -635,6 +639,7 @@ FLIPPEDYPROC:
 	Inherits@1: ^ProducesStuff
 	Inherits@2: ^2x2Shape
 	Inherits@AIbuilding: ^AIbuildingMicroControl
+	Inherits@Autoproducer: ^AirAutoproducer
 	Exit@1:
 		SpawnOffset: 0,-256,0
 	GrantExternalConditionToProduced:

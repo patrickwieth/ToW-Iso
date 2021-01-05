@@ -20,7 +20,7 @@ Player:
 		ReadyAudio: ConstructionComplete
 		SpeedUp: true
 		CancelledAudio: Cancelled
-		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+		BuildTimeSpeedReduction: 10
 	ClassicProductionQueue@Defense:
 		Type: Defense
 		LowPowerModifier: 200
@@ -125,3 +125,5 @@ Player:
 	GameSaveViewportManager:
 	PlayerRadarTerrain:
 	AutoDeployManager:
+	ProximityCaptor:
+		Types: Player

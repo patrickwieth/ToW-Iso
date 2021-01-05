@@ -11,7 +11,7 @@ soviet_conscript:
 		Queue: Infantry
 		BuildPaletteOrder: 1
 		Description: Basic combat infantry.\n\nGood vs: Infantry\n\nSpecial:\n- Crush class: crushable
-		Prerequisites: soviet_barracks
+		Prerequisites: ~soviet_barracks
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -147,9 +147,7 @@ soviet_conyard:
 		ActorTypes: e2
 
 soviet_factory:
-	Inherits: ^Building
-	Inherits@shape: ^4x3Shape
-	Inherits@Autoproducer: ^Autoproducer
+	Inherits: ^Factory
 	Building:
 		Footprint: xxx= xxx= xxx=
 		Dimensions: 4,3
@@ -157,7 +155,7 @@ soviet_factory:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 80
-		Prerequisites: soviet_conyard
+		Prerequisites: ~soviet_conyard
 		Description: Produces vehicles.
 		BuildDurationModifier: 25
 	Valued:
@@ -203,14 +201,14 @@ soviet_factory:
 soviet_barracks:
 	Inherits: ^Barracks
 	Inherits@2: ^2x3Shape
-	Inherits@Autoproducer: ^Autoproducer
+	Inherits@Autoproducer: ^InfAutoproducer
 	Tooltip:
 		Name: Soviet Barracks
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 2
 		Description: Arms Infantry.\n\nSpecial:\n- Heals infantry in an area around it.\n- Maximun production speed is reached with 7 barracks.\n- Max production speed reduces production time by 50%.
-		Prerequisites: soviet_conyard
+		Prerequisites: ~soviet_conyard
 	Building:
 		Footprint: xx xx ==
 		Dimensions: 2,3
@@ -260,6 +258,8 @@ soviet_barracks:
 		Prerequisite: SharedEngie
 	RequiresBuildableArea:
 		AreaTypes: building
+	RenderSprites:
+		Scale: 1
 
 soviet_power:
 	Inherits: ^Powerplant
@@ -269,7 +269,7 @@ soviet_power:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1
-		Prerequisites: soviet_conyard
+		Prerequisites: ~soviet_conyard
 		Description: Provides power for other structures.
 	Building:
 		Footprint: xx xx
@@ -289,7 +289,7 @@ soviet_advanced_power:
 		Queue: Building
 		BuildPaletteOrder: 7
 		Description: Provides more power than the standard powerplant\nusing less space.
-		Prerequisites: soviet_conyard
+		Prerequisites: ~soviet_conyard
 	Valued:
 		Cost: 700
 	Building:

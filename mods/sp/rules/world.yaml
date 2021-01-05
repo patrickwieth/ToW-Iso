@@ -43,7 +43,7 @@
 		Name: Random
 		InternalName: Random
 		Description: Random\n Not everyone has a chance to choose his life.
-		RandomFactionMembers: mut
+		RandomFactionMembers: mut, scr, gdi, nod, cab
 	ResourceType@Tiberium:
 		Type: Tiberium
 		Name: Tiberium Riparius
@@ -387,7 +387,7 @@ World:
 		Class: none
 		ClassName: MCV Only
 		Factions: mut
-		BaseActor: soviet_conyard
+		BaseActor: mutmcv
 	MPStartUnits@MCVscr:
 		Class: none
 		ClassName: MCV Only

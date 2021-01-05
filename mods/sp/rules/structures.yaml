@@ -37,7 +37,6 @@ GAPOWR:
 GAPILE:
 	Inherits: ^Barracks
 	Inherits@2: ^2x2Shape
-	Inherits@Autoproducer: ^InfAutoproducer
 	Tooltip:
 		Name: GDI Barracks
 	Buildable:
@@ -142,7 +141,6 @@ GDIREF4:
 
 GAWEAP:
 	Inherits: ^Factory
-	Inherits@Autoproducer: ^TankAutoproducer
 	Tooltip:
 		Name: GDI War Factory
 	Buildable:
@@ -196,7 +194,6 @@ GARADR:
 GAHPAD:
 	Inherits@1: ^Helipad
 	Inherits@2: ^2x2Shape
-	Inherits@Autoproducer: ^AirAutoproducer
 	Tooltip:
 		Name: Helipad
 	Buildable:
@@ -354,7 +351,6 @@ NAPOWR:
 NAHAND:
 	Inherits: ^Barracks
 	Inherits@2: ^3x2Shape
-	Inherits@Autoproducer: ^InfAutoproducer
 	Tooltip:
 		Name: Hand of Nod
 	Buildable:
@@ -461,7 +457,6 @@ NODREF4:
 
 NAWEAP:
 	Inherits: ^Factory
-	Inherits@Autoproducer: ^TankAutoproducer
 	Tooltip:
 		Name: Nod War Factory
 	ProvidesPrerequisite:
@@ -534,7 +529,6 @@ NAAPWR:
 NAHPAD:
 	Inherits@1: ^Helipad
 	Inherits@2: ^2x2Shape
-	Inherits@Autoproducer: ^AirAutoproducer
 	Tooltip:
 		Name: Helipad
 	Buildable:

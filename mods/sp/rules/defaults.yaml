@@ -21,6 +21,7 @@
 
 ^AutoTargetGround:
 	AutoTarget:
+		ScanRadius: 12
 		AttackAnythingCondition: stance-attackanything
 		MinimumScanTimeInterval: 16
 		MaximumScanTimeInterval: 20
@@ -46,6 +47,7 @@
 
 ^AutoTargetAir:
 	AutoTarget:
+		ScanRadius: 12
 		MinimumScanTimeInterval: 16
 		MaximumScanTimeInterval: 20
 	AutoTargetPriority@DEFAULT:
@@ -54,6 +56,7 @@
 
 ^AutoTargetAll:
 	AutoTarget:
+		ScanRadius: 12
 		AttackAnythingCondition: stance-attackanything
 		MinimumScanTimeInterval: 16
 		MaximumScanTimeInterval: 20
@@ -841,62 +844,62 @@
 
 ^3CellVision:
 	RevealsShroud:
-		Range: 3c0
+		Range: 6c0
 		Type: GroundPosition
 
 ^4CellVision:
 	RevealsShroud:
-		Range: 4c0
+		Range: 8c0
 		Type: GroundPosition
 
 ^5CellVision:
 	RevealsShroud:
-		Range: 5c0
+		Range: 10c0
 		Type: GroundPosition
 
 ^6CellVision:
 	RevealsShroud:
-		Range: 6c0
+		Range: 12c0
 		Type: GroundPosition
 
 ^7CellVision:
 	RevealsShroud:
-		Range: 7c0
+		Range: 14c0
 		Type: GroundPosition
 
 ^8CellVision:
 	RevealsShroud:
-		Range: 8c0
+		Range: 16c0
 		Type: GroundPosition
 
 ^9CellVision:
 	RevealsShroud:
-		Range: 9c0
+		Range: 18c0
 		Type: GroundPosition
 
 ^10CellVision:
 	RevealsShroud:
-		Range: 10c0
+		Range: 20c0
 		Type: GroundPosition
 
 ^11CellVision:
 	RevealsShroud:
-		Range: 11c0
+		Range: 22c0
 		Type: GroundPosition
 
 ^12CellVision:
 	RevealsShroud:
-		Range: 12c0
+		Range: 24c0
 		Type: GroundPosition
 
 ^13CellVision:
 	RevealsShroud:
-		Range: 13c0
+		Range: 26c0
 		Type: GroundPosition
 
 ^14CellVision:
 	RevealsShroud:
-		Range: 14c0
+		Range: 28c0
 		Type: GroundPosition
 
 ^FullHealthRepairCondition:
@@ -1294,6 +1297,8 @@
 		Sequence: infantry
 		Palette: player
 		IsPlayerPalette: true
+	ProximityCaptor:
+		Types: Infantry
 
 ^Soldier:
 	Inherits@1: ^Infantry
@@ -1685,6 +1690,8 @@
 	Inherits@2: ^VehicleEffects
 	Inherits@3: ^ExistsInWorld
 	Inherits@Autoproduceable: ^Autoproduceable
+	ProximityCaptor:
+		Types: Vehicle
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -1949,8 +1956,15 @@
 	Hovers:
 		RequiresCondition: airborne
 
+^CombatHelicopterNoAmmo:
+	Inherits: ^Helicopter
+
 ^CombatHelicopter:
 	Inherits: ^Helicopter
+	ReloadAmmoPool:
+		AmmoPool: primary
+		Count: 10
+		Delay: 300
 #	Rearmable:
 #		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
 
@@ -1958,11 +1972,19 @@
 	Inherits: ^Aircraft
 	Inherits@3: ^AutoTargetAir
 	Aircraft:
-#	Rearmable:
-#		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
+
+^CombatPlaneNoAmmo:
+	Inherits: ^Plane
 
 ^CombatPlane:
 	Inherits: ^Plane
+	ReloadAmmoPool:
+		AmmoPool: primary
+		Count: 10
+		Delay: 300
+#	Rearmable:
+#		RearmActors: nahpad, gahpad, muair, scrair, cabair, civheli, tdhelipad
+
 
 ^Visceroid:
 	Inherits@1: ^ExistsInWorld
@@ -2429,6 +2451,7 @@
 		Voice: Attack
 		TargetFrozenActors: true
 	AutoTarget:
+		ScanRadius: 12
 	RenderRangeCircle:
 	DrawLineToTarget:
 	Armor:

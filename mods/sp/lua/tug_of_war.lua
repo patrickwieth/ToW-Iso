@@ -1,3 +1,5 @@
+debugging = false
+
 WorldLoadedToW = function()
 	neutral = Player.GetPlayer("Neutral")
 	mp0 = Player.GetPlayer("Multi0")
@@ -64,7 +66,6 @@ else
 end
 
 
-
 TickTugOfWar = function()
 	if DateTime.GameTime == 1 then
 		-- game setup, this only happens at the start, first define teams
@@ -88,14 +89,15 @@ TickTugOfWar = function()
 			teamApower = #teamB / #teamA
 		end
 
-		Media.DisplayMessage("Team A has " .. tostring(#teamA) .. " members and power of " .. tostring(teamApower) .. ", players:")
-		for i,player in next,teamA do
-			Media.DisplayMessage(tostring(player))
-		end
-
-		Media.DisplayMessage("Team B has " .. tostring(#teamB) .. " members and power of " .. tostring(teamBpower) .. ", players:")
-		for i,player in next,teamB do
-			Media.DisplayMessage(tostring(player))
+		if debugging then
+			Media.DisplayMessage("Team A has " .. tostring(#teamA) .. " members and power of " .. tostring(teamApower) .. ", players:")
+			for i,player in next,teamA do
+				Media.DisplayMessage(tostring(player))
+			end
+			Media.DisplayMessage("Team B has " .. tostring(#teamB) .. " members and power of " .. tostring(teamBpower) .. ", players:")
+			for i,player in next,teamB do
+				Media.DisplayMessage(tostring(player))
+			end
 		end
 
 		-- then find out which team is closer to which spawning points
@@ -103,41 +105,131 @@ TickTugOfWar = function()
 			return math.pow(a.Location.X - b.Location.X, 2) + math.pow(a.Location.Y - b.Location.Y, 2)
 		end
 
-		mcv = teamA[1].GetActorsByTypes({"soviet_conyard", "drache", "mcv", "cabmcv", "nodmcv"})[1]
+		MCV = teamA[1].GetActorsByTypes({"soviet_conyard", "drache", "mcv", "cabmcv", "nodmcv", "mutmcv"})[1]
 
-		Media.DisplayMessage("Distance to A:", tostring(sqdistance(mcv, startpointa)))
-		Media.DisplayMessage("Distance to B:", tostring(sqdistance(mcv, startpointb)))
+		if debugging then
+			Media.DisplayMessage("Distance to A:", tostring(sqdistance(MCV, startpointa)))
+			Media.DisplayMessage("Distance to B:", tostring(sqdistance(MCV, startpointb)))
+		end
 
-		if sqdistance(mcv, startpointa) < sqdistance(mcv, startpointb) then
-			Media.DisplayMessage("Switching sides of teams")
+		teamsSwitched = false
+		if sqdistance(MCV, startpointa) > sqdistance(MCV, startpointb) then
+			if debugging then Media.DisplayMessage("Switching sides of teams") end
 			tempTeam = teamA
 			teamA = teamB
 			teamB = tempTeam
+			teamsSwitched = true
 		end
 
+		captureStartPointActorA = Actor.Create("gdie1", true, { Owner = teamA[1], Location = startpointa.Location, SubCell = 1 })
+		captureStartPointActorB = Actor.Create("gdie1", true, { Owner = teamB[1], Location = startpointb.Location, SubCell = 1 })
+	elseif DateTime.GameTime == 2 then
+		captureStartPointActorA.Destroy()
+		captureStartPointActorB.Destroy()
 	elseif DateTime.GameTime % 1000 > 0 then
 		-- we only do special tick things every 1000 Ticks, any tick else is skipped
-    	return
+    return
+	else
+		if debugging then Media.DisplayMessage(tostring(DateTime.GameTime)) end
+		-- these are the actions that are done every 1000 ticks
+		CheckWinConditions()
+		TransferUnitGroups()
+		GuardMoveUnits()
   end
-
-	--Media.DisplayMessage(tostring(DateTime.GameTime))
-	-- these are the actions that are done every 1000 ticks
-	TransferUnitGroups()
-	AttackMoveUnits()
 end
 
+teamAwinning = false
+teamBwinning = false
+
+CheckWinConditions = function ()
+	for i,player in next,teamA do
+		if startpointb.Owner == player then
+			if teamAwinning == true then
+				teamXloses(teamB)
+			end
+			Media.DisplayMessage("Team A has captured the final Checkpoint. Team B needs to take it back or it will lose the game.")
+			teamAwinning = true
+		elseif teamAwinning == true then
+			teamAwinning = false
+		end
+	end
+	for i,player in next,teamB do
+		if startpointa.Owner == player then
+			if teamBwinning == true then
+				teamXloses(teamA)
+			end
+			Media.DisplayMessage("Team B has captured the final Checkpoint. Team A needs to take it back or it will lose the game.")
+			teamBwinning = true
+		elseif teamBwinning == true then
+			teamBwinning = false
+		end
+	end
+end
+
+teamXloses = function (X)
+	for i,player in next,X do
+		for j,unit in pairs(player.GetActors()) do
+			if unit.HasProperty('Health') then unit.Kill() end
+		end
+	end
+end
+
+GuardUnitsFromTable = function (unittable, GuardTarget)
+	for i=1,#unittable do
+		if unittable[i].IsDead  then
+			--table.remove(unittable, i)			-- crash area
+		else
+			unittable[i].Guard(GuardTarget)
+		end
+	end
+end
+
+GuardMoveUnits = function()
+	ActivityApplyFunction = GuardUnitsFromTable
+
+	if ( warpointa3 ~= nil ) then
+		ActivityApplyFunction(teamAunits[1], warpointa3)
+		ActivityApplyFunction(teamAunits[2], warpointa2)
+		ActivityApplyFunction(teamAunits[3], warpointa1)
+		ActivityApplyFunction(teamAunits[4], warpoint0)
+		ActivityApplyFunction(teamAunits[5], warpointb1)
+		ActivityApplyFunction(teamAunits[6], warpointb2)
+		ActivityApplyFunction(teamAunits[7], warpointb3)
+
+		ActivityApplyFunction(teamBunits[1], warpointb3)
+		ActivityApplyFunction(teamBunits[2], warpointb2)
+		ActivityApplyFunction(teamBunits[3], warpointb1)
+		ActivityApplyFunction(teamBunits[4], warpoint0)
+		ActivityApplyFunction(teamBunits[5], warpointa1)
+		ActivityApplyFunction(teamBunits[6], warpointa2)
+		ActivityApplyFunction(teamBunits[7], warpointa3)
+
+	elseif ( warpointa2 ~= nil ) then
+		ActivityApplyFunction(teamAunits[3], warpointa2)
+		ActivityApplyFunction(teamAunits[4], warpointa1)
+		ActivityApplyFunction(teamAunits[5], warpoint0)
+		ActivityApplyFunction(teamAunits[6], warpointb1)
+		ActivityApplyFunction(teamAunits[7], warpointb2)
+
+		ActivityApplyFunction(teamBunits[3], warpointb2)
+		ActivityApplyFunction(teamBunits[4], warpointb1)
+		ActivityApplyFunction(teamBunits[5], warpoint0)
+		ActivityApplyFunction(teamBunits[6], warpointa1)
+		ActivityApplyFunction(teamBunits[7], warpointa2)
+	else
+		ActivityApplyFunction(teamAunits[5], warpointa1)
+		ActivityApplyFunction(teamAunits[6], warpoint0)
+		ActivityApplyFunction(teamAunits[7], warpointb1)
+
+		ActivityApplyFunction(teamBunits[5], warpointb1)
+		ActivityApplyFunction(teamBunits[6], warpoint0)
+		ActivityApplyFunction(teamBunits[7], warpointa1)
+	end
+end
 
 AttackMoveUnitsFromTable = function (unittable, Location)
-	--for i,unit in next,unittable do
-  	--Media.DisplayMessage(tostring(key) .. " of " .. tostring(#autoproduced) .. " is " .. tostring(value.Type))
-	--end
-	--for i=1,#unittable do
-		--Media.DisplayMessage(tostring(i) .. " of " .. tostring(#unittable) .. " is " .. tostring(unittable[i].Type))
-	--end
-
 	for i=1,#unittable do
-		--Media.DisplayMessage(tostring(i) .. " of " .. tostring(#autoproduced))
-		if unittable[i].IsDead  then --and unittable[i] ~= nil
+		if unittable[i].IsDead  then
 			--table.remove(unittable, i)			-- crash area
 		else
 			unittable[i].AttackMove(Location, 0)
@@ -211,22 +303,26 @@ TransferUnitGroups = function()
 
 	-- sort units into specific arrays
 
-	--for i, unit in pairs(autoproduced) do
 	for i=1,#autoproduced do
 
 		--Media.DisplayMessage("sorting unit #" .. tostring( i ))
 		-- split new units up depending on team
-		if (autoproduced[i].Owner.Team == 0)
-		then
-			--Media.DisplayMessage(tostring(i) .. " in team " .. tostring( autoproduced[i].Owner.Team ))
-			table.insert(teamAunits[insertIndex], autoproduced[i])
+		if (autoproduced[i].Owner.Team == teamA[1].Team) then
+			if teamsSwitched then
+				table.insert(teamBunits[insertIndex], autoproduced[i])
+			else
+				table.insert(teamAunits[insertIndex], autoproduced[i])
+			end
+
 			--table.remove(autoproduced, i)
 		else
-			--Media.DisplayMessage(tostring(i) .. " in yes" .. tostring( autoproduced[i].Owner.Team ))
-			table.insert(teamBunits[insertIndex], autoproduced[i])
+			if teamsSwitched then
+				table.insert(teamAunits[insertIndex], autoproduced[i])
+			else
+				table.insert(teamBunits[insertIndex], autoproduced[i])
+			end
 			--table.remove(autoproduced, i)
 		end
-
 	end
 	autoproduced = {}
 end

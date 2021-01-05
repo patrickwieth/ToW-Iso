@@ -97,7 +97,7 @@ MEDIC:
 	Crushable:
 		CrushSound: squishy2.aud
 	AutoTarget:
-		ScanRadius: 6
+		ScanRadius: 12
 	Armament:
 		Weapon: Heal
 		Cursor: heal
@@ -522,7 +522,7 @@ FlameHologram:
 	EditorOnlyTooltip:
 		Name: Militant Hollogram
 	AutoTarget:
-		ScanRadius: 7
+		ScanRadius: 12
 		InitialStance: AttackAnything
 
 MARAUDER:
@@ -548,7 +548,7 @@ MARAUDER:
 	Health:
 		HP: 10000
 	AutoTarget:
-		ScanRadius: 8
+		ScanRadius: 12
 	Mobile:
 		PauseOnCondition: WebDisable
 		RequireForceMoveCondition: !AImicroManage && !undeployed
@@ -953,7 +953,7 @@ SHARK:
 	AttackMove:
 		Voice: Move
 	AutoTarget:
-		ScanRadius: 4
+		ScanRadius: 12
 		InitialStance: AttackAnything
 	WithInfantryBody:
 		StandSequences: stand
@@ -1247,7 +1247,7 @@ CABSENTRY:
 		LocalOffset: 250,0,100
 		PauseOnCondition: WebDisable || initializing
 	AutoTarget:
-		ScanRadius: 8
+		ScanRadius: 12
 		InitialStance: AttackAnything
 	-Armor:
 	Armor@2:
@@ -1412,7 +1412,7 @@ PDRONE:
 		AttackSequences: shoot
 		DefaultAttackSequence: fire
 	AutoTarget:
-		ScanRadius: 8
+		ScanRadius: 12
 		InitialStance: AttackAnything
 	Armament:
 		Weapon: ReclaimerHit
