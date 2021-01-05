@@ -303,7 +303,7 @@ SONIC:
 		TurnSpeed: 16
 		Offset: -500,0,0
 	AutoTarget:
-		ScanRadius: 7
+		ScanRadius: 12
 	BodyOrientation:
 		CameraPitch: 240
 
@@ -996,10 +996,9 @@ TICKHOLOGRAM:
 			TiberiumDeathStrong: evaporate
 			EnergyDeath: evaporate
 			ExplosionDeath: evaporate
-
 	AttackFrontal:
 	AutoTarget:
-		ScanRadius: 7
+		ScanRadius: 12
 		InitialStance: AttackAnything
 		InitialStanceAI: AttackAnything
 	-Explodes:
@@ -1065,7 +1064,7 @@ BIKE:
 		Palette: mouse
 		ValidRelationships: Ally, Enemy, Neutral
 	AutoTarget:
-		ScanRadius: 8
+		ScanRadius: 16
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 
@@ -1571,7 +1570,7 @@ DEATHCLAW:
 	Targetable@MindControlImmunity:
 		TargetTypes: MindControlImmune
 	AutoTarget:
-		ScanRadius: 6
+		ScanRadius: 12
 		InitialStance: AttackAnything
 	Health:
 		HP: 70000
@@ -1651,7 +1650,7 @@ HVRTRUK3:
 		Palette: mouse
 		ValidRelationships: Ally, Enemy, Neutral
 	AutoTarget:
-		ScanRadius: 8
+		ScanRadius: 12
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 
@@ -2157,7 +2156,7 @@ REPAIRVEHICLE:
 	Voiced:
 		VoiceSet: Limpet
 	AutoTarget:
-		ScanRadius: 6
+		ScanRadius: 12
 	WithFacingSpriteBody:
 	AutoTarget:
 		InitialStance: AttackAnything
@@ -2301,7 +2300,7 @@ SPIDERARTY:
 		DefaultAttackSequence: shoot
 		RequiresCondition: !inside-tunnel
 	AutoTarget:
-		ScanRadius: 11
+		ScanRadius: 12
 	AttackFrontal:
 		PauseOnCondition: empdisable
 		TargetFrozenActors: true
