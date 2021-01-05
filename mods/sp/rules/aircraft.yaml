@@ -628,7 +628,7 @@ WETP:
 		ReloadDelay: 250
 		AmmoCondition: ammo
 	AutoTarget:
-		ScanRadius: 6
+		ScanRadius: 12
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 	RenderSprites:
@@ -1415,7 +1415,7 @@ DEVOURER:
 	Turreted:
 		TurnSpeed: 12
 	AutoTarget:
-		ScanRadius: 5
+		ScanRadius: 12
 	RenderSprites:
 	WithFacingSpriteBody:
 		RequiresCondition: !Attacking

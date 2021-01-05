@@ -21,6 +21,7 @@
 
 ^AutoTargetGround:
 	AutoTarget:
+		ScanRadius: 12
 		AttackAnythingCondition: stance-attackanything
 		MinimumScanTimeInterval: 16
 		MaximumScanTimeInterval: 20
@@ -46,6 +47,7 @@
 
 ^AutoTargetAir:
 	AutoTarget:
+		ScanRadius: 12
 		MinimumScanTimeInterval: 16
 		MaximumScanTimeInterval: 20
 	AutoTargetPriority@DEFAULT:
@@ -54,6 +56,7 @@
 
 ^AutoTargetAll:
 	AutoTarget:
+		ScanRadius: 12
 		AttackAnythingCondition: stance-attackanything
 		MinimumScanTimeInterval: 16
 		MaximumScanTimeInterval: 20
@@ -2448,6 +2451,7 @@
 		Voice: Attack
 		TargetFrozenActors: true
 	AutoTarget:
+		ScanRadius: 12
 	RenderRangeCircle:
 	DrawLineToTarget:
 	Armor:
