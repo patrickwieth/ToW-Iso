@@ -114,6 +114,7 @@ JUMPJET:
 	Inherits: ^Soldier
 	Inherits@2: ^6CellVision
 	Inherits@GainsExperience: ^GainsExperience
+	Buildable:
 	Valued:
 		Cost: 450
 	Tooltip:
@@ -141,8 +142,7 @@ JUMPJET:
 		Weapon: GJJGrenade
 		LocalOffset: 300,0,900
 		PauseOnCondition: WebDisable
-	Passenger:
-		CustomPipType: blue
+	-Passenger:
 	AttackFrontal:
 		Voice: Attack
 		Armaments: OnFoot
@@ -235,6 +235,8 @@ JUMPJETAIR:
 	-ExternalCondition@spawnsparks:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	Passenger:
+		CustomPipType: blue
 
 EAGLEGUARD:
 	Inherits: ^Soldier
