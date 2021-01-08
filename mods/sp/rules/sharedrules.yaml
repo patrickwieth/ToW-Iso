@@ -49,6 +49,7 @@ MCV:
 	Inherits: ^VoxelVehicle
 	Inherits@2: ^LowPrioritySelectionMode
 	Inherits@3: ^5CellVision
+	Inherits@4: ^FixPrototypeActivation
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 110
@@ -438,7 +439,7 @@ PROC:
 	Inherits@1: ^NormalRefineryHitShape
 	Inherits@2: ^RefineryHP
 	Inherits@3: ^AICashCheat
-	Inherits@Cash: ^CashGenerator 
+	Inherits@Cash: ^CashGenerator
 	Building:
 		Footprint: xx== xx== xx==
 		Dimensions: 4,3
@@ -446,10 +447,6 @@ PROC:
 		DockAngle: 640
 		DockOffset: 2,1
 		DiscardExcessResources: false
-	FreeActor:
-		Actor: HARV
-		SpawnOffset: 3,1
-		Facing: 640
 	WithIdleOverlay@REDLIGHTS:
 		Sequence: idle-redlights
 		RequiresCondition: !Building-Buildup

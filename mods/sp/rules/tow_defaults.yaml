@@ -5,6 +5,7 @@
 		PipCount: 10
 		PassengerFacing: 0
 		LoadingCondition: notmobile
+		LoadedCondition: Loaded
 	Inherits@PIPS: ^CargoPips
 	PeriodicCargoProducer:
 		Condition: Autoproduced
@@ -15,6 +16,9 @@
 	Production@Autoproduction:
 		Produces: Autoproduction
 		PauseOnCondition: forceshield || invulnerability || being-warped
+	ProximityExternalCondition@PrototypeActivation:
+		Condition: activePrototype
+		Range: 25c0
 	ReloadDelayMultiplier@balance2:
 		Modifier: 50
 		RequiresCondition: true
@@ -25,6 +29,17 @@
 		Condition: TeamBalance1
 	ExternalCondition@TeamBalance:
 		Condition: TeamBalance2
+	GrantTimedCondition@Highlight:
+		Condition: Highlight
+		Duration: 3
+		RequiresCondition: !Loaded && !Cooldown
+	GrantTimedCondition@Cooldown:
+		Condition: Cooldown
+		Duration: 25
+		RequiresCondition: !Loaded && !Highlight
+	WithColoredOverlay@Highlight:
+		RequiresCondition: Highlight
+		Palette: highlight
 
 ^InfAutoproducer:
 	Inherits: ^Autoproducer
@@ -47,11 +62,38 @@
 	PeriodicCargoProducer:
 		ChargeDuration: 3000
 
+^FixPrototypeActivation:
+	ProximityExternalCondition@PrototypeSelfActivation:
+		Condition: activePrototype
+		Range: 1c0
+
 ^Autoproduceable:
-	RejectsOrders:
-		RequiresCondition: Autoproduced
 	ExternalCondition@Autoproduced:
 		Condition: Autoproduced
+	RejectsOrders:
+		RequiresCondition: Autoproduced
+	ExternalCondition@PrototypeActivation:
+		Condition: activePrototype
+	SpeedMultiplier@PrototypeActivation:
+		RequiresCondition: !activePrototype
+		Modifier: 10
+	RangeMultiplier@PrototypeActivation:
+		RequiresCondition: !activePrototype
+		Modifier: 1
+	WithColoredOverlay@PrototypeActivation:
+		RequiresCondition: !activePrototype
+		Palette: disabled
+	GrantTimedCondition@Highlight:
+		Condition: Highlight
+		Duration: 3
+		RequiresCondition: !Autoproduced && !Cooldown
+	GrantTimedCondition@Cooldown:
+		Condition: Cooldown
+		Duration: 25
+		RequiresCondition: !Autoproduced && !Highlight
+	WithColoredOverlay@Highlight:
+		RequiresCondition: Highlight
+		Palette: highlight
 
 ^Checkpoint:
 	DamageMultiplier@Checkpoint:
@@ -63,5 +105,5 @@
 
 ^CashGenerator:
 	CashTrickler:
-		Interval: 150
+		Interval: 200
 		Amount: 100
