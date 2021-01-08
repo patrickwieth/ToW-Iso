@@ -1197,6 +1197,7 @@
 		TargetTypes: Ground, Infantry
 		RequiresCondition: !inside-tunnel
 	Passenger:
+		Weight: 10
 		CargoType: Infantry
 		Voice: Move
 	QuantizeFacingsFromSequence:
@@ -1369,7 +1370,7 @@
 	Passenger:
 		CargoType: Vehicle
 		Voice: Move
-		Weight: 3
+		Weight: 10
 	-WithColoredOverlay@WebDisable:
 	-TimedConditionBar@WebDisable:
 	-SpeedMultiplier@WebDisable:
@@ -1652,7 +1653,7 @@
 		CargoType: Vehicle
 		CustomPipType: blue
 		Voice: Move
-		Weight: 3
+		Weight: 10
 	SharedPassenger:
 		CargoType: Vehicle
 		CustomPipType: blue
@@ -1907,6 +1908,7 @@
 		MaximumPitch: 90
 		LandableTerrainTypes: Clear, Ice, Rough, Road, DirtRoad, Ground, Green, Tiberium, BlueTiberium, Building
 	Passenger:
+		Weight: 10
 		CargoType: Aircraft
 	Repairable:
 		RepairActors: gadept, scrdepot, tdrepd
@@ -2509,6 +2511,7 @@
 	Targetable:
 		TargetTypes: Ground, Vehicle
 	Passenger:
+		Weight: 10
 		CargoType: Infantry
 		Voice: Move
 	HiddenUnderFog:
