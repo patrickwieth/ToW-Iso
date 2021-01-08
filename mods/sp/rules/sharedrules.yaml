@@ -50,6 +50,13 @@ MCV:
 	Inherits@2: ^LowPrioritySelectionMode
 	Inherits@3: ^5CellVision
 	Inherits@4: ^FixPrototypeActivation
+	-ExternalCondition@PrototypeActivation:
+	-SpeedMultiplier@PrototypeActivation:
+	-RangeMultiplier@PrototypeActivation:
+	-WithColoredOverlay@PrototypeActivation:
+	-GrantTimedCondition@Highlight:
+	-GrantTimedCondition@Cooldown:
+	-WithColoredOverlay@Highlight:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 110

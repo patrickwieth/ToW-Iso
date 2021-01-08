@@ -22,6 +22,7 @@
 ^AutoTargetGround:
 	AutoTarget:
 		ScanRadius: 12
+		InitialStance: AttackAnything
 		AttackAnythingCondition: stance-attackanything
 		MinimumScanTimeInterval: 16
 		MaximumScanTimeInterval: 20
@@ -48,6 +49,7 @@
 ^AutoTargetAir:
 	AutoTarget:
 		ScanRadius: 12
+		InitialStance: AttackAnything
 		MinimumScanTimeInterval: 16
 		MaximumScanTimeInterval: 20
 	AutoTargetPriority@DEFAULT:
@@ -57,6 +59,7 @@
 ^AutoTargetAll:
 	AutoTarget:
 		ScanRadius: 12
+		InitialStance: AttackAnything
 		AttackAnythingCondition: stance-attackanything
 		MinimumScanTimeInterval: 16
 		MaximumScanTimeInterval: 20
