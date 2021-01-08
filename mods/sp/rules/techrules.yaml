@@ -175,10 +175,11 @@ NEUTRALPOWERPLANT:
 	Inherits: ^TechBuilding
 	Inherits@3: ^3x3Shape
 	Inherits@Checkpoint: ^Checkpoint
+	Inherits@Cash: ^CashGenerator
 	Tooltip:
 		Name: Nuclear Power Plant
 	TooltipDescription:
-		Description: Provides build radius & explodes violently when destroyed.
+		Description: Provides build radius & generates some cash.
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
@@ -200,6 +201,7 @@ NEUTRALPOWERPLANT:
 		EmptyWeapon: PowerplantNuke
 	IsometricSelectable:
 		DecorationHeight: 72
+
 
 SCRINREINFPAD:
 	Inherits: ^TechBuilding
