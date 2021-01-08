@@ -109,8 +109,6 @@ GDIREF:
 		BuildPaletteOrder: 3
 		Prerequisites: ~structures.gdi, anypower, ~AIantiRush
 		Description: Processes raw Tiberium into useable resources.\nCan be rotated.\n\nSpecial:\n- Stores 1000$.
-	FreeActor:
-		Actor: harv.gdi
 	-WithIdleOverlay@REDLIGHTS:
 	PlaceBuildingVariants:
 		Actors: gdiref3, gdiref2, gdiref4
@@ -119,24 +117,18 @@ GDIREF2:
 	Inherits: FLIPPEDPROC
 	Tooltip:
 		Name: GDI Refinery
-	FreeActor:
-		Actor: harv.gdi
 	-WithIdleOverlay@REDLIGHTS:
 
 GDIREF3:
 	Inherits: FLIPPEDXPROC
 	Tooltip:
 		Name: GDI Refinery
-	FreeActor:
-		Actor: harv.gdi
 	-WithIdleOverlay@REDLIGHTS:
 
 GDIREF4:
 	Inherits: FLIPPEDYPROC
 	Tooltip:
 		Name: GDI Refinery
-	FreeActor:
-		Actor: harv.gdi
 	-WithIdleOverlay@REDLIGHTS:
 
 GAWEAP:
@@ -425,8 +417,6 @@ NODREF:
 		BuildPaletteOrder: 3
 		Prerequisites: ~structures.nod, anypower, ~AIantiRush
 		Description: Processes raw Tiberium into useable resources.\nCan be rotated.\n\nSpecial:\n- Stores 1000$.
-	FreeActor:
-		Actor: harv.nod
 	-WithIdleOverlay@REDLIGHTS:
 	PlaceBuildingVariants:
 		Actors: nodref3, nodref2, nodref4
@@ -436,24 +426,18 @@ NODREF2:
 	Tooltip:
 		Name: Nod Refinery
 	-WithIdleOverlay@REDLIGHTS:
-	FreeActor:
-		Actor: harv.nod
 
 NODREF3:
 	Inherits: FLIPPEDXPROC
 	Tooltip:
 		Name: Nod Refinery
 	-WithIdleOverlay@REDLIGHTS:
-	FreeActor:
-		Actor: harv.nod
 
 NODREF4:
 	Inherits: FLIPPEDYPROC
 	Tooltip:
 		Name: Nod Refinery
 	-WithIdleOverlay@REDLIGHTS:
-	FreeActor:
-		Actor: harv.nod
 
 NAWEAP:
 	Inherits: ^Factory
@@ -767,8 +751,6 @@ MUPROC:
 		Prerequisites: ~structures.mut, anypower, ~AIantiRush
 		IconPalette: UnittemIconMut
 		Description: Processes raw Tiberium into useable resources.\nCan be rotated.\n\nSpecial:\n- Stores 1000$.
-	FreeActor:
-		Actor: harv.mut
 	-WithIdleOverlay@REDLIGHTS:
 	Cloak@CLOAKGENERATOR:
 		Palette: cloakmut
@@ -784,8 +766,6 @@ MUPROC2:
 	Inherits@2: ^MutRender
 	Tooltip:
 		Name: Forgotten Refinery
-	FreeActor:
-		Actor: harv.mut
 	-WithIdleOverlay@REDLIGHTS:
 
 MUPROC3:
@@ -793,8 +773,6 @@ MUPROC3:
 	Inherits@2: ^MutRender
 	Tooltip:
 		Name: Forgotten Refinery
-	FreeActor:
-		Actor: harv.mut
 	-WithIdleOverlay@REDLIGHTS:
 
 MUPROC4:
@@ -802,8 +780,6 @@ MUPROC4:
 	Inherits@2: ^MutRender
 	Tooltip:
 		Name: Forgotten Refinery
-	FreeActor:
-		Actor: harv.mut
 	-WithIdleOverlay@REDLIGHTS:
 
 MUWEAP:
@@ -1056,8 +1032,6 @@ SCRPROC:
 		IconPalette: UnittemIconScrin
 	StoresResources:
 		Capacity: 4000
-	FreeActor:
-		Actor: SCRHARV
 	ProvidesPrerequisite@buildingname:
 	-WithIdleOverlay@REDLIGHTS:
 	-WithDockedOverlay@flame:
@@ -1080,8 +1054,6 @@ SCRPROC2:
 		Name: Scrin Refinery
 	-WithIdleOverlay@REDLIGHTS:
 	-WithDockedOverlay@flame:
-	FreeActor:
-		Actor: SCRHARV
 	StoresResources:
 		Capacity: 4000
 	WithResourceStoragePipsDecoration:
@@ -1101,8 +1073,6 @@ SCRPROC3:
 		Name: Scrin Refinery
 	-WithIdleOverlay@REDLIGHTS:
 	-WithDockedOverlay@flame:
-	FreeActor:
-		Actor: SCRHARV
 	StoresResources:
 		Capacity: 4000
 	WithResourceStoragePipsDecoration:
@@ -1122,8 +1092,6 @@ SCRPROC4:
 		Name: Scrin Refinery
 	-WithIdleOverlay@REDLIGHTS:
 	-WithDockedOverlay@flame:
-	FreeActor:
-		Actor: SCRHARV
 	StoresResources:
 		Capacity: 4000
 	WithResourceStoragePipsDecoration:
@@ -1468,8 +1436,6 @@ CABPROC:
 		Prerequisites: anypower, ~structures.cab, ~AIantiRush
 		Description: Processes raw Tiberium into useable resources.\nCan be rotated.\n\nSpecial:\n- Stores 1000$.
 		IconPalette: UnittemIconCab
-	FreeActor:
-		Actor: cabharv
 	-WithIdleOverlay@REDLIGHTS:
 	WithDeathAnimation:
 		DeathSequencePalette: playercab
@@ -1483,8 +1449,6 @@ CABPROC2:
 	Inherits@1: ^CabRender
 	Tooltip:
 		Name: C.A.B.A.L. Refinery
-	FreeActor:
-		Actor: cabharv
 	-WithIdleOverlay@REDLIGHTS:
 	WithDeathAnimation:
 		DeathSequencePalette: playercab
@@ -1496,8 +1460,6 @@ CABPROC3:
 	Inherits@1: ^CabRender
 	Tooltip:
 		Name: C.A.B.A.L. Refinery
-	FreeActor:
-		Actor: cabharv
 	-WithIdleOverlay@REDLIGHTS:
 	WithDeathAnimation:
 		DeathSequencePalette: playercab
@@ -1509,8 +1471,6 @@ CABPROC4:
 	Inherits@1: ^CabRender
 	Tooltip:
 		Name: C.A.B.A.L. Refinery
-	FreeActor:
-		Actor: cabharv
 	-WithIdleOverlay@REDLIGHTS:
 	WithDeathAnimation:
 		DeathSequencePalette: playercab
