@@ -55,6 +55,7 @@ WELL:
 	UpdatesDerrickCount:
 	IsometricSelectable:
 		DecorationHeight: 144
+	-Targetable:
 
 MACHINESHOP:
 	Inherits: ^TechBuilding
@@ -201,7 +202,7 @@ NEUTRALPOWERPLANT:
 		EmptyWeapon: PowerplantNuke
 	IsometricSelectable:
 		DecorationHeight: 72
-
+	-Targetable:
 
 SCRINREINFPAD:
 	Inherits: ^TechBuilding
