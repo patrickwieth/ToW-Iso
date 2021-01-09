@@ -35,6 +35,74 @@ soviet_conscript:
 		FacingTolerance: 2
 	RenderSprites:
 
+soviet_tesla_trooper:
+	Inherits: ^Mutant
+	Inherits@1: ^7CellVision
+	Inherits@GainsExperience: ^GainsExperience
+	Inherits@AImicroManagable: ^AImicroManagable
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 15
+		Description: Psychic mutant that leads armies through fear.\n\nGood vs: Vehicles, Aircraft.\n\nSpecial:\n- Can persuade friendly units to fight harder when deployed\n- Buffed units will get 20% extra attack speed, move speed and receive 20% more damage\n- Effect lasts 15 seconds\n- Heals on Tiberium\n- Can attack air\n- Can shoot over walls\n- Crush class: crushable
+		Prerequisites: ~murax, muhall
+	Valued:
+		Cost: 450
+	Tooltip:
+		Name: Tesla Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Voiced:
+		VoiceSet: Umagon
+	Health:
+		HP: 15000
+	AutoTarget:
+	RenderSprites:
+	Armament@PRIMARY:
+		Weapon: SeerTesla
+		Name: OnFoot
+		FireDelay: 5
+		LocalOffset: 100,0,400
+		PauseOnCondition: WebDisable
+	Armament@SECONDARY:
+		Weapon: SeerTeslaAA
+		Name: OnFoot
+		FireDelay: 5
+		LocalOffset: 100,0,400
+		PauseOnCondition: WebDisable
+	Armament@GARRISON:
+		Weapon: SeerTesla
+		LocalOffset: 100,0,400
+	Armament@GARRISON-AA:
+		Weapon: SeerTeslaAA
+		LocalOffset: 100,0,400
+	AttackFrontal:
+		Voice: Attack
+		Armaments: OnFoot
+		FacingTolerance: 2
+	Explodes:
+		Weapon: SeerTyranyInstakillSpawn
+		EmptyWeapon: SeerTyranyInstakillSpawn
+		LoadedChance: 100
+		Chance: 100
+	GrantTimedConditionOnDeploy:
+		DeployedCondition: deployed
+		CooldownTicks: 2000
+		DeployedTicks: 60
+		StartsFullyCharged: true
+		PauseOnCondition: WebDisable
+	ExplodeWeapon:
+		Weapon: SeerTyranyBuff
+		RequiresCondition: deployed
+	ExplodeWeapon@2:
+		Weapon: SparkExplo
+		RequiresCondition: deployed
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage
+		DeployChance: 50
+		DeployTicks: 2005
+		UndeployTicks: 1
+		DeployTrigger: Attack
+
 ##################### BUILDINGS #####################
 
 ^conyard_prototype:

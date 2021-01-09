@@ -61,6 +61,63 @@ soviet_conscript:
 		ShadowStart: 842
 	icon: sidebar-gdi|e1icon
 
+soviet_tesla_trooper:
+	Inherits@1: ^InfantryDeathAnims
+	Defaults:
+		Tick: 80
+	stand:
+		Facings: 8
+		ShadowStart: 361
+	run:
+		Start: 8
+		Length: 12
+		Facings: 8
+		ShadowStart: 369
+	idle1:
+		Start: 298
+		Length: 20
+		ShadowStart: 659
+	idle2:
+		Start: 319
+		Length: 20
+		ShadowStart: 680
+	prone-run:
+		Start: 112
+		Length: 9
+		Facings: 8
+		ShadowStart: 473
+	prone-stand:
+		Start: 105
+		Facings: 8
+		ShadowStart: 466
+	die1:
+		Start: 280
+		Length: 9
+		ShadowStart: 641
+	die2:
+		Start: 289
+		Length: 9
+		ShadowStart: 650
+	die-crushed:
+		Start: 289
+		Length: 9
+		Tick: 800
+		ZOffset: -511
+		ShadowStart: 650
+	shoot:
+		Start: 184
+		Length: 6
+		Stride: 12
+		Facings: 8
+		ShadowStart: 545
+	prone-shoot:
+		Start: 190
+		Length: 6
+		Stride: 12
+		Facings: 8
+		ShadowStart: 551
+	icon: sidebar-gdi|e1icon
+
 ##################### BUILDINGS #####################
 
 soviet_conyard:
