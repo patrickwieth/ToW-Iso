@@ -1,3 +1,4 @@
+wavetime = 750
 debugging = false
 
 WorldLoadedToW = function()
@@ -126,7 +127,7 @@ TickTugOfWar = function()
 	elseif DateTime.GameTime == 2 then
 		captureStartPointActorA.Kill()
 		captureStartPointActorB.Destroy()
-	elseif DateTime.GameTime % 1000 > 0 then
+	elseif DateTime.GameTime % wavetime > 0 then
 		-- we only do special tick things every 1000 Ticks, any tick else is skipped
     return
 	else

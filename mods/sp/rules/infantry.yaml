@@ -96,8 +96,6 @@ MEDIC:
 		HP: 7000
 	Crushable:
 		CrushSound: squishy2.aud
-	AutoTarget:
-		ScanRadius: 12
 	Armament:
 		Weapon: Heal
 		Cursor: heal
@@ -523,9 +521,6 @@ FlameHologram:
 		Image: altnode1
 	EditorOnlyTooltip:
 		Name: Militant Hollogram
-	AutoTarget:
-		ScanRadius: 12
-		InitialStance: AttackAnything
 
 MARAUDER:
 	Inherits: ^Mutant
@@ -549,8 +544,6 @@ MARAUDER:
 		Volume: 7
 	Health:
 		HP: 10000
-	AutoTarget:
-		ScanRadius: 12
 	Mobile:
 		PauseOnCondition: WebDisable
 		RequireForceMoveCondition: !AImicroManage && !undeployed
@@ -954,9 +947,6 @@ SHARK:
 		ValidTargets: Infantry
 	AttackMove:
 		Voice: Move
-	AutoTarget:
-		ScanRadius: 12
-		InitialStance: AttackAnything
 	WithInfantryBody:
 		StandSequences: stand
 		IdleSequences: idle1, idle2, idle3, idle4
@@ -1248,9 +1238,6 @@ CABSENTRY:
 		Weapon: SentryGun
 		LocalOffset: 250,0,100
 		PauseOnCondition: WebDisable || initializing
-	AutoTarget:
-		ScanRadius: 12
-		InitialStance: AttackAnything
 	-Armor:
 	Armor@2:
 		Type: VehicleArmor
@@ -1413,9 +1400,6 @@ PDRONE:
 		IdleSequences: idle1, idle2
 		AttackSequences: shoot
 		DefaultAttackSequence: fire
-	AutoTarget:
-		ScanRadius: 12
-		InitialStance: AttackAnything
 	Armament:
 		Weapon: ReclaimerHit
 		PauseOnCondition: WebDisable
