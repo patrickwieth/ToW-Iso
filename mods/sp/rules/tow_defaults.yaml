@@ -109,14 +109,20 @@
 		RequiresCondition: Autoproduced && PlannedObsolence && !LifeDuration
 	GrantTimedCondition@LifeDuration:
 		Condition: LifeDuration
-		Duration: 400
+		Duration: 9000
 		RequiresCondition: Autoproduced && !PlannedObsolence
 	GrantTimedCondition@PlannedObsolence:
 		Condition: PlannedObsolence
-		Duration: 401
+		Duration: 9001
 		RequiresCondition: Autoproduced && !LifeDuration
 
 ^CashGenerator:
 	CashTrickler:
 		Interval: 250
 		Amount: 100
+
+^DefenseBuildingBuff:
+	DamageMultiplier:
+		Modifier: 10
+	FirepowerMultiplier:
+		Modifier: 500

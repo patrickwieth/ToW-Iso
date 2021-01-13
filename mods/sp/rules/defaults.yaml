@@ -2191,6 +2191,7 @@
 	Inherits@1: ^AutoTargetAll
 	Inherits@2: ^DisableOnLowPowerOrPowerDown
 	Inherits@3: ^8CellVision
+	Inherits@4: ^DefenseBuildingBuff
 	RevealsShroud:
 		Type: Footprint
 		MaxHeightDelta: 3
