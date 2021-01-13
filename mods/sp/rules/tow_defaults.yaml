@@ -75,13 +75,13 @@
 	ExternalCondition@PrototypeActivation:
 		Condition: activePrototype
 	SpeedMultiplier@PrototypeActivation:
-		RequiresCondition: !activePrototype
+		RequiresCondition: !Autoproduced && !activePrototype
 		Modifier: 10
 	RangeMultiplier@PrototypeActivation:
-		RequiresCondition: !activePrototype
+		RequiresCondition: !Autoproduced && !activePrototype
 		Modifier: 1
 	WithColoredOverlay@PrototypeActivation:
-		RequiresCondition: !activePrototype
+		RequiresCondition: !Autoproduced && !activePrototype
 		Palette: disabled
 	GrantTimedCondition@Highlight:
 		Condition: Highlight

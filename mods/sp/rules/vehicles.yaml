@@ -237,8 +237,6 @@ JUG:
 		Armaments: primary, secondary
 		PauseOnCondition: empdisable
 		TargetFrozenActors: true
-	AutoTarget:
-		ScanRadius: 16
 	Armament:
 		Weapon: JuggCannon
 		LocalOffset: 600, 200, 2650
@@ -302,8 +300,6 @@ SONIC:
 	Turreted:
 		TurnSpeed: 16
 		Offset: -500,0,0
-	AutoTarget:
-		ScanRadius: 12
 	BodyOrientation:
 		CameraPitch: 240
 
@@ -998,7 +994,6 @@ TICKHOLOGRAM:
 			ExplosionDeath: evaporate
 	AttackFrontal:
 	AutoTarget:
-		ScanRadius: 12
 		InitialStance: AttackAnything
 		InitialStanceAI: AttackAnything
 	-Explodes:
@@ -1064,7 +1059,6 @@ BIKE:
 		Palette: mouse
 		ValidRelationships: Ally, Enemy, Neutral
 	AutoTarget:
-		ScanRadius: 16
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 
@@ -1189,8 +1183,6 @@ HOWTLIZER:
 		MuzzleSequence: muzzle
 		MuzzlePalette: gensmkexploj
 		PauseOnCondition: empdisable
-	AutoTarget:
-		ScanRadius: 19
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: empdisable
@@ -1525,8 +1517,6 @@ MRLS:
 	Voiced:
 		VoiceSet: Trike
 		Volume: 3
-	AutoTarget:
-		ScanRadius: 13
 	Armament:
 		Weapon: tiberianrocket
 		LocalOffset: 400,100,900, 400,-100,900
@@ -1570,7 +1560,6 @@ DEATHCLAW:
 	Targetable@MindControlImmunity:
 		TargetTypes: MindControlImmune
 	AutoTarget:
-		ScanRadius: 12
 		InitialStance: AttackAnything
 	Health:
 		HP: 70000
@@ -1650,7 +1639,6 @@ HVRTRUK3:
 		Palette: mouse
 		ValidRelationships: Ally, Enemy, Neutral
 	AutoTarget:
-		ScanRadius: 12
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 
@@ -2155,8 +2143,6 @@ REPAIRVEHICLE:
 		Voice: Attack
 	Voiced:
 		VoiceSet: Limpet
-	AutoTarget:
-		ScanRadius: 12
 	WithFacingSpriteBody:
 	AutoTarget:
 		InitialStance: AttackAnything
@@ -2299,8 +2285,6 @@ SPIDERARTY:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		RequiresCondition: !inside-tunnel
-	AutoTarget:
-		ScanRadius: 12
 	AttackFrontal:
 		PauseOnCondition: empdisable
 		TargetFrozenActors: true

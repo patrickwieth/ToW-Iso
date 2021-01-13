@@ -23,9 +23,6 @@ ORCA:
 		TurnSpeed: 20
 		Speed: 150
 		MoveIntoShroud: true
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: AttackAnything
 	Health:
 		HP: 12000
 	Armament:
@@ -102,9 +99,6 @@ ORCAB:
 		PauseOnCondition: !ammo
 	AttackAircraft:
 		FacingTolerance: 20
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: AttackAnything
 	AmmoPool:
 		Ammo: 20
 		ReloadCount: 10
@@ -165,7 +159,6 @@ DPOD:
 	AmmoPool:
 		Ammo: 5
 		AmmoCondition: ammo
-	AutoTarget:
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
@@ -326,9 +319,6 @@ APACHE:
 		ReloadCount: 2
 		ReloadDelay: 50
 		AmmoCondition: ammo
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: AttackAnything
 	WithIdleOverlay@ROTORAIR:
 		Offset: 150,0,200
 		Sequence: rotor
@@ -394,9 +384,6 @@ SCRIN:
 		ReloadCount: 5
 		ReloadDelay: 83
 		AmmoCondition: ammo
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: AttackAnything
 	DeathSounds:
 	SpawnActorOnDeath:
 		Actor: SCRIN.Husk
@@ -573,9 +560,6 @@ MUTHELI:
 		ReloadCount: 2
 		ReloadDelay: 50
 		AmmoCondition: ammo
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: AttackAnything
 	SpawnActorOnDeath:
 		Actor: MUTHELI.Husk
 		RequiresCondition: airborne
@@ -627,10 +611,6 @@ WETP:
 		ReloadCount: 1
 		ReloadDelay: 250
 		AmmoCondition: ammo
-	AutoTarget:
-		ScanRadius: 12
-		InitialStance: HoldFire
-		InitialStanceAI: AttackAnything
 	RenderSprites:
 	Hovers@CRUISING:
 		RequiresCondition: cruising
@@ -932,8 +912,6 @@ SCRDESTROYER:
 		Prerequisites: ~scrair, scrradr
 	Selectable:
 		Bounds: 85,50,0,-12
-	AutoTarget:
-		ScanRadius: 15
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 60
@@ -1054,7 +1032,6 @@ SCRCARRIER:
 		InstantRepair: true
 	AttackTurreted:
 	Turreted:
-	AutoTarget:
 	-WithFacingSpriteBody:
 	WithInfantryBody:
 	BodyOrientation:
@@ -1212,7 +1189,6 @@ SCRBATTLESHIP:
 	WithMuzzleOverlay:
 	AttackTurreted:
 	Turreted:
-	AutoTarget:
 	BodyOrientation:
 		QuantizedFacings: 32
 	SpawnActorOnDeath:
@@ -1277,7 +1253,6 @@ WASP:
 		AttackType: Hover
 		FacingTolerance: 20
 		Voice: Attack
-	AutoTarget:
 	RenderSprites:
 	WithFacingSpriteBody:
 	BodyOrientation:
@@ -1421,8 +1396,6 @@ DEVOURER:
 		PauseOnCondition: empdisable
 	Turreted:
 		TurnSpeed: 12
-	AutoTarget:
-		ScanRadius: 12
 	RenderSprites:
 	WithFacingSpriteBody:
 		RequiresCondition: !Attacking
