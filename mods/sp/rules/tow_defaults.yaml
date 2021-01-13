@@ -94,6 +94,7 @@
 	WithColoredOverlay@Highlight:
 		RequiresCondition: Highlight
 		Palette: highlight
+	Inherits: ^TimedLife
 
 ^Checkpoint:
 	DamageMultiplier@Checkpoint:
@@ -103,7 +104,19 @@
 		CaptorTypes: Vehicle, Tank, Infantry
 		Sticky: true
 
+^TimedLife:
+	KillsSelf:
+		RequiresCondition: Autoproduced && PlannedObsolence && !LifeDuration
+	GrantTimedCondition@LifeDuration:
+		Condition: LifeDuration
+		Duration: 400
+		RequiresCondition: Autoproduced && !PlannedObsolence
+	GrantTimedCondition@PlannedObsolence:
+		Condition: PlannedObsolence
+		Duration: 401
+		RequiresCondition: Autoproduced && !LifeDuration
+
 ^CashGenerator:
 	CashTrickler:
-		Interval: 200
+		Interval: 250
 		Amount: 100
