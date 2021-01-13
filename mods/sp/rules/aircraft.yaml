@@ -810,6 +810,13 @@ DRACHE:
 	Inherits: ^Helicopter
 	Inherits@1: ^8CellVision
 	Inherits@2: ^ScrinAircraftGeneric
+	-ExternalCondition@PrototypeActivation:
+	-SpeedMultiplier@PrototypeActivation:
+	-RangeMultiplier@PrototypeActivation:
+	-WithColoredOverlay@PrototypeActivation:
+	-GrantTimedCondition@Highlight:
+	-GrantTimedCondition@Cooldown:
+	-WithColoredOverlay@Highlight:
 	Buildable:
 		Queue: Air
 		BuildPaletteOrder: 110
