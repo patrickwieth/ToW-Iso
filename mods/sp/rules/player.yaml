@@ -74,6 +74,8 @@ Player:
 		SpeechNotification: LowPower
 	AllyRepair:
 	PlayerResources:
+		DefaultCash: 20000
+		SelectableCash: 5000, 10000, 20000, 100000
 		InsufficientFundsNotification: InsufficientFunds
 		CashTickUpNotification: CashTickUp
 		CashTickDownNotification: CashTickDown

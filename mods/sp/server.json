@@ -13,8 +13,8 @@
     "enablesingleplayer": true,
     "options": {
         "startingcash": {
-            "value": 5000,
-            "preferredvalue": 5000,
+            "value": 20000,
+            "preferredvalue": 20000,
             "locked": false
         },
         "cheats": {
