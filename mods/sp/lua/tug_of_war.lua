@@ -1,4 +1,4 @@
-wavetime = 750
+wavetime = 500
 debugging = false
 
 WorldLoadedToW = function()
