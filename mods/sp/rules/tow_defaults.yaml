@@ -101,7 +101,7 @@
 		Modifier: 0
 	ProximityCapturable:
 		Range: 10c0
-		CaptorTypes: Vehicle, Tank, Infantry
+		CaptorTypes: Vehicle, Tank, Infantry, Building
 		Sticky: true
 
 ^TimedLife:
@@ -120,9 +120,21 @@
 	CashTrickler:
 		Interval: 250
 		Amount: 100
+	ProductionCostMultiplier:
+		Multiplier: 200
+		Prerequisites: scaling
+	ProductionCostMultiplier:
+		Multiplier: 200
+		Prerequisites: scaling >= 2
+	ProvidesPrerequisite@scaling:
+		Prerequisite: scaling
 
 ^DefenseBuildingBuff:
 	DamageMultiplier:
-		Modifier: 10
+		Modifier: 25
 	FirepowerMultiplier:
-		Modifier: 500
+		Modifier: 400
+	RangeMultiplier:
+		Modifier: 150
+	ReloadDelayMultiplier:
+		Modifier: 50

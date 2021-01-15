@@ -2185,6 +2185,8 @@
 		Position: Center
 		Palette: mouse
 	Huntable:
+	ProximityCaptor:
+		Types: Building
 
 ^Defence:
 	Inherits: ^Building
