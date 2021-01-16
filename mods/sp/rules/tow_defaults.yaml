@@ -120,6 +120,9 @@
 	CashTrickler:
 		Interval: 250
 		Amount: 100
+	GrantExternalConditionToOwner@Economy:
+		Condition: Economy
+		RequiresCondition: !ownerless
 
 ^DefenseBuildingBuff:
 	DamageMultiplier:

@@ -129,3 +129,5 @@ Player:
 	AutoDeployManager:
 	ProximityCaptor:
 		Types: Player
+	ExternalCondition@Economy:
+		Condition: Economy

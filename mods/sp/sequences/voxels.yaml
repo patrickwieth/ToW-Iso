@@ -54,7 +54,7 @@ hvr:
 
 stnk:
 	idle:
-	
+
 orca:
 	idle:
 
@@ -183,3 +183,8 @@ cube:
     #
 dpod:
 	idle:
+
+ttnk2:
+	idle: ttnk
+	turret: ttnktur
+	barrel: ttnkbarl

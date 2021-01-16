@@ -579,3 +579,48 @@ ObeliskLaserFire:
 	Warhead@1Dam: SpreadDamage
 		Damage: 30000
 		DamageTypes: Prone60Percent, TriggerProne, EnergyDeath
+
+
+
+^Cannon:
+	ReloadDelay: 50
+	Range: 6c768
+	Report: 120mmf.aud
+	Projectile: Bullet
+		Speed: 682
+		Image: 120mm
+		Shadow: true
+		LaunchAngle: 75
+		Palette: ra
+	Warhead@1Dam: SpreadDamage
+		Spread: 108
+		Falloff: 100, 50, 25, 12, 6, 3, 0
+		Damage: 3600
+		Versus:
+			None: 25
+			Wood: 65
+			Light: 75
+			Heavy: 100
+			Concrete: 60
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ExplosionPalette: effect-ignore-lighting-alpha75
+		ImpactSounds: expnew14.aud
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ExplosionPalette: player
+		ImpactSounds: ssplash3.aud
+		ValidTargets: Water
+		InvalidTargets: Vehicle
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater
+		InvalidTargets: Vehicle, Building, Wall
+
+90mm:
+	Inherits: ^Cannon
+	Warhead@2Eff: CreateEffect
+		Explosions: small_clsn
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
