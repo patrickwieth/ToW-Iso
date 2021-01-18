@@ -1200,7 +1200,7 @@
 		TargetTypes: Ground, Infantry
 		RequiresCondition: !inside-tunnel
 	Passenger:
-		Weight: 10
+		Weight: 1
 		CargoType: Infantry
 		Voice: Move
 	QuantizeFacingsFromSequence:
@@ -2517,7 +2517,7 @@
 	Targetable:
 		TargetTypes: Ground, Vehicle
 	Passenger:
-		Weight: 10
+		Weight: 1
 		CargoType: Infantry
 		Voice: Move
 	HiddenUnderFog:

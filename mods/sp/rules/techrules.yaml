@@ -180,7 +180,7 @@ NEUTRALPOWERPLANT:
 	Tooltip:
 		Name: Nuclear Power Plant
 	TooltipDescription:
-		Description: Provides build radius & generates some cash.
+		Description: Generates some cash.
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
@@ -191,10 +191,6 @@ NEUTRALPOWERPLANT:
 	RenderSprites:
 	RevealsShroud:
 		Range: 5c0
-	GivesBuildableArea:
-		AreaTypes: building
-	BaseProvider:
-		Range: 8c0
 	RequiresBuildableArea:
 		AreaTypes: building
 	Explodes:

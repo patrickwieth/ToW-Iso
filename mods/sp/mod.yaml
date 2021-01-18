@@ -144,6 +144,7 @@ Rules:
 	sp|rules/AIOnly.yaml
 	sp|rules/tow_defaults.yaml
 	sp|rules/soviet.yaml
+	sp|rules/nod.yaml
 
 Weapons:
 	sp|weapons/weapondefaults.yaml
@@ -177,6 +178,7 @@ Sequences:
 	sp|sequences/bridges.yaml
 	sp|sequences/mufactory.yaml
 	sp|sequences/sovseq.yaml
+	sp|sequences/nod2seq.yaml
 
 ModelSequences:
 	sp|sequences/voxels.yaml

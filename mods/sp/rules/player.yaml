@@ -20,7 +20,7 @@ Player:
 		ReadyAudio: ConstructionComplete
 		SpeedUp: true
 		CancelledAudio: Cancelled
-		BuildTimeSpeedReduction: 10
+		BuildTimeSpeedReduction: 1
 	ClassicProductionQueue@Defense:
 		Type: Defense
 		LowPowerModifier: 200
@@ -30,7 +30,7 @@ Player:
 		ReadyAudio: ConstructionComplete
 		SpeedUp: true
 		CancelledAudio: Cancelled
-		BuildTimeSpeedReduction: 10
+		BuildTimeSpeedReduction: 1
 	ClassicProductionQueue@Vehicle:
 		Type: Vehicle
 		LowPowerModifier: 200
@@ -40,7 +40,7 @@ Player:
 		ReadyAudio: UnitReady
 		SpeedUp: true
 		CancelledAudio: Cancelled
-		BuildTimeSpeedReduction: 10
+		BuildTimeSpeedReduction: 1
 	ClassicProductionQueue@Infantry:
 		Type: Infantry
 		LowPowerModifier: 200
@@ -49,7 +49,7 @@ Player:
 		ReadyAudio: UnitReady
 		SpeedUp: true
 		CancelledAudio: Cancelled
-		BuildTimeSpeedReduction: 10
+		BuildTimeSpeedReduction: 1
 	ClassicProductionQueue@Air:
 		Type: Air
 		BuildDurationModifier: 100
@@ -59,7 +59,7 @@ Player:
 		ReadyAudio: UnitReady
 		SpeedUp: true
 		CancelledAudio: Cancelled
-		BuildTimeSpeedReduction: 10
+		BuildTimeSpeedReduction: 1
 	PlaceBuilding:
 		ToggleVariantKey: ToggleVariant
 		NewOptionsNotification: NewOptions
@@ -129,3 +129,205 @@ Player:
 	AutoDeployManager:
 	ProximityCaptor:
 		Types: Player
+	ExternalCondition@Economy:
+		Condition: Economy
+	PlayerCashTrickler@1:
+		Interval: 100
+		Amount: 50
+		RequiresCondition: Economy == 1
+	PlayerCashTrickler@2:
+		Interval: 100
+		Amount: 84
+		RequiresCondition: Economy == 2
+	PlayerCashTrickler@3:
+		Interval: 100
+		Amount: 114
+		RequiresCondition: Economy == 3
+	PlayerCashTrickler@4:
+		Interval: 100
+		Amount: 141
+		RequiresCondition: Economy == 4
+	PlayerCashTrickler@5:
+		Interval: 100
+		Amount: 167
+		RequiresCondition: Economy == 5
+	PlayerCashTrickler@6:
+		Interval: 100
+		Amount: 192
+		RequiresCondition: Economy == 6
+	PlayerCashTrickler@7:
+		Interval: 100
+		Amount: 215
+		RequiresCondition: Economy == 7
+	PlayerCashTrickler@8:
+		Interval: 100
+		Amount: 238
+		RequiresCondition: Economy == 8
+	PlayerCashTrickler@9:
+		Interval: 100
+		Amount: 260
+		RequiresCondition: Economy == 9
+	PlayerCashTrickler@10:
+		Interval: 100
+		Amount: 281
+		RequiresCondition: Economy == 10
+	PlayerCashTrickler@11:
+		Interval: 100
+		Amount: 302
+		RequiresCondition: Economy == 11
+	PlayerCashTrickler@12:
+		Interval: 100
+		Amount: 322
+		RequiresCondition: Economy == 12
+	PlayerCashTrickler@13:
+		Interval: 100
+		Amount: 342
+		RequiresCondition: Economy == 13
+	PlayerCashTrickler@14:
+		Interval: 100
+		Amount: 362
+		RequiresCondition: Economy == 14
+	PlayerCashTrickler@15:
+		Interval: 100
+		Amount: 381
+		RequiresCondition: Economy == 15
+	PlayerCashTrickler@16:
+		Interval: 100
+		Amount: 400
+		RequiresCondition: Economy == 16
+	PlayerCashTrickler@17:
+		Interval: 100
+		Amount: 418
+		RequiresCondition: Economy == 17
+	PlayerCashTrickler@18:
+		Interval: 100
+		Amount: 436
+		RequiresCondition: Economy == 18
+	PlayerCashTrickler@19:
+		Interval: 100
+		Amount: 455
+		RequiresCondition: Economy == 19
+	PlayerCashTrickler@20:
+		Interval: 100
+		Amount: 473
+		RequiresCondition: Economy == 20
+	PlayerCashTrickler@21:
+		Interval: 100
+		Amount: 490
+		RequiresCondition: Economy == 21
+	PlayerCashTrickler@22:
+		Interval: 100
+		Amount: 507
+		RequiresCondition: Economy == 22
+	PlayerCashTrickler@23:
+		Interval: 100
+		Amount: 525
+		RequiresCondition: Economy == 23
+	PlayerCashTrickler@24:
+		Interval: 100
+		Amount: 542
+		RequiresCondition: Economy == 24
+	PlayerCashTrickler@25:
+		Interval: 100
+		Amount: 559
+		RequiresCondition: Economy == 25
+	PlayerCashTrickler@26:
+		Interval: 100
+		Amount: 575
+		RequiresCondition: Economy == 26
+	PlayerCashTrickler@27:
+		Interval: 100
+		Amount: 592
+		RequiresCondition: Economy == 27
+	PlayerCashTrickler@28:
+		Interval: 100
+		Amount: 608
+		RequiresCondition: Economy == 28
+	PlayerCashTrickler@29:
+		Interval: 100
+		Amount: 624
+		RequiresCondition: Economy == 29
+	PlayerCashTrickler@30:
+		Interval: 100
+		Amount: 640
+		RequiresCondition: Economy == 30
+	PlayerCashTrickler@31:
+		Interval: 100
+		Amount: 656
+		RequiresCondition: Economy == 31
+	PlayerCashTrickler@32:
+		Interval: 100
+		Amount: 672
+		RequiresCondition: Economy == 32
+	PlayerCashTrickler@33:
+		Interval: 100
+		Amount: 688
+		RequiresCondition: Economy == 33
+	PlayerCashTrickler@34:
+		Interval: 100
+		Amount: 704
+		RequiresCondition: Economy == 34
+	PlayerCashTrickler@35:
+		Interval: 100
+		Amount: 719
+		RequiresCondition: Economy == 35
+	PlayerCashTrickler@36:
+		Interval: 100
+		Amount: 734
+		RequiresCondition: Economy == 36
+	PlayerCashTrickler@37:
+		Interval: 100
+		Amount: 750
+		RequiresCondition: Economy == 37
+	PlayerCashTrickler@38:
+		Interval: 100
+		Amount: 765
+		RequiresCondition: Economy == 38
+	PlayerCashTrickler@39:
+		Interval: 100
+		Amount: 780
+		RequiresCondition: Economy == 39
+	PlayerCashTrickler@40:
+		Interval: 100
+		Amount: 795
+		RequiresCondition: Economy == 40
+	PlayerCashTrickler@41:
+		Interval: 100
+		Amount: 810
+		RequiresCondition: Economy == 41
+	PlayerCashTrickler@42:
+		Interval: 100
+		Amount: 824
+		RequiresCondition: Economy == 42
+	PlayerCashTrickler@43:
+		Interval: 100
+		Amount: 839
+		RequiresCondition: Economy == 43
+	PlayerCashTrickler@44:
+		Interval: 100
+		Amount: 854
+		RequiresCondition: Economy == 444
+	PlayerCashTrickler@45:
+		Interval: 100
+		Amount: 869
+		RequiresCondition: Economy == 45
+	PlayerCashTrickler@46:
+		Interval: 100
+		Amount: 883
+		RequiresCondition: Economy == 46
+	PlayerCashTrickler@47:
+		Interval: 100
+		Amount: 897
+		RequiresCondition: Economy == 47
+	PlayerCashTrickler@48:
+		Interval: 100
+		Amount: 912
+		RequiresCondition: Economy == 48
+	PlayerCashTrickler@49:
+		Interval: 100
+		Amount: 926
+		RequiresCondition: Economy == 49
+	PlayerCashTrickler@50:
+		Interval: 100
+		Amount: 940
+		RequiresCondition: Economy == 50

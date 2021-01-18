@@ -45,6 +45,8 @@
 	Inherits: ^Autoproducer
 	Cargo:
 		Types: Infantry
+		MaxWeight: 1
+		PipCount: 1
 	PeriodicCargoProducer:
 		ChargeDuration: 3000
 
@@ -109,25 +111,17 @@
 		RequiresCondition: Autoproduced && PlannedObsolence && !LifeDuration
 	GrantTimedCondition@LifeDuration:
 		Condition: LifeDuration
-		Duration: 9000
+		Duration: 6000
 		RequiresCondition: Autoproduced && !PlannedObsolence
 	GrantTimedCondition@PlannedObsolence:
 		Condition: PlannedObsolence
-		Duration: 9001
+		Duration: 6001
 		RequiresCondition: Autoproduced && !LifeDuration
 
 ^CashGenerator:
-	CashTrickler:
-		Interval: 250
-		Amount: 100
-	ProductionCostMultiplier:
-		Multiplier: 200
-		Prerequisites: scaling
-	ProductionCostMultiplier:
-		Multiplier: 200
-		Prerequisites: scaling >= 2
-	ProvidesPrerequisite@scaling:
-		Prerequisite: scaling
+	GrantExternalConditionToOwner@Economy:
+		Condition: Economy
+		RequiresCondition: !ownerless
 
 ^DefenseBuildingBuff:
 	DamageMultiplier:
