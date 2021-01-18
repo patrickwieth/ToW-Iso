@@ -176,7 +176,6 @@ NEUTRALPOWERPLANT:
 	Inherits: ^TechBuilding
 	Inherits@3: ^3x3Shape
 	Inherits@Checkpoint: ^Checkpoint
-	Inherits@Cash: ^CashGenerator
 	Tooltip:
 		Name: Nuclear Power Plant
 	TooltipDescription:
@@ -199,6 +198,9 @@ NEUTRALPOWERPLANT:
 	IsometricSelectable:
 		DecorationHeight: 72
 	-Targetable:
+	CashTrickler:
+		Interval: 100
+		Amount: 50
 
 SCRINREINFPAD:
 	Inherits: ^TechBuilding
