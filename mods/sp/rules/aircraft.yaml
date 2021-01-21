@@ -792,7 +792,6 @@ DRACHE:
 	Inherits@2: ^ScrinAircraftGeneric
 	-ExternalCondition@PrototypeActivation:
 	-SpeedMultiplier@PrototypeActivation:
-	-RangeMultiplier@PrototypeActivation:
 	-WithColoredOverlay@PrototypeActivation:
 	-GrantTimedCondition@Highlight:
 	-GrantTimedCondition@Cooldown:

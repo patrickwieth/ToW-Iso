@@ -143,6 +143,14 @@ teamAwinning = false
 teamBwinning = false
 
 CheckWinConditions = function ()
+	if startpointa.IsDead then
+		teamXloses(teamA)
+	end
+	if startpointb.IsDead then
+		teamXloses(teamB)
+	end
+
+	--[[ old wincon with capture
 	for i,player in next,teamA do
 		if startpointb.Owner == player then
 			if teamAwinning == true then
@@ -165,6 +173,8 @@ CheckWinConditions = function ()
 			teamBwinning = false
 		end
 	end
+	--]]
+
 end
 
 teamXloses = function (X)

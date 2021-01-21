@@ -52,7 +52,6 @@ MCV:
 	Inherits@4: ^FixPrototypeActivation
 	-ExternalCondition@PrototypeActivation:
 	-SpeedMultiplier@PrototypeActivation:
-	-RangeMultiplier@PrototypeActivation:
 	-WithColoredOverlay@PrototypeActivation:
 	-GrantTimedCondition@Highlight:
 	-GrantTimedCondition@Cooldown:
@@ -607,6 +606,7 @@ FLIPPEDYPROC:
 		Prerequisite: Vehicle or Aircraft production
 	Production:
 		Produces: Vehicle, Tank
+		ProduceIntoCargo: true
 	PrimaryBuilding:
 	ProductionBar@Vehicle:
 		ProductionType: Vehicle

@@ -5,7 +5,7 @@
 		PipCount: 10
 		PassengerFacing: 0
 		LoadingCondition: notmobile
-		LoadedCondition: Loaded
+		LoadedCondition: loaded
 	Inherits@PIPS: ^CargoPips
 	PeriodicCargoProducer:
 		Condition: Autoproduced
@@ -77,13 +77,13 @@
 	ExternalCondition@PrototypeActivation:
 		Condition: activePrototype
 	SpeedMultiplier@PrototypeActivation:
-		RequiresCondition: !Autoproduced && !activePrototype
 		Modifier: 10
-	RangeMultiplier@PrototypeActivation:
-		RequiresCondition: !Autoproduced && !activePrototype
-		Modifier: 1
+		RequiresCondition: !Autoproduced && !loaded && !activePrototype
+	ReloadDelayMultiplier@PrototypeActivation:
+		Modifier: 500
+		RequiresCondition: !Autoproduced && !loaded && !activePrototype
 	WithColoredOverlay@PrototypeActivation:
-		RequiresCondition: !Autoproduced && !activePrototype
+		RequiresCondition: !Autoproduced && !loaded && !activePrototype
 		Palette: disabled
 	GrantTimedCondition@Highlight:
 		Condition: Highlight
@@ -103,8 +103,16 @@
 		Modifier: 0
 	ProximityCapturable:
 		Range: 10c0
-		CaptorTypes: Vehicle, Tank, Infantry, Building
+		CaptorTypes: Vehicle, Tank, Infantry, Aircraft, Building
 		Sticky: true
+
+^WinCon:
+	DamageMultiplier:
+		Modifier: 25
+	ProximityCapturable:
+		Range: 10c0
+		CaptorTypes: Vehicle, Tank, Infantry, Building
+		Permanent: true
 
 ^TimedLife:
 	KillsSelf:
@@ -127,7 +135,7 @@
 	DamageMultiplier:
 		Modifier: 25
 	FirepowerMultiplier:
-		Modifier: 400
+		Modifier: 150
 	RangeMultiplier:
 		Modifier: 150
 	ReloadDelayMultiplier:

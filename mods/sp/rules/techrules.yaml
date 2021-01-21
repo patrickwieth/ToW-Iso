@@ -23,7 +23,7 @@ WELL:
 	Inherits@2: ^3x3Shape
 	Inherits@3: ^MutRender
 	Inherits@4: ^6CellVision
-	Inherits@Checkpoint: ^Checkpoint
+	Inherits@Checkpoint: ^WinCon
 	Tooltip:
 		Name: Tiberium Extractor
 	TooltipDescription:
@@ -55,7 +55,6 @@ WELL:
 	UpdatesDerrickCount:
 	IsometricSelectable:
 		DecorationHeight: 144
-	-Targetable:
 
 MACHINESHOP:
 	Inherits: ^TechBuilding
