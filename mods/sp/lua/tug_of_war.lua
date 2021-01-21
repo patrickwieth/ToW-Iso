@@ -1,5 +1,5 @@
 wavetime = 500
-debugging = false
+debugging = true
 
 WorldLoadedToW = function()
 	neutral = Player.GetPlayer("Neutral")
@@ -70,63 +70,20 @@ end
 TickTugOfWar = function()
 	if DateTime.GameTime == 1 then
 		-- game setup, this only happens at the start, first define teams
-		teamA = {}
-		teamB = {}
+		SetupTeams()
 
-		for i,player in next,players do
-			if player.IsAlliedWith(mp0) then
-				teamA[#teamA+1] = player
-			else
-				teamB[#teamB+1] = player
-			end
-		end
+		-- then find out which team is closer to which spawning points and swap if wrong
+		--SwitchSidesIfNecessary()
 
-		-- calculate team power to give buffs to teams with fewer players
-		teamApower = 1
-		teamBpower = 1
-		if (#teamA > #teamB) then
-			teamBpower = #teamA / #teamB
-		elseif (#teamA < #teamB) then
-			teamApower = #teamB / #teamA
-		end
+		-- calculate team power to give buffs to the team with fewer players
+		GiveBalanceBuffs()
 
-		if debugging then
-			Media.DisplayMessage("Team A has " .. tostring(#teamA) .. " members and power of " .. tostring(teamApower) .. ", players:")
-			for i,player in next,teamA do
-				Media.DisplayMessage(tostring(player))
-			end
-			Media.DisplayMessage("Team B has " .. tostring(#teamB) .. " members and power of " .. tostring(teamBpower) .. ", players:")
-			for i,player in next,teamB do
-				Media.DisplayMessage(tostring(player))
-			end
-		end
-
-		-- then find out which team is closer to which spawning points
-		function sqdistance(a, b)
-			return math.pow(a.Location.X - b.Location.X, 2) + math.pow(a.Location.Y - b.Location.Y, 2)
-		end
-
-		MCV = teamA[1].GetActorsByTypes({"soviet_conyard", "drache", "mcv", "cabmcv", "nodmcv", "mutmcv"})[1]
-
-		if debugging then
-			Media.DisplayMessage("Distance to A:", tostring(sqdistance(MCV, startpointa)))
-			Media.DisplayMessage("Distance to B:", tostring(sqdistance(MCV, startpointb)))
-		end
-
-		teamsSwitched = false
-		if sqdistance(MCV, startpointa) > sqdistance(MCV, startpointb) then
-			if debugging then Media.DisplayMessage("Switching sides of teams") end
-			tempTeam = teamA
-			teamA = teamB
-			teamB = tempTeam
-			teamsSwitched = true
-		end
-
+		-- spawn dummy actors giving control of the wincon buildings
 		captureStartPointActorA = Actor.Create("gdie1", true, { Owner = teamA[1], Location = startpointa.Location, SubCell = 1 })
 		captureStartPointActorB = Actor.Create("gdie1", true, { Owner = teamB[1], Location = startpointb.Location, SubCell = 1 })
 	elseif DateTime.GameTime == 2 then
 		captureStartPointActorA.Kill()
-		captureStartPointActorB.Destroy()
+		captureStartPointActorB.Kill()
 	elseif DateTime.GameTime % wavetime > 0 then
 		-- we only do special tick things every 1000 Ticks, any tick else is skipped
     return
@@ -139,8 +96,70 @@ TickTugOfWar = function()
   end
 end
 
-teamAwinning = false
-teamBwinning = false
+
+SetupTeams = function ()
+	function sqdistance(a, b)
+		return math.pow(a.Location.X - b.Location.X, 2) + math.pow(a.Location.Y - b.Location.Y, 2)
+	end
+
+	teamA = {}
+	teamB = {}
+
+	for i,player in next,players do
+		MCV = player.GetActorsByTypes({"soviet_conyard", "drache", "mcv", "cabmcv", "nodmcv", "mutmcv"})[1]
+
+		if sqdistance(MCV, startpointa) < sqdistance(MCV, startpointb) then
+			teamA[#teamA+1] = player
+		else
+			teamB[#teamB+1] = player
+		end
+
+	end
+
+end
+
+SwitchSidesIfNecessary = function ()
+
+
+	MCV = teamA[1].GetActorsByTypes({"soviet_conyard", "drache", "mcv", "cabmcv", "nodmcv", "mutmcv"})[1]
+
+	if debugging then
+		Media.DisplayMessage("Distance to A:", tostring(sqdistance(MCV, startpointa)))
+		Media.DisplayMessage("Distance to B:", tostring(sqdistance(MCV, startpointb)))
+	end
+
+	teamsSwitched = false
+
+	-- and switch teams if wrong
+	if sqdistance(MCV, startpointa) > sqdistance(MCV, startpointb) then
+		if debugging then Media.DisplayMessage("Switching sides of teams") end
+		tempTeam = teamA
+		teamA = teamB
+		teamB = tempTeam
+		teamsSwitched = true
+	end
+end
+
+GiveBalanceBuffs = function ()
+	teamApower = 1
+	teamBpower = 1
+	if (#teamA > #teamB) then
+		teamBpower = #teamA / #teamB
+	elseif (#teamA < #teamB) then
+		teamApower = #teamB / #teamA
+	end
+
+	if debugging then
+		Media.DisplayMessage("Team A has " .. tostring(#teamA) .. " members and power of " .. tostring(teamApower) .. ", players:")
+		for i,player in next,teamA do
+			Media.DisplayMessage(tostring(player))
+		end
+		Media.DisplayMessage("Team B has " .. tostring(#teamB) .. " members and power of " .. tostring(teamBpower) .. ", players:")
+		for i,player in next,teamB do
+			Media.DisplayMessage(tostring(player))
+		end
+	end
+end
 
 CheckWinConditions = function ()
 	if startpointa.IsDead then
@@ -151,6 +170,8 @@ CheckWinConditions = function ()
 	end
 
 	--[[ old wincon with capture
+	teamAwinning = false
+	teamBwinning = false
 	for i,player in next,teamA do
 		if startpointb.Owner == player then
 			if teamAwinning == true then
@@ -313,26 +334,19 @@ TransferUnitGroups = function()
 	teamBunits[1] = {}
 
 	-- sort units into specific arrays
-
-	for i=1,#autoproduced do
-
-		--Media.DisplayMessage("sorting unit #" .. tostring( i ))
+	for i=1, #autoproduced do
+		-- determine team
+		local unitBelongsToTeamA = false
+		for j=1, #teamA do
+			if (autoproduced[i].Owner == teamA[j]) then
+				unitBelongsToTeamA = true
+			end
+		end
 		-- split new units up depending on team
-		if (autoproduced[i].Owner.Team == teamA[1].Team) then
-			if teamsSwitched then
-				table.insert(teamBunits[insertIndex], autoproduced[i])
-			else
-				table.insert(teamAunits[insertIndex], autoproduced[i])
-			end
-
-			--table.remove(autoproduced, i)
+		if unitBelongsToTeamA then
+			table.insert(teamAunits[insertIndex], autoproduced[i])
 		else
-			if teamsSwitched then
-				table.insert(teamAunits[insertIndex], autoproduced[i])
-			else
-				table.insert(teamBunits[insertIndex], autoproduced[i])
-			end
-			--table.remove(autoproduced, i)
+			table.insert(teamBunits[insertIndex], autoproduced[i])
 		end
 	end
 	autoproduced = {}
@@ -345,16 +359,16 @@ Trigger.OnAnyProduction(
 		if productionType == 'Autoproduction'
     then
 			if producer.Owner.IsAlliedWith(teamA[1]) and teamApower == 1.5 then
-				--Media.DisplayMessage("buffA1")
+				Media.DisplayMessage("buffA1")
 				producer.GrantCondition("TeamBalance1")
 			elseif producer.Owner.IsAlliedWith(teamA[1]) and teamApower == 2 then
-				--Media.DisplayMessage("buffA2")
+				Media.DisplayMessage("buffA2")
 				producer.GrantCondition("TeamBalance2")
 			elseif not producer.Owner.IsAlliedWith(teamA[1]) and teamBpower == 1.5 then
-				--Media.DisplayMessage("buffB1")
+				Media.DisplayMessage("buffB1")
 				producer.GrantCondition("TeamBalance1")
 			elseif not producer.Owner.IsAlliedWith(teamA[1]) and teamBpower == 2 then
-				--Media.DisplayMessage("buffB2")
+				Media.DisplayMessage("buffB2")
 				producer.GrantCondition("TeamBalance2")
 			end
 

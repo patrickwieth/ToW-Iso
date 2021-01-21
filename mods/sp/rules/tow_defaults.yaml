@@ -21,7 +21,7 @@
 		Range: 25c0
 	ReloadDelayMultiplier@balance2:
 		Modifier: 50
-		RequiresCondition: true
+		RequiresCondition: TeamBalance2
 	ReloadDelayMultiplier@balance1:
 		Modifier: 66
 		RequiresCondition: TeamBalance1
@@ -32,11 +32,11 @@
 	GrantTimedCondition@Highlight:
 		Condition: Highlight
 		Duration: 3
-		RequiresCondition: !Loaded && !Cooldown
+		RequiresCondition: !loaded && !Cooldown
 	GrantTimedCondition@Cooldown:
 		Condition: Cooldown
 		Duration: 25
-		RequiresCondition: !Loaded && !Highlight
+		RequiresCondition: !loaded && !Highlight
 	WithColoredOverlay@Highlight:
 		RequiresCondition: Highlight
 		Palette: highlight
@@ -112,6 +112,7 @@
 	ProximityCapturable:
 		Range: 10c0
 		CaptorTypes: Vehicle, Tank, Infantry, Building
+		Sticky: true
 		Permanent: true
 
 ^TimedLife:
