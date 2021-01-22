@@ -49,10 +49,6 @@ MCV:
 	Inherits: ^VoxelVehicle
 	Inherits@2: ^LowPrioritySelectionMode
 	Inherits@3: ^5CellVision
-	Inherits@4: ^FixPrototypeActivation
-	-ExternalCondition@PrototypeActivation:
-	-SpeedMultiplier@PrototypeActivation:
-	-WithColoredOverlay@PrototypeActivation:
 	-GrantTimedCondition@Highlight:
 	-GrantTimedCondition@Cooldown:
 	-WithColoredOverlay@Highlight:

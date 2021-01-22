@@ -1,8 +1,8 @@
 # Shattered-Paradise
 Third party mod for OpenRA based on Tiberian Sun Firestorm, it aims to make the Forgotten, CABAL, and the Scrin playable.
 
-*	Moddb Page: http://www.moddb.com/mods/shattered-paradise
-*	Discord Chat: https://discord.gg/0rD8cHbU08JdQ5pJ
+*	Moddb Page: http://www.moddb.com/mods/tug-of-war1
+*	Discord Chat: https://discord.gg/yPA3aKe
 
 Main Goals:
 *	To make the game more varied by adding new factions with diferent styles of play.
@@ -11,4 +11,4 @@ Main Goals:
 *	Finally, to keep the gameplay simple, similar to the original game.
 
 Secondary Goals:
-*	Skirmish Maps, Campaign, Challenge Missions, etc. 
+*	Skirmish Maps, Campaign, Challenge Missions, etc.

@@ -1444,8 +1444,6 @@ STRUCK:
 		UnloadVoice: Move
 		LoadingCondition: notmobile
 		OwnerChangedAffectsPassengers: false
-	Passenger:
-		CargoType: Apc
 	AutoTarget:
 	AttackGarrisoned:
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128

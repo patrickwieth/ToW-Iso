@@ -7,6 +7,9 @@
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
 	Inherits@PIPS: ^CargoPips
+	Production:
+		ProduceIntoCargo: true
+		RequiresCondition: !loaded
 	PeriodicCargoProducer:
 		Condition: Autoproduced
 		Type: Autoproduction
@@ -16,9 +19,6 @@
 	Production@Autoproduction:
 		Produces: Autoproduction
 		PauseOnCondition: forceshield || invulnerability || being-warped
-	ProximityExternalCondition@PrototypeActivation:
-		Condition: activePrototype
-		Range: 25c0
 	ReloadDelayMultiplier@balance2:
 		Modifier: 50
 		RequiresCondition: TeamBalance2
@@ -107,6 +107,9 @@
 		Sticky: true
 
 ^WinCon:
+	ProximityExternalCondition@PrototypeActivation:
+		Condition: activePrototype
+		Range: 60c0
 	DamageMultiplier:
 		Modifier: 25
 	ProximityCapturable:
