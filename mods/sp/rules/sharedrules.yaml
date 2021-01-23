@@ -603,7 +603,6 @@ FLIPPEDYPROC:
 	Production:
 		Produces: Vehicle, Tank
 		ProduceIntoCargo: true
-		RequiresCondition: !loaded
 	PrimaryBuilding:
 	ProductionBar@Vehicle:
 		ProductionType: Vehicle

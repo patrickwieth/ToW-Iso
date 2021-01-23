@@ -5,20 +5,21 @@
 		PipCount: 10
 		PassengerFacing: 0
 		LoadingCondition: notmobile
-		LoadedCondition: loaded
+		CargoFullCondition: cargoFull
+		PassengersCargoFullCondition: passengerFull
 		PassengerConditions:
 			bggy: cargoForInf
+			struck: cargoForInf
 		PassengerOfPassengersConditions:
 			gdie1: fuck
-			crusader: Highlight
 	Inherits@PIPS: ^CargoPips
 	Production:
 		ProduceIntoCargo: true
-		RequiresCondition: !loaded
+		RequiresCondition: !cargoFull
 	Production@InfIntoCargo:
 		Produces: Infantry
 		ProduceIntoCargoOfCargo: true
-		RequiresCondition: cargoForInf && !fuck
+		RequiresCondition: cargoForInf && !passengerFull
 	PeriodicCargoProducer:
 		Condition: Autoproduced
 		Type: Autoproduction
@@ -41,11 +42,11 @@
 	GrantTimedCondition@Highlight:
 		Condition: Highlight
 		Duration: 3
-		RequiresCondition: !loaded && !Cooldown
+		RequiresCondition: !cargoFull && !Cooldown
 	GrantTimedCondition@Cooldown:
 		Condition: Cooldown
 		Duration: 25
-		RequiresCondition: !loaded && !Highlight
+		RequiresCondition: !cargoFull && !Highlight
 	WithColoredOverlay@Highlight:
 		RequiresCondition: Highlight
 		Palette: highlight
@@ -87,12 +88,12 @@
 		Condition: activePrototype
 	SpeedMultiplier@PrototypeActivation:
 		Modifier: 10
-		RequiresCondition: !Autoproduced && !loaded && !activePrototype
+		RequiresCondition: !Autoproduced && !activePrototype
 	ReloadDelayMultiplier@PrototypeActivation:
 		Modifier: 500
-		RequiresCondition: !Autoproduced && !loaded && !activePrototype
+		RequiresCondition: !Autoproduced && !activePrototype
 	WithColoredOverlay@PrototypeActivation:
-		RequiresCondition: !Autoproduced && !loaded && !activePrototype
+		RequiresCondition: !Autoproduced && !activePrototype
 		Palette: disabled
 	GrantTimedCondition@Highlight:
 		Condition: Highlight
