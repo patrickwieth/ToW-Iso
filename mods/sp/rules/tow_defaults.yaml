@@ -6,19 +6,23 @@
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
+		cargoFullCondition: cargoFull
+		passengersCargoFullCondition: passengerCargoFull
 		PassengerConditions:
 			bggy: cargoForInf
 		PassengerOfPassengersConditions:
 			gdie1: fuck
 			crusader: Highlight
+	ExternalCondition@TeamBalance:
+		Condition: passengerCargoFull
 	Inherits@PIPS: ^CargoPips
 	Production:
 		ProduceIntoCargo: true
-		RequiresCondition: !loaded
+		RequiresCondition: !cargoFull
 	Production@InfIntoCargo:
 		Produces: Infantry
 		ProduceIntoCargoOfCargo: true
-		RequiresCondition: cargoForInf && !fuck
+		RequiresCondition: cargoForInf && !passengerCargoFull
 	PeriodicCargoProducer:
 		Condition: Autoproduced
 		Type: Autoproduction
