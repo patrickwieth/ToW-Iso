@@ -1,5 +1,5 @@
 wavetime = 500
-debugging = true
+debugging = false
 
 WorldLoadedToW = function()
 	neutral = Player.GetPlayer("Neutral")
@@ -81,9 +81,9 @@ TickTugOfWar = function()
 		-- spawn dummy actors giving control of the wincon buildings
 		captureStartPointActorA = Actor.Create("gdie1", true, { Owner = teamA[1], Location = startpointa.Location, SubCell = 1 })
 		captureStartPointActorB = Actor.Create("gdie1", true, { Owner = teamB[1], Location = startpointb.Location, SubCell = 1 })
-	elseif DateTime.GameTime == 2 then
-		captureStartPointActorA.Kill()
-		captureStartPointActorB.Kill()
+	elseif DateTime.GameTime == 3 then
+		captureStartPointActorA.Destroy()
+		captureStartPointActorB.Destroy()
 	elseif DateTime.GameTime % wavetime > 0 then
 		-- we only do special tick things every 1000 Ticks, any tick else is skipped
     return

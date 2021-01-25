@@ -147,7 +147,7 @@
 
 ^DefenseBuildingBuff:
 	DamageMultiplier:
-		Modifier: 25
+		Modifier: 50
 	FirepowerMultiplier:
 		Modifier: 150
 	RangeMultiplier:

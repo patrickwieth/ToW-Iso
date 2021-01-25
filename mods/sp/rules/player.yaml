@@ -330,4 +330,4 @@ Player:
 	PlayerCashTrickler@50:
 		Interval: 100
 		Amount: 940
-		RequiresCondition: Economy == 50
+		RequiresCondition: Economy > 49

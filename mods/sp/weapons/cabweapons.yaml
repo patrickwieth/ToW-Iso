@@ -366,7 +366,7 @@ MarnFlash6:
 DroneHostMissile:
 	Inherits: ^RocketWarhead
 	ReloadDelay: 120
-	Range: 15c0
+	Range: 18c0
 	Burst: 3
 	Report: samshot1.aud, icbm1.aud
 	ValidTargets: Ground, Water
@@ -375,7 +375,8 @@ DroneHostMissile:
 		Speed: 300
 		Shadow: true
 		Image: dronemissile
-		AirburstAltitude: 5000
+		RangeLimit: 20c0
+		AirburstAltitude: 1000
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
 		Damage: 1
@@ -396,7 +397,7 @@ DroneHostShell:
 	Inherits: ^ArtilleryWarhead
 	Inherits@2: ^Small_Clsn
 	ReloadDelay: 150
-	Range: 1c512
+	Range: 0c512
 	ValidTargets: Ground, Water, Vehicle, Infantry, water
 	Projectile: BulletAS
 		Speed: 200
@@ -406,7 +407,7 @@ DroneHostShell:
 		Image: clusterbomb
 	Warhead@1Dam: SpreadDamage
 		Spread: 350
-		Damage: 2000
+		Damage: 8000
 		Versus:
 			Worker: 25
 		ValidTargets: Ground, Water, Vehicle, Infantry, water
