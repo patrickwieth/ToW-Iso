@@ -3,20 +3,8 @@ debugging = false
 
 WorldLoadedToW = function()
 	neutral = Player.GetPlayer("Neutral")
-	mp0 = Player.GetPlayer("Multi0")
-	mp1 = Player.GetPlayer("Multi1")
-	mp2 = Player.GetPlayer("Multi2")
-	mp3 = Player.GetPlayer("Multi3")
-	mp4 = Player.GetPlayer("Multi4")
-	mp5 = Player.GetPlayer("Multi5")
-	mp6 = Player.GetPlayer("Multi6")
-	mp7 = Player.GetPlayer("Multi7")
-	mp8 = Player.GetPlayer("Multi8")
-	mp9 = Player.GetPlayer("Multi9")
-	mp10 = Player.GetPlayer("Multi10")
-	mp11 = Player.GetPlayer("Multi11")
 
-	players = { mp0, mp1, mp2, mp3, mp4, mp5, mp6, mp7, mp8, mp9, mp10, mp11 }
+	players = Player.GetPlayers(function(p) return not p.IsNonCombatant end)
 end
 
 autoproduced = {}
