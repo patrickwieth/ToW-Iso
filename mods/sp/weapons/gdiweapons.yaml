@@ -175,7 +175,7 @@ APCGrenade:
 		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: jsbang16b
-		
+
 ApcVulcan:
 	Inherits: ^RifleWarhead
 	Inherits@2: ^Piffs
@@ -244,7 +244,7 @@ JuggCannon:
 	Inherits: ^ArtilleryWarhead
 	Inherits@2: ^Small_Clsn
 	ReloadDelay: 75
-	Range: 15c0
+	Range: 18c0
 	MinRange: 5c0
 	Report: jugger1.aud
 	Projectile: BulletAS
@@ -268,7 +268,7 @@ JuggCannon:
 JuggCannonShellCasing:
 	Inherits: ^ShellCasing
 	ReloadDelay: 75
-	Range: 15c0
+	Range: 18c0
 	MinRange: 5c0
 
 SonicZap:

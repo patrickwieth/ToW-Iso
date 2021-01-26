@@ -388,7 +388,7 @@ TiberianRocket:
 	Inherits: ^ArtilleryWarhead
 	Inherits@1: ^SpawnsIrradiation
 	ReloadDelay: 90
-	Range: 12c0
+	Range: 18c0
 	Burst: 6
 	Report: rketinf1.aud
 	ValidTargets: Ground, Water
@@ -398,7 +398,7 @@ TiberianRocket:
 		Blockable: false
 		Shadow: true
 		LaunchAngle: 62
-		Inaccuracy: 2c0
+		Inaccuracy: 1c512
 		TrailPalette: effectalpha75
 		Image: DRAGON
 		TrailImage: small_smoke_trail

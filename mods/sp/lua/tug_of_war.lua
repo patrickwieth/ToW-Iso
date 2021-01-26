@@ -347,16 +347,16 @@ Trigger.OnAnyProduction(
 		if productionType == 'Autoproduction'
     then
 			if producer.Owner.IsAlliedWith(teamA[1]) and teamApower == 1.5 then
-				Media.DisplayMessage("buffA1")
+				if debugging then Media.DisplayMessage("buffA1") end
 				producer.GrantCondition("TeamBalance1")
 			elseif producer.Owner.IsAlliedWith(teamA[1]) and teamApower == 2 then
-				Media.DisplayMessage("buffA2")
+				if debugging then Media.DisplayMessage("buffA2") end
 				producer.GrantCondition("TeamBalance2")
 			elseif not producer.Owner.IsAlliedWith(teamA[1]) and teamBpower == 1.5 then
-				Media.DisplayMessage("buffB1")
+				if debugging then Media.DisplayMessage("buffB1") end
 				producer.GrantCondition("TeamBalance1")
 			elseif not producer.Owner.IsAlliedWith(teamA[1]) and teamBpower == 2 then
-				Media.DisplayMessage("buffB2")
+				if debugging then Media.DisplayMessage("buffB2") end
 				producer.GrantCondition("TeamBalance2")
 			end
 

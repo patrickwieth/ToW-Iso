@@ -306,7 +306,7 @@ Player:
 	PlayerCashTrickler@44:
 		Interval: 100
 		Amount: 854
-		RequiresCondition: Economy == 444
+		RequiresCondition: Economy == 44
 	PlayerCashTrickler@45:
 		Interval: 100
 		Amount: 869

@@ -29,6 +29,18 @@
 	Production@Autoproduction:
 		Produces: Autoproduction
 		PauseOnCondition: forceshield || invulnerability || being-warped
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower
+		Condition: disabled
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
+	ReloadDelayMultiplier@lowpower:
+		Modifier: 200
+		RequiresCondition: lowpower
 	ReloadDelayMultiplier@balance2:
 		Modifier: 50
 		RequiresCondition: TeamBalance2
@@ -80,6 +92,7 @@
 		Range: 1c0
 
 ^Autoproduceable:
+	Inherits: ^TimedLife
 	ExternalCondition@Autoproduced:
 		Condition: Autoproduced
 	RejectsOrders:
@@ -106,7 +119,8 @@
 	WithColoredOverlay@Highlight:
 		RequiresCondition: Highlight
 		Palette: highlight
-	Inherits: ^TimedLife
+	FirepowerMultiplier:
+		Modifier: 200
 
 ^Checkpoint:
 	DamageMultiplier@Checkpoint:
@@ -147,7 +161,7 @@
 
 ^DefenseBuildingBuff:
 	DamageMultiplier:
-		Modifier: 50
+		Modifier: 33
 	FirepowerMultiplier:
 		Modifier: 150
 	RangeMultiplier:

@@ -376,7 +376,9 @@ DroneHostMissile:
 		Shadow: true
 		Image: dronemissile
 		RangeLimit: 20c0
-		AirburstAltitude: 1000
+		LockOnProbability: 0
+		Inaccuracy: 1c512
+		AirburstAltitude: 2000
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
 		Damage: 1
@@ -623,7 +625,7 @@ BlasterProton:
 	Inherits@2: ^GreenPlasmaExplosion
 	ReloadDelay: 100
 	Burst: 5
-	Range: 11c0
+	Range: 10c0
 	MinRange: 3c0
 	Report: scrin5b.aud
 	ValidTargets: Ground, Water, Vehicle, Infantry, water

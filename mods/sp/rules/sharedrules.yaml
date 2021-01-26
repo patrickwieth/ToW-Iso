@@ -602,7 +602,6 @@ FLIPPEDYPROC:
 		Prerequisite: Vehicle or Aircraft production
 	Production:
 		Produces: Vehicle, Tank
-		ProduceIntoCargo: true
 	PrimaryBuilding:
 	ProductionBar@Vehicle:
 		ProductionType: Vehicle

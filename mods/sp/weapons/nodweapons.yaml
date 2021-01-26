@@ -339,7 +339,7 @@ SpectreCannon:
 		Image: spectreball
 		LaunchAngle: 165
 		Shadow: true
-		Inaccuracy: 0c256
+		Inaccuracy: 1c512
 		Blockable: false
 		ContrailLength: 10
 		ContrailZOffset: 650
