@@ -197,9 +197,6 @@ NEUTRALPOWERPLANT:
 	IsometricSelectable:
 		DecorationHeight: 72
 	-Targetable:
-	CashTrickler:
-		Interval: 100
-		Amount: 50
 
 SCRINREINFPAD:
 	Inherits: ^TechBuilding

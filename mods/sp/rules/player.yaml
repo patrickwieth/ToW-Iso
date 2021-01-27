@@ -331,3 +331,6 @@ Player:
 		Interval: 100
 		Amount: 940
 		RequiresCondition: Economy > 49
+	ProvidesPrerequisite:
+		Prerequisite: EcoMaxed
+		RequiresCondition: Economy > 49

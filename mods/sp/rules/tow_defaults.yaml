@@ -129,6 +129,9 @@
 		Range: 10c0
 		CaptorTypes: Vehicle, Tank, Infantry, Aircraft, Building
 		Sticky: true
+	CashTrickler:
+		Interval: 100
+		Amount: 100
 
 ^WinCon:
 	ProximityExternalCondition@PrototypeActivation:

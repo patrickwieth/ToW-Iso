@@ -2263,7 +2263,7 @@ CONTAINER2X1:
 
 CONTAINER2X1STACKED:
 	Inherits: CONTAINER2X1
-	
+
 CONTAINERDIAGONAL:
 	Inherits: ^CivBuilding
 	Inherits@2: ^2x2DiagonalShape
@@ -3238,8 +3238,6 @@ TDWF:
 	Inherits@1: ^4x4Shape
 	Tooltip:
 		Name: War Factory
-	ProvidesPrerequisite@ShowMammMkII:
-		Prerequisite: showmammmk2
 	WithIdleOverlay@ROOF:
 		Sequence: idle-roof
 		RequiresCondition: !Building-Buildup

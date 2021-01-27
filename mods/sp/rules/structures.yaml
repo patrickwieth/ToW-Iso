@@ -107,7 +107,7 @@ GDIREF:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 3
-		Prerequisites: ~structures.gdi, anypower, ~AIantiRush
+		Prerequisites: ~structures.gdi, anypower, ~AIantiRush, !EcoMaxed
 		Description: Processes raw Tiberium into useable resources.\nCan be rotated.\n\nSpecial:\n- Stores 1000$.
 	-WithIdleOverlay@REDLIGHTS:
 	PlaceBuildingVariants:
@@ -140,8 +140,6 @@ GAWEAP:
 		BuildPaletteOrder: 4
 		Description: Produces vehicles.\n\nSpecial:\n- Maximun production speed is reached with 4 factories.\n- Max production speed reduces production time by 50%.
 		Prerequisites: proc, ~structures.gdi
-	ProvidesPrerequisite@ShowMammMkII:
-		Prerequisite: showmammmk2
 	WithIdleOverlay@ROOF:
 		Sequence: idle-roof
 		RequiresCondition: !Building-Buildup
@@ -261,8 +259,6 @@ GTDROP:
 		Sequence: idle-lights
 		RequiresCondition: !Building-Buildup
 	ProvidesPrerequisite@buildingname:
-	ProvidesPrerequisite@ShowMammMkII:
-		Prerequisite: showmammmk2
 	NukePower:
 		Prerequisites:
 			1: gtdrop
@@ -292,10 +288,6 @@ GTDROP:
 		SpawnOffset: 350,450,0 #-280,400,0
 		ExitCell: 2,2
 		ProductionTypes: Mammoth, Vehicle
-	ProductionAirdrop:
-		Produces: Vehicle, Mammoth
-		ActorType: dshp
-		ReadyAudio: UnitReady
 	ProximityExternalCondition@DropshipCloak:
 		Condition: DropshipCloak
 		Range: 10c0
@@ -415,7 +407,7 @@ NODREF:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 3
-		Prerequisites: ~structures.nod, anypower, ~AIantiRush
+		Prerequisites: ~structures.nod, anypower, ~AIantiRush, !EcoMaxed
 		Description: Processes raw Tiberium into useable resources.\nCan be rotated.\n\nSpecial:\n- Stores 1000$.
 	-WithIdleOverlay@REDLIGHTS:
 	PlaceBuildingVariants:
@@ -748,7 +740,7 @@ MUPROC:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 3
-		Prerequisites: ~structures.mut, anypower, ~AIantiRush
+		Prerequisites: ~structures.mut, anypower, ~AIantiRush, !EcoMaxed
 		IconPalette: UnittemIconMut
 		Description: Processes raw Tiberium into useable resources.\nCan be rotated.\n\nSpecial:\n- Stores 1000$.
 	-WithIdleOverlay@REDLIGHTS:
@@ -1027,7 +1019,7 @@ SCRPROC:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 3
-		Prerequisites: scrpowr, ~structures.scr, ~AIantiRush
+		Prerequisites: scrpowr, ~structures.scr, ~AIantiRush, !EcoMaxed
 		Description: Processes raw Tiberium into useable resources.\nCan be rotated.\n\nSpecial:\n- Stores 4000$.
 		IconPalette: UnittemIconScrin
 	StoresResources:
@@ -1433,7 +1425,7 @@ CABPROC:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 3
-		Prerequisites: anypower, ~structures.cab, ~AIantiRush
+		Prerequisites: anypower, ~structures.cab, ~AIantiRush, !EcoMaxed
 		Description: Processes raw Tiberium into useable resources.\nCan be rotated.\n\nSpecial:\n- Stores 1000$.
 		IconPalette: UnittemIconCab
 	-WithIdleOverlay@REDLIGHTS:
