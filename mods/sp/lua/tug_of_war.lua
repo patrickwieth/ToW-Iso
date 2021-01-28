@@ -80,7 +80,8 @@ TickTugOfWar = function()
 		-- these are the actions that are done every 1000 ticks
 		CheckWinConditions()
 		TransferUnitGroups()
-		GuardMoveUnits()
+		--GuardMoveUnits()
+		AttackMoveUnits()
   end
 end
 
@@ -249,10 +250,15 @@ end
 
 AttackMoveUnitsFromTable = function (unittable, Location)
 	for i=1,#unittable do
+
 		if unittable[i].IsDead  then
 			--table.remove(unittable, i)			-- crash area
 		else
-			unittable[i].AttackMove(Location, 0)
+			if unittable[i].HasProperty("AttackMove") then
+				unittable[i].AttackMove(Location, 0)
+			else
+				unittable[i].Move(Location, 0)
+			end
 		end
 	end
 end

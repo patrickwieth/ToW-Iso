@@ -100,7 +100,7 @@ HARV:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 1
-		Prerequisites: ~humanharvester, factory
+		Prerequisites: ~humanharvester, factory, ~disabled
 		BuildAtProductionType: Tank
 		Description: Collects Tiberium for processing.\n\nSpecial:\n- Harvests Tiberium\n- Immune to Veins\n- Can crush infantry\n- Cannot be mindcontrolled\n- Selfheal
 	Selectable:
@@ -211,7 +211,7 @@ CABHARV:
 	Inherits: HARV
 	Inherits@1: ^CabalVehicleVoice
 	Buildable:
-		Prerequisites: proc, ~cabweap
+		Prerequisites: proc, ~cabweap, ~disabled
 	RenderSprites:
 		Image: cabharv
 		-FactionImages:
@@ -383,7 +383,7 @@ GACNST:
 	Inherits@AIbuilding: ^AIbuildingMicroControl
 	Inherits@Autoproducer: ^InfAutoproducer
 	Valued:
-		Cost: 500
+		Cost: 1000
 	ProvidesPrerequisite:
 		Prerequisite: barracks
 	ProximityExternalCondition@hospitalheal:
@@ -644,7 +644,7 @@ FLIPPEDYPROC:
 	GrantExternalConditionToProduced:
 		Condition: produced
 	Valued:
-		Cost: 500
+		Cost: 1000
 	Production:
 		Produces: Air
 	RallyPoint:
@@ -1121,7 +1121,7 @@ TRNSPORT:
 		Description: VTOL aircraft for transporting vehicles.\n\nSpecial:\n- Can transport one vehicle.\n- Works as an APC (vehicle moves into carryall)
 		Queue: Air
 		BuildPaletteOrder: 2
-		Prerequisites: ~humanstuff, gadept
+		Prerequisites: ~humanstuff, gadept, ~disabled
 	Aircraft:
 		RepulsionSpeed: 40
 		AltitudeVelocity: 350

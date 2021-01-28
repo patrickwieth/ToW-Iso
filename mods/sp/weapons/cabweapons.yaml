@@ -409,7 +409,7 @@ DroneHostShell:
 		Image: clusterbomb
 	Warhead@1Dam: SpreadDamage
 		Spread: 350
-		Damage: 8000
+		Damage: 9000
 		Versus:
 			Worker: 25
 		ValidTargets: Ground, Water, Vehicle, Infantry, water

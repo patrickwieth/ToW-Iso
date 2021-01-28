@@ -70,7 +70,7 @@
 		MaxWeight: 1
 		PipCount: 1
 	PeriodicCargoProducer:
-		ChargeDuration: 3000
+		ChargeDuration: 1500
 
 ^TankAutoproducer:
 	Inherits: ^Autoproducer
@@ -84,7 +84,7 @@
 	Cargo:
 		Types: Aircraft
 	PeriodicCargoProducer:
-		ChargeDuration: 3000
+		ChargeDuration: 1500
 
 ^FixPrototypeActivation:
 	ProximityExternalCondition@PrototypeSelfActivation:

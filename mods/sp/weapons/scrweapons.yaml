@@ -516,7 +516,7 @@ BattleshipCannon:
 	Inherits: ^FullDamage
 	Inherits@2: ^Scrin_Explo
 	ReloadDelay: 25
-	Range: 5c768
+	Range: 7c768
 	Report: SeekerShot0000.wav,  SeekerShot0001.wav,  SeekerShot0002.wav,  SeekerShot0003.wav
 	Burst: 16
 	BurstDelays: 2
