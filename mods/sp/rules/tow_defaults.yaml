@@ -20,7 +20,7 @@
 		Type: Vehicle
 		DisplayOrder: 0
 		BuildDurationModifier: 1
-		Group: Vehicle, Tank
+		Group: Vehicle
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress

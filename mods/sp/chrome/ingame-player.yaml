@@ -626,13 +626,14 @@ Container@PLAYER_WIDGETS:
 							TooltipText: Scroll down
 							TooltipContainer: TOOLTIP_CONTAINER
 		ProductionTabs@PRODUCTION_TABS:
-			Logic: AddFactionSuffixLogic, ProductionTabsLogic
+			Logic: ProductionTabsLogic
 			PaletteWidget: PRODUCTION_PALETTE
 			TypesContainer: PRODUCTION_TYPES
 			BackgroundContainer: PRODUCTION_BACKGROUND
 			PreviousProductionTabKey: PreviousProductionTab
 			NextProductionTabKey: NextProductionTab
-			X: WINDOW_RIGHT - 5 - 18 - 194
+			Decorations: blank-tab
+			X: WINDOW_RIGHT - 5 - 18
 			Y: 299
-			Width: 194
-			Height: 20
+			Width: 1
+			Height: 1

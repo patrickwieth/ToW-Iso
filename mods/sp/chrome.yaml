@@ -1486,3 +1486,22 @@ logos:
 	Inherits: ^LoadScreen
 	Regions:
 		logo: 0, 0, 256, 256
+
+panel-black:
+	Image: cncchrome.png
+	PanelRegion: 200, 0, 2, 2, 1, 1, 2, 2
+
+panel-transparent:
+	Image: cncchrome.png
+	PanelRegion: 200, 0, 2, 2, 1, 1, 2, 2
+	PanelSides: Edges
+
+blank-tab:
+	Image: cncchrome.png
+	Regions:
+		right: 200, 0, 1, 1
+		right-pressed: 200, 0, 1, 1
+		right-disabled: 200, 0, 1, 1
+		left: 200, 0, 1, 1
+		left-pressed: 200, 0, 1, 1
+		left-disabled: 200, 0, 1, 1

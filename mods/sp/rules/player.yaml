@@ -13,6 +13,7 @@ Player:
 	EnemyWatcher:
 	ClassicProductionQueue@Building:
 		Type: Building
+		Group: Building
 		LowPowerModifier: 200
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
@@ -23,6 +24,7 @@ Player:
 		BuildTimeSpeedReduction: 1
 	ClassicProductionQueue@Defense:
 		Type: Defense
+		Group: Defense
 		LowPowerModifier: 200
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
@@ -33,6 +35,7 @@ Player:
 		BuildTimeSpeedReduction: 1
 	ClassicProductionQueue@Infantry:
 		Type: Infantry
+		Group: Infantry
 		LowPowerModifier: 200
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
@@ -42,6 +45,7 @@ Player:
 		BuildTimeSpeedReduction: 1
 	ClassicProductionQueue@Air:
 		Type: Air
+		Group: Air
 		BuildDurationModifier: 100
 		LowPowerModifier: 200
 		QueuedAudio: Building
