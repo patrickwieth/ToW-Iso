@@ -601,7 +601,7 @@ FLIPPEDYPROC:
 	ProvidesPrerequisite@factoryhelipad:
 		Prerequisite: Vehicle or Aircraft production
 	Production:
-		Produces: Vehicle, Tank
+		Produces: Vehicle
 	PrimaryBuilding:
 	ProductionBar@Vehicle:
 		ProductionType: Vehicle

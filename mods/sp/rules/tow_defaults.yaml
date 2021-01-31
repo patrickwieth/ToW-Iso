@@ -16,6 +16,17 @@
 	Production:
 		ProduceIntoCargo: true
 		RequiresCondition: !cargoFull
+	ProductionQueue:
+		Type: Vehicle
+		DisplayOrder: 0
+		BuildDurationModifier: 1
+		Group: Vehicle, Tank
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	Production@InfIntoCargo:
 		Produces: Infantry
 		ProduceIntoCargoOfCargo: true
