@@ -6,7 +6,7 @@
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 		CargoFullCondition: cargoFull
-		PassengersCargoFullCondition: passengerFull
+		PassengersCargoFullCondition: passengerCargoFull
 		PassengerConditions:
 			bggy: cargoForInf
 			struck: cargoForInf
