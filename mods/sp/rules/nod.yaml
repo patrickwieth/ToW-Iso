@@ -1,3 +1,91 @@
+^VehicleTS:
+	Inherits@2: ^ExistsInWorld
+	Inherits@3: ^EmpDisable
+	Inherits@4: ^Cloakable
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	Mobile:
+		PauseOnCondition: empdisable || being-captured || carried
+		Locomotor: Vehicle
+		TurnSpeed: 20
+		Voice: Move
+	Selectable:
+		Bounds: 40,24
+	Voiced:
+		VoiceSet: Vehicle
+	Targetable:
+		RequiresCondition: !inside-tunnel
+		TargetTypes: Ground, Vehicle
+	Targetable@REPAIR:
+		RequiresCondition: !inside-tunnel && damaged
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	Repairable:
+		RepairActors: gadept
+		Voice: Move
+	Passenger:
+		CargoType: Vehicle
+		Voice: Move
+	AttackMove:
+		Voice: Move
+	HiddenUnderFog:
+	ActorLostNotification:
+	CaptureManager:
+		BeingCapturedCondition: being-captured
+	Capturable:
+		Types: Vehicle
+		CancelActivity: True
+	Guard:
+		Voice: Move
+	Guardable:
+	BodyOrientation:
+		CameraPitch: 85
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	MustBeDestroyed:
+	RenderSprites:
+	ThrowsShrapnel:
+		Weapons: SmallDebris
+		Pieces: 3, 7
+		Range: 2c0, 5c0
+	GrantConditionOnDamageState@DAMAGEDSPEED:
+		Condition: damagedspeed
+		ValidDamageStates: Heavy
+	GrantConditionOnDamageState@CRITICALSPEED:
+		Condition: criticalspeed
+		ValidDamageStates: Critical
+	SpeedMultiplier@DAMAGED:
+		RequiresCondition: damagedspeed
+		Modifier: 80
+	SpeedMultiplier@CRITICAL:
+		RequiresCondition: criticalspeed
+		Modifier: 60
+	Carryable:
+		RequiresCondition: !inside-tunnel
+		LockedCondition: carried
+	RevealOnFire:
+	EntersTunnels:
+		Voice: Move
+	HitShape:
+	MapEditorData:
+		Categories: Vehicle
+	GrantConditionOnTunnelLayer:
+		Condition: inside-tunnel
+	WithDecoration@UNDERGROUND:
+		RequiresCondition: inside-tunnel
+		Position: Center
+		Image: typeglyphs
+		Sequence: vehicle
+		Palette: player
+		IsPlayerPalette: true
+
+^TankTS:
+	Inherits: ^VehicleTS
+
 ^VoxelActor:
 	BodyOrientation:
 		QuantizedFacings: 0
@@ -126,3 +214,57 @@ TTNK2:
 		ArmamentNames: primary, deployed
 	RenderVoxels:
 		Scale: 11.5
+
+STNK:
+	Inherits: ^TankTS
+	Inherits@VOXELS: ^VoxelActor
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: Stealth Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 150
+		Prerequisites: ~naweap, natech, ~techlevel.high
+		Queue: Vehicle
+		Description: Lightly armoured tank equipped with a personal\nstealth generator. Armed with missiles.\nCan be spotted by infantry at close range.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Mobile:
+		TurnSpeed: 20
+		Speed: 85
+	Health:
+		HP: 18000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		RequiresCondition: !inside-tunnel
+		Range: 5c0
+		MaxHeightDelta: 3
+	Cloak:
+		InitialDelay: 90
+		CloakDelay: 90
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || empdisable
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Armament:
+		Weapon: Dragon
+		LocalOffset: 301,61,421, 301,-61,421
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: empdisable
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: ReturnFire
+	-MustBeDestroyed:
+	Explodes:
+		RequiresCondition: !rank-elite
+	Explodes@ELITE:
+		RequiresCondition: rank-elite
+		Weapon: UnitExplode

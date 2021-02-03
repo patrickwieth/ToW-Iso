@@ -18,3 +18,7 @@ ttnk2:
 		Length: *
 		Offset: 0, 0, 24
 	icon: tickicon
+
+stnk:
+	Inherits: ^EmpOverlay
+	icon: stnkicon

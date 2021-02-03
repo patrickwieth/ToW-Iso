@@ -1191,7 +1191,7 @@ HOWTLIZER:
 		Condition: CloakBreaks
 		ValidDamageStates: Critical
 
-STNK:
+STNK2:
 	Inherits: ^TurretedTank
 	Inherits@1: ^9CellVision
 	Inherits@GainsExperience: ^GainsExperience

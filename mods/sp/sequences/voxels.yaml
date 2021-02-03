@@ -188,3 +188,6 @@ ttnk2:
 	idle: ttnk
 	turret: ttnktur
 	barrel: ttnkbarl
+
+stnk:
+	idle: stnk
