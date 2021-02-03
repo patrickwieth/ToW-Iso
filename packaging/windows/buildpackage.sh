@@ -88,7 +88,7 @@ function build_platform()
 
 	echo "Building mod files (${PLATFORM})"
 	pushd "${TEMPLATE_ROOT}" > /dev/null
-	make all
+	make version VERSION="${TAG}"
 	popd > /dev/null
 
 	cp -Lr "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/mods"
