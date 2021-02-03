@@ -48,8 +48,8 @@
             "locked": true
         },
         "buildradius": {
-            "value": true,
-            "preferredvalue": true,
+            "value": false,
+            "preferredvalue": false,
             "locked": false
         },
         "shortgame": {
