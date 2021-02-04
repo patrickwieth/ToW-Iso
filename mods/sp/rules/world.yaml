@@ -363,8 +363,10 @@ World:
 	MapBuildRadius:
 		AllyBuildRadiusCheckboxDisplayOrder: 4
 		BuildRadiusCheckboxDisplayOrder: 5
+		BuildRadiusCheckboxEnabled: False
 	MapOptions:
 		ShortGameCheckboxDisplayOrder: 2
+		ShortGameCheckboxVisible: False
 		TechLevelDropdownDisplayOrder: 2
 		GameSpeedDropdownDisplayOrder: 3
 	CreateMPPlayers:
