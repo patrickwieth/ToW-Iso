@@ -33,7 +33,6 @@ soviet_conscript:
 		Voice: Attack
 		Armaments: OnFoot
 		FacingTolerance: 2
-	RenderSprites:
 
 soviet_tesla_trooper:
 	Inherits: ^Mutant
@@ -61,7 +60,7 @@ soviet_tesla_trooper:
 		Weapon: SeerTesla
 		Name: OnFoot
 		FireDelay: 5
-		LocalOffset: 100,0,400
+		LocalOffset: 400,0,400
 		PauseOnCondition: WebDisable
 	Armament@SECONDARY:
 		Weapon: SeerTeslaAA
