@@ -512,6 +512,9 @@ bggy:
 		UseTilesetCode: false
 	icon: buggyicon
 
+bggy.info:
+	Inherits: bggy
+
 scrproc:
 	Defaults:
 		Offset: 0, -30, 42

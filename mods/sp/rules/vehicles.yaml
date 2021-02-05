@@ -800,6 +800,11 @@ BGGY:
 		Position: BottomLeft
 		RequiresSelection: true
 
+BGGY.info:
+	Inherits: BGGY
+	Buildable:
+		Prerequisites: ~buggyLoaded, disabled
+
 ATTACKBIKE:
 	Inherits: ^Tank
 	Inherits@1: ^AutoTargetGround
