@@ -18,3 +18,18 @@ ttnk2:
 		Length: *
 		Offset: 0, 0, 24
 	icon: tickicon
+
+ttnk3:
+	Inherits: ^EmpOverlay
+	idle: gatick
+		Offset: 0, -14, 14
+	damaged-idle: gatick
+		Start: 1
+		Offset: 0, -14, 14
+	make: gatickmk
+		Length: 24
+		Offset: 0, -14, 14
+	muzzle: gunfire
+		Length: *
+		Offset: 0, 0, 24
+	icon: tickicon

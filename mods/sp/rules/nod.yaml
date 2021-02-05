@@ -126,3 +126,10 @@ TTNK2:
 		ArmamentNames: primary, deployed
 	RenderVoxels:
 		Scale: 11.5
+
+TTNK3:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 60
+	RenderVoxels:
