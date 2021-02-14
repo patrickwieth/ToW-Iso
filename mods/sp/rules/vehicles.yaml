@@ -523,6 +523,7 @@ BGGY:
 		LoadedCondition: loaded
 		OwnerChangedAffectsPassengers: false
 		PassengerConditions:
+			upgrade.minigun: ifv.militant
 			altnode1: ifv.militant
 			gdie1: ifv.militant
 			marauder: ifv.militant
@@ -799,11 +800,6 @@ BGGY:
 	WithCargoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
-
-BGGY.info:
-	Inherits: BGGY
-	Buildable:
-		Prerequisites: ~buggyLoaded, disabled
 
 ATTACKBIKE:
 	Inherits: ^Tank

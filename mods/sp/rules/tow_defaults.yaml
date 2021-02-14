@@ -14,12 +14,31 @@
 			Prerequisite: buggyLoaded
 			RequiresCondition: buggyLoaded
 		PassengerOfPassengersConditions:
-			gdie1: fuck
+			gdie1: Highlight
 	Inherits@PIPS: ^CargoPips
 	Production:
 		ProduceIntoCargo: true
 		RequiresCondition: !cargoFull
-	ProductionQueue:
+	Production@Upgrade:
+		Produces: Upgrade
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: buggyLoaded && !passengerCargoFull
+	Production@InfIntoCargo:
+		Produces: Infantry
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: cargoForInf && !passengerCargoFull
+	ProductionQueue@Upgrade:
+		Type: Upgrade
+		DisplayOrder: 0
+		BuildDurationModifier: 1
+		Group: Vehicle
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Vehicle:
 		Type: Vehicle
 		DisplayOrder: 0
 		BuildDurationModifier: 1
@@ -30,14 +49,6 @@
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	Production@InfIntoCargo:
-		Produces: Vehicle
-		ProduceIntoCargoOfCargo: true
-		RequiresCondition: buggyLoaded && !passengerCargoFull
-	Production@InfIntoCargo:
-		Produces: Infantry
-		ProduceIntoCargoOfCargo: true
-		RequiresCondition: (cargoForInf) && !passengerCargoFull
 	PeriodicCargoProducer:
 		Condition: Autoproduced
 		Type: Autoproduction

@@ -268,3 +268,76 @@ STNK:
 	Explodes@ELITE:
 		RequiresCondition: rank-elite
 		Weapon: UnitExplode
+
+############################################
+# UPGRADES
+############################################
+BGGY.info:
+	Inherits: BGGY
+	Buildable:
+		Queue: Upgrade
+		Prerequisites: ~buggyLoaded, disabled
+
+^upgrade:
+	Inherits: ^Soldier
+	Inherits@2: ^6CellVision
+	Inherits@GainsExperience: ^GainsExperience
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin minigun
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Minigun
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 15000
+	Voiced:
+		VoiceSet: Marine
+	Armament@1:
+		Weapon: MarineRifle
+		PauseOnCondition: WebDisable
+		Name: OnFoot
+	Armament@2:
+		Weapon: GMarineRifle
+		PauseOnCondition: WebDisable
+	AttackFrontal:
+		Voice: Attack
+		Armaments: OnFoot
+		FacingTolerance: 2
+	RenderSprites:
+
+upgrade.minigun:
+	Inherits: ^Soldier
+	Inherits@2: ^6CellVision
+	Inherits@GainsExperience: ^GainsExperience
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin minigun
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Minigun
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 15000
+	Voiced:
+		VoiceSet: Marine
+	Armament@1:
+		Weapon: MarineRifle
+		PauseOnCondition: WebDisable
+		Name: OnFoot
+	Armament@2:
+		Weapon: GMarineRifle
+		PauseOnCondition: WebDisable
+	AttackFrontal:
+		Voice: Attack
+		Armaments: OnFoot
+		FacingTolerance: 2
+	RenderSprites:
