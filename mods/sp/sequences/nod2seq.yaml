@@ -84,3 +84,18 @@ upgrade.minigun:
 		Facings: 8
 		ShadowStart: 552
 	icon: sidebar-gdi|e1icon
+
+upgrade.rocket_launcher:
+	Inherits: upgrade.minigun
+
+upgrade.repair:
+	Inherits: upgrade.minigun
+
+upgrade.flamethrower:
+	Inherits: upgrade.minigun
+
+upgrade.laser:
+	Inherits: upgrade.minigun
+
+upgrade.toxin:
+	Inherits: upgrade.minigun

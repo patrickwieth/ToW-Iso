@@ -530,17 +530,22 @@ BGGY:
 			cyborg: ifv.militant
 			worker: ifv.militant
 			cyberdog: ifv.militant
+			upgrade.rocket_launcher: ifv.crusader
 			crusader: ifv.crusader
 			grenadier: ifv.crusader
 			mutfiend: ifv.crusader
 			cborg: ifv.crusader
 			legio: ifv.crusader
+			upgrade.repair: ifv.engineer
 			engineer: ifv.engineer
 			e2: ifv.engineer
 			shapeshifter: ifv.engineer
 			swarmling: ifv.engineer
+			upgrade.flamethrower: ifv.templar
 			templar: ifv.templar
+			upgrade.laser: ifv.nconf
 			nconf: ifv.nconf
+			upgrade.toxin: ifv.bhs
 			bhs: ifv.bhs
 			jumpjet: ifv.jumpjet
 			eagleguard: ifv.eagleguard

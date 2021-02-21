@@ -278,10 +278,9 @@ BGGY.info:
 		Queue: Upgrade
 		Prerequisites: ~buggyLoaded, disabled
 
-^upgrade:
+^Upgrade:
 	Inherits: ^Soldier
 	Inherits@2: ^6CellVision
-	Inherits@GainsExperience: ^GainsExperience
 	Buildable:
 		Queue: Upgrade
 		BuildPaletteOrder: 1
@@ -311,9 +310,7 @@ BGGY.info:
 	RenderSprites:
 
 upgrade.minigun:
-	Inherits: ^Soldier
-	Inherits@2: ^6CellVision
-	Inherits@GainsExperience: ^GainsExperience
+	Inherits: ^Upgrade
 	Buildable:
 		Queue: Upgrade
 		BuildPaletteOrder: 1
@@ -323,21 +320,63 @@ upgrade.minigun:
 		Cost: 150
 	Tooltip:
 		Name: Upgrade Minigun
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Health:
-		HP: 15000
-	Voiced:
-		VoiceSet: Marine
-	Armament@1:
-		Weapon: MarineRifle
-		PauseOnCondition: WebDisable
-		Name: OnFoot
-	Armament@2:
-		Weapon: GMarineRifle
-		PauseOnCondition: WebDisable
-	AttackFrontal:
-		Voice: Attack
-		Armaments: OnFoot
-		FacingTolerance: 2
-	RenderSprites:
+
+upgrade.rocket_launcher:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin rocket launcher
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Rocket Launcher
+
+upgrade.repair:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin repair
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Repair Arm
+
+upgrade.flamethrower:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin flames
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Flamethrower
+
+upgrade.laser:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin laz0rs
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Laser
+
+upgrade.toxin:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin toxin
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Toxin
