@@ -1,3 +1,91 @@
+^VehicleTS:
+	Inherits@2: ^ExistsInWorld
+	Inherits@3: ^EmpDisable
+	Inherits@4: ^Cloakable
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	Mobile:
+		PauseOnCondition: empdisable || being-captured || carried
+		Locomotor: Vehicle
+		TurnSpeed: 20
+		Voice: Move
+	Selectable:
+		Bounds: 40,24
+	Voiced:
+		VoiceSet: Vehicle
+	Targetable:
+		RequiresCondition: !inside-tunnel
+		TargetTypes: Ground, Vehicle
+	Targetable@REPAIR:
+		RequiresCondition: !inside-tunnel && damaged
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	Repairable:
+		RepairActors: gadept
+		Voice: Move
+	Passenger:
+		CargoType: Vehicle
+		Voice: Move
+	AttackMove:
+		Voice: Move
+	HiddenUnderFog:
+	ActorLostNotification:
+	CaptureManager:
+		BeingCapturedCondition: being-captured
+	Capturable:
+		Types: Vehicle
+		CancelActivity: True
+	Guard:
+		Voice: Move
+	Guardable:
+	BodyOrientation:
+		CameraPitch: 85
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	MustBeDestroyed:
+	RenderSprites:
+	ThrowsShrapnel:
+		Weapons: SmallDebris
+		Pieces: 3, 7
+		Range: 2c0, 5c0
+	GrantConditionOnDamageState@DAMAGEDSPEED:
+		Condition: damagedspeed
+		ValidDamageStates: Heavy
+	GrantConditionOnDamageState@CRITICALSPEED:
+		Condition: criticalspeed
+		ValidDamageStates: Critical
+	SpeedMultiplier@DAMAGED:
+		RequiresCondition: damagedspeed
+		Modifier: 80
+	SpeedMultiplier@CRITICAL:
+		RequiresCondition: criticalspeed
+		Modifier: 60
+	Carryable:
+		RequiresCondition: !inside-tunnel
+		LockedCondition: carried
+	RevealOnFire:
+	EntersTunnels:
+		Voice: Move
+	HitShape:
+	MapEditorData:
+		Categories: Vehicle
+	GrantConditionOnTunnelLayer:
+		Condition: inside-tunnel
+	WithDecoration@UNDERGROUND:
+		RequiresCondition: inside-tunnel
+		Position: Center
+		Image: typeglyphs
+		Sequence: vehicle
+		Palette: player
+		IsPlayerPalette: true
+
+^TankTS:
+	Inherits: ^VehicleTS
+
 ^VoxelActor:
 	BodyOrientation:
 		QuantizedFacings: 0
@@ -126,3 +214,199 @@ TTNK2:
 		ArmamentNames: primary, deployed
 	RenderVoxels:
 		Scale: 11.5
+
+STNK:
+	Inherits: ^TankTS
+	Inherits@VOXELS: ^VoxelActor
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: Stealth Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 150
+		Prerequisites: ~naweap, natech, ~techlevel.high
+		Queue: Vehicle
+		Description: Lightly armoured tank equipped with a personal\nstealth generator. Armed with missiles.\nCan be spotted by infantry at close range.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Mobile:
+		TurnSpeed: 20
+		Speed: 85
+	Health:
+		HP: 18000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		RequiresCondition: !inside-tunnel
+		Range: 5c0
+		MaxHeightDelta: 3
+	Cloak:
+		InitialDelay: 90
+		CloakDelay: 90
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
+		IsPlayerPalette: true
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || empdisable
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Armament:
+		Weapon: Dragon
+		LocalOffset: 301,61,421, 301,-61,421
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: empdisable
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: ReturnFire
+	-MustBeDestroyed:
+	Explodes:
+		RequiresCondition: !rank-elite
+	Explodes@ELITE:
+		RequiresCondition: rank-elite
+		Weapon: UnitExplode
+
+############################################
+# UPGRADES
+############################################
+^upgrade_filler:
+	Interactable:
+	AlwaysVisible:
+	Tooltip:
+		Name: Filler
+	Buildable:
+		Queue: Upgrade
+		ForceIconLocation: true
+		ShowTooltip: false
+	Valued:
+		Cost: 0
+	KillsSelf:
+		RemoveInstead: true
+	RenderSprites:
+		Image: upgrade.filler
+
+BGGY.info:
+	Inherits: BGGY
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 0
+		Description: This factory is equipped with a Buggy. It can be upgrades with the following upgrades.
+		Prerequisites: ~buggyLoaded, disabled
+
+upgrade_filler.1:
+	Inherits: ^upgrade_filler
+	Buildable:
+		BuildPaletteOrder: 1
+		Prerequisites: ~buggyLoaded, disabled
+
+upgrade_filler.2:
+	Inherits: ^upgrade_filler
+	Buildable:
+		BuildPaletteOrder: 1
+		Prerequisites: ~buggyLoaded, disabled
+
+^Upgrade:
+	Inherits: ^Soldier
+	Inherits@2: ^6CellVision
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin minigun
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Minigun
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 15000
+	Voiced:
+		VoiceSet: Marine
+	Armament@1:
+		Weapon: MarineRifle
+		PauseOnCondition: WebDisable
+		Name: OnFoot
+	Armament@2:
+		Weapon: GMarineRifle
+		PauseOnCondition: WebDisable
+	AttackFrontal:
+		Voice: Attack
+		Armaments: OnFoot
+		FacingTolerance: 2
+	RenderSprites:
+
+upgrade.minigun:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin minigun
+		Prerequisites: buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Minigun
+
+upgrade.rocket_launcher:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin rocket launcher
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Rocket Launcher
+
+upgrade.repair:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin repair
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Repair Arm
+
+upgrade.flamethrower:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin flames
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Flamethrower
+
+upgrade.laser:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin laz0rs
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Laser
+
+upgrade.toxin:
+	Inherits: ^Upgrade
+	Buildable:
+		Queue: Upgrade
+		BuildPaletteOrder: 1
+		Description: Yeeees I'm gettin toxin
+		Prerequisites: ~buggyLoaded
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Upgrade Toxin

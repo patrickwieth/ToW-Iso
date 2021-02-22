@@ -109,6 +109,7 @@ Packages:
 	sp|bits/neutral/naval
 	sp|bits/neutral/campaignstuff
 	sp|bits/soviet
+	sp|bits/upgrades
 	sp|uibits
 	sp|lua
 

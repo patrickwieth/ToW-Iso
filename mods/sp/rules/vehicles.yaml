@@ -523,23 +523,29 @@ BGGY:
 		LoadedCondition: loaded
 		OwnerChangedAffectsPassengers: false
 		PassengerConditions:
+			upgrade.minigun: ifv.militant
 			altnode1: ifv.militant
 			gdie1: ifv.militant
 			marauder: ifv.militant
 			cyborg: ifv.militant
 			worker: ifv.militant
 			cyberdog: ifv.militant
+			upgrade.rocket_launcher: ifv.crusader
 			crusader: ifv.crusader
 			grenadier: ifv.crusader
 			mutfiend: ifv.crusader
 			cborg: ifv.crusader
 			legio: ifv.crusader
+			upgrade.repair: ifv.engineer
 			engineer: ifv.engineer
 			e2: ifv.engineer
 			shapeshifter: ifv.engineer
 			swarmling: ifv.engineer
+			upgrade.flamethrower: ifv.templar
 			templar: ifv.templar
+			upgrade.laser: ifv.nconf
 			nconf: ifv.nconf
+			upgrade.toxin: ifv.bhs
 			bhs: ifv.bhs
 			jumpjet: ifv.jumpjet
 			eagleguard: ifv.eagleguard
@@ -1191,7 +1197,7 @@ HOWTLIZER:
 		Condition: CloakBreaks
 		ValidDamageStates: Critical
 
-STNK:
+STNK2:
 	Inherits: ^TurretedTank
 	Inherits@1: ^9CellVision
 	Inherits@GainsExperience: ^GainsExperience

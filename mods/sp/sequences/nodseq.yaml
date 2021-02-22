@@ -424,7 +424,7 @@ subtank:
 	Inherits: ^EmpOverlay
 	icon: subticon
 
-stnk:
+stnk2:
 	Inherits: ^EmpOverlay
 	idle: stealthtank3
 		Facings: -32

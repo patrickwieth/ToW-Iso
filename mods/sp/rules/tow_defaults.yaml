@@ -8,18 +8,47 @@
 		CargoFullCondition: cargoFull
 		PassengersCargoFullCondition: passengerCargoFull
 		PassengerConditions:
-			bggy: cargoForInf
+			bggy: buggyLoaded
 			struck: cargoForInf
 		PassengerOfPassengersConditions:
-			gdie1: fuck
+			gdie1: Highlight
 	Inherits@PIPS: ^CargoPips
+	ProvidesPrerequisite@bggy:
+		RequiresCondition: buggyLoaded
+		Prerequisite: buggyLoaded
 	Production:
 		ProduceIntoCargo: true
 		RequiresCondition: !cargoFull
+	Production@Upgrade:
+		Produces: Upgrade
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: buggyLoaded && !passengerCargoFull
 	Production@InfIntoCargo:
 		Produces: Infantry
 		ProduceIntoCargoOfCargo: true
 		RequiresCondition: cargoForInf && !passengerCargoFull
+	ProductionQueue@Upgrade:
+		Type: Upgrade
+		DisplayOrder: 0
+		BuildDurationModifier: 1
+		Group: Vehicle
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Vehicle:
+		Type: Vehicle
+		DisplayOrder: 0
+		BuildDurationModifier: 1
+		Group: Vehicle
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	PeriodicCargoProducer:
 		Condition: Autoproduced
 		Type: Autoproduction
