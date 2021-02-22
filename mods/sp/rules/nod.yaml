@@ -272,10 +272,40 @@ STNK:
 ############################################
 # UPGRADES
 ############################################
+^upgrade_filler:
+	Interactable:
+	AlwaysVisible:
+	Tooltip:
+		Name: Filler
+	Buildable:
+		Queue: Upgrade
+		ForceIconLocation: true
+		ShowTooltip: false
+	Valued:
+		Cost: 0
+	KillsSelf:
+		RemoveInstead: true
+	RenderSprites:
+		Image: upgrade.filler
+
 BGGY.info:
 	Inherits: BGGY
 	Buildable:
 		Queue: Upgrade
+		BuildPaletteOrder: 0
+		Description: This factory is equipped with a Buggy. It can be upgrades with the following upgrades.
+		Prerequisites: ~buggyLoaded, disabled
+
+upgrade_filler.1:
+	Inherits: ^upgrade_filler
+	Buildable:
+		BuildPaletteOrder: 1
+		Prerequisites: ~buggyLoaded, disabled
+
+upgrade_filler.2:
+	Inherits: ^upgrade_filler
+	Buildable:
+		BuildPaletteOrder: 1
 		Prerequisites: ~buggyLoaded, disabled
 
 ^Upgrade:
@@ -315,7 +345,7 @@ upgrade.minigun:
 		Queue: Upgrade
 		BuildPaletteOrder: 1
 		Description: Yeeees I'm gettin minigun
-		Prerequisites: ~buggyLoaded
+		Prerequisites: buggyLoaded
 	Valued:
 		Cost: 150
 	Tooltip:

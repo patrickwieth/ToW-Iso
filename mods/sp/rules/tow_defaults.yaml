@@ -10,12 +10,12 @@
 		PassengerConditions:
 			bggy: buggyLoaded
 			struck: cargoForInf
-		ProvidesPrerequisite:
-			Prerequisite: buggyLoaded
-			RequiresCondition: buggyLoaded
 		PassengerOfPassengersConditions:
 			gdie1: Highlight
 	Inherits@PIPS: ^CargoPips
+	ProvidesPrerequisite@bggy:
+		RequiresCondition: buggyLoaded
+		Prerequisite: buggyLoaded
 	Production:
 		ProduceIntoCargo: true
 		RequiresCondition: !cargoFull

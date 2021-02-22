@@ -23,6 +23,9 @@ stnk:
 	Inherits: ^EmpOverlay
 	icon: stnkicon
 
+upgrade.filler:
+	icon: invis
+
 upgrade.minigun:
 	Inherits: gdie1
 	Inherits@1: ^InfantryDeathAnims
@@ -83,19 +86,24 @@ upgrade.minigun:
 		Length: 2
 		Facings: 8
 		ShadowStart: 552
-	icon: sidebar-gdi|e1icon
+	icon: minigunicon
 
 upgrade.rocket_launcher:
 	Inherits: upgrade.minigun
+	icon: rocketicon
 
 upgrade.repair:
 	Inherits: upgrade.minigun
+	icon: repairicon
 
 upgrade.flamethrower:
 	Inherits: upgrade.minigun
+	icon: flamethrowericon
 
 upgrade.laser:
 	Inherits: upgrade.minigun
+	icon: lasericon
 
 upgrade.toxin:
 	Inherits: upgrade.minigun
+	icon: toxinicon
