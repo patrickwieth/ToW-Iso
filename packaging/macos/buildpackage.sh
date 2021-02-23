@@ -153,7 +153,8 @@ build_platform() {
 
 	echo "Building mod files"
 	pushd "${TEMPLATE_ROOT}" > /dev/null
-	make version VERSION="${TAG}"
+		make version VERSION="${TAG}"
+		make all
 	popd > /dev/null
 
 	cp -LR "${TEMPLATE_ROOT}mods/"* "${LAUNCHER_RESOURCES_DIR}/mods"
