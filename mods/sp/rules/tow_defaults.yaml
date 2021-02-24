@@ -76,9 +76,9 @@
 	ReloadDelayMultiplier@balance1:
 		Modifier: 66
 		RequiresCondition: TeamBalance1
-	ExternalCondition@TeamBalance:
+	ExternalCondition@TeamBalance1:
 		Condition: TeamBalance1
-	ExternalCondition@TeamBalance:
+	ExternalCondition@TeamBalance2:
 		Condition: TeamBalance2
 	GrantTimedCondition@Highlight:
 		Condition: Highlight
