@@ -1,6 +1,6 @@
 Metadata:
 	Title: Tug of War
-	Version: Yes
+	Version: 0.20
 	Website: https://discord.gg/ZKKbhUs
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 
@@ -117,7 +117,7 @@ MapFolders:
 	sp|maps/multiplayer: System
 	sp|maps/others: System
 	sp|maps/campaign/cabal: System
-	~^SupportDir|maps/sp/SP-Playtest-20201220: User
+	~^SupportDir|maps/sp/0.20: User
 
 Rules:
 	sp|rules/ai.yaml

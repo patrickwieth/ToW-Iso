@@ -77,6 +77,7 @@ done
 echo "Building mod files"
 pushd "${TEMPLATE_ROOT}" > /dev/null
 	make version VERSION="${TAG}"
+	make all
 popd > /dev/null
 
 cp -Lr "${TEMPLATE_ROOT}/mods/"* "${APPDIR}/usr/lib/openra/mods"
