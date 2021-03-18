@@ -1,4 +1,235 @@
+^SovietTank:
+	Inherits: ^Tank
+	Inherits@1: ^7CellVision
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 60
+		TurnSpeed: 16
+		Locomotor: InfantryCrusherVehicle
+	Voiced:
+		VoiceSet: MammothTankVO
+		Volume: 3
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: empdisable
+	BodyOrientation:
+		QuantizedFacings: 32
+		CameraPitch: 250
+	WithMuzzleOverlay:
 
+^TurretedSovietTank:
+	Inherits: ^TurretedTank
+	Inherits@1: ^7CellVision
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 60
+		TurnSpeed: 16
+		Locomotor: InfantryCrusherVehicle
+	Voiced:
+		VoiceSet: MammothTankVO
+		Volume: 3
+	Turreted:
+		TurnSpeed: 12
+		Offset: -200,0,0
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: empdisable
+	BodyOrientation:
+		QuantizedFacings: 32
+		CameraPitch: 250
+	WithMuzzleOverlay:
+
+soviet_T-34:
+	Inherits: ^TurretedSovietTank
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: T-34
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Tank
+		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
+		BuildPaletteOrder: 8
+		Prerequisites: ~gaweap, gatech
+	Health:
+		HP: 80000
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+	Armament@CASINGPRIMARY:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+
+soviet_IS-2:
+	Inherits: ^TurretedSovietTank
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: IS-2
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Tank
+		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
+		BuildPaletteOrder: 8
+		Prerequisites: ~gaweap, gatech
+	Health:
+		HP: 80000
+	Turreted:
+		Offset: 0,0,0
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+	Armament@CASINGPRIMARY:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+
+soviet_IS-3:
+	Inherits: ^TurretedSovietTank
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: IS-3
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Tank
+		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
+		BuildPaletteOrder: 8
+		Prerequisites: ~gaweap, gatech
+	Health:
+		HP: 80000
+	Turreted:
+		Offset: 100,10,0
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+	Armament@CASINGPRIMARY:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+
+soviet_IS-3:
+	Inherits: ^TurretedSovietTank
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: IS-3
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Tank
+		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
+		BuildPaletteOrder: 8
+		Prerequisites: ~gaweap, gatech
+	Health:
+		HP: 80000
+	Turreted:
+		Offset: 100,10,0
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+	Armament@CASINGPRIMARY:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+
+soviet_GAZ-AAA:
+	Inherits: ^TurretedSovietTank
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: GAZ-AAA
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Tank
+		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
+		BuildPaletteOrder: 8
+		Prerequisites: ~gaweap, gatech
+	Health:
+		HP: 80000
+	Turreted:
+		Offset: -260,0,650
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+	Armament@CASINGPRIMARY:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+
+soviet_ISU-152:
+	Inherits: ^SovietTank
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: ISU-152
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Tank
+		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
+		BuildPaletteOrder: 8
+		Prerequisites: ~gaweap, gatech
+	Health:
+		HP: 80000
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+	Armament@CASINGPRIMARY:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+
+soviet_SU-100:
+	Inherits: ^SovietTank
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: SU-100
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Tank
+		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
+		BuildPaletteOrder: 8
+		Prerequisites: ~gaweap, gatech
+	Health:
+		HP: 80000
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+	Armament@CASINGPRIMARY:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
 
 ##################### INFANTRY #####################
 

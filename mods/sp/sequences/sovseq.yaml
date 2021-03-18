@@ -1,3 +1,90 @@
+##################### VEHICLES #####################
+
+soviet_t-34:
+	Inherits: ^EmpOverlay
+	idle: soviet_t-34
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_t-34
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	turret: soviet_t-34tur
+		Facings: -32
+		Offset: 8, 8
+		UseTilesetCode: false
+	icon: stnkicon
+
+soviet_is-2:
+	Inherits: ^EmpOverlay
+	idle: soviet_is-2
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_is-2
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	turret: soviet_is-2tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: stnkicon
+
+soviet_gaz-aaa:
+	Inherits: ^EmpOverlay
+	idle: soviet_gazaaa
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_gazaaa
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	turret: soviet_flaktur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_gazaaa_icon
+
+soviet_is-3:
+	Inherits: ^EmpOverlay
+	idle: soviet_is-3
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_is-3
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	turret: soviet_is-2tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: stnkicon
+
+soviet_isu-152:
+	Inherits: ^EmpOverlay
+	idle: soviet_isu152
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_isu152
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	icon: stnkicon
+
+soviet_su-100:
+	Inherits: ^EmpOverlay
+	idle: soviet_su100
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_su100
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	icon: stnkicon
+
 ##################### INFANTRY #####################
 
 soviet_conscript:
