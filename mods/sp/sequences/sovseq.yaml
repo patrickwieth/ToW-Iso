@@ -12,9 +12,9 @@ soviet_t-34:
 		ShadowStart: 32
 	turret: soviet_t-34tur
 		Facings: -32
-		Offset: 8, 8
+		Offset: 0, 0
 		UseTilesetCode: false
-	icon: stnkicon
+	icon: soviet_t-34_icon
 
 soviet_is-2:
 	Inherits: ^EmpOverlay
@@ -29,7 +29,67 @@ soviet_is-2:
 	turret: soviet_is-2tur
 		Facings: -32
 		UseTilesetCode: false
-	icon: stnkicon
+	icon: soviet_is-2_icon
+
+soviet_is-3:
+	Inherits: ^EmpOverlay
+	idle: soviet_is-3
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_is-3
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	turret: soviet_is-3tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_is-3_icon
+
+soviet_kv-1:
+	Inherits: ^EmpOverlay
+	idle: soviet_kv-1
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_kv-1
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	turret: soviet_kv-1tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_kv-1_icon
+
+soviet_kv-2:
+	Inherits: ^EmpOverlay
+	idle: soviet_kv-2
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_kv-2
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	turret: soviet_kv-2tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_kv-2_icon
+
+soviet_zis-5:
+	Inherits: ^EmpOverlay
+	idle: soviet_bakraa
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_bakraa
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	turret: soviet_bakraatur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_bakraa_icon
 
 soviet_gaz-aaa:
 	Inherits: ^EmpOverlay
@@ -46,44 +106,69 @@ soviet_gaz-aaa:
 		UseTilesetCode: false
 	icon: soviet_gazaaa_icon
 
-soviet_is-3:
+soviet_su-12:
 	Inherits: ^EmpOverlay
-	idle: soviet_is-3
+	idle: soviet_su-12
 		Facings: -32
 		UseTilesetCode: false
 		ShadowStart: 32
-	stand: soviet_is-3
+	stand: soviet_su-12
 		Facings: -32
 		UseTilesetCode: false
 		ShadowStart: 32
-	turret: soviet_is-2tur
+	turret: soviet_flaktur
 		Facings: -32
 		UseTilesetCode: false
-	icon: stnkicon
+	icon: soviet_su-12_icon
+
+soviet_obj-261:
+	Inherits: ^EmpOverlay
+	idle: soviet_obj-261
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_obj-261
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	icon: soviet_obj-261_icon
 
 soviet_isu-152:
 	Inherits: ^EmpOverlay
-	idle: soviet_isu152
+	idle: soviet_isu-152
 		Facings: -32
 		UseTilesetCode: false
 		ShadowStart: 32
-	stand: soviet_isu152
+	stand: soviet_isu-152
 		Facings: -32
 		UseTilesetCode: false
 		ShadowStart: 32
-	icon: stnkicon
+	icon: soviet_isu-152_icon
 
 soviet_su-100:
 	Inherits: ^EmpOverlay
-	idle: soviet_su100
+	idle: soviet_su-100
 		Facings: -32
 		UseTilesetCode: false
 		ShadowStart: 32
-	stand: soviet_su100
+	stand: soviet_su-100
 		Facings: -32
 		UseTilesetCode: false
 		ShadowStart: 32
-	icon: stnkicon
+	icon: soviet_su-100_icon
+
+soviet_su-5:
+	Inherits: ^EmpOverlay
+	idle: soviet_su-5
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	stand: soviet_su-5
+		Facings: -32
+		UseTilesetCode: false
+		ShadowStart: 32
+	icon: soviet_su-5_icon
+
 
 ##################### INFANTRY #####################
 
