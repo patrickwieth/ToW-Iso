@@ -56,7 +56,7 @@ soviet_T-34:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: 0,0,0
+		Offset: 100,0,200
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -84,7 +84,7 @@ soviet_IS-2:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: 200,0,0
+		Offset: 135,0,300
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -112,7 +112,7 @@ soviet_IS-3:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: 150,0,0
+		Offset: 160,0,200
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -140,7 +140,7 @@ soviet_KV-1:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: 150,00,0
+		Offset: 100,0,300
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -168,7 +168,7 @@ soviet_KV-2:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: 150,0,0
+		Offset: 125,0,400
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -196,7 +196,7 @@ soviet_zis-5:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: 100,10,0
+		Offset: -250,20,100
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -224,7 +224,7 @@ soviet_SU-12:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: 100,10,0
+		Offset: -250,10,100
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -252,7 +252,7 @@ soviet_GAZ-AAA:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: -260,0,650
+		Offset: -250,0,450
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
