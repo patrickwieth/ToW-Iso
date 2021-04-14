@@ -194,11 +194,11 @@
 		RequiresCondition: Autoproduced && PlannedObsolence && !LifeDuration
 	GrantTimedCondition@LifeDuration:
 		Condition: LifeDuration
-		Duration: 6000
+		Duration: 3000
 		RequiresCondition: Autoproduced && !PlannedObsolence
 	GrantTimedCondition@PlannedObsolence:
 		Condition: PlannedObsolence
-		Duration: 6001
+		Duration: 3001
 		RequiresCondition: Autoproduced && !LifeDuration
 
 ^CashGenerator:
