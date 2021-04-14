@@ -1,0 +1,236 @@
+##################### CHASSIS #####################
+# these are needed to mount turrets on a vehicle ##
+###################################################
+
+^chassis_prototype:
+	Inherits@PIPS: ^CargoPips
+	Turreted:
+		TurnSpeed: 12
+		Offset: -200,0,0
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: empdisable
+	WithMuzzleOverlay:
+
+^light_chassis_prototype:
+	Inherits@1: ^chassis_prototype
+	Inherits@2: ^light_turrets
+	Buildable:
+		Prerequisites: vehicles.any
+
+^medium_chassis_prototype:
+	Inherits@1: ^chassis_prototype
+	Inherits@3: ^medium_turrets
+	Buildable:
+		Prerequisites: vehicles.any, techcenter
+
+^heavy_chassis_prototype:
+	Inherits: ^chassis_prototype
+	Inherits: ^heavy_turrets
+	Buildable:
+		Prerequisites: vehicles.any, hightech
+
+
+##################### TURRETS #####################
+#   the traits that list the mountable turrets   ##
+###################################################
+
+^turret_prototype:
+	Inherits: ^Vehicle
+	Tooltip:
+		Name: Turret
+	Buildable:
+		Queue: Turret
+	Health:
+		HP: 5000
+	RevealsShroud:
+		Range: 2c0
+	Mobile:
+		TurnSpeed: 8
+		Speed: 56
+
+################# LIGHT TURRETS #################
+
+^light_turret_prototype:
+	Inherits: ^turret_prototype
+	Valued:
+		Cost: 100
+	Passenger:
+		CargoType: light_turret
+		Weight: 5
+
+^light_turrets:
+	Turreted:
+		TurnSpeed: 12
+	# new light turrets must be added here
+	Inherits: maxim_turret_mounted
+	Cargo:
+		Types: light_turret, ammo
+		MaxWeight: 8
+		PipCount: 8
+		LoadingCondition: notmobile
+		LoadedCondition: full
+		PassengerConditions:
+
+
+maxim_turret:
+	Inherits: ^light_turret_prototype
+	Buildable:
+		BuildPaletteOrder: 0
+		Prerequisites: ~infantry.ra, ~techlevel.infonly
+		Description: Turret with Anti-Air Barrels
+	Tooltip:
+		Name: Maxim Machine Guns
+
+maxim_turret_mounted:                         ## Maxim Turret
+	WithSpriteTurret@maxim_turret:
+		RequiresCondition: maxim_turret
+		Sequence: maxim_turret
+	ExplodeWeapon@Casing_maxim_turret:
+		Weapon: QuadFireCasing
+		LocalOffset: -200,0,1200
+		RequiresCondition: attack && maxim_turret
+		RevokeDelay: 1
+	GrantConditionOnAttack@Casing_maxim_turret:
+		Condition: attack
+		ArmamentNames: primary
+		RequiresCondition: maxim_turret
+	Armament@Fakebullet_maxim_turret:
+		Weapon: QuadFireLine
+		LocalOffset: 1200,0,1000
+		PauseOnCondition: empdisable
+		RequiresCondition: maxim_turret
+	Armament@FakebulletAA_maxim_turret:
+		Weapon: QuadFireLineAA
+		LocalOffset: 1200,0,1000
+		PauseOnCondition: empdisable
+		RequiresCondition: maxim_turret
+	Armament@maxim_turret:
+		Weapon: QuadFire
+		MuzzleSequence: muzzle
+		LocalOffset: 800,0,700
+		MuzzlePalette: apgrey
+		PauseOnCondition: empdisable
+		RequiresCondition: maxim_turret
+	Armament@AA1_maxim_turret:
+		Weapon: QuadFireAA
+		MuzzleSequence: muzzle
+		MuzzlePalette: apgrey
+		LocalOffset: 800,0,700
+		PauseOnCondition: empdisable
+		RequiresCondition: maxim_turret
+	Cargo:
+		PassengerConditions:
+			maxim_turret: maxim_turret
+
+
+################# MEDIUM TURRETS #################
+
+^medium_turret_prototype:
+	Inherits: ^turret_prototype
+	Valued:
+		Cost: 200
+	Passenger:
+		CargoType: medium_turret
+		Weight: 5
+
+^medium_turrets:
+	Inherits: ^light_turrets
+	Turreted:
+		TurnSpeed: 8
+	# new medium turrets must be added here
+	Inherits: t-34_turret_mounted
+	Cargo:
+		Types: light_turret, medium_turret, ammo
+		MaxWeight: 8
+		PipCount: 8
+		LoadingCondition: notmobile
+		LoadedCondition: full
+		PassengerConditions:
+
+
+t-34_turret:
+	Inherits: ^medium_turret_prototype
+	Buildable:
+		BuildPaletteOrder: 0
+		Prerequisites: ~T-34Loaded
+		Description: Missile Station Turret capable of firing multiple Missiles
+	Tooltip:
+		Name: T-34 Turret
+
+t-34_turret_mounted:                         ## T-34 Turret
+	WithSpriteTurret@t-34_turret:
+		RequiresCondition: t-34_turret
+		Sequence: t-34_turret
+	Armament@t-34_turret1:
+		Weapon: LynxCannon
+		LocalOffset: 400,0,600
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		Recoil: 0c128
+		PauseOnCondition: empdisable
+		RequiresCondition: t-34_turret
+	Armament@casing_t-34_turret1:
+		Weapon: LynxCannonShellCasing
+		LocalOffset: 0,0,600
+		PauseOnCondition: empdisable
+		RequiresCondition: t-34_turret
+	Cargo:
+		PassengerConditions:
+			t-34_turret: t-34_turret
+
+
+################# HEAVY TURRETS #################
+
+^heavy_turret_prototype:
+	Inherits: ^turret_prototype
+	Valued:
+		Cost: 300
+	Passenger:
+		CargoType: heavy_turret
+		Weight: 5
+
+^heavy_turrets:
+	Inherits: ^medium_turrets
+	Turreted:
+		TurnSpeed: 4
+	# new heavy turrets must be added here
+	Inherits: kv-2_turret_mounted
+	Cargo:
+		Types: light_turret, medium_turret, heavy_turret, ammo
+		MaxWeight: 8
+		PipCount: 8
+		LoadingCondition: notmobile
+		LoadedCondition: full
+		PassengerConditions:
+
+
+kv-2_turret:
+	Inherits: ^heavy_turret_prototype
+	Buildable:
+		BuildPaletteOrder: 0
+		Prerequisites: ~infantry.ra, ~techlevel.infonly
+		Description: Turret with 2 Barrels
+	Tooltip:
+		Name: M10 Turret
+
+kv-2_turret_mounted:
+	WithSpriteTurret@kv-2_turret:
+		RequiresCondition: kv-2_turret
+		Sequence: kv2_turret
+	Armament@kv-2_turret:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+		RequiresCondition: kv-2_turret
+	Armament@CASING_kv-2_turret:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+		RequiresCondition: kv-2_turret
+	Cargo:
+		PassengerConditions:
+			kv-2_turret: kv-2_turret

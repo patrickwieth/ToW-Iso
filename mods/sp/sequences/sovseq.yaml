@@ -2,6 +2,7 @@
 
 soviet_t-34:
 	Inherits: ^EmpOverlay
+	Inherits: ^heavy_chassis
 	idle: soviet_t-34
 		Facings: -32
 		UseTilesetCode: false
@@ -15,6 +16,9 @@ soviet_t-34:
 		Offset: 0, 0
 		UseTilesetCode: false
 	icon: soviet_t-34_icon
+
+soviet_t-34.info:
+	Inherits: soviet_t-34
 
 soviet_is-2:
 	Inherits: ^EmpOverlay
@@ -125,6 +129,7 @@ soviet_obj-261:
 	Inherits: ^EmpOverlay
 	idle: soviet_obj-261
 		Facings: -32
+		Offset: 0,-10
 		UseTilesetCode: false
 		ShadowStart: 32
 	stand: soviet_obj-261

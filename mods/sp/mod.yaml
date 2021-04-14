@@ -146,6 +146,7 @@ Rules:
 	sp|rules/tow_defaults.yaml
 	sp|rules/soviet.yaml
 	sp|rules/nod.yaml
+	sp|rules/turrets.yaml
 
 Weapons:
 	sp|weapons/weapondefaults.yaml
@@ -180,6 +181,7 @@ Sequences:
 	sp|sequences/mufactory.yaml
 	sp|sequences/sovseq.yaml
 	sp|sequences/nod2seq.yaml
+	sp|sequences/turrets.yaml
 
 ModelSequences:
 	sp|sequences/voxels.yaml

@@ -1,8 +1,8 @@
+##################### VEHICLES #####################
+
 ^SovietTank:
 	Inherits: ^Tank
 	Inherits@1: ^7CellVision
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
 	Mobile:
 		Speed: 60
 		TurnSpeed: 16
@@ -21,8 +21,6 @@
 ^TurretedSovietTank:
 	Inherits: ^TurretedTank
 	Inherits@1: ^7CellVision
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
 	Mobile:
 		Speed: 60
 		TurnSpeed: 16
@@ -40,9 +38,11 @@
 		QuantizedFacings: 32
 		CameraPitch: 250
 	WithMuzzleOverlay:
+	-WithSpriteTurret:
 
 soviet_T-34:
 	Inherits: ^TurretedSovietTank
+	Inherits: ^medium_chassis_prototype
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -52,25 +52,25 @@ soviet_T-34:
 		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
+		Prerequisites: !disabled
 	Health:
 		HP: 80000
 	Turreted:
 		Offset: 100,0,200
-	Armament@PRIMARY:
-		Weapon: 4tnkgun
-		LocalOffset: 1150,120,550, 1150,-120,550
-		MuzzleSequence: muzzle
-		Recoil: 127
-		RecoilRecovery: 26
-		PauseOnCondition: empdisable
-	Armament@CASINGPRIMARY:
-		Weapon: 4TNKGUNShellCasing
-		LocalOffset: 0,120,550, 0,-120,550
-		PauseOnCondition: empdisable
+	Passenger:
+		CargoCondition: T-34Loaded
+
+soviet_T-34.info:
+	Inherits: soviet_T-34
+	Buildable:
+		Queue: Turret
+		BuildPaletteOrder: 0
+		Description: This factory produces T-34 Chassis. \nIt needs a turret to start production. \nUnload to remove production prototype from factory.
+		Prerequisites: ~T-34Loaded, disabled
 
 soviet_IS-2:
 	Inherits: ^TurretedSovietTank
+	Inherits: ^heavy_chassis_prototype
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -99,6 +99,7 @@ soviet_IS-2:
 
 soviet_IS-3:
 	Inherits: ^TurretedSovietTank
+	Inherits: ^heavy_chassis_prototype
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -127,6 +128,7 @@ soviet_IS-3:
 
 soviet_KV-1:
 	Inherits: ^TurretedSovietTank
+	Inherits: ^medium_chassis_prototype
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -155,6 +157,7 @@ soviet_KV-1:
 
 soviet_KV-2:
 	Inherits: ^TurretedSovietTank
+	Inherits: ^heavy_chassis_prototype
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -183,6 +186,7 @@ soviet_KV-2:
 
 soviet_zis-5:
 	Inherits: ^TurretedSovietTank
+	Inherits: ^light_chassis_prototype
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -196,7 +200,7 @@ soviet_zis-5:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: -250,20,100
+		Offset: -250,20,200
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -211,6 +215,7 @@ soviet_zis-5:
 
 soviet_SU-12:
 	Inherits: ^TurretedSovietTank
+	Inherits: ^light_chassis_prototype
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -224,7 +229,7 @@ soviet_SU-12:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: -250,10,100
+		Offset: -250,10,200
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -239,6 +244,7 @@ soviet_SU-12:
 
 soviet_GAZ-AAA:
 	Inherits: ^TurretedSovietTank
+	Inherits: ^light_chassis_prototype
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -252,7 +258,7 @@ soviet_GAZ-AAA:
 	Health:
 		HP: 80000
 	Turreted:
-		Offset: -250,0,450
+		Offset: -250,10,350
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550

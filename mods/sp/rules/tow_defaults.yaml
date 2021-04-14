@@ -1,13 +1,14 @@
 ^Autoproducer:
 	Cargo:
 		Types: Infantry, Vehicle
-		MaxWeight: 10
-		PipCount: 10
+		MaxWeight: 11
+		PipCount: 11
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 		CargoFullCondition: cargoFull
 		PassengersCargoFullCondition: passengerCargoFull
 		PassengerConditions:
+			soviet_t-34: T-34Loaded
 			bggy: buggyLoaded
 			struck: cargoForInf
 		PassengerOfPassengersConditions:
@@ -16,17 +17,18 @@
 	ProvidesPrerequisite@bggy:
 		RequiresCondition: buggyLoaded
 		Prerequisite: buggyLoaded
+	# Production Queues
 	Production:
 		ProduceIntoCargo: true
-		RequiresCondition: !cargoFull
-	Production@Upgrade:
-		Produces: Upgrade
-		ProduceIntoCargoOfCargo: true
-		RequiresCondition: buggyLoaded && !passengerCargoFull
+		RequiresCondition: true || !cargoFull
 	Production@InfIntoCargo:
 		Produces: Infantry
 		ProduceIntoCargoOfCargo: true
 		RequiresCondition: cargoForInf && !passengerCargoFull
+	Production@Upgrade:
+		Produces: Upgrade
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: buggyLoaded && !passengerCargoFull
 	ProductionQueue@Upgrade:
 		Type: Upgrade
 		DisplayOrder: 0
@@ -38,8 +40,16 @@
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@Vehicle:
-		Type: Vehicle
+	# turret
+	ProvidesPrerequisite@T-34Loaded:
+		RequiresCondition: T-34Loaded
+		Prerequisite: T-34Loaded
+	Production@Turret:
+		Produces: Turret
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: T-34Loaded && !passengerCargoFull
+	ProductionQueue@Turret:
+		Type: Turret
 		DisplayOrder: 0
 		BuildDurationModifier: 1
 		Group: Vehicle
@@ -49,6 +59,7 @@
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	# Periodic Production stuff
 	PeriodicCargoProducer:
 		Condition: Autoproduced
 		Type: Autoproduction
@@ -58,6 +69,7 @@
 	Production@Autoproduction:
 		Produces: Autoproduction
 		PauseOnCondition: forceshield || invulnerability || being-warped
+	# Production speed modifier
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -80,6 +92,7 @@
 		Condition: TeamBalance1
 	ExternalCondition@TeamBalance2:
 		Condition: TeamBalance2
+	# blinkenlights
 	GrantTimedCondition@Highlight:
 		Condition: Highlight
 		Duration: 3
@@ -122,6 +135,8 @@
 
 ^Autoproduceable:
 	Inherits: ^TimedLife
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	ExternalCondition@Autoproduced:
 		Condition: Autoproduced
 	RejectsOrders:

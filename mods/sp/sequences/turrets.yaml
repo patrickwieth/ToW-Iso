@@ -1,0 +1,55 @@
+^light_chassis:
+	Inherits: ^light_turrets
+
+^medium_chassis:
+	Inherits: ^light_turrets
+	Inherits: ^medium_turrets
+
+^heavy_chassis:
+	Inherits: ^light_turrets
+	Inherits: ^medium_turrets
+	Inherits: ^heavy_turrets
+
+^light_turrets:
+	maxim_turret: soviet_gazaaatur
+		Facings: -32
+		UseTilesetCode: false
+
+^medium_turrets:
+	t-34_turret: soviet_t-34tur
+		Facings: -32
+		Offset: 0, 0
+		UseTilesetCode: false
+
+^heavy_turrets:
+	kv2_turret: soviet_kv-2tur
+		Facings: -32
+		UseTilesetCode: false
+
+# light turrets
+
+maxim_turret:
+	Inherits: ^EmpOverlay
+	idle: soviet_gazaaatur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_gazaaa_icon
+
+## medium turrets
+
+t-34_turret:
+	Inherits: ^EmpOverlay
+	idle: soviet_t-34tur
+		Facings: -32
+		Offset: 0, 0
+		UseTilesetCode: false
+	icon: soviet_t-34_icon
+
+## heavy turrets
+
+kv-2_turret:
+	Inherits: ^EmpOverlay
+	idle: soviet_kv-2tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_kv-2_icon
