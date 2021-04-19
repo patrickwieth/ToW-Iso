@@ -22,7 +22,7 @@
 	Inherits@1: ^chassis_prototype
 	Inherits@3: ^medium_turrets
 	Buildable:
-		Prerequisites: vehicles.any, techcenter
+		Prerequisites: vehicles.any, techcenter  
 
 ^heavy_chassis_prototype:
 	Inherits: ^chassis_prototype
@@ -61,7 +61,7 @@
 
 ^light_turrets:
 	Turreted:
-		TurnSpeed: 12
+		TurnSpeed:  12
 	# new light turrets must be added here
 	Inherits: maxim_turret_mounted
 	Cargo:

@@ -1,8 +1,8 @@
 ^Autoproducer:
 	Cargo:
 		Types: Infantry, Vehicle
-		MaxWeight: 11
-		PipCount: 11
+		MaxWeight: 10
+		PipCount: 10
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 		CargoFullCondition: cargoFull
@@ -93,6 +93,8 @@
 	ExternalCondition@TeamBalance2:
 		Condition: TeamBalance2
 	# blinkenlights
+	ExternalCondition@highl:
+		Condition: Highlight
 	GrantTimedCondition@Highlight:
 		Condition: Highlight
 		Duration: 3

@@ -58,7 +58,7 @@ soviet_T-34:
 	Turreted:
 		Offset: 100,0,200
 	Passenger:
-		CargoCondition: T-34Loaded
+		ConditionToCargo: Highlight  
 
 soviet_T-34.info:
 	Inherits: soviet_T-34
