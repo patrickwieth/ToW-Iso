@@ -48,8 +48,6 @@ soviet_T-34:
 	Tooltip:
 		Name: T-34
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: !disabled
@@ -57,13 +55,11 @@ soviet_T-34:
 		HP: 80000
 	Turreted:
 		Offset: 100,0,200
-	Passenger:
-		ConditionToCargo: Highlight  
 
 soviet_T-34.info:
 	Inherits: soviet_T-34
 	Buildable:
-		Queue: Turret
+		Queue: Medium_Chassis
 		BuildPaletteOrder: 0
 		Description: This factory produces T-34 Chassis. \nIt needs a turret to start production. \nUnload to remove production prototype from factory.
 		Prerequisites: ~T-34Loaded, disabled
@@ -76,11 +72,8 @@ soviet_IS-2:
 	Tooltip:
 		Name: IS-2
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
 	Health:
 		HP: 80000
 	Turreted:
@@ -105,11 +98,8 @@ soviet_IS-3:
 	Tooltip:
 		Name: IS-3
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
 	Health:
 		HP: 80000
 	Turreted:
@@ -134,8 +124,6 @@ soviet_KV-1:
 	Tooltip:
 		Name: KV-1
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: ~gaweap, gatech
@@ -163,8 +151,6 @@ soviet_KV-2:
 	Tooltip:
 		Name: KV-2
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: ~gaweap, gatech
@@ -192,8 +178,6 @@ soviet_zis-5:
 	Tooltip:
 		Name: Zis-5
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: ~gaweap, gatech
@@ -221,8 +205,6 @@ soviet_SU-12:
 	Tooltip:
 		Name: SU-12
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: ~gaweap, gatech
@@ -250,8 +232,6 @@ soviet_GAZ-AAA:
 	Tooltip:
 		Name: GAZ-AAA
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: ~gaweap, gatech
@@ -278,8 +258,6 @@ soviet_ISU-152:
 	Tooltip:
 		Name: ISU-152
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: ~gaweap, gatech
@@ -304,8 +282,6 @@ soviet_Obj-261:
 	Tooltip:
 		Name: Obj-261
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: ~gaweap, gatech
@@ -330,8 +306,6 @@ soviet_SU-100:
 	Tooltip:
 		Name: SU-100
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: ~gaweap, gatech
@@ -356,8 +330,6 @@ soviet_SU-5:
 	Tooltip:
 		Name: SU-5
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Tank
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
 		Prerequisites: ~gaweap, gatech

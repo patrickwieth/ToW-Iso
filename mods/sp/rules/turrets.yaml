@@ -11,25 +11,35 @@
 		Voice: Attack
 		PauseOnCondition: empdisable
 	WithMuzzleOverlay:
+	Passenger:
+		CargoType: Vehicle
+		Weight: 10
 
 ^light_chassis_prototype:
 	Inherits@1: ^chassis_prototype
 	Inherits@2: ^light_turrets
 	Buildable:
+		Queue: Vehicle
 		Prerequisites: vehicles.any
+	Passenger:
+		ConditionToCargo: light_chassis
 
 ^medium_chassis_prototype:
 	Inherits@1: ^chassis_prototype
 	Inherits@3: ^medium_turrets
 	Buildable:
-		Prerequisites: vehicles.any, techcenter  
+		Queue: Vehicle
+		Prerequisites: vehicles.any, techcenter
+	Passenger:
+		ConditionToCargo: medium_chassis
 
 ^heavy_chassis_prototype:
 	Inherits: ^chassis_prototype
-	Inherits: ^heavy_turrets
 	Buildable:
+		Queue: Vehicle
 		Prerequisites: vehicles.any, hightech
-
+	Passenger:
+		ConditionToCargo: heavy_chassis
 
 ##################### TURRETS #####################
 #   the traits that list the mountable turrets   ##
@@ -39,8 +49,6 @@
 	Inherits: ^Vehicle
 	Tooltip:
 		Name: Turret
-	Buildable:
-		Queue: Turret
 	Health:
 		HP: 5000
 	RevealsShroud:
@@ -53,10 +61,13 @@
 
 ^light_turret_prototype:
 	Inherits: ^turret_prototype
+	Buildable:
+		Queue: Light_Chassis
 	Valued:
 		Cost: 100
 	Passenger:
 		CargoType: light_turret
+		ConditionToCargoOfCargo: light_turret_mounted
 		Weight: 5
 
 ^light_turrets:
@@ -72,12 +83,10 @@
 		LoadedCondition: full
 		PassengerConditions:
 
-
 maxim_turret:
 	Inherits: ^light_turret_prototype
 	Buildable:
 		BuildPaletteOrder: 0
-		Prerequisites: ~infantry.ra, ~techlevel.infonly
 		Description: Turret with Anti-Air Barrels
 	Tooltip:
 		Name: Maxim Machine Guns
@@ -128,20 +137,22 @@ maxim_turret_mounted:                         ## Maxim Turret
 
 ^medium_turret_prototype:
 	Inherits: ^turret_prototype
+	Buildable:
+		Queue: Medium_Chassis
 	Valued:
 		Cost: 200
 	Passenger:
 		CargoType: medium_turret
+		ConditionToCargoOfCargo: medium_turret_mounted
 		Weight: 5
 
 ^medium_turrets:
-	Inherits: ^light_turrets
 	Turreted:
 		TurnSpeed: 8
 	# new medium turrets must be added here
 	Inherits: t-34_turret_mounted
 	Cargo:
-		Types: light_turret, medium_turret, ammo
+		Types: medium_turret, ammo
 		MaxWeight: 8
 		PipCount: 8
 		LoadingCondition: notmobile
@@ -153,7 +164,6 @@ t-34_turret:
 	Inherits: ^medium_turret_prototype
 	Buildable:
 		BuildPaletteOrder: 0
-		Prerequisites: ~T-34Loaded
 		Description: Missile Station Turret capable of firing multiple Missiles
 	Tooltip:
 		Name: T-34 Turret
@@ -184,20 +194,22 @@ t-34_turret_mounted:                         ## T-34 Turret
 
 ^heavy_turret_prototype:
 	Inherits: ^turret_prototype
+	Buildable:
+		Queue: Heavy_Chassis
 	Valued:
 		Cost: 300
 	Passenger:
 		CargoType: heavy_turret
+		ConditionToCargoOfCargo: heavy_turret_mounted
 		Weight: 5
 
 ^heavy_turrets:
-	Inherits: ^medium_turrets
 	Turreted:
 		TurnSpeed: 4
 	# new heavy turrets must be added here
 	Inherits: kv-2_turret_mounted
 	Cargo:
-		Types: light_turret, medium_turret, heavy_turret, ammo
+		Types: heavy_turret, ammo
 		MaxWeight: 8
 		PipCount: 8
 		LoadingCondition: notmobile
@@ -209,7 +221,6 @@ kv-2_turret:
 	Inherits: ^heavy_turret_prototype
 	Buildable:
 		BuildPaletteOrder: 0
-		Prerequisites: ~infantry.ra, ~techlevel.infonly
 		Description: Turret with 2 Barrels
 	Tooltip:
 		Name: M10 Turret

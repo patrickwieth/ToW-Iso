@@ -12,7 +12,7 @@
 			bggy: buggyLoaded
 			struck: cargoForInf
 		PassengerOfPassengersConditions:
-			gdie1: Highlight
+			t-34_turret: turreted_chassis
 	Inherits@PIPS: ^CargoPips
 	ProvidesPrerequisite@bggy:
 		RequiresCondition: buggyLoaded
@@ -20,7 +20,7 @@
 	# Production Queues
 	Production:
 		ProduceIntoCargo: true
-		RequiresCondition: true || !cargoFull
+		RequiresCondition: !cargoFull
 	Production@InfIntoCargo:
 		Produces: Infantry
 		ProduceIntoCargoOfCargo: true
@@ -40,16 +40,47 @@
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	# turret
-	ProvidesPrerequisite@T-34Loaded:
-		RequiresCondition: T-34Loaded
-		Prerequisite: T-34Loaded
-	Production@Turret:
-		Produces: Turret
+	# Turret Production
+	ExternalCondition@Light_Chassis:
+		Condition: light_chassis
+	Production@Light_Chassis:
+		Produces: Light_Chassis
 		ProduceIntoCargoOfCargo: true
-		RequiresCondition: T-34Loaded && !passengerCargoFull
-	ProductionQueue@Turret:
-		Type: Turret
+		RequiresCondition: light_chassis && !autoproduction && !passengerCargoFull
+	ProductionQueue@Light_Chassis:
+		Type: Light_Chassis
+		DisplayOrder: 0
+		BuildDurationModifier: 1
+		Group: Vehicle
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	Production@Medium_Chassis:
+		Produces: Medium_Chassis
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: medium_chassis && !autoproduction && !passengerCargoFull
+	ProductionQueue@Medium_Chassis:
+		Type: Medium_Chassis
+		DisplayOrder: 0
+		BuildDurationModifier: 1
+		Group: Vehicle
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ExternalCondition@Heavy_Chassis:
+		Condition: heavy_chassis
+	Production@Heavy_Chassis:
+		Produces: Heavy_Chassis
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: heavy_chassis && !autoproduction && !passengerCargoFull
+	ProductionQueue@Heavy_Chassis:
+		Type: Heavy_Chassis
 		DisplayOrder: 0
 		BuildDurationModifier: 1
 		Group: Vehicle
@@ -60,15 +91,20 @@
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	# Periodic Production stuff
+	GrantCondition@autoproduction:
+		RequiresCondition: light_turret_mounted || medium_turret_mounted || heavy_turret_mounted
+		Condition: autoproduction
 	PeriodicCargoProducer:
 		Condition: Autoproduced
 		Type: Autoproduction
 		ChargeDuration: 500
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
+		RequiresCondition: autoproduction
 	Production@Autoproduction:
 		Produces: Autoproduction
 		PauseOnCondition: forceshield || invulnerability || being-warped
+		RequiresCondition: autoproduction
 	# Production speed modifier
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -98,11 +134,11 @@
 	GrantTimedCondition@Highlight:
 		Condition: Highlight
 		Duration: 3
-		RequiresCondition: !cargoFull && !Cooldown
+		RequiresCondition: (light_chassis || medium_chassis || heavy_chassis) && !autoproduction && !Cooldown
 	GrantTimedCondition@Cooldown:
 		Condition: Cooldown
 		Duration: 25
-		RequiresCondition: !cargoFull && !Highlight
+		RequiresCondition: (light_chassis || medium_chassis || heavy_chassis) && !autoproduction && !Highlight
 	WithColoredOverlay@Highlight:
 		RequiresCondition: Highlight
 		Palette: highlight
