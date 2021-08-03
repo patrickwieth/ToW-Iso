@@ -2,16 +2,19 @@
 	Inherits: ^light_turrets
 
 ^medium_chassis:
-	Inherits: ^light_turrets
 	Inherits: ^medium_turrets
 
 ^heavy_chassis:
-	Inherits: ^light_turrets
-	Inherits: ^medium_turrets
 	Inherits: ^heavy_turrets
 
 ^light_turrets:
 	maxim_turret: soviet_gazaaatur
+		Facings: -32
+		UseTilesetCode: false
+	bakraa_turret: soviet_su-12tur
+		Facings: -32
+		UseTilesetCode: false
+	flak_turret: soviet_flaktur
 		Facings: -32
 		UseTilesetCode: false
 
@@ -22,6 +25,15 @@
 		UseTilesetCode: false
 
 ^heavy_turrets:
+	is2_turret: soviet_is-2tur
+		Facings: -32
+		UseTilesetCode: false
+	is3_turret: soviet_is-3tur
+		Facings: -32
+		UseTilesetCode: false
+	kv1_turret: soviet_kv-1tur
+		Facings: -32
+		UseTilesetCode: false
 	kv2_turret: soviet_kv-2tur
 		Facings: -32
 		UseTilesetCode: false
@@ -35,6 +47,20 @@ maxim_turret:
 		UseTilesetCode: false
 	icon: soviet_gazaaa_icon
 
+bakraa_turret:
+	Inherits: ^EmpOverlay
+	idle: soviet_su-12tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_bakraa_icon
+
+flak_turret:
+	Inherits: ^EmpOverlay
+	idle: soviet_flaktur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_bakraa_icon
+
 ## medium turrets
 
 t-34_turret:
@@ -47,9 +73,30 @@ t-34_turret:
 
 ## heavy turrets
 
+kv-1_turret:
+	Inherits: ^EmpOverlay
+	idle: soviet_kv-1tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_kv-1_icon
+
 kv-2_turret:
 	Inherits: ^EmpOverlay
 	idle: soviet_kv-2tur
 		Facings: -32
 		UseTilesetCode: false
 	icon: soviet_kv-2_icon
+
+is-2_turret:
+	Inherits: ^EmpOverlay
+	idle: soviet_is-2tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_is-2_icon
+
+is-3_turret:
+	Inherits: ^EmpOverlay
+	idle: soviet_is-3tur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_is-3_icon

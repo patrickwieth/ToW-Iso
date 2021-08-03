@@ -2,7 +2,7 @@
 
 soviet_t-34:
 	Inherits: ^EmpOverlay
-	Inherits: ^heavy_chassis
+	Inherits: ^medium_chassis
 	idle: soviet_t-34
 		Facings: -32
 		UseTilesetCode: false
@@ -22,6 +22,7 @@ soviet_t-34.info:
 
 soviet_is-2:
 	Inherits: ^EmpOverlay
+	Inherits: ^heavy_chassis
 	idle: soviet_is-2
 		Facings: -32
 		UseTilesetCode: false
@@ -37,6 +38,7 @@ soviet_is-2:
 
 soviet_is-3:
 	Inherits: ^EmpOverlay
+	Inherits: ^heavy_chassis
 	idle: soviet_is-3
 		Facings: -32
 		UseTilesetCode: false
@@ -52,6 +54,7 @@ soviet_is-3:
 
 soviet_kv-1:
 	Inherits: ^EmpOverlay
+	Inherits: ^heavy_chassis
 	idle: soviet_kv-1
 		Facings: -32
 		UseTilesetCode: false
@@ -67,6 +70,7 @@ soviet_kv-1:
 
 soviet_kv-2:
 	Inherits: ^EmpOverlay
+	Inherits: ^heavy_chassis
 	idle: soviet_kv-2
 		Facings: -32
 		UseTilesetCode: false
@@ -82,6 +86,7 @@ soviet_kv-2:
 
 soviet_zis-5:
 	Inherits: ^EmpOverlay
+	Inherits: ^light_chassis
 	idle: soviet_bakraa
 		Facings: -32
 		UseTilesetCode: false
@@ -97,6 +102,7 @@ soviet_zis-5:
 
 soviet_gaz-aaa:
 	Inherits: ^EmpOverlay
+	Inherits: ^light_chassis
 	idle: soviet_gazaaa
 		Facings: -32
 		UseTilesetCode: false
@@ -112,6 +118,7 @@ soviet_gaz-aaa:
 
 soviet_su-12:
 	Inherits: ^EmpOverlay
+	Inherits: ^light_chassis
 	idle: soviet_su-12
 		Facings: -32
 		UseTilesetCode: false

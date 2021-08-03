@@ -583,6 +583,8 @@ FLIPPEDYPROC:
 		Cost: 2000
 	ProvidesPrerequisite:
 		Prerequisite: factory
+	ProvidesPrerequisite:
+		Prerequisite: vehicles.any
 	Building:
 		Footprint: xxx= xxx= xxx=
 		Dimensions: 4,3

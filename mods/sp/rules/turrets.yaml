@@ -1,3 +1,24 @@
+
+^combat_ready_vehicle:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Vehicle
+	Health:
+		HP: 5000
+	RevealsShroud:
+		Range: 2c0
+	Mobile:
+		TurnSpeed: 8
+		Speed: 56
+	Passenger:
+		CargoType: Vehicle
+		ConditionToCargo: combat_ready_vehicle
+		Weight: 10
+
 ##################### CHASSIS #####################
 # these are needed to mount turrets on a vehicle ##
 ###################################################
@@ -29,7 +50,7 @@
 	Inherits@3: ^medium_turrets
 	Buildable:
 		Queue: Vehicle
-		Prerequisites: vehicles.any, techcenter
+		Prerequisites: vehicles.any, radar
 	Passenger:
 		ConditionToCargo: medium_chassis
 
@@ -37,7 +58,7 @@
 	Inherits: ^chassis_prototype
 	Buildable:
 		Queue: Vehicle
-		Prerequisites: vehicles.any, hightech
+		Prerequisites: vehicles.any, tech
 	Passenger:
 		ConditionToCargo: heavy_chassis
 
@@ -75,6 +96,8 @@
 		TurnSpeed:  12
 	# new light turrets must be added here
 	Inherits: maxim_turret_mounted
+	Inherits: bakraa_turret_mounted
+	Inherits: flak_turret_mounted
 	Cargo:
 		Types: light_turret, ammo
 		MaxWeight: 8
@@ -133,6 +156,106 @@ maxim_turret_mounted:                         ## Maxim Turret
 			maxim_turret: maxim_turret
 
 
+flak_turret:
+	Inherits: ^light_turret_prototype
+	Buildable:
+		BuildPaletteOrder: 0
+		Description: Turret with Anti-Air Barrels
+	Tooltip:
+		Name: Flak Turret
+
+flak_turret_mounted:                         ## Flak Turret
+	WithSpriteTurret@flak_turret:
+		RequiresCondition: flak_turret
+		Sequence: flak_turret
+	ExplodeWeapon@Casing_flak_turret:
+		Weapon: QuadFireCasing
+		LocalOffset: -200,0,1200
+		RequiresCondition: attack && flak_turret
+		RevokeDelay: 1
+	GrantConditionOnAttack@Casing_flak_turret:
+		Condition: attack
+		ArmamentNames: primary
+		RequiresCondition: flak_turret
+	Armament@Fakebullet_flak_turret:
+		Weapon: QuadFireLine
+		LocalOffset: 1200,0,1000
+		PauseOnCondition: empdisable
+		RequiresCondition: flak_turret
+	Armament@FakebulletAA_flak_turret:
+		Weapon: QuadFireLineAA
+		LocalOffset: 1200,0,1000
+		PauseOnCondition: empdisable
+		RequiresCondition: flak_turret
+	Armament@flak_turret:
+		Weapon: QuadFire
+		MuzzleSequence: muzzle
+		LocalOffset: 800,0,700
+		MuzzlePalette: apgrey
+		PauseOnCondition: empdisable
+		RequiresCondition: flak_turret
+	Armament@AA1_flak_turret:
+		Weapon: QuadFireAA
+		MuzzleSequence: muzzle
+		MuzzlePalette: apgrey
+		LocalOffset: 800,0,700
+		PauseOnCondition: empdisable
+		RequiresCondition: flak_turret
+	Cargo:
+		PassengerConditions:
+			flak_turret: flak_turret
+
+
+bakraa_turret:
+	Inherits: ^light_turret_prototype
+	Buildable:
+		BuildPaletteOrder: 0
+		Description: Turret with Anti-Air Barrels
+	Tooltip:
+		Name: Bakraa Turret Syndrome
+
+bakraa_turret_mounted:                         ## Bakraa Turret
+	WithSpriteTurret@bakraa_turret:
+		RequiresCondition: bakraa_turret
+		Sequence: bakraa_turret
+	ExplodeWeapon@Casing_bakraa_turret:
+		Weapon: QuadFireCasing
+		LocalOffset: -200,0,1200
+		RequiresCondition: attack && bakraa_turret
+		RevokeDelay: 1
+	GrantConditionOnAttack@Casing_bakraa_turret:
+		Condition: attack
+		ArmamentNames: primary
+		RequiresCondition: bakraa_turret
+	Armament@Fakebullet_bakraa_turret:
+		Weapon: QuadFireLine
+		LocalOffset: 1200,0,1000
+		PauseOnCondition: empdisable
+		RequiresCondition: bakraa_turret
+	Armament@FakebulletAA_bakraa_turret:
+		Weapon: QuadFireLineAA
+		LocalOffset: 1200,0,1000
+		PauseOnCondition: empdisable
+		RequiresCondition: bakraa_turret
+	Armament@bakraa_turret:
+		Weapon: QuadFire
+		MuzzleSequence: muzzle
+		LocalOffset: 800,0,700
+		MuzzlePalette: apgrey
+		PauseOnCondition: empdisable
+		RequiresCondition: bakraa_turret
+	Armament@AA1_bakraa_turret:
+		Weapon: QuadFireAA
+		MuzzleSequence: muzzle
+		MuzzlePalette: apgrey
+		LocalOffset: 800,0,700
+		PauseOnCondition: empdisable
+		RequiresCondition: bakraa_turret
+	Cargo:
+		PassengerConditions:
+			bakraa_turret: bakraa_turret
+
+
 ################# MEDIUM TURRETS #################
 
 ^medium_turret_prototype:
@@ -164,9 +287,9 @@ t-34_turret:
 	Inherits: ^medium_turret_prototype
 	Buildable:
 		BuildPaletteOrder: 0
-		Description: Missile Station Turret capable of firing multiple Missiles
+		Description: A cannon turret loadable with shells.
 	Tooltip:
-		Name: T-34 Turret
+		Name: F-34 Turret (76mm)
 
 t-34_turret_mounted:                         ## T-34 Turret
 	WithSpriteTurret@t-34_turret:

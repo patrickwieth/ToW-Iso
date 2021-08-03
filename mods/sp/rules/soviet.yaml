@@ -62,7 +62,7 @@ soviet_T-34.info:
 		Queue: Medium_Chassis
 		BuildPaletteOrder: 0
 		Description: This factory produces T-34 Chassis. \nIt needs a turret to start production. \nUnload to remove production prototype from factory.
-		Prerequisites: ~T-34Loaded, disabled
+		Prerequisites: disabled
 
 soviet_IS-2:
 	Inherits: ^TurretedSovietTank
@@ -126,7 +126,6 @@ soviet_KV-1:
 	Buildable:
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
 	Health:
 		HP: 80000
 	Turreted:
@@ -153,7 +152,6 @@ soviet_KV-2:
 	Buildable:
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
 		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
 	Health:
 		HP: 80000
 	Turreted:
@@ -170,44 +168,16 @@ soviet_KV-2:
 		LocalOffset: 0,120,550, 0,-120,550
 		PauseOnCondition: empdisable
 
-soviet_zis-5:
-	Inherits: ^TurretedSovietTank
-	Inherits: ^light_chassis_prototype
-	Valued:
-		Cost: 1750
-	Tooltip:
-		Name: Zis-5
-	Buildable:
-		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
-		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
-	Health:
-		HP: 80000
-	Turreted:
-		Offset: -250,20,200
-	Armament@PRIMARY:
-		Weapon: 4tnkgun
-		LocalOffset: 1150,120,550, 1150,-120,550
-		MuzzleSequence: muzzle
-		Recoil: 127
-		RecoilRecovery: 26
-		PauseOnCondition: empdisable
-	Armament@CASINGPRIMARY:
-		Weapon: 4TNKGUNShellCasing
-		LocalOffset: 0,120,550, 0,-120,550
-		PauseOnCondition: empdisable
-
 soviet_SU-12:
 	Inherits: ^TurretedSovietTank
 	Inherits: ^light_chassis_prototype
 	Valued:
-		Cost: 1750
+		Cost: 500
 	Tooltip:
 		Name: SU-12
 	Buildable:
-		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
+		Description: Light Truck.\nCan mount small weapon systems.
 		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
 	Health:
 		HP: 80000
 	Turreted:
@@ -228,17 +198,42 @@ soviet_GAZ-AAA:
 	Inherits: ^TurretedSovietTank
 	Inherits: ^light_chassis_prototype
 	Valued:
-		Cost: 1750
+		Cost: 1000
 	Tooltip:
 		Name: GAZ-AAA
 	Buildable:
-		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
+		Description: Medium Truck\nCan mount small weapon systems.
 		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
 	Health:
 		HP: 80000
 	Turreted:
 		Offset: -250,10,350
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+	Armament@CASINGPRIMARY:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+
+soviet_zis-5:
+	Inherits: ^TurretedSovietTank
+	Inherits: ^light_chassis_prototype
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Zis-5
+	Buildable:
+		Description: Heavy Truck.\nCan mount medium sized weapon systems.
+		BuildPaletteOrder: 8
+	Health:
+		HP: 80000
+	Turreted:
+		Offset: -250,20,200
 	Armament@PRIMARY:
 		Weapon: 4tnkgun
 		LocalOffset: 1150,120,550, 1150,-120,550
@@ -259,32 +254,9 @@ soviet_ISU-152:
 		Name: ISU-152
 	Buildable:
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
-		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
-	Health:
-		HP: 80000
-	Armament@PRIMARY:
-		Weapon: 4tnkgun
-		LocalOffset: 1150,120,550, 1150,-120,550
-		MuzzleSequence: muzzle
-		Recoil: 127
-		RecoilRecovery: 26
-		PauseOnCondition: empdisable
-	Armament@CASINGPRIMARY:
-		Weapon: 4TNKGUNShellCasing
-		LocalOffset: 0,120,550, 0,-120,550
-		PauseOnCondition: empdisable
-
-soviet_Obj-261:
-	Inherits: ^SovietTank
-	Valued:
-		Cost: 1750
-	Tooltip:
-		Name: Obj-261
-	Buildable:
-		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
-		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
+		Queue: Vehicle
+		Prerequisites: vehicles.any
+		BuildPaletteOrder: 9
 	Health:
 		HP: 80000
 	Armament@PRIMARY:
@@ -307,8 +279,9 @@ soviet_SU-100:
 		Name: SU-100
 	Buildable:
 		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
-		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
+		Queue: Vehicle
+		Prerequisites: vehicles.any
+		BuildPaletteOrder: 9
 	Health:
 		HP: 80000
 	Armament@PRIMARY:
@@ -323,16 +296,18 @@ soviet_SU-100:
 		LocalOffset: 0,120,550, 0,-120,550
 		PauseOnCondition: empdisable
 
+
 soviet_SU-5:
 	Inherits: ^SovietTank
 	Valued:
-		Cost: 1750
+		Cost: 600
 	Tooltip:
 		Name: SU-5
 	Buildable:
-		Description: Heavy assault tank.\n\nGood vs: Vehicles, Aircraft\n\nSpecial:\n- Selfheal to 50%\n- Can attack air\n- Only the Missiles can pass over walls\n- Can crush infantry
-		BuildPaletteOrder: 8
-		Prerequisites: ~gaweap, gatech
+		Description: Light Mortar\nCan load mortar shells.
+		Queue: Vehicle
+		Prerequisites: vehicles.any
+		BuildPaletteOrder: 9
 	Health:
 		HP: 80000
 	Armament@PRIMARY:
@@ -346,6 +321,32 @@ soviet_SU-5:
 		Weapon: 4TNKGUNShellCasing
 		LocalOffset: 0,120,550, 0,-120,550
 		PauseOnCondition: empdisable
+
+soviet_Obj-261:
+	Inherits: ^SovietTank
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: Obj-261
+	Buildable:
+		Description: Heavy artillery.\nCan load heavy artillery shells.
+		Queue: Vehicle
+		Prerequisites: vehicles.any
+		BuildPaletteOrder: 9
+	Health:
+		HP: 80000
+	Armament@PRIMARY:
+		Weapon: 4tnkgun
+		LocalOffset: 1150,120,550, 1150,-120,550
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+	Armament@CASINGPRIMARY:
+		Weapon: 4TNKGUNShellCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+
 
 ##################### INFANTRY #####################
 
