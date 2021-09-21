@@ -1,14 +1,12 @@
 
 ^combat_ready_vehicle:
+	Inherits@PIPS: ^CargoPips
 	Inherits: ^Vehicle
 	Buildable:
 		Queue: Vehicle
-	Valued:
-		Cost: 100
+		Prerequisites: vehicles.any
 	Tooltip:
 		Name: Vehicle
-	Health:
-		HP: 5000
 	RevealsShroud:
 		Range: 2c0
 	Mobile:
@@ -16,8 +14,15 @@
 		Speed: 56
 	Passenger:
 		CargoType: Vehicle
-		ConditionToCargo: combat_ready_vehicle
+		ConditionToCargo: ammo
 		Weight: 10
+	Cargo:
+		Types: ammo
+		MaxWeight: 1
+		PipCount: 1
+		LoadingCondition: notmobile
+		LoadedCondition: full
+		PassengerConditions:
 
 ##################### CHASSIS #####################
 # these are needed to mount turrets on a vehicle ##
@@ -55,7 +60,8 @@
 		ConditionToCargo: medium_chassis
 
 ^heavy_chassis_prototype:
-	Inherits: ^chassis_prototype
+	Inherits@1: ^chassis_prototype
+	Inherits@4: ^heavy_turrets
 	Buildable:
 		Queue: Vehicle
 		Prerequisites: vehicles.any, tech

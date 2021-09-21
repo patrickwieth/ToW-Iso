@@ -1,0 +1,30 @@
+^ammo_prototype:
+	Inherits: ^Vehicle
+	Tooltip:
+		Name: Ammo
+	Health:
+		HP: 5000
+	RevealsShroud:
+		Range: 2c0
+	Mobile:
+		TurnSpeed: 8
+		Speed: 56
+	Buildable:
+		Queue: Ammo
+		Prerequisites: vehicles.any
+	Valued:
+		Cost: 0
+	Passenger:
+		CargoType: ammo
+		ConditionToCargoOfCargo: ammo_loaded
+		Weight: 5
+
+heavy_artillery_AP:
+	Inherits: ^ammo_prototype
+	Buildable:
+		BuildPaletteOrder: 0
+		Description: Heavy artillery shell with armor piercing warhead. Very effective vs. armored targets, weak vs. infantry, no area damage.
+	Tooltip:
+		Name: Heavy Artillery AP Shell
+	Passenger:
+		ConditionToCargo: ap_shell

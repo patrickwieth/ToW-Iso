@@ -64,7 +64,7 @@
 		RequiresCondition: medium_chassis && !autoproduction && !passengerCargoFull
 	ProductionQueue@Medium_Chassis:
 		Type: Medium_Chassis
-		DisplayOrder: 0
+		DisplayOrder: 1
 		BuildDurationModifier: 1
 		Group: Vehicle
 		ReadyAudio: UnitReady
@@ -81,6 +81,24 @@
 		RequiresCondition: heavy_chassis && !autoproduction && !passengerCargoFull
 	ProductionQueue@Heavy_Chassis:
 		Type: Heavy_Chassis
+		DisplayOrder: 2
+		BuildDurationModifier: 1
+		Group: Vehicle
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	# Ammo Production
+	ExternalCondition@Ammo:
+		Condition: ammo
+	Production@Ammo:
+		Produces: Ammo
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: ammo
+	ProductionQueue@Ammo:
+		Type: Ammo
 		DisplayOrder: 0
 		BuildDurationModifier: 1
 		Group: Vehicle
@@ -140,7 +158,7 @@
 		Duration: 25
 		RequiresCondition: (light_chassis || medium_chassis || heavy_chassis) && !autoproduction && !Highlight
 	WithColoredOverlay@Highlight:
-		RequiresCondition: Highlight
+		RequiresCondition: Highlight || ammo
 		Palette: highlight
 
 ^InfAutoproducer:

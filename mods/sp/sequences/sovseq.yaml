@@ -54,7 +54,7 @@ soviet_is-3:
 
 soviet_kv-1:
 	Inherits: ^EmpOverlay
-	Inherits: ^heavy_chassis
+	Inherits: ^medium_chassis
 	idle: soviet_kv-1
 		Facings: -32
 		UseTilesetCode: false
