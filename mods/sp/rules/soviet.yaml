@@ -328,7 +328,7 @@ soviet_Obj-261:
 	Inherits@base: ^SovietTank
 	Inherits@ext: ^combat_ready_vehicle
 	Passenger:
-		ConditionToCargo: heavy_artillery
+		ConditionToCargo: ammo
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -341,16 +341,18 @@ soviet_Obj-261:
 	Health:
 		HP: 80000
 	Armament@PRIMARY:
-		Weapon: 4tnkgun
-		LocalOffset: 1150,120,550, 1150,-120,550
+		Weapon: Heavy_Artillery_AP
+		LocalOffset: 750,0,1050
 		MuzzleSequence: muzzle
 		Recoil: 127
 		RecoilRecovery: 26
 		PauseOnCondition: empdisable
+		RequiresCondition: ap_shell
 	Armament@CASINGPRIMARY:
-		Weapon: 4TNKGUNShellCasing
+		Weapon: JuggCannonShellCasing
 		LocalOffset: 0,120,550, 0,-120,550
 		PauseOnCondition: empdisable
+		RequiresCondition: ap_shell
 
 
 ##################### INFANTRY #####################

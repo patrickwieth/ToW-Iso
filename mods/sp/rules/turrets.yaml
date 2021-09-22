@@ -18,8 +18,8 @@
 		Weight: 10
 	Cargo:
 		Types: ammo
-		MaxWeight: 1
-		PipCount: 1
+		MaxWeight: 2
+		PipCount: 2
 		LoadingCondition: notmobile
 		LoadedCondition: full
 		PassengerConditions:

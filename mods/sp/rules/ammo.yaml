@@ -17,14 +17,45 @@
 	Passenger:
 		CargoType: ammo
 		ConditionToCargoOfCargo: ammo_loaded
-		Weight: 5
+		Highlander: True
+		Weight: 1
 
 heavy_artillery_AP:
 	Inherits: ^ammo_prototype
 	Buildable:
-		BuildPaletteOrder: 0
-		Description: Heavy artillery shell with armor piercing warhead. Very effective vs. armored targets, weak vs. infantry, no area damage.
+		BuildPaletteOrder: 1
+		Description: Heavy artillery shell with armor piercing warhead. \n  Very effective vs. armored targets, weak vs. infantry, no area damage.\n  Cannot be intercepted by point defense laser.
 	Tooltip:
 		Name: Heavy Artillery AP Shell
+	Passenger:
+		ConditionToCargo: ap_shell
+
+heavy_artillery_HE:
+	Inherits: ^ammo_prototype
+	Buildable:
+		BuildPaletteOrder: 2
+		Description: Heavy artillery shell with high explosive warhead. \n  Very effective vs. light armored targets, moderate area damage.
+	Tooltip:
+		Name: Heavy Artillery HE Shell
+	Passenger:
+		ConditionToCargo: he_shell
+
+heavy_artillery_Cluster:
+	Inherits: ^ammo_prototype
+	Buildable:
+		BuildPaletteOrder: 3
+		Description: Heavy artillery shell with cluster bomb warhead. \n  Very effective vs. massed units, considerable area damage.
+	Tooltip:
+		Name: Heavy Artillery Cluster Shell
+	Passenger:
+		ConditionToCargo: cluster_shell
+
+heavy_artillery_Nuke:
+	Inherits: ^ammo_prototype
+	Buildable:
+		BuildPaletteOrder: 4
+		Description: Heavy artillery shell with nuclear warhead. \n  Very effective vs. massed units, excessive area damage.
+	Tooltip:
+		Name: Heavy Artillery Nuke Shell
 	Passenger:
 		ConditionToCargo: ap_shell

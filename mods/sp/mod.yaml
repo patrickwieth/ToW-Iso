@@ -163,6 +163,8 @@ Weapons:
 	sp|weapons/scrweapons.yaml
 	sp|weapons/garrisonweapons.yaml
 	sp|weapons/dummyweapons.yaml
+	#sp|weapons/weapontypes.yaml
+	sp|weapons/projectiles.yaml
 
 Sequences:
 	sp|sequences/miscseq.yaml

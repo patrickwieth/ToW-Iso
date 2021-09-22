@@ -158,7 +158,7 @@
 		Duration: 25
 		RequiresCondition: (light_chassis || medium_chassis || heavy_chassis) && !autoproduction && !Highlight
 	WithColoredOverlay@Highlight:
-		RequiresCondition: Highlight || ammo
+		RequiresCondition: Highlight
 		Palette: highlight
 
 ^InfAutoproducer:

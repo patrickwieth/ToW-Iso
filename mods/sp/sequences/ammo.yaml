@@ -1,4 +1,25 @@
-heavy_artillery_AP:
+heavy_artillery_ap:
+	Inherits: ^EmpOverlay
+	idle: soviet_gazaaatur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_gazaaa_icon
+
+heavy_artillery_he:
+	Inherits: ^EmpOverlay
+	idle: soviet_gazaaatur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_gazaaa_icon
+
+heavy_artillery_cluster:
+	Inherits: ^EmpOverlay
+	idle: soviet_gazaaatur
+		Facings: -32
+		UseTilesetCode: false
+	icon: soviet_gazaaa_icon
+
+heavy_artillery_nuke:
 	Inherits: ^EmpOverlay
 	idle: soviet_gazaaatur
 		Facings: -32
