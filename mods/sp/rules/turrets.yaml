@@ -24,6 +24,20 @@
 		LoadedCondition: full
 		PassengerConditions:
 
+^artillery_vehicle:
+	Inherits: ^combat_ready_vehicle
+	Passenger:
+		ConditionToCargo: arty_ammo
+	Cargo:
+		Types: Arty_Ammo
+
+^tank_destroyer:
+	Inherits: ^combat_ready_vehicle
+	Passenger:
+		ConditionToCargo: arty_ammo
+	Cargo:
+		Types: Arty_Ammo
+
 ##################### CHASSIS #####################
 # these are needed to mount turrets on a vehicle ##
 ###################################################

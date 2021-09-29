@@ -248,7 +248,7 @@ soviet_zis-5:
 
 soviet_ISU-152:
 	Inherits@base: ^SovietTank
-	Inherits@ext: ^combat_ready_vehicle
+	Inherits@ext: ^tank_destroyer
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -260,17 +260,22 @@ soviet_ISU-152:
 		BuildPaletteOrder: 9
 	Health:
 		HP: 80000
-	Armament@PRIMARY:
-		Weapon: 4tnkgun
-		LocalOffset: 1150,120,550, 1150,-120,550
+	Armament@1:
+		Weapon: Heavy_Shell_AP
+		LocalOffset: 1000,0,1350
 		MuzzleSequence: muzzle
 		Recoil: 127
 		RecoilRecovery: 26
 		PauseOnCondition: empdisable
-	Armament@CASINGPRIMARY:
-		Weapon: 4TNKGUNShellCasing
-		LocalOffset: 0,120,550, 0,-120,550
+		RequiresCondition: ap_shell
+	Armament@2:
+		Weapon: Heavy_Shell_HE
+		LocalOffset: 1000,0,1350
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
 		PauseOnCondition: empdisable
+		RequiresCondition: he_shell
 
 soviet_SU-100:
 	Inherits@base: ^SovietTank
@@ -326,9 +331,7 @@ soviet_SU-5:
 
 soviet_Obj-261:
 	Inherits@base: ^SovietTank
-	Inherits@ext: ^combat_ready_vehicle
-	Passenger:
-		ConditionToCargo: ammo
+	Inherits@ext: ^artillery_vehicle
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -339,21 +342,39 @@ soviet_Obj-261:
 		Prerequisites: vehicles.any
 		BuildPaletteOrder: 9
 	Health:
-		HP: 80000
-	Armament@PRIMARY:
+		HP: 35000
+	Armament@1:
 		Weapon: Heavy_Artillery_AP
-		LocalOffset: 750,0,1050
+		LocalOffset: 1000,0,1350
 		MuzzleSequence: muzzle
 		Recoil: 127
 		RecoilRecovery: 26
 		PauseOnCondition: empdisable
 		RequiresCondition: ap_shell
-	Armament@CASINGPRIMARY:
-		Weapon: JuggCannonShellCasing
-		LocalOffset: 0,120,550, 0,-120,550
+	Armament@2:
+		Weapon: Heavy_Artillery_HE
+		LocalOffset: 1000,0,1350
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
 		PauseOnCondition: empdisable
-		RequiresCondition: ap_shell
-
+		RequiresCondition: he_shell
+	Armament@3:
+		Weapon: Heavy_Artillery_Cluster
+		LocalOffset: 1000,0,1350
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+		RequiresCondition: cluster_shell
+	Armament@4:
+		Weapon: Heavy_Artillery_Nuke
+		LocalOffset: 1000,0,1350
+		MuzzleSequence: muzzle
+		Recoil: 127
+		RecoilRecovery: 26
+		PauseOnCondition: empdisable
+		RequiresCondition: nuke_shell
 
 ##################### INFANTRY #####################
 

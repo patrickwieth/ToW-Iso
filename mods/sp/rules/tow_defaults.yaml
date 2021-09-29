@@ -108,6 +108,40 @@
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ExternalCondition@Arty_Ammo:
+		Condition: arty_ammo
+	Production@Arty_Ammo:
+		Produces: Arty_Ammo
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: arty_ammo
+	ProductionQueue@Arty_Ammo:
+		Type: Arty_Ammo
+		DisplayOrder: 0
+		BuildDurationModifier: 1
+		Group: Vehicle
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ExternalCondition@Heavy_Shell_Ammo:
+		Condition: heavy_shell_ammo
+	Production@Heavy_Shell_Ammo:
+		Produces: Heavy_Shell_Ammo
+		ProduceIntoCargoOfCargo: true
+		RequiresCondition: heavy_shell_ammo
+	ProductionQueue@Heavy_Shell_Ammo:
+		Type: Heavy_Shell_Ammo
+		DisplayOrder: 0
+		BuildDurationModifier: 1
+		Group: Vehicle
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	# Periodic Production stuff
 	GrantCondition@autoproduction:
 		RequiresCondition: light_turret_mounted || medium_turret_mounted || heavy_turret_mounted

@@ -1,27 +1,71 @@
 heavy_artillery_ap:
-	Inherits: ^EmpOverlay
-	idle: soviet_gazaaatur
-		Facings: -32
-		UseTilesetCode: false
+	Inherits: ^InfantryDeathAnims
+	Defaults: civ1
+		Tick: 80
+	stand: civ1
+		Facings: 8
+		ShadowStart: 292
+	run: civ1
+		Start: 8
+		Length: 6
+		Facings: 8
+		ShadowStart: 300
+	idle1: civ1
+		Start: 56
+		Length: 15
+		ShadowStart: 348
+	idle2: civ1
+		Start: 71
+		Length: 15
+		ShadowStart: 363
+	panic-run: civ1
+		Start: 86
+		Length: 6
+		Facings: 8
+		ShadowStart: 378
+	panic-stand: civ1
+		Start: 86
+		Facings: 8
+		Stride: 6
+		ShadowStart: 378
+	die1: civ1
+		Start: 134
+		Length: 15
+		ShadowStart: 426
+	die2: civ1
+		Start: 149
+		Length: 15
+		ShadowStart: 441
+		Tick: 80
+	die-crushed: civ1
+		Start: 159
+		Length: 5
+		ShadowStart: 451
+		Tick: 800
+		ZOffset: -511
+	shoot: civ1
+		Start: 164
+		Length: 6
+		Facings: 8
+		ShadowStart: 456
 	icon: soviet_gazaaa_icon
 
 heavy_artillery_he:
-	Inherits: ^EmpOverlay
-	idle: soviet_gazaaatur
-		Facings: -32
-		UseTilesetCode: false
-	icon: soviet_gazaaa_icon
+	Inherits: heavy_artillery_ap
+	icon: soviet_bakraa_icon
 
 heavy_artillery_cluster:
-	Inherits: ^EmpOverlay
-	idle: soviet_gazaaatur
-		Facings: -32
-		UseTilesetCode: false
-	icon: soviet_gazaaa_icon
+	Inherits: heavy_artillery_ap
+	icon: soviet_kv-1_icon
 
 heavy_artillery_nuke:
-	Inherits: ^EmpOverlay
-	idle: soviet_gazaaatur
-		Facings: -32
-		UseTilesetCode: false
-	icon: soviet_gazaaa_icon
+	Inherits: heavy_artillery_ap
+	icon: soviet_kv-2_icon
+
+heavy_shell_ap:
+	Inherits: heavy_artillery_ap
+	icon: soviet_bakraa_icon
+
+heavy_shell_he:
+	Inherits: heavy_artillery_ap
+	icon: soviet_bakraa_icon
