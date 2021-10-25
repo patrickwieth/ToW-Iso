@@ -14,7 +14,6 @@
 		Speed: 56
 	Passenger:
 		CargoType: Vehicle
-		ConditionToCargo: ammo
 		Weight: 10
 	Cargo:
 		Types: ammo
@@ -23,6 +22,13 @@
 		LoadingCondition: notmobile
 		LoadedCondition: full
 		PassengerConditions:
+
+^light_artillery_vehicle:
+	Inherits: ^combat_ready_vehicle
+	Passenger:
+		ConditionToCargo: light_arty_ammo
+	Cargo:
+		Types: Light_Arty_Ammo
 
 ^artillery_vehicle:
 	Inherits: ^combat_ready_vehicle
@@ -34,9 +40,9 @@
 ^tank_destroyer:
 	Inherits: ^combat_ready_vehicle
 	Passenger:
-		ConditionToCargo: arty_ammo
+		ConditionToCargo: heavy_shell_ammo
 	Cargo:
-		Types: Arty_Ammo
+		Types: Heavy_Shell_Ammo
 
 ##################### CHASSIS #####################
 # these are needed to mount turrets on a vehicle ##

@@ -1,37 +1,51 @@
+
+Heavy_Shell_PrototypeCasing:
+	Inherits: ^ShellCasing
+	ReloadDelay: 80
+	Range: 6c0
+
 ^Heavy_Shell_Prototype:
-	Inherits: ^ArtilleryWarhead
-	Inherits@2: ^Large_Explosion
-	ReloadDelay: 150
-	Range: 18c0
-	MinRange: 5c0
-	Report: jugfire0000.wav, jugfire0001.wav, jugfire0002.wav #specfire0000.wav, specfire0001.wav, specfire0002.wav
+	ReloadDelay: 80
+	Range: 6c0
+	Report: 120mmf.aud
 	Projectile: BulletAS
-		Speed: 175
-		Image: spectreball
-		LaunchAngle: 145
+		Speed: 650
+		Image: 120mm
 		Shadow: true
-		Inaccuracy: 1c512
-		Blockable: false
-		ContrailLength: 10
-		ContrailZOffset: 650
-		ContrailUsePlayerColor: true
+		LaunchAngle: 55
 		Palette: ra
+		Blockable: true
+		ContrailLength: 10
+		ContrailColor: FFFFFF
+		ContrailWidth: 0c21
 	Warhead@1Dam: SpreadDamage
-		Spread: 550
-		Damage: 28000
-		DamageTypes: Prone100Percent, TriggerProne, ExplosionDeath
+		Damage: 7000
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: tib_expsmall
+		ImpactSounds: expnew12.aud
+		InvalidTargets: Water, Air, AirHit
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: ssplash1.aud, ssplash2.aud, ssplash3.aud
+		ExplosionPalette: player
+		ImpactActors: false
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+		InvalidTargets: Vehicle, Building, Wall
 
 Heavy_Shell_AP:
-	Inherits: ^Heavy_Artillery_Prototype
+	Inherits: ^Heavy_Shell_Prototype
 	Inherits@3: ^ShellAP
 	Projectile: BulletAS
-		Speed: 200
+		Speed: 600
 		Inaccuracy: 0
 	Warhead@1Dam: SpreadDamage
 		Spread: 150
 
 Heavy_Shell_HE:
-	Inherits: ^Heavy_Artillery_Prototype
+	Inherits: ^Heavy_Shell_Prototype
 	Inherits@3: ^ShellHE
 
 ^Heavy_Artillery_Prototype:
@@ -65,6 +79,10 @@ Heavy_Artillery_AP:
 		Inaccuracy: 0
 	Warhead@1Dam: SpreadDamage
 		Spread: 150
+	Warhead@2Eff: CreateEffect
+		Explosions: tib_expsmall
+		ImpactSounds: expnew12.aud
+		InvalidTargets: Water, Air, AirHit
 
 Heavy_Artillery_HE:
 	Inherits: ^Heavy_Artillery_Prototype

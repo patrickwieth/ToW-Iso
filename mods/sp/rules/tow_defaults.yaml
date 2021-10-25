@@ -91,23 +91,6 @@
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 	# Ammo Production
-	ExternalCondition@Ammo:
-		Condition: ammo
-	Production@Ammo:
-		Produces: Ammo
-		ProduceIntoCargoOfCargo: true
-		RequiresCondition: ammo
-	ProductionQueue@Ammo:
-		Type: Ammo
-		DisplayOrder: 0
-		BuildDurationModifier: 1
-		Group: Vehicle
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ExternalCondition@Arty_Ammo:
 		Condition: arty_ammo
 	Production@Arty_Ammo:

@@ -262,20 +262,26 @@ soviet_ISU-152:
 		HP: 80000
 	Armament@1:
 		Weapon: Heavy_Shell_AP
-		LocalOffset: 1000,0,1350
-		MuzzleSequence: muzzle
 		Recoil: 127
 		RecoilRecovery: 26
+		MuzzleSequence: muzzle
+		LocalOffset: 500, 300, 300
 		PauseOnCondition: empdisable
 		RequiresCondition: ap_shell
 	Armament@2:
 		Weapon: Heavy_Shell_HE
-		LocalOffset: 1000,0,1350
-		MuzzleSequence: muzzle
 		Recoil: 127
 		RecoilRecovery: 26
+		MuzzleSequence: muzzle
+		LocalOffset: 500, 300, 300
 		PauseOnCondition: empdisable
 		RequiresCondition: he_shell
+	Armament@CASINGPRIMARY:
+		Weapon: Heavy_Shell_PrototypeCasing
+		LocalOffset: 0,120,550, 0,-120,550
+		PauseOnCondition: empdisable
+		RequiresCondition: he_shell || ap_shell
+
 
 soviet_SU-100:
 	Inherits@base: ^SovietTank
